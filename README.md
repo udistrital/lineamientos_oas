@@ -16,7 +16,7 @@
 
 
 ## 2. Repositorios Institucionales
-
+- Lineamientos
 
 ## 3. Modelos de datos
 - Lineamientos
