@@ -23,6 +23,9 @@
 
 ## 4. Generación de Apis
 - Lineamientos
+- Generar de API Beego
+- Generar Logs
+- Configurar Respuestas Json
 - Calidad
 
 ## 5. Integración con WSO2AM
