@@ -57,7 +57,7 @@
 
 - Instalar QT
 
-      sudo yum install qt5-qtbase-devel -y
+      sudo yum install qt5-qtbase-devel qt5-qtsvg-devel -y
 
     Crear varialbes de Qt al PATH
 
