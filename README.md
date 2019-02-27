@@ -1,5 +1,7 @@
 # Introducción OAS
 
+Este repositorio es un conglomerado de buenas prácticas, lineamientos, configuraciones a realizar en el entorno de desarrollo de las nuevas tecnologias de la Oficina Asesora de Sistemas (OAS)
+
 
 ## 1. Instalación de Herramientas
 
@@ -23,7 +25,7 @@
 
 ## 4. Generación de Apis
 - Lineamientos
-- Generar de API Beego
+- Generar API Beego
 - Generar Logs
 - Configurar Respuestas Json
 - Calidad
