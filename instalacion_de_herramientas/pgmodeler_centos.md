@@ -80,16 +80,16 @@
 
 - Descargar fuentes de pgModeler
 
-  Descargar la ultima versión del siguiente link [https://github.com/pgmodeler/pgmodeler/releases](https://github.com/pgmodeler/pgmodeler/releases)
+  Descargar la versión **v0.9.1** con extención **.tar.gz** del siguiente link [https://github.com/pgmodeler/pgmodeler/releases](https://github.com/pgmodeler/pgmodeler/releases)
 
-  Descargar el codigo fuente en la extención .tar.gz
+  Descomprimir el fuente de extención .tar.gz
 
       cd Downloads/
       tar -zxvf pgmodeler-*.tar.gz
 
   Ingresar a la carpeta descomprimida segun la version descargada
 
-      cd pgmodeler-0.9.2-alpha1/
+      cd pgmodeler-0.9.1/
 
 - Instalacion del binario
 
