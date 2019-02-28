@@ -144,7 +144,7 @@ En está sección se realiza  paso a paso la creación de una API con el framewo
 
 6. Generar Documentación
 
-  Ubicado en la rais del proyecto
+  Ubicado en la raíz del proyecto
 
        cd ~/go/src/github.com/TuUsuarioGithub/testApi
 
