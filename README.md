@@ -26,7 +26,7 @@ Este repositorio es un conglomerado de buenas prácticas, lineamientos, configur
 ## 4. Generación de Apis
 - Lineamientos
 - [Generar API Beego](/generacion_de_apis/generar_api.md)
-- [Generar Logs en API Beego](/generacion_de_apis/generar_api.md)
+- [Generar Logs en API Beego](/generacion_de_apis/logs_api.md)
 - [Configurar Respuestas Json en API Beego](/generacion_de_apis/generar_api.md)
 - Calidad
 
