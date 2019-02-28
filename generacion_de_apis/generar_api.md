@@ -80,7 +80,7 @@ En está sección se realiza  paso a paso la creación de una API con el framewo
 
 5. Configurar cors
 
-    Esta configuración permitirá quee los servicios sean consumibles desde un navegador web
+    Esta configuración permitirá que los servicios sean consumibles desde un navegador web
 
   - Código original:
 
@@ -154,8 +154,8 @@ En está sección se realiza  paso a paso la creación de una API con el framewo
 
 7. Consumir los servicios
 
-  Abrir navegador he ingresar 127.0.0.1:8080/v1/usuario
+    Abrir navegador he ingresar 127.0.0.1:8080/v1/usuario
 
-  Visualizar el Documentación de swagger:
+    Visualizar el Documentación de swagger:
 
-  Abrir navegador he ingresar 127.0.0.1:8080/swagger/
+    Abrir navegador he ingresar 127.0.0.1:8080/swagger/
