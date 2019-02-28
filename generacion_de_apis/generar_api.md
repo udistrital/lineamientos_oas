@@ -37,7 +37,7 @@ En está sección se realiza  paso a paso la creación de una API con el framewo
 
 4. Crear API
 
-       bee api testApi -driver=postgres -conn=postgres://postgres:postgres@127.0.0.1/bd_oas?sslmode=disable
+       bee api testApi -driver=postgres -conn=postgres://MyUsuarioBD:MyPassDB@127.0.0.1/bd_oas?sslmode=disable
 
     Se Creara un directorio llamado testApi con los archivo correspondiente a la api.
 
