@@ -52,4 +52,21 @@ En está sección se realiza  paso a paso la creación de una API con el framewo
        │   └── router.go
        └── tests
 
+    Especificar el esquema en el proyecto. Para esto, editamos el archivo **testApi/conf/app.conf** agregamos lo siguiente **"&search_path=nombre_de_tu_schema"**
+
+    Código original:
+
+       sqlconn = postgres://postgres:postgres@127.0.0.1/bd_oas?sslmode=disable
+
+    Ajuste:
+
+       sqlconn = postgres://postgres:postgres@127.0.0.1/bd_oas?sslmode=disable&search_path=public
+
+    Especificamos el auto incremental del id en los modelos en el archivo **testApi/models/usurio.go**
+
+       type Usurio struct {
+         Id     int    `orm:"column(id);pk"`
+         Nombre string `orm:"column(nombre);null"`
+       }
+
 5. DD
