@@ -64,9 +64,74 @@ En está sección se realiza  paso a paso la creación de una API con el framewo
 
     Especificamos el auto incremental del id en los modelos en el archivo **testApi/models/usurio.go**
 
-       type Usurio struct {
-         Id     int    `orm:"column(id);pk"`
-         Nombre string `orm:"column(nombre);null"`
-       }
+    - Código original:
 
-5. DD
+          type Usurio struct {
+            Id     int    `orm:"column(id);pk"`
+            Nombre string `orm:"column(nombre);null"`
+          }
+
+    - Ajuste:
+
+          type Usurio struct {
+            Id     int    `orm:"column(id);pk;auto"`
+            Nombre string `orm:"column(nombre);null"`
+          }
+
+5. Configurar cors
+
+  Esta configuración permitirá quee los servicios sean consumibles desde un navegador web
+
+  - En el import()
+
+         "github.com/astaxie/beego/plugins/cors"
+
+  - En la Funcion func init()
+
+         beego.InsertFilter("*", beego.BeforeRouter, cors.Allow(&cors.Options{
+           AllowOrigins: []string{"*"},
+           AllowMethods: []string{"PUT", "PATCH", "GET", "POST", "OPTIONS", "DELETE"},
+           AllowHeaders: []string{"Origin", "x-requested-with",
+             "content-type",
+             "accept",
+             "origin",
+             "authorization",
+             "x-csrftoken"},
+           ExposeHeaders:    []string{"Content-Length"},
+           AllowCredentials: true,
+         }))
+
+  - Al final tendremos la funcion main de la siguieten forma:
+
+         func main() {
+           orm.RegisterDataBase("default", "postgres", beego.AppConfig.String("sqlconn"))
+           if beego.BConfig.RunMode == "dev" {
+             beego.BConfig.WebConfig.DirectoryIndex = true
+             beego.BConfig.WebConfig.StaticDir["/swagger"] = "swagger"
+           }
+
+           beego.InsertFilter("*", beego.BeforeRouter, cors.Allow(&cors.Options{
+             AllowOrigins: []string{"*"},
+             AllowMethods: []string{"PUT", "PATCH", "GET", "POST", "OPTIONS", "DELETE"},
+             AllowHeaders: []string{"Origin", "x-requested-with",
+               "content-type",
+               "accept",
+               "origin",
+               "authorization",
+               "x-csrftoken"},
+             ExposeHeaders:    []string{"Content-Length"},
+             AllowCredentials: true,
+           }))
+
+           beego.Run()
+         }
+
+6. Generar Documentación
+
+  Ubicado en la rais del proyecto
+
+       cd ~/go/src/github.com/TuUsuarioGithub/testApi
+
+  Ejecutra
+
+       bee run -downdoc=true -gendoc=true
