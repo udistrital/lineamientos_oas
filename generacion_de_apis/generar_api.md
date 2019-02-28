@@ -142,9 +142,6 @@ En está sección se realiza  paso a paso la creación de una API con el framewo
           beego.Run()
         }
 
-
-
-
 6. Generar Documentación
 
   Ubicado en la rais del proyecto
