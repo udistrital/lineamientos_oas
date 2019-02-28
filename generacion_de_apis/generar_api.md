@@ -21,7 +21,7 @@ En está sección se realiza  paso a paso la creación de una API con el framewo
 
   ![Crear Tabla](/generacion_de_apis/img/002.png)
 
-  - Puedes ejecutar el sql [adjunto](/generacion_de_apis/bd/usurio.sql)
+  - Puedes ejecutar el sql [adjunto](/generacion_de_apis/bd/usuario.sql)
 
           psql -d bd_oas -a -f usurio.sql
 
