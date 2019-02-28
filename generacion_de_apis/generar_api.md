@@ -12,3 +12,17 @@ En está sección se realiza  paso a paso la creación de una API con el framewo
 6. [Instalación pgModeler](/instalacion_de_herramientas/pgmodeler.md)
 
 ## Generar API
+
+1. Crear un bd llamada bd_oas
+
+  ![Crear BD](/img/001.png)
+
+2. Crear una tabla usuario
+
+  ![Crear Tabla](/img/002.png)
+
+  - Puedes ejecutar el sql [adjunto](/bd/usurio.sql)
+
+          psql -d bd_oas -a -f usurio.sql
+
+  - puedes exportar el modelo dbm desde el pgModeler
