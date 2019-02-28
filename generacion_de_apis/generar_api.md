@@ -31,7 +31,7 @@ En está sección se realiza  paso a paso la creación de una API con el framewo
 
        cd ~/go/src/github.com/ && mkdir TuUsuarioGithub
 
-  Ingrer al directorio
+    Ingrer al directorio
 
        cd ~/go/src/github.com/TuUsuarioGithub
 
@@ -39,7 +39,7 @@ En está sección se realiza  paso a paso la creación de una API con el framewo
 
        bee api testApi -driver=postgres -conn=postgres://postgres:postgres@127.0.0.1/bd_oas?sslmode=disable
 
-  Se Creara un directorio llamado testApi con los archivo correspondiente a la api.
+    Se Creara un directorio llamado testApi con los archivo correspondiente a la api.
 
        ├── conf
        │   └── app.conf
