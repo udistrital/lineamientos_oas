@@ -80,7 +80,7 @@ En está sección se realiza  paso a paso la creación de una API con el framewo
 
 5. Configurar cors
 
-  Esta configuración permitirá quee los servicios sean consumibles desde un navegador web
+    Esta configuración permitirá quee los servicios sean consumibles desde un navegador web
 
   - En el import()
 
