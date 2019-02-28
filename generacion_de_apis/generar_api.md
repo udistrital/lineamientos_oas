@@ -23,6 +23,33 @@ En está sección se realiza  paso a paso la creación de una API con el framewo
 
   - Puedes ejecutar el sql [adjunto](/generacion_de_apis/bd/usuario.sql)
 
-          psql -U postgres -d bd_oas -a -f usuario.sql
+         psql -U postgres -d bd_oas -a -f usuario.sql
 
   - puedes exportar el modelo dbm desde el pgModeler
+
+3. Crear directorio para proyecto Beego
+
+       cd ~/go/src/github.com/ && mkdir TuUsuarioGithub
+
+  Ingrer al directorio
+
+       cd ~/go/src/github.com/TuUsuarioGithub
+
+4. Crear API
+
+       bee api testApi -driver=postgres -conn=postgres://postgres:postgres@127.0.0.1/bd_oas?sslmode=disable
+
+  Se Creara un directorio llamado testApi con los archivo correspondiente a la api.
+
+       ├── conf
+       │   └── app.conf
+       ├── controllers
+       │   └── usurio.go
+       ├── main.go
+       ├── models
+       │   └── usurio.go
+       ├── routers
+       │   └── router.go
+       └── tests
+
+5. DD
