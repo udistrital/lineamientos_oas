@@ -23,6 +23,6 @@ En está sección se realiza  paso a paso la creación de una API con el framewo
 
   - Puedes ejecutar el sql [adjunto](/generacion_de_apis/bd/usuario.sql)
 
-          psql -d bd_oas -a -f usurio.sql
+          psql -U postgres -d bd_oas -a -f usuario.sql
 
   - puedes exportar el modelo dbm desde el pgModeler

@@ -11,7 +11,7 @@ CAUTION: Do not modify this file unless you know what you are doing.
 <schema name="public" layer="0" fill-color="#e1e1e1" sql-disabled="true">
 </schema>
 
-<table name="usurio" layer="0" collapse-mode="2" max-obj-count="2">
+<table name="usuario" layer="0" collapse-mode="2" max-obj-count="2">
 	<schema name="public"/>
 	<role name="postgres"/>
 	<position x="420" y="120"/>
@@ -21,7 +21,7 @@ CAUTION: Do not modify this file unless you know what you are doing.
 	<column name="nombre">
 		<type name="varchar" length="0"/>
 	</column>
-	<constraint name="pk_usuario" type="pk-constr" table="public.usurio">
+	<constraint name="pk_usuario" type="pk-constr" table="public.usuario">
 		<columns names="id" ref-type="src-columns"/>
 	</constraint>
 </table>
