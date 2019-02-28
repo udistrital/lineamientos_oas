@@ -82,49 +82,68 @@ En está sección se realiza  paso a paso la creación de una API con el framewo
 
     Esta configuración permitirá quee los servicios sean consumibles desde un navegador web
 
-  - En el import()
+  - Código original:
+
+          func main() {
+            orm.RegisterDataBase("default", "postgres", beego.AppConfig.String("sqlconn"))
+            if beego.BConfig.RunMode == "dev" {
+            	beego.BConfig.WebConfig.DirectoryIndex = true
+            	beego.BConfig.WebConfig.StaticDir["/swagger"] = "swagger"
+            }
+            beego.Run()
+          }
+
+
+  - En el import() agregamos lo siguiente
 
          "github.com/astaxie/beego/plugins/cors"
 
-  - En la Funcion func init()
+  - En la Funcion func init() agregamos lo siguiente
 
-         beego.InsertFilter("*", beego.BeforeRouter, cors.Allow(&cors.Options{
-           AllowOrigins: []string{"*"},
-           AllowMethods: []string{"PUT", "PATCH", "GET", "POST", "OPTIONS", "DELETE"},
-           AllowHeaders: []string{"Origin", "x-requested-with",
-             "content-type",
-             "accept",
-             "origin",
-             "authorization",
-             "x-csrftoken"},
-           ExposeHeaders:    []string{"Content-Length"},
-           AllowCredentials: true,
-         }))
+        beego.InsertFilter("*", beego.BeforeRouter, cors.Allow(&cors.Options{
+          AllowOrigins: []string{"*"},
+          AllowMethods: []string{"PUT", "PATCH", "GET", "POST", "OPTIONS", "DELETE"},
+          AllowHeaders: []string{"Origin", "x-requested-with",
+            "content-type",
+            "accept",
+            "origin",
+            "authorization",
+            "x-csrftoken"},
+          ExposeHeaders:    []string{"Content-Length"},
+          AllowCredentials: true,
+        }))
+
+  - Si le interesa ver en el log de la api las consultas SQL que realiza, agregar al inicio del main la siguiente linea:
+
+        orm.Debug = true
 
   - Al final tendremos la funcion main de la siguieten forma:
 
-         func main() {
-           orm.RegisterDataBase("default", "postgres", beego.AppConfig.String("sqlconn"))
-           if beego.BConfig.RunMode == "dev" {
-             beego.BConfig.WebConfig.DirectoryIndex = true
-             beego.BConfig.WebConfig.StaticDir["/swagger"] = "swagger"
-           }
+        func main() {
+          orm.Debug = true
+          orm.RegisterDataBase("default", "postgres", beego.AppConfig.String("sqlconn"))
+          if beego.BConfig.RunMode == "dev" {
+          	beego.BConfig.WebConfig.DirectoryIndex = true
+          	beego.BConfig.WebConfig.StaticDir["/swagger"] = "swagger"
+          }
+          beego.InsertFilter("*", beego.BeforeRouter, cors.Allow(&cors.Options{
+            AllowOrigins: []string{"*"},
+            AllowMethods: []string{"PUT", "PATCH", "GET", "POST", "OPTIONS", "DELETE"},
+            AllowHeaders: []string{"Origin", "x-requested-with",
+              "content-type",
+              "accept",
+              "origin",
+              "authorization",
+              "x-csrftoken"},
+            ExposeHeaders:    []string{"Content-Length"},
+            AllowCredentials: true,
+          }))
 
-           beego.InsertFilter("*", beego.BeforeRouter, cors.Allow(&cors.Options{
-             AllowOrigins: []string{"*"},
-             AllowMethods: []string{"PUT", "PATCH", "GET", "POST", "OPTIONS", "DELETE"},
-             AllowHeaders: []string{"Origin", "x-requested-with",
-               "content-type",
-               "accept",
-               "origin",
-               "authorization",
-               "x-csrftoken"},
-             ExposeHeaders:    []string{"Content-Length"},
-             AllowCredentials: true,
-           }))
+          beego.Run()
+        }
 
-           beego.Run()
-         }
+
+
 
 6. Generar Documentación
 
@@ -135,3 +154,11 @@ En está sección se realiza  paso a paso la creación de una API con el framewo
   Ejecutra
 
        bee run -downdoc=true -gendoc=true
+
+7. Consumir los servicios
+
+  Abrir navegador he ingresar 127.0.0.1:8080/v1/usuario
+
+  Visualizar el Documentación de swagger:
+
+  Abrir navegador he ingresar 127.0.0.1:8080/swagger/
