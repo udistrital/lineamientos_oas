@@ -25,7 +25,7 @@ En está sección se realiza  paso a paso la creación de una API con el framewo
 
          psql -U postgres -d bd_oas -a -f usuario.sql
 
-  - opción 2.2 :puedes exportar el [modelo dbm desde](/generacion_de_apis/bd/usuario.dbm) en pgModeler
+  - opción 2.2: puedes exportar el [modelo dbm desde](/generacion_de_apis/bd/usuario.dbm) en pgModeler
 
 3. Crear directorio para proyecto Beego
 
