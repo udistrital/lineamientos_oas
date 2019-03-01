@@ -1,6 +1,6 @@
 # Configurar Respuestas Json en API Beego
 
-En está sección se especificarán los ajustes pertinentes para que las API creadas en el framewor Beego respondan en JSON conforme los estandares de la Oficina Asesora de Sistemas; esto con el fin de que no genere problemas al intregarse con el administrador de servicios WSO2.
+En está sección se especificarán los ajustes pertinentes para que las API creadas en el framewor Beego respondan en JSON conforme a los estandares de la Oficina Asesora de Sistemas; esto con el fin de que no genere problemas al intregarse con el administrador de servicios WSO2.
 
 ## Refactoring Controllers
 
