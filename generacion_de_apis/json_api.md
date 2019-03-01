@@ -57,7 +57,7 @@ En está sección se especificarán los ajustes pertinentes para que las API cre
 
 ### Diff Solicitud POST
 
-![Refactor Metodo Post](/generacion_de_apis/img/post.png)
+  ![Refactor Metodo Post](/generacion_de_apis/img/post.png)
 
 
 ## Solicitud GETONE
@@ -108,7 +108,7 @@ En está sección se especificarán los ajustes pertinentes para que las API cre
 
 ### Diff Solicitud GETONE
 
-![Refactor Metodo GetOne](/generacion_de_apis/img/getone.png)
+  ![Refactor Metodo GetOne](/generacion_de_apis/img/getone.png)
 
 
 ## Solicitud GETALL
@@ -249,23 +249,111 @@ En está sección se especificarán los ajustes pertinentes para que las API cre
 
 ### Diff Solicitud GETALL
 
-![Refactor Metodo GetAll](/generacion_de_apis/img/getall.png)
+  ![Refactor Metodo GetAll](/generacion_de_apis/img/getall.png)
 
 
 ### Solicitud PUT
 
 ### Solicitud PUT Original
 
+    // Put ...
+    // @Title Put
+    // @Description update the Usuario
+    // @Param	id		path 	string	true		"The id you want to update"
+    // @Param	body		body 	models.Usuario	true		"body for Usuario content"
+    // @Success 200 {object} models.Usuario
+    // @Failure 403 :id is not int
+    // @router /:id [put]
+    func (c *UsuarioController) Put() {
+    	idStr := c.Ctx.Input.Param(":id")
+    	id, _ := strconv.Atoi(idStr)
+    	v := models.Usuario{Id: id}
+    	if err := json.Unmarshal(c.Ctx.Input.RequestBody, &v); err == nil {
+    		if err := models.UpdateUsuarioById(&v); err == nil {
+    			c.Data["json"] = "OK"
+    		} else {
+    			c.Data["json"] = err.Error()
+    		}
+    	} else {
+    		c.Data["json"] = err.Error()
+    	}
+    	c.ServeJSON()
+    }
+
 ### Solicitud PUT con Ajustes
 
+    // Put ...
+    // @Title Put
+    // @Description update the Usuario
+    // @Param	id		path 	string	true		"The id you want to update"
+    // @Param	body		body 	models.Usuario	true		"body for Usuario content"
+    // @Success 200 {object} models.Usuario
+    // @Failure 400 the request contains incorrect syntax
+    // @router /:id [put]
+    func (c *UsuarioController) Put() {
+    	idStr := c.Ctx.Input.Param(":id")
+    	id, _ := strconv.Atoi(idStr)
+    	v := models.Usuario{Id: id}
+    	if err := json.Unmarshal(c.Ctx.Input.RequestBody, &v); err == nil {
+    		if err := models.UpdateUsuarioById(&v); err == nil {
+    			c.Data["json"] = v
+    		} else {
+    			beego.Error(err)
+    			c.Abort("400")
+    		}
+    	} else {
+    		beego.Error(err)
+    		c.Abort("400")
+    	}
+    	c.ServeJSON()
+    }
+
 ### Diff Solicitud PUT
-![Refactor Metodo Post](/generacion_de_apis/img/put.png)
+  ![Refactor Metodo Post](/generacion_de_apis/img/put.png)
 
 
 ### DELETE
-### Solicitud Original
 
-### Solicitud con Ajustes
+### Solicitud DELETE Original
+
+    // Delete ...
+    // @Title Delete
+    // @Description delete the Usuario
+    // @Param	id		path 	string	true		"The id you want to delete"
+    // @Success 200 {string} delete success!
+    // @Failure 403 id is empty
+    // @router /:id [delete]
+    func (c *UsuarioController) Delete() {
+    	idStr := c.Ctx.Input.Param(":id")
+    	id, _ := strconv.Atoi(idStr)
+    	if err := models.DeleteUsuario(id); err == nil {
+    		c.Data["json"] = "OK"
+    	} else {
+    		c.Data["json"] = err.Error()
+    	}
+    	c.ServeJSON()
+    }
+
+### Solicitud DELETE con Ajustes
+
+    // Delete ...
+    // @Title Delete
+    // @Description delete the Usuario
+    // @Param	id		path 	string	true		"The id you want to delete"
+    // @Success 200 {string} delete success!
+    // @Failure 404 not found resource
+    // @router /:id [delete]
+    func (c *UsuarioController) Delete() {
+    	idStr := c.Ctx.Input.Param(":id")
+    	id, _ := strconv.Atoi(idStr)
+    	if err := models.DeleteUsuario(id); err == nil {
+    		c.Data["json"] = map[string]interface{}{"Id": id}
+    	} else {
+    		beego.Error(err)
+    		c.Abort("404")
+    	}
+    	c.ServeJSON()
+    }
 
 ### Diff Solicitud DELETE
-![Refactor Metodo Post](/generacion_de_apis/img/delete.png)
+  ![Refactor Metodo Post](/generacion_de_apis/img/delete.png)
