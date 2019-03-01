@@ -2,7 +2,7 @@
 
 En está sección se especificarán los ajustes pertinentes para que las API creadas en el framewor Beego respondan en JSON conforme los estandares de la Oficina Asesora de Sistemas; esto con el fin de que no genere problemas al intregarse con el administrador de servicios WSO2.
 
-# Refactoring Controllers
+## Refactoring Controllers
 
 Editar el **main.go** de la API a Ajustar. Agregar las plantillas de errores que se encuentran en el repositorio **[utils_oas](https://github.com/udistrital/utils_oas)** de la siguiente forma.
 
@@ -55,7 +55,29 @@ Editar el **main.go** de la API a Ajustar. Agregar las plantillas de errores que
           beego.Run()
       }
 
+## Script para Refactor
 
+Se desarrolló un script en python 2.7  para realizar los ajustes de los micro servicios de forma masiva y automática.  el único  restricción que existe, es que solo realiza los ajustes en micro servicios que se han generado por el framework Beego y nos se han personalizado o modificado en sus líneas. [refactor_controller](https://github.com/jotavargas/refactor_controller)
+
+- Clonamos script para refactor.
+
+        git clone https://github.com/jotavargas/refactor_controller.git
+
+- Ejecutamos script
+
+      #ir al proyecto
+      cd refactor_controller
+
+      #como ejecutar (con python 2.7)
+      python main.py -F ruta_controladores_del_api_a_refactoring
+
+      #Ejemplo:
+      python main.py -F /home/jjvargass/go/src/github.com/udistrital/api_financiera/controllers
+
+- Indentar Controladores *.go
+
+      cd ruta_controladores_del_api_a_refactoring
+      gofmt -w *.go
 
 Los cambios específicos en cada uno de los microservicios se definirán a continuación.
 
