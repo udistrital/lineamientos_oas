@@ -12,7 +12,7 @@ Los siguiente comandos creará un directorio y archivo dedicado para el almacena
 
   Ejemplo:
 
-      cd ~/go/src/github.com/udistrital/administrativa_mid_api
+      cd ~/go/src/github.com/udistrital/administrativa_mid
 
 - Crear directorio y archivo de logs para API según el nombre del repo
 
@@ -53,7 +53,7 @@ los siguientes pasos son las configuraciones que se deben realizar en el archivo
 
   Implementación en **func main()**:
 
-      logs.SetLogger(logs.AdapterFile, `{"filename":"/var/log/beego/administrativa_mid_api/administrativa_mid_api.log"}`)
+      logs.SetLogger(logs.AdapterFile, `{"filename":"/var/log/beego/administrativa_mid/administrativa_mid.log"}`)
 
     Para mas parametros del AdapterFile [https://beego.me/docs/module/logs.md#provider-configuration](https://beego.me/docs/module/logs.md#provider-configuration)
 
@@ -95,7 +95,7 @@ los siguientes pasos son las configuraciones que se deben realizar en el archivo
       		AllowCredentials: true,
       	}))
       	//
-      	logs.SetLogger(logs.AdapterFile, `{"filename":"/var/log/beego/administrativa_mid_api/administrativa_mid_api.log"}`)
+      	logs.SetLogger(logs.AdapterFile, `{"filename":"/var/log/beego/administrativa_mid/administrativa_mid.log"}`)
       	//
 
       	pacUtils.Init()
