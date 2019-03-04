@@ -31,7 +31,7 @@ Los nombres de los branch establecidos para el **Continuous Integration (CI)** s
   ![Crear BD](/repositorios_institucionales/img/repo_02.png)
 
 ### Branch dev (development)
-Branch dedicado al despliegue de los desarrolló en la infraestructura local
+Branch dedicado al despliegue en la infraestructura local
 
 ### Branch test (testing)
 Branch dedicado al despliegue en preproducción
