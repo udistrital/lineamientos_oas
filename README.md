@@ -18,7 +18,7 @@ Este repositorio es un conglomerado de buenas prácticas, lineamientos, configur
 
 
 ## 2. Repositorios Institucionales
-- Lineamientos
+- [Lineamientos](/repositorios_institucionales/lineamientos.md)
 
 ## 3. Modelos de datos
 - Lineamientos
