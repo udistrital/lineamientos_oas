@@ -59,11 +59,11 @@ Editar el **main.go** de la API a Ajustar. Agregar las plantillas de errores que
 
 Se desarrolló un script en python 2.7 para realizar los ajustes de los micro servicios desarrolladon en el framework Beego de forma masiva y automática. la única restricción que existe, es que **solo realiza los ajustes en micro servicios que nos se han personalizado o modificado en sus líneas**. [refactor_controller](https://github.com/jotavargas/refactor_controller)
 
-- Clonamos script para refactor.
+- Clonar script para refactor.
 
         git clone https://github.com/jotavargas/refactor_controller.git
 
-- Ejecutamos script
+- Ejecutar script
 
       #ir al proyecto
       cd refactor_controller
