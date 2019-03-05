@@ -98,7 +98,7 @@ En está sección se realiza  paso a paso la creación de una API con el framewo
 
          "github.com/astaxie/beego/plugins/cors"
 
-  - En la Funcion func init() agregamos lo siguiente
+  - En la Funcion func main() agregamos lo siguiente
 
         beego.InsertFilter("*", beego.BeforeRouter, cors.Allow(&cors.Options{
           AllowOrigins: []string{"*"},
