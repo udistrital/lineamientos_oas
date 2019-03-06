@@ -84,29 +84,40 @@ Se desarrolló un script en python 2.7 para realizar los ajustes de los micro se
 Los cambios específicos en cada uno de los microservicios se definirán a continuación.
 
 
-## Solicitud POST
+### Solicitud POST
 
   ![Refactor Metodo Post](/generacion_de_apis/img/post.png)
 
 
-## Solicitud GETONE
+### Solicitud GETONE
 
   ![Refactor Metodo GetOne](/generacion_de_apis/img/getone.png)
 
 
-## Solicitud GETALL
+### Solicitud GETALL
 
   ![Refactor Metodo GetAll](/generacion_de_apis/img/getall1.png)
 
   ![Refactor Metodo GetAll](/generacion_de_apis/img/getall2.png)
 
-
-
 ### Solicitud PUT
 
   ![Refactor Metodo Post](/generacion_de_apis/img/put.png)
 
-
-### DELETE
+### Solicitud DELETE
 
   ![Refactor Metodo Post](/generacion_de_apis/img/delete.png)
+
+## Estructura JSON
+
+Obtenemos la siguiente estructura cuando el framework a controlado un error de bd
+
+  ![Refactor Metodo Post](/generacion_de_apis/img/json01.png)
+
+Obtenemos este Json cuando es desarrollador ha personalizado el servicio y estructura del error en el atributo development
+
+  ![Refactor Metodo Post](/generacion_de_apis/img/json02.png)
+
+Obtenemos este Json cuando ingresamos a una servicio  que no existe
+
+![Refactor Metodo Post](/generacion_de_apis/img/json03.png)
