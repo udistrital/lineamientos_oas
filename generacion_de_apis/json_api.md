@@ -96,7 +96,10 @@ Los cambios específicos en cada uno de los microservicios se definirán a conti
 
 ## Solicitud GETALL
 
-  ![Refactor Metodo GetAll](/generacion_de_apis/img/getall.png)
+  ![Refactor Metodo GetAll](/generacion_de_apis/img/getall1.png)
+
+  ![Refactor Metodo GetAll](/generacion_de_apis/img/getall2.png)
+
 
 
 ### Solicitud PUT
