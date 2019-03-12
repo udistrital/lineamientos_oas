@@ -33,8 +33,8 @@ Este repositorio es un conglomerado de buenas prácticas, lineamientos, configur
 
 ## 5. Integración con WSO2AM
 
-## 6. Pruebas Unitarias de Apis
-- Lineamientos
+## 6. Pruebas Unitarias API Beego
+- [Lineamientos](/pruebas_unitarias_api_beego/unit_test_beego.md)
 
 ## 7. Generación clientes
 - Lineamientos
