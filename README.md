@@ -14,8 +14,7 @@ Este repositorio es un conglomerado de buenas prácticas, lineamientos, configur
 7. Instalar Cliente
 
 ### En Ambiente Dockerizado
-
-
+1. Instalación
 
 ## 2. Repositorios Institucionales
 - [Lineamientos](/repositorios_institucionales/lineamientos.md)
@@ -25,22 +24,23 @@ Este repositorio es un conglomerado de buenas prácticas, lineamientos, configur
 - Lineamientos
 
 ## 4. Generación de Apis
-- Lineamientos
 - [Generar API Beego](/generacion_de_apis/generar_api.md)
 - [Generar Logs en API Beego](/generacion_de_apis/logs_api.md)
 - [Configurar Respuestas Json en API Beego](/generacion_de_apis/json_api.md)
-- Calidad
 
-## 5. Integración con WSO2AM
-
-## 6. Pruebas Unitarias API Beego
+## 5. Pruebas Unitarias API Beego
 - [Lineamientos](/pruebas_unitarias_api_beego/unit_test_beego.md)
+
+## 6. Integración con WSO2AM
+- Lineamientos
+
 
 ## 7. Generación clientes
 - Lineamientos
 - Calidad
 
 ## 8. Integración con WSO2IS
+- Lineamientos
 
 ## 9. Pruebas Unitarias de Clientes
 - Lineamientos
