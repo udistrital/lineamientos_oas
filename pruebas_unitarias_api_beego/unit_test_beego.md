@@ -8,10 +8,10 @@ Beego crea un directorio llamado **test** dedicado para la pruebas del proyecto.
     ├── conf
     │   └── app.conf
     ├── controllers
-    │   └── usurio.go
+    │   └── usuario.go
     ├── main.go
     ├── models
-    │   └── usurio.go
+    │   └── usuario.go
     ├── routers
     │   └── router.go
     └── tests
@@ -28,17 +28,17 @@ El contenido del directorio **test** deberá tener como mínimo la carpeta model
     ├── conf
     │   └── app.conf
     ├── controllers
-    │   └── usurio.go
+    │   └── usuario.go
     ├── main.go
     ├── models
-    │   └── usurio.go
+    │   └── usuario.go
     ├── routers
     │   └── router.go
     └── tests
         ├── controllers
-        │   └── usurio_test.go
+        │   └── usuario_test.go
         ├── models
-        │   └── usurio_test.go
+        │   └── usuario_test.go
 
 
 ## Nombre de los Archivos
