@@ -44,10 +44,10 @@ En está sección se realiza  paso a paso la creación de una API con el framewo
        ├── conf
        │   └── app.conf
        ├── controllers
-       │   └── usurio.go
+       │   └── usuario.go
        ├── main.go
        ├── models
-       │   └── usurio.go
+       │   └── usuario.go
        ├── routers
        │   └── router.go
        └── tests
@@ -62,18 +62,18 @@ En está sección se realiza  paso a paso la creación de una API con el framewo
 
           sqlconn = postgres://postgres:postgres@127.0.0.1/bd_oas?sslmode=disable&search_path=public
 
-    Especificamos el auto incremental del id en los modelos en el archivo **testApi/models/usurio.go**
+    Especificamos el auto incremental del id en los modelos en el archivo **testApi/models/usuario.go**
 
     - Código original:
 
-          type Usurio struct {
+          type Usuario struct {
             Id     int    `orm:"column(id);pk"`
             Nombre string `orm:"column(nombre);null"`
           }
 
     - Ajuste:
 
-          type Usurio struct {
+          type Usuario struct {
             Id     int    `orm:"column(id);pk;auto"`
             Nombre string `orm:"column(nombre);null"`
           }
