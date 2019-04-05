@@ -21,7 +21,7 @@ Este repositorio es un conglomerado de buenas prácticas, lineamientos, configur
 - [Contenido README](/repositorios_institucionales/contenido_readme.md)
 
 ## 3. Modelos de datos
-- Lineamientos
+- [Lineamientos](/modelo_de_datos/estandar.md)
 
 ## 4. Generación de Apis
 - [Generar API Beego](/generacion_de_apis/generar_api.md)
