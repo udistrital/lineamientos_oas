@@ -19,6 +19,7 @@ Este repositorio es un conglomerado de buenas prácticas, lineamientos, configur
 ## 2. Repositorios Institucionales
 - [Lineamientos](/repositorios_institucionales/lineamientos.md)
 - [Contenido README](/repositorios_institucionales/contenido_readme.md)
+- .gitignore
 
 ## 3. Modelos de datos
 - [Lineamientos](/modelo_de_datos/estandar.md)
@@ -31,16 +32,15 @@ Este repositorio es un conglomerado de buenas prácticas, lineamientos, configur
 ## 5. Pruebas Unitarias API Beego
 - [Lineamientos](/pruebas_unitarias_api_beego/unit_test_beego.md)
 
-## 6. Integración con WSO2AM
-- Lineamientos
-
-
-## 7. Generación clientes
+## 6. Generación clientes
 - Lineamientos
 - Calidad
 
-## 8. Integración con WSO2IS
+## 7. Pruebas Unitarias de Clientes
 - Lineamientos
 
-## 9. Pruebas Unitarias de Clientes
+## 8. Integración con WSO2AM
+- Lineamientos
+
+## 9. Integración con WSO2IS
 - Lineamientos
