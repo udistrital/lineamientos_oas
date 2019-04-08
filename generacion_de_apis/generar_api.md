@@ -151,7 +151,27 @@ En está sección se realiza  paso a paso la creación de una API con el framewo
           beego.Run()
         }
 
-6. Generar Documentación
+6. Especificar la relacion Fk en Servicios
+
+  En el archivo **./models/rol.go** debemos especificar la funcion **RelatedSel()**
+
+  Código original
+
+        func GetAllRol(query map[string]string, fields []string, sortby []string, order []string,
+        	offset int64, limit int64) (ml []interface{}, err error) {
+        	o := orm.NewOrm()
+        	qs := o.QueryTable(new(Rol))
+        ...
+
+  Agregando la función  .RelatedSel()
+
+        func GetAllRol(query map[string]string, fields []string, sortby []string, order []string,
+        	offset int64, limit int64) (ml []interface{}, err error) {
+        	o := orm.NewOrm()
+        	qs := o.QueryTable(new(Rol)).RelatedSel()
+        ...
+
+7. Generar Documentación
 
   Ubicado en la raíz del proyecto
 
@@ -161,7 +181,7 @@ En está sección se realiza  paso a paso la creación de una API con el framewo
 
        bee run -downdoc=true -gendoc=true
 
-7. Consumir los servicios
+8. Consumir los servicios
 
     Abrir navegador he ingresar 127.0.0.1:8080/v1/usuario
 
