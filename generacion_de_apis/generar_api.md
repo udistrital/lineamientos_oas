@@ -21,11 +21,11 @@ En está sección se realiza  paso a paso la creación de una API con el framewo
 
     ![Crear Tabla](/generacion_de_apis/img/002.png)
 
-  - opción 2.1: Puede ejecutar el sql [adjunto](/generacion_de_apis/bd/usuario.sql)
+  - opción 2.1: Puede ejecutar el sql [adjunto](/generacion_de_apis/bd/usuario_rol.sql)
 
          psql -U postgres -d bd_oas -a -f usuario.sql
 
-  - opción 2.2: puedes exportar el [modelo dbm desde](/generacion_de_apis/bd/usuario.dbm) en pgModeler
+  - opción 2.2: puedes exportar el [modelo dbm desde](/generacion_de_apis/bd/usuario_rol.dbm) en pgModeler
 
 3. Crear directorio para proyecto Beego
 
