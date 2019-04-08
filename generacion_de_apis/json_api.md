@@ -76,10 +76,11 @@ Se desarrolló un script en python 2.7 para realizar los ajustes de los micro se
       #Ejemplo:
       python main.py -F /home/jjvargass/go/src/github.com/udistrital/api_financiera/controllers
 
-- Indentar Controladores *.go
+- Indentar e importar package en Controladores *.go
 
       cd ruta_controladores_del_api_a_refactoring
       gofmt -w *.go
+      goimports -w *.go
 
 
 
