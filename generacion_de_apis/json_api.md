@@ -123,3 +123,11 @@ Obtenemos este Json cuando es desarrollador ha personalizado el servicio y estru
 Obtenemos este Json cuando ingresamos a una servicio  que no existe
 
 ![Refactor Metodo Post](/generacion_de_apis/img/json03.png)
+
+
+## Testing Jmeter
+
+
+![Refactor Metodo GetAll](/generacion_de_apis/img/test_01.png)
+
+#### [Testing Jmeter](/generacion_de_apis/src/beegoTodasLasSolicitudes.jmx)
