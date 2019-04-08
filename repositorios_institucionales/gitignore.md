@@ -1,5 +1,5 @@
 # gitignore
-En está sección se establecerán las convenciones para la deginción del archivo .gitignore de los repositorios para la Oficina Asesora de Sistemas (OAS).
+En está sección se establecerán las convenciones para la definción del archivo **.gitignore** de los repositorios para la Oficina Asesora de Sistemas (OAS).
 
 ## Proyectos Beego
 
