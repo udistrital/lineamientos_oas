@@ -89,7 +89,7 @@ En está sección se realiza  paso a paso la creación de una API con el framewo
 
 5. Configurar cors
 
-  Esta configuración permitirá que los servicios sean consumibles desde un navegador web
+    Esta configuración permitirá que los servicios sean consumibles desde un navegador web
 
   - Código original:
 
@@ -173,11 +173,11 @@ En está sección se realiza  paso a paso la creación de una API con el framewo
 
 7. Generar Documentación
 
-  Ubicado en la raíz del proyecto
+    Ubicado en la raíz del proyecto
 
        cd ~/go/src/github.com/TuUsuarioGithub/testApi
 
-  Ejecutra
+    Ejecutra
 
        bee run -downdoc=true -gendoc=true
 
