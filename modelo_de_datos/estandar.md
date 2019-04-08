@@ -49,11 +49,11 @@ Las columnas deben ser nombradas según los lineamientos a continuación:
       Opción2 Para la tabla usuario, usando tipo de dato serial:
       id serial NOT NULL,
 
-    ![Crear Tabla](/generacion_de_apis/img/002.png)
+    ![Crear Tabla](/modelo_de_datos/img/001.png)
 
 - Las columnas que hacen parte de una **llave foránea**, es decir referencian al campo ID de otra tabla, deben ser nombradas tal cual el nombre de la tabla que referencian y finalizar con **_id**.
 
-    ![Crear Tabla](/modelo_de_datos/img/001.png)
+    ![Crear Tabla](/modelo_de_datos/img/002.png)
 
 - Los campos que almacenan un valor de moneda deben ser de tipo numeric(20,7)
 - Los campos que almacenan un valor de porcentaje deben ser de tipo numeric(5,4)
