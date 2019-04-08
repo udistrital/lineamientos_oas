@@ -68,21 +68,22 @@ En está sección se realiza  paso a paso la creación de una API con el framewo
           sqlconn = postgres://postgres:postgres@127.0.0.1/bd_oas?sslmode=disable&search_path=public
 
     Especificamos el auto incremental del id en los modelos.
+
     Ejemplo: En el archivo **testApi/models/usuario.go**
 
     - Código original:
 
           type Usuario struct {
-            Id     int    `orm:"column(id);pk"`
-            Nombre string `orm:"column(nombre)"`
+            Id       int    `orm:"column(id);pk"`
+            Nombre   string `orm:"column(nombre)"`
             Apellido string `orm:"column(apellido);null"`
           }
 
     - Ajuste:
 
           type Usuario struct {
-            Id     int    `orm:"column(id);pk;auto"`
-            Nombre string `orm:"column(nombre)"`
+            Id       int    `orm:"column(id);pk;auto"`
+            Nombre   string `orm:"column(nombre)"`
             Apellido string `orm:"column(apellido);null"`
           }
 
