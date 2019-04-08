@@ -89,7 +89,7 @@ En está sección se realiza  paso a paso la creación de una API con el framewo
 
 5. Configurar cors
 
-    Esta configuración permitirá que los servicios sean consumibles desde un navegador web
+  Esta configuración permitirá que los servicios sean consumibles desde un navegador web
 
   - Código original:
 
@@ -153,23 +153,23 @@ En está sección se realiza  paso a paso la creación de una API con el framewo
 
 6. Especificar la relacion Fk en Servicios
 
-  En el archivo **./models/rol.go** debemos especificar la funcion **RelatedSel()**
+    En el archivo **./models/rol.go** debemos especificar la funcion **RelatedSel()**
 
-  Código original
+    - Código original
 
-        func GetAllRol(query map[string]string, fields []string, sortby []string, order []string,
-        	offset int64, limit int64) (ml []interface{}, err error) {
-        	o := orm.NewOrm()
-        	qs := o.QueryTable(new(Rol))
-        ...
+          func GetAllRol(query map[string]string, fields []string, sortby []string, order []string,
+          	offset int64, limit int64) (ml []interface{}, err error) {
+          	o := orm.NewOrm()
+          	qs := o.QueryTable(new(Rol))
+          ...
 
-  Agregando la función  .RelatedSel()
+    - Ajuste .RelatedSel()
 
-        func GetAllRol(query map[string]string, fields []string, sortby []string, order []string,
-        	offset int64, limit int64) (ml []interface{}, err error) {
-        	o := orm.NewOrm()
-        	qs := o.QueryTable(new(Rol)).RelatedSel()
-        ...
+          func GetAllRol(query map[string]string, fields []string, sortby []string, order []string,
+          	offset int64, limit int64) (ml []interface{}, err error) {
+          	o := orm.NewOrm()
+          	qs := o.QueryTable(new(Rol)).RelatedSel()
+          ...
 
 7. Generar Documentación
 
