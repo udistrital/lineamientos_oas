@@ -28,13 +28,6 @@ Los campos de una tabla corresponden a los atributos de una entidad, describen p
 Las columnas deben ser nombradas según los lineamientos a continuación:
 
 - Los nombres deben ser simples, representativos e intuitivos.
-- Para los campos que almacenen caracteres se recomienda usar el tipo de dato *character varying* especificando su longitud.
-- Especificar la longitud del campo si aplica.
-
-      - Indicar la longitud del campo si el tipo de dato es character varying:
-      character varying(15)
-      - Especificar longitud y precisión del campo si el tipo de dato es Numeric:
-      numeric(5,2).
 
 - Los nombres de las columnas de una tabla deben estar expresados en singular, usando _ como separador.
 - **El campo clave** o identificador de una tabla debe nombrarse como **id** y sebe ser:
@@ -43,11 +36,13 @@ Las columnas deben ser nombradas según los lineamientos a continuación:
 
   Opción2: de tipo de dato serial que creará automaticamente la seguencia.
 
-      opción1 Para la tabla contrato el campo clave debe ser:
+      Opción1 Para la tabla contrato el campo clave debe ser:
       id integer NOT NULL DEFAULT nextval('public.contrato_id_seq'::regclass)
 
       Opción2 Para la tabla usuario, usando tipo de dato serial:
       id serial NOT NULL,
+
+  **Nota**: Se recomienda la Opción2, es mas rapida.
 
     ![Crear Tabla](/modelo_de_datos/img/001.png)
 
@@ -57,6 +52,12 @@ Las columnas deben ser nombradas según los lineamientos a continuación:
 
 - Los campos que almacenan un valor de moneda deben ser de tipo numeric(20,7)
 - Los campos que almacenan un valor de porcentaje deben ser de tipo numeric(5,4)
+- Para los campos que almacenen caracteres se recomienda usar el tipo de dato *character varying* especificando su longitud.
+- Especificar la longitud del campo si aplica.
+      - Indicar la longitud del campo si el tipo de dato es character varying:
+      character varying(15)
+      - Especificar longitud y precisión del campo si el tipo de dato es Numeric:
+      numeric(5,2).
 
 ## Claves primarias
 
