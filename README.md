@@ -19,7 +19,7 @@ Este repositorio es un conglomerado de buenas prácticas, lineamientos, configur
 ## 2. Repositorios Institucionales
 - [Lineamientos](/repositorios_institucionales/lineamientos.md)
 - [Contenido README](/repositorios_institucionales/contenido_readme.md)
-- .gitignore
+- [.gitignore](/repositorios_institucionales/gitignore.md)
 
 ## 3. Modelos de datos
 - [Lineamientos](/modelo_de_datos/estandar.md)
