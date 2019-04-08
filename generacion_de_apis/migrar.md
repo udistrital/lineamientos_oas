@@ -1,6 +1,6 @@
 # Migrar Modelo de API a bd nuevas
 
-1. Agregar ** orm.RunCommand() **  en **func main()**
+1. Agregar **orm.RunCommand()**  en **func main()**
 
         orm.RunCommand()
 
