@@ -28,6 +28,7 @@ Este repositorio es un conglomerado de buenas prácticas, lineamientos, configur
 - [Generar API Beego](/generacion_de_apis/generar_api.md)
 - [Generar Logs en API Beego](/generacion_de_apis/logs_api.md)
 - [Configurar Respuestas Json en API Beego](/generacion_de_apis/json_api.md)
+- [Migrar Modelo de API a bd nuevas](/generacion_de_apis/migrar.md)
 
 ## 5. Pruebas Unitarias API Beego
 - [Lineamientos](/pruebas_unitarias_api_beego/unit_test_beego.md)
