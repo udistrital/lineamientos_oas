@@ -74,5 +74,11 @@
       -force=false: drop tables before create
       -v=false: verbose info
 
+## Testing Jmeter
+
+![Test Usuario Rol FK](/generacion_de_apis/img/usuario_rol_fk.png)
+
+#### [Testing Jmeter](/generacion_de_apis/src/beegoUsuarioRolTestFK.jmx)
+
 ## Tomado
 [Command Line](https://beego.me/docs/mvc/model/cmd.md#command-line)
