@@ -14,9 +14,9 @@ Cada una de estas bases de datos contendra un esquema por funcionalidad.
 
   ![Crear Tabla](/modelo_de_datos/img/bd_esquemas.png)
 
-**Nota**: A los esquemas se nombran por funcionalidad y **no** por nombre de la aplicación. 
+**Nota**: Los esquemas se nombran por funcionalidad y **no** por nombre de la aplicación. 
 
-Ejemplo de por nombre de aplicación:
+Ejemplo por nombre de aplicación:
 
   ![Crear Tabla](/modelo_de_datos/img/error_comun.png)
 
