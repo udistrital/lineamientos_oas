@@ -3,7 +3,7 @@
 
 ## Bases de Datos y Esquemas
 
-Para los sistemas en nuevas tecnologias en los que tienen base de datos en *PostgreSQL* se manejará  inicalmente **cuatro (4)** bases de datos llamada de la siguiente manera:
+Para los sistemas en nuevas tecnologias en los que tienen bases de datos en *PostgreSQL* se manejará  inicalmente **cuatro (4)** bases de datos llamada de la siguiente manera:
 
     academica
     administrativa
