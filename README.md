@@ -14,7 +14,7 @@ Este repositorio es un conglomerado de buenas prácticas, lineamientos, configur
 7. Instalar Cliente
 
 ### En Ambiente Dockerizado
-1. Instalación
+1. [lineamiento](/instalacion_de_herramientas/dockerizacion.md)
 
 ## 2. Repositorios Institucionales
 - [Lineamientos](/repositorios_institucionales/lineamientos.md)
