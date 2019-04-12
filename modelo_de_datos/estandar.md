@@ -3,7 +3,7 @@
 
 ## Bases de Datos y Esquemas
 
-Para los sistemas en nuevas tecnologias en los que tienen base de datos en *PostgreSQL* se manejará  inicalmente **cuatro (4)** base de datos llamada de la siguietne manera:
+Para los sistemas en nuevas tecnologias en los que tienen base de datos en *PostgreSQL* se manejará  inicalmente **cuatro (4)** bases de datos llamada de la siguietne manera:
 
     academica
     administrativa
@@ -14,9 +14,9 @@ Cada una de estas bases de datos contendra un esquema por funcionalidad.
 
   ![Crear Tabla](/modelo_de_datos/img/bd_esquemas.png)
 
-**Nota**: A los esquemas deberán proporcionarles nombres de funcionalidad y **no** equivocamente el nombre de la aplicación. Un error muy comun que se comente.
+**Nota**: A los esquemas se nombran por funcionalidad y **no** por nombre de la aplicación. 
 
-Ejemplo de error común:
+Ejemplo de por nombre de aplicación:
 
   ![Crear Tabla](/modelo_de_datos/img/error_comun.png)
 
