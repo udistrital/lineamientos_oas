@@ -3,12 +3,30 @@
 
 ## Bases de Datos y Esquemas
 
-Para los sistemas nuevos que tienen base de datos en *PostgreSQL* se maneja **una sola** base de datos llamada **udistrital** y 4 esquemas que son
+Para los sistemas en nuevas tecnologias en los que tienen base de datos en *PostgreSQL* se manejará  inicalmente **cuatro (4)** base de datos llamada de la siguietne manera:
 
-    core
     academica
-    financiera
     administrativa
+    core
+    financiera
+
+Cada una de estas bases de datos contendra un esquema por funcionalidad.
+
+  ![Crear Tabla](/modelo_de_datos/img/bd_esquemas.png)
+
+**Nota**: A los esquemas deberán proporcionarles nombres de funcionalidad y **no** equivocamente el nombre de la aplicación. Un error muy comun que se comente.
+
+Ejemplo de error común:
+
+  ![Crear Tabla](/modelo_de_datos/img/error_comun.png)
+
+Una representación cercana a la estructura de bd seria como se muestra a continuación:
+
+  ![Crear Tabla](/modelo_de_datos/img/bd_all.png)
+
+Un Ejemplo de la bd de Financiera sera la siguiente:
+
+  ![Crear Tabla](/modelo_de_datos/img/ejemplo_bd_esquemas.png)
 
 ## Tablas
 
