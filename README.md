@@ -32,6 +32,7 @@ Este repositorio es un conglomerado de buenas prácticas, lineamientos, configur
 
 ## 5. Pruebas Unitarias API Beego
 - [Lineamientos](/pruebas_unitarias_api_beego/unit_test_beego.md)
+- [Api mid](/pruebas_unitarias_api_beego/api_mid.md)
 
 ## 6. Generación clientes
 - Lineamientos
