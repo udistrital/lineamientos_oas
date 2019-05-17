@@ -6,7 +6,9 @@ las api_mid están orientados a interoperar con otras apis y consolidar informac
 
 ## Ejemplo
 
-Se desea Crear un servicio que ingresando un id, retorna este id y un saludo.
+*Se desea Crear un servicio que ingresando un id, retorna este id y un saludo.*
+
+**Opción 1**
 
 Lo más normal para esta solicitud es crear un servicio y en este crear el saludo
 
@@ -25,6 +27,8 @@ Lo más normal para esta solicitud es crear un servicio y en este crear el salud
       }
 
 pero qué pasa si queremos extender las funcionalidades del saludo, o queremos implementar en otra servicio el saludo. No vale la pena replicar código, para esto se desarrolla una función que se encargue de generar el saludo y al controlador solo lo dejamos como el puente que expone la información.
+
+**Opción 2 (La correcta)**
 
     // Saludo ...
     // @Title Saludo
@@ -45,3 +49,7 @@ pero qué pasa si queremos extender las funcionalidades del saludo, o queremos i
     	result = "Hola a todos"
     	return
     }
+
+De esta forma sucede dos cosas:
+1. Se puede reutilizar la funcion GeneradorSaludo() en otros servicios
+2. Se puede realizar pruebas unitarias a la fucnion GeneradorSaludo()
