@@ -96,10 +96,14 @@ A la izquierda el método por defecto creados por el Framewrok. A la derecha el 
 
 ### Solicitud GETONE
 
+A la izquierda el método por defecto creados por el Framewrok. A la derecha el refactor por el Script [refactor_controller](https://github.com/udistrital/refactor_controller)
+
   ![Refactor Metodo GetOne](/generacion_de_apis/img/getone.png)
 
 
 ### Solicitud GETALL
+
+A la izquierda el método por defecto creados por el Framewrok. A la derecha el refactor por el Script [refactor_controller](https://github.com/udistrital/refactor_controller)
 
   ![Refactor Metodo GetAll](/generacion_de_apis/img/getall1.png)
 
@@ -107,9 +111,13 @@ A la izquierda el método por defecto creados por el Framewrok. A la derecha el 
 
 ### Solicitud PUT
 
+A la izquierda el método por defecto creados por el Framewrok. A la derecha el refactor por el Script [refactor_controller](https://github.com/udistrital/refactor_controller)
+
   ![Refactor Metodo Post](/generacion_de_apis/img/put.png)
 
 ### Solicitud DELETE
+
+A la izquierda el método por defecto creados por el Framewrok. A la derecha el refactor por el Script [refactor_controller](https://github.com/udistrital/refactor_controller)
 
   ![Refactor Metodo Post](/generacion_de_apis/img/delete.png)
 
