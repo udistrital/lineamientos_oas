@@ -59,7 +59,7 @@ Editar el **main.go** de la API a Ajustar. Agregar las plantillas de errores que
 
 ## Script para Refactor
 
-Se desarrolló un script en python 2.7 para realizar los ajustes de los micro servicios desarrolladon en el framework Beego de forma masiva y automática. la única restricción que existe, es que **solo realiza los ajustes en micro servicios que nos se han personalizado o modificado en sus líneas**. [refactor_controller](https://github.com/jotavargas/refactor_controller)
+Se desarrolló un script en python 2.7 para realizar los ajustes de los micro servicios desarrolladon en el framework Beego de forma masiva y automática. la única restricción que existe, es que **solo realiza los ajustes en micro servicios que nos se han personalizado o modificado en sus líneas**. [refactor_controller](https://github.com/udistrital/refactor_controller)
 
 - Clonar script para refactor.
 
@@ -88,6 +88,8 @@ Los cambios específicos en cada uno de los microservicios se definirán a conti
 
 
 ### Solicitud POST
+
+A la izquierda el método por defecto creados por el Framewrok. A la derecha el refactor por el Script [refactor_controller](https://github.com/udistrital/refactor_controller)
 
   ![Refactor Metodo Post](/generacion_de_apis/img/post.png)
 
