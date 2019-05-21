@@ -44,26 +44,26 @@ En está sección se realiza  paso a paso la creación de una API con el framewo
 
 4. Crear API
 
-  ```bash
-  bee api testApi -driver=postgres -conn=postgres://MyUsuarioBD:MyPassDB@127.0.0.1/bd_oas?sslmode=disable
-  ```
+    ```bash
+    bee api testApi -driver=postgres -conn=postgres://MyUsuarioBD:MyPassDB@127.0.0.1/bd_oas?sslmode=disable
+    ```
 
     Se Creara un directorio llamado testApi con los archivo correspondiente a la api.
 
-  ```bash
-  ├── conf
-  │   └── app.conf
-  ├── controllers
-  │   ├── rol.go
-  │   └── usuario.go
-  ├── main.go
-  ├── models
-  │   ├── rol.go
-  │   └── usuario.go
-  ├── routers
-  │   └── router.go
-  └── tests
-  ```
+    ```bash
+    ├── conf
+    │   └── app.conf
+    ├── controllers
+    │   ├── rol.go
+    │   └── usuario.go
+    ├── main.go
+    ├── models
+    │   ├── rol.go
+    │   └── usuario.go
+    ├── routers
+    │   └── router.go
+    └── tests
+    ```
 
   Especificar el esquema en el proyecto. Para esto, editamos el archivo **testApi/conf/app.conf** agregamos lo siguiente:
 
