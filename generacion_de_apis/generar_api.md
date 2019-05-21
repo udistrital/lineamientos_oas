@@ -23,69 +23,88 @@ En está sección se realiza  paso a paso la creación de una API con el framewo
 
   - opción 2.1: Puede ejecutar el sql [adjunto](/generacion_de_apis/bd/usuario_rol.sql)
 
-         psql -U postgres -d bd_oas -a -f usuario_rol.sql
+    ```bash
+     psql -U postgres -d bd_oas -a -f usuario_rol.sql
+    ```
 
   - opción 2.2: puedes exportar el [modelo dbm desde](/generacion_de_apis/bd/usuario_rol.dbm) en pgModeler
 
 3. Crear directorio para proyecto Beego
 
-       cd ~/go/src/github.com/ && mkdir TuUsuarioGithub
+  ```bash
+  cd ~/go/src/github.com/ && mkdir TuUsuarioGithub
+  ```
 
     Ingrer al directorio
 
-       cd ~/go/src/github.com/TuUsuarioGithub
+  ```bash
+  cd ~/go/src/github.com/TuUsuarioGithub
+  ```
 
 4. Crear API
 
-       bee api testApi -driver=postgres -conn=postgres://MyUsuarioBD:MyPassDB@127.0.0.1/bd_oas?sslmode=disable
+  ```bash
+  bee api testApi -driver=postgres -conn=postgres://MyUsuarioBD:MyPassDB@127.0.0.1/bd_oas?sslmode=disable
+  ```
 
     Se Creara un directorio llamado testApi con los archivo correspondiente a la api.
 
-        ├── conf
-        │   └── app.conf
-        ├── controllers
-        │   ├── rol.go
-        │   └── usuario.go
-        ├── main.go
-        ├── models
-        │   ├── rol.go
-        │   └── usuario.go
-        ├── routers
-        │   └── router.go
-        └── tests
+  ```bash
+  ├── conf
+  │   └── app.conf
+  ├── controllers
+  │   ├── rol.go
+  │   └── usuario.go
+  ├── main.go
+  ├── models
+  │   ├── rol.go
+  │   └── usuario.go
+  ├── routers
+  │   └── router.go
+  └── tests
+  ```
 
+  Especificar el esquema en el proyecto. Para esto, editamos el archivo **testApi/conf/app.conf** agregamos lo siguiente:
 
-    Especificar el esquema en el proyecto. Para esto, editamos el archivo **testApi/conf/app.conf** agregamos lo siguiente:
+  ```bash
+  &search_path=nombre_de_tu_schema
+  ```
 
-          &search_path=nombre_de_tu_schema
+  - Código original:
 
-    - Código original:
+    ```golang
+    sqlconn = postgres://postgres:postgres@127.0.0.1/bd_oas?sslmode=disable
+    ```
 
-          sqlconn = postgres://postgres:postgres@127.0.0.1/bd_oas?sslmode=disable
+  - Ajuste:
 
-    - Ajuste:
+    ```golang
+    sqlconn = postgres://postgres:postgres@127.0.0.1/bd_oas?sslmode=disable&search_path=public
+    ```
 
-          sqlconn = postgres://postgres:postgres@127.0.0.1/bd_oas?sslmode=disable&search_path=public
+  Especificamos el auto incremental del id en los modelos.
 
-    Especificamos el auto incremental del id en los modelos.
+  Ejemplo: En el archivo **testApi/models/usuario.go**
 
-    Ejemplo: En el archivo **testApi/models/usuario.go**
+  - Código original:
 
-    - Código original:
+    ```golang
+    type Usuario struct {
+      Id       int    `orm:"column(id);pk"`
+      Nombre   string `orm:"column(nombre)"`
+      Apellido string `orm:"column(apellido);null"`
+    }
+    ```
 
-          type Usuario struct {
-            Id       int    `orm:"column(id);pk"`
-            Nombre   string `orm:"column(nombre)"`
-            Apellido string `orm:"column(apellido);null"`
-          }
+  - Ajuste:
 
-    - Ajuste:
-
-          type Usuario struct {
-            Id       int    `orm:"column(id);pk;auto"`
-            Nombre   string `orm:"column(nombre)"`
-            Apellido string `orm:"column(apellido);null"`
-          }
+    ```golang
+    type Usuario struct {
+      Id       int    `orm:"column(id);pk;auto"`
+      Nombre   string `orm:"column(nombre)"`
+      Apellido string `orm:"column(apellido);null"`
+    }
+    ```
 
 5. Configurar cors
 
@@ -93,63 +112,72 @@ En está sección se realiza  paso a paso la creación de una API con el framewo
 
   - Código original:
 
-          func main() {
-            orm.RegisterDataBase("default", "postgres", beego.AppConfig.String("sqlconn"))
-            if beego.BConfig.RunMode == "dev" {
-            	beego.BConfig.WebConfig.DirectoryIndex = true
-            	beego.BConfig.WebConfig.StaticDir["/swagger"] = "swagger"
-            }
-            beego.Run()
-          }
-
+    ```golang
+    func main() {
+      orm.RegisterDataBase("default", "postgres", beego.AppConfig.String("sqlconn"))
+      if beego.BConfig.RunMode == "dev" {
+      	beego.BConfig.WebConfig.DirectoryIndex = true
+      	beego.BConfig.WebConfig.StaticDir["/swagger"] = "swagger"
+      }
+      beego.Run()
+    }
+    ```
 
   - En el import() agregamos lo siguiente
 
-         "github.com/astaxie/beego/plugins/cors"
+    ```golang
+    "github.com/astaxie/beego/plugins/cors"
+    ```
 
   - En la Funcion func main() agregamos lo siguiente
 
-        beego.InsertFilter("*", beego.BeforeRouter, cors.Allow(&cors.Options{
-          AllowOrigins: []string{"*"},
-          AllowMethods: []string{"PUT", "PATCH", "GET", "POST", "OPTIONS", "DELETE"},
-          AllowHeaders: []string{"Origin", "x-requested-with",
-            "content-type",
-            "accept",
-            "origin",
-            "authorization",
-            "x-csrftoken"},
-          ExposeHeaders:    []string{"Content-Length"},
-          AllowCredentials: true,
-        }))
+    ```golang
+    beego.InsertFilter("*", beego.BeforeRouter, cors.Allow(&cors.Options{
+      AllowOrigins: []string{"*"},
+      AllowMethods: []string{"PUT", "PATCH", "GET", "POST", "OPTIONS", "DELETE"},
+      AllowHeaders: []string{"Origin", "x-requested-with",
+        "content-type",
+        "accept",
+        "origin",
+        "authorization",
+        "x-csrftoken"},
+      ExposeHeaders:    []string{"Content-Length"},
+      AllowCredentials: true,
+    }))
+    ```
 
   - Si le interesa ver en el log de la api las consultas SQL que realiza, agregar al inicio del main la siguiente linea:
 
-        orm.Debug = true
+    ```golang
+    orm.Debug = true
+    ```
 
   - Al final tendremos la funcion main de la siguieten forma:
 
-        func main() {
-          orm.Debug = true
-          orm.RegisterDataBase("default", "postgres", beego.AppConfig.String("sqlconn"))
-          if beego.BConfig.RunMode == "dev" {
-          	beego.BConfig.WebConfig.DirectoryIndex = true
-          	beego.BConfig.WebConfig.StaticDir["/swagger"] = "swagger"
-          }
-          beego.InsertFilter("*", beego.BeforeRouter, cors.Allow(&cors.Options{
-            AllowOrigins: []string{"*"},
-            AllowMethods: []string{"PUT", "PATCH", "GET", "POST", "OPTIONS", "DELETE"},
-            AllowHeaders: []string{"Origin", "x-requested-with",
-              "content-type",
-              "accept",
-              "origin",
-              "authorization",
-              "x-csrftoken"},
-            ExposeHeaders:    []string{"Content-Length"},
-            AllowCredentials: true,
-          }))
+    ```golang
+    func main() {
+      orm.Debug = true
+      orm.RegisterDataBase("default", "postgres", beego.AppConfig.String("sqlconn"))
+      if beego.BConfig.RunMode == "dev" {
+      	beego.BConfig.WebConfig.DirectoryIndex = true
+      	beego.BConfig.WebConfig.StaticDir["/swagger"] = "swagger"
+      }
+      beego.InsertFilter("*", beego.BeforeRouter, cors.Allow(&cors.Options{
+        AllowOrigins: []string{"*"},
+        AllowMethods: []string{"PUT", "PATCH", "GET", "POST", "OPTIONS", "DELETE"},
+        AllowHeaders: []string{"Origin", "x-requested-with",
+          "content-type",
+          "accept",
+          "origin",
+          "authorization",
+          "x-csrftoken"},
+        ExposeHeaders:    []string{"Content-Length"},
+        AllowCredentials: true,
+      }))
 
-          beego.Run()
-        }
+      beego.Run()
+    }
+    ```
 
 6. Especificar la relacion Fk en Servicios
 
@@ -157,29 +185,36 @@ En está sección se realiza  paso a paso la creación de una API con el framewo
 
     - Código original
 
-          func GetAllRol(query map[string]string, fields []string, sortby []string, order []string,
-          	offset int64, limit int64) (ml []interface{}, err error) {
-          	o := orm.NewOrm()
-          	qs := o.QueryTable(new(Rol))
-          ...
-
+    ```golang
+    func GetAllRol(query map[string]string, fields []string, sortby []string, order []string,
+    	offset int64, limit int64) (ml []interface{}, err error) {
+    	o := orm.NewOrm()
+    	qs := o.QueryTable(new(Rol))
+    ...
+    ```
     - Ajuste .RelatedSel()
 
-          func GetAllRol(query map[string]string, fields []string, sortby []string, order []string,
-          	offset int64, limit int64) (ml []interface{}, err error) {
-          	o := orm.NewOrm()
-          	qs := o.QueryTable(new(Rol)).RelatedSel()
-          ...
+    ```golang
+    func GetAllRol(query map[string]string, fields []string, sortby []string, order []string,
+    	offset int64, limit int64) (ml []interface{}, err error) {
+    	o := orm.NewOrm()
+    	qs := o.QueryTable(new(Rol)).RelatedSel()
+    ...
+    ```
 
 7. Generar Documentación
 
     Ubicado en la raíz del proyecto
 
-       cd ~/go/src/github.com/TuUsuarioGithub/testApi
+  ```bash
+  cd ~/go/src/github.com/TuUsuarioGithub/testApi
+  ```
 
     Ejecutra
 
-       bee run -downdoc=true -gendoc=true
+  ```bash
+  bee run -downdoc=true -gendoc=true
+  ```
 
 8. Consumir los servicios
 
