@@ -44,14 +44,20 @@ Este repositorio es un conglomerado de buenas prácticas, lineamientos, configur
 
 ### Generación Reglas de Negocio (RULE)
 
+- [Generar Reglas de Negocio]()
+
 ***
 ## 5. Pruebas Unitarias API Beego
 
-### Pruebas Unitarias API CRU
-
 - [Lineamientos](/pruebas_unitarias_api_beego/unit_test_beego.md)
 
+### Pruebas Unitarias API CRU
+
+- [Prueebas Unitarias en API CRU]()
+
 ### Pruebas Unitarias API MID
+
+- [Prueebas Unitarias en API MID]()
 
 ***
 ## 6. Generación clientes
