@@ -2,9 +2,9 @@
 
 - Descargar código fuente de [https://golang.org/dl/](https://golang.org/dl/)
 
-```bash
-      cd Downloads/
-      sudo tar -C /usr/local -xzf go1*.tar.gz
+```console
+cd Downloads/
+sudo tar -C /usr/local -xzf go1*.tar.gz
 ```
 
 - Configurar variables de entorno
