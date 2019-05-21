@@ -12,7 +12,7 @@ Las **api_mid** están orientados a *interoperar con otras apis y consolidar inf
 
 Lo más normal para esta solicitud es crear un servicio y en este crear el saludo
 
-      ```golang
+      ```go
       // Saludo ...
       // @Title Saludo
       // @Description get Saludo by id
