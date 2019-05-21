@@ -24,6 +24,7 @@ Siguiendo los lineamientos, creamos en la carpeta test un directorio llamado con
 
 Este archivo contendrá la siguiente prueba unitaria:
 
+
 ```golang
 package test
 
@@ -59,8 +60,8 @@ func Suma(num1, num2 int) (result int) {
 
 Y su respectivo paquete de pruebas
 
-package test
 ```golang
+package test
 import (
 	"testing"
 
@@ -77,3 +78,4 @@ func TestSuma(t *testing.T) {
 	}
 }
 ```
+![Prueba Unitaria 01](/pruebas_unitarias_api_beego/img/test_04.png)
