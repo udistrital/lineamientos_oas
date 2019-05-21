@@ -15,32 +15,32 @@ En está sección se realiza  paso a paso la creación de una API con el framewo
 
 1. Crear un bd llamada bd_oas
 
-    ![Crear BD](/generacion_de_apis/img/001.png)
+  ![Crear BD](/generacion_de_apis/img/001.png)
 
 2. Crear una tabla usuario
 
-    ![Crear Tabla](/generacion_de_apis/img/002.png)
+  ![Crear Tabla](/generacion_de_apis/img/002.png)
 
-  - opción 2.1: Puede ejecutar el sql [adjunto](/generacion_de_apis/bd/usuario_rol.sql)
+  Opción 2.1: Puede ejecutar el sql [adjunto](/generacion_de_apis/bd/usuario_rol.sql)
 
-    ```bash
-     psql -U postgres -d bd_oas -a -f usuario_rol.sql
-    ```
+  ```bash
+   psql -U postgres -d bd_oas -a -f usuario_rol.sql
+  ```
 
-  - opción 2.2: puedes exportar el [modelo dbm desde](/generacion_de_apis/bd/usuario_rol.dbm) en pgModeler
+  Opción 2.2: puedes exportar el [modelo dbm desde](/generacion_de_apis/bd/usuario_rol.dbm) en pgModeler
 
 
 3. Crear directorio para proyecto Beego
 
-    ```bash
-    cd ~/go/src/github.com/ && mkdir TuUsuarioGithub
-    ```
+  ```bash
+  cd ~/go/src/github.com/ && mkdir TuUsuarioGithub
+  ```
 
-    Ingrer al directorio
+  Ingrer al directorio
 
-    ```bash
-    cd ~/go/src/github.com/TuUsuarioGithub
-    ```
+  ```bash
+  cd ~/go/src/github.com/TuUsuarioGithub
+  ```
 
 4. Crear API
 
