@@ -6,15 +6,15 @@ Este repositorio es un conglomerado de buenas prácticas, lineamientos, configur
 ## 1. Instalación de Herramientas
 ***
 ### En PC Local
-1. [Instalación Golang](/instalacion_de_herramientas/golang.md)
-3. [Instalación Beego y Bee](/instalacion_de_herramientas/beego.md)
-4. [Instalación Postgres](/instalacion_de_herramientas/postgres.md)
-5. [Instalación pgAdmin3](/instalacion_de_herramientas/pgadmin3.md)
-6. [Instalación pgModeler](/instalacion_de_herramientas/pgmodeler.md)
-7. Instalar Cliente
+- [Instalación Golang](/instalacion_de_herramientas/golang.md)
+- [Instalación Beego y Bee](/instalacion_de_herramientas/beego.md)
+- [Instalación Postgres](/instalacion_de_herramientas/postgres.md)
+- [Instalación pgAdmin3](/instalacion_de_herramientas/pgadmin3.md)
+- [Instalación pgModeler](/instalacion_de_herramientas/pgmodeler.md)
+- Instalar Cliente
 
 ### En Ambiente Dockerizado
-1. [lineamiento](/instalacion_de_herramientas/dockerizacion.md)
+- [lineamiento](/instalacion_de_herramientas/dockerizacion.md)
 
 ## 2. Repositorios Institucionales
 ***
