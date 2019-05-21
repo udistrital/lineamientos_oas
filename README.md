@@ -40,11 +40,12 @@ Este repositorio es un conglomerado de buenas prácticas, lineamientos, configur
 
 ### Generación API MID
 
-- [Generar API MID](/generacion_de_apis/api_mid.md)
+- [Lineamiento API MID](/generacion_de_apis/api_mid.md)
+- [Generar API MID-(Falta)]()
 
 ### Generación Reglas de Negocio (RULE)
 
-- [Generar Reglas de Negocio]()
+- [Generar Reglas de Negocio-(Falta)]()
 
 ***
 ## 5. Pruebas Unitarias API Beego
@@ -53,11 +54,11 @@ Este repositorio es un conglomerado de buenas prácticas, lineamientos, configur
 
 ### Pruebas Unitarias API CRU
 
-- [Prueebas Unitarias en API CRU]()
+- [Prueebas Unitarias en API CRU-(Falta)]()
 
 ### Pruebas Unitarias API MID
 
-- [Prueebas Unitarias en API MID]()
+- [Prueebas Unitarias en API MID-(Falta)]()
 
 ***
 ## 6. Generación clientes
