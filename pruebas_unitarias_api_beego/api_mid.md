@@ -2,7 +2,7 @@
 En esta sección se mostrará como consolidar adecuadamente el Api mid
 
 ## Orientacion (teoria)
-las api_mid están orientados a interoperar con otras apis y consolidar información, separando todo lo orientado al crud en las respectivas api_crud y todo lo del modelo de negocio en estas. Por ende, es apropiado **establecer al maximo funciones dedicadas** que luego seran expuesta en los servicios del mid.
+Las **api_mid** están orientados a *interoperar con otras apis y consolidar información*, separando todo lo orientado al crud en las respectivas **api_crud** y todo lo del **modelo de negocio en estas**. Por ende, es apropiado **establecer al maximo funciones dedicadas** que luego seran expuesta en los servicios del mid.
 
 ## Ejemplo
 
