@@ -4,7 +4,7 @@ Este repositorio es un conglomerado de buenas prácticas, lineamientos, configur
 
 
 ## 1. Instalación de Herramientas
-
+***
 ### En PC Local
 1. [Instalación Golang](/instalacion_de_herramientas/golang.md)
 3. [Instalación Beego y Bee](/instalacion_de_herramientas/beego.md)
@@ -17,6 +17,7 @@ Este repositorio es un conglomerado de buenas prácticas, lineamientos, configur
 1. [lineamiento](/instalacion_de_herramientas/dockerizacion.md)
 
 ## 2. Repositorios Institucionales
+***
 - [Lineamientos](/repositorios_institucionales/lineamientos.md)
 - [Contenido README](/repositorios_institucionales/contenido_readme.md)
 - [.gitignore](/repositorios_institucionales/gitignore.md)
