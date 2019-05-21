@@ -50,7 +50,7 @@ Este repositorio es un conglomerado de buenas prácticas, lineamientos, configur
 ***
 ## 5. Pruebas Unitarias API Beego
 
-- [Lineamientos Pruebas Unitarias API Beego](/pruebas_unitarias_api_beego/unit_test_beego.md)
+- [Lineamientos](/pruebas_unitarias_api_beego/unit_test_beego.md)
 
 > ### Pruebas Unitarias API CRU
 
