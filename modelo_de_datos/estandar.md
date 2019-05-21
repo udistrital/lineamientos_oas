@@ -79,9 +79,10 @@ Las columnas deben ser nombradas según los lineamientos a continuación:
 - Especificar la longitud del campo si aplica.
 
   ```sql
-  - Indicar la longitud del campo si el tipo de dato es character varying:
+  --Indicar la longitud del campo si el tipo de dato es character varying:
   character varying(15)
-  - Especificar longitud y precisión del campo si el tipo de dato es Numeric:
+
+  -- Especificar longitud y precisión del campo si el tipo de dato es Numeric:
   numeric(5,2).
   ```
 
@@ -89,37 +90,48 @@ Las columnas deben ser nombradas según los lineamientos a continuación:
 
 La clave primaria es un conjunto de campos que identifica de forma única un registro en una tabla, debe entenderse que no es igual al concepto de columna cuya nomenclatura se explica en el punto 6. Son un caso particular de un índice, la nomenclatura para la restricción de este índice debe hacerse usando el nombre de la tabla, anteponiendo el prefijo pk y guión bajo.
 
-    pk_cliente
+```sql
+pk_cliente
+```
 
 ## Restricciones claves foráneas
 
 Las claves foráneas son usadas para definir vínculos entre tablas relacionadas. Una clave foránea establece una relación entre una o más columnas de una tabla y la clave primaria de la tabla referenciada. El patrón para la nomenclatura de restricción de clave foránea es el siguiente:
 
-    fk_<tabla_que_referencia>_<tabla_referenciada>
-    Ejemplo:
-    fk_orden_pago_cliente
+```sql
+fk_<tabla_que_referencia>_<tabla_referenciada>
+Ejemplo:
+fk_orden_pago_cliente
+```
 
 ## Restricciones Unique
 
 La nomenclatura para este tipo de restricciones es la siguiente cuando hablamos de Unique constraint:
 
-    uq_<nombre_columna>_<nombre_tabla>
-    Ejemplo:
-    uq_identificacion_persona
-
+```sql
+uq_<nombre_columna>_<nombre_tabla>
+Ejemplo:
+uq_identificacion_persona
+```
 
 ## Restricciones Check
 
 La nomenclatura para este tipo de restricciones es la siguiente cuando hablamos de Check constraint:
 
-    ck_<nombre_columna>_<nombre_tabla>
-    Ejmplo:
-    ck_genero_persona
+```sql
+ck_<nombre_columna>_<nombre_tabla>
+Ejmplo:
+ck_genero_persona
+```
 
 ## Índices
 
-Los índices son un mecanismo para aumentar la eficiencia de localización y acceso de un registro en una tabla en la base de datos, opcionalmente asegurando unicidad de los valores del índice. La definición de índices tiene un impacto positivo en los tiempos de consulta de registro y uno negativo en los de inserción y actualización de los campos del índice. Los índices están asociados a una tabla y a un conjunto de campos de la tabla, a su vez pueden ser únicos o no. La nomenclatura es la siguiente ( [_aux] denota que puede ir otra palabra si se requiere una diferenciación en particular de otros índices con nombre similar):
+Los índices son un mecanismo para aumentar la eficiencia de localización y acceso de un registro en una tabla en la base de datos, opcionalmente asegurando unicidad de los valores del índice. La definición de índices tiene un impacto positivo en los tiempos de consulta de registro y uno negativo en los de inserción y actualización de los campos del índice. Los índices están asociados a una tabla y a un conjunto de campos de la tabla, a su vez pueden ser únicos o no.
 
-    [idx_]<tabla>_<campo>[_aux]    
-    Ejemplo:
-    idx_persona_genero
+La nomenclatura es la siguiente ( [_aux] denota que puede ir otra palabra si se requiere una diferenciación en particular de otros índices con nombre similar):
+
+```sql
+[idx_]<tabla>_<campo>[_aux]    
+Ejemplo:
+idx_persona_genero
+```
