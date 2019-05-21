@@ -29,11 +29,12 @@ En está sección se realiza  paso a paso la creación de una API con el framewo
 
   - opción 2.2: puedes exportar el [modelo dbm desde](/generacion_de_apis/bd/usuario_rol.dbm) en pgModeler
 
+
 3. Crear directorio para proyecto Beego
 
-  ```bash
-  cd ~/go/src/github.com/ && mkdir TuUsuarioGithub
-  ```
+    ```bash
+    cd ~/go/src/github.com/ && mkdir TuUsuarioGithub
+    ```
 
     Ingrer al directorio
 
