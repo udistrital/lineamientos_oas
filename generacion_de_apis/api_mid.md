@@ -12,7 +12,7 @@ Las **api_mid** están orientados a *interoperar con otras apis y consolidar inf
 
 Lo más normal para esta solicitud es crear un servicio y en este crear el saludo
 
-      ```go
+```golang
       // Saludo ...
       // @Title Saludo
       // @Description get Saludo by id
@@ -26,7 +26,7 @@ Lo más normal para esta solicitud es crear un servicio y en este crear el salud
       	c.Data["json"] = map[string]interface{}{"Code": id, "Body": "hola que hace"}
       	c.ServeJSON()
       }
-      ```
+```
 
 Pero qué pasa si queremos extender las funcionalidades del saludo, o queremos implementar en otra servicio el saludo. No vale la pena replicar código, para esto se desarrolla una función que se encargue de generar el saludo y al controlador solo lo dejamos como el puente que expone la información.
 
