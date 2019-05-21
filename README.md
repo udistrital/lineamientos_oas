@@ -23,10 +23,11 @@ Este repositorio es un conglomerado de buenas prácticas, lineamientos, configur
 - [.gitignore](/repositorios_institucionales/gitignore.md)
 
 ## 3. Modelos de datos
+***
 - [Lineamientos](/modelo_de_datos/estandar.md)
 
 ## 4. Apis Beego OAS
-
+***
 ### Generación de API CRU
 
 - [Generar API Beego](/generacion_de_apis/generar_api.md)
@@ -41,21 +42,25 @@ Este repositorio es un conglomerado de buenas prácticas, lineamientos, configur
 ### Generación Reglas de Negocio (RULE)
 
 ## 5. Pruebas Unitarias API Beego
-
+***
 ### Pruebas Unitarias API CRU
 - [Lineamientos](/pruebas_unitarias_api_beego/unit_test_beego.md)
 
 ### Pruebas Unitarias API MID
 
 ## 6. Generación clientes
+***
 - Lineamientos
 - Calidad
 
 ## 7. Pruebas Unitarias de Clientes
+***
 - Lineamientos
 
 ## 8. Integración con WSO2AM
+***
 - Lineamientos
 
 ## 9. Integración con WSO2IS
+***
 - Lineamientos
