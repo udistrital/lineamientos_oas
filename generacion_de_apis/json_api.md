@@ -68,25 +68,30 @@ Se desarrolló un script en python 2.7 para realizar los ajustes de los micro se
 
 - Clonar script para refactor.
 
-        git clone https://github.com/jotavargas/refactor_controller.git
+  ```golang
+  git clone https://github.com/jotavargas/refactor_controller.git
+  ```
 
 - Ejecutar script
 
-      #ir al proyecto
-      cd refactor_controller
+  ```bash
+  #ir al proyecto
+  cd refactor_controller
 
-      #como ejecutar (con python 2.7)
-      python main.py -F ruta_controladores_del_api_a_refactoring
+  #como ejecutar (con python 2.7)
+  python main.py -F ruta_controladores_del_api_a_refactoring
 
-      #Ejemplo:
-      python main.py -F /home/jjvargass/go/src/github.com/udistrital/api_financiera/controllers
+  #Ejemplo:
+  python main.py -F /home/jjvargass/go/src/github.com/udistrital/api_financiera/controllers
+  ```
 
 - Indentar e importar package en Controladores *.go
 
-      cd ruta_controladores_del_api_a_refactoring
-      gofmt -w *.go
-      goimports -w *.go
-
+  ```bash
+  cd ruta_controladores_del_api_a_refactoring
+  gofmt -w *.go
+  goimports -w *.go
+  ```
 
 
 Los cambios específicos en cada uno de los microservicios se definirán a continuación.
