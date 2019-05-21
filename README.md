@@ -26,16 +26,14 @@ Este repositorio es un conglomerado de buenas prácticas, lineamientos, configur
 
 ## 4. Apis Beego OAS
 
-### Generación de API CRU
-  ___
+  ### Generación de API CRU
 
 - [Generar API Beego](/generacion_de_apis/generar_api.md)
 - [Generar Logs en API Beego](/generacion_de_apis/logs_api.md)
 - [Configurar Respuestas Json en API Beego](/generacion_de_apis/json_api.md)
 - [Migrar Modelo de API a bd nuevas](/generacion_de_apis/migrar.md)
 
-### Generación API MID
-___
+  ### Generación API MID
 
 - [Generar API MID](/pruebas_unitarias_api_beego/api_mid.md)
 
