@@ -18,7 +18,7 @@ func Resta(num1, num2 int) (result int) {
 
 ![Prueba Unitaria 01](/pruebas_unitarias_api_beego/img/test_01.png)
 
-Siguiendo los lineamientos, creamos en la carpeta test un directorio llamado controller de la siguiente manera [*test/controller*], que  almacena las pruebas unitarias de los archivos correspondientes a los controller.
+Siguiendo los lineamientos, creamos en la carpeta test un directorio llamado controller de la siguiente manera [*tests/controllers*], que  almacena las pruebas unitarias de los archivos correspondientes a los controller.
 
 ![Prueba Unitaria 01](/pruebas_unitarias_api_beego/img/test_02.png)
 
