@@ -86,6 +86,12 @@ Se obtiene:
   ```
 **Nota**: los ejemplos de pruebas unitarias las puede encontrar en el siguiente repo [api_debug_beego_request](https://github.com/jotavargas/api_debug_beego_request):
 
+Para limpiar el cache de los Test
+
+```bash
+go clean -testcache
+```
+
 ## Tomado de:
 
 [Golang package testing](https://godoc.org/testing)
