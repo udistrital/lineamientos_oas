@@ -65,11 +65,11 @@ En está sección se realiza  paso a paso la creación de una API con el framewo
     └── tests
     ```
 
-  Especificar el esquema en el proyecto. Para esto, editamos el archivo **testApi/conf/app.conf** agregamos lo siguiente:
+    Especificar el esquema en el proyecto. Para esto, editamos el archivo **testApi/conf/app.conf** agregamos lo siguiente:
 
-  ```bash
-  &search_path=nombre_de_tu_schema
-  ```
+    ```bash
+    &search_path=nombre_de_tu_schema
+    ```
 
   - Código original:
 
