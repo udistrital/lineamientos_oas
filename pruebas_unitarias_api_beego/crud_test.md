@@ -60,6 +60,8 @@ func Suma(num1, num2 int) (result int) {
 
 Y su respectivo paquete de pruebas
 
+![Prueba Unitaria 01](/pruebas_unitarias_api_beego/img/test_04.png)
+
 ```golang
 package test
 import (
@@ -78,4 +80,3 @@ func TestSuma(t *testing.T) {
 	}
 }
 ```
-![Prueba Unitaria 01](/pruebas_unitarias_api_beego/img/test_04.png)
