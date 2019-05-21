@@ -38,9 +38,9 @@ En está sección se realiza  paso a paso la creación de una API con el framewo
 
     Ingrer al directorio
 
-  ```bash
-  cd ~/go/src/github.com/TuUsuarioGithub
-  ```
+    ```bash
+    cd ~/go/src/github.com/TuUsuarioGithub
+    ```
 
 4. Crear API
 
