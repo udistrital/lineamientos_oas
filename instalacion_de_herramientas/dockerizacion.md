@@ -2,7 +2,7 @@
 
 En está sección se especificarán los lineamientos para el desarrollo de contenidos dockerizados para los ambientes de desarrollo de la  Oficina Asesora de Sistema.
 
-## Repositorio para fuentes de Imagenes Docker
+## Repositorio para Fuentes de Imagenes Docker
 
 Se deben resguardar los fuentes de las imágenes Docker en el siguiente repositorio.
 
