@@ -54,7 +54,7 @@ Este repositorio es un conglomerado de buenas prácticas, lineamientos, configur
 
 ### Pruebas Unitarias API CRU
 
-- [Pruebas Unitarias en API CRU-(Falta)]()
+- [Pruebas Unitarias en API CRU-(Falta)](/pruebas_unitarias_api_beego/crud_test.md)
 
 ### Pruebas Unitarias API MID
 
