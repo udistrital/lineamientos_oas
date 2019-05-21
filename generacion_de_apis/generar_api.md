@@ -204,7 +204,7 @@ En está sección se realiza  paso a paso la creación de una API con el framewo
 
 7. Generar Documentación
 
-    Ubicado en la raíz del proyecto
+  Ubicado en la raíz del proyecto
 
   ```bash
   cd ~/go/src/github.com/TuUsuarioGithub/testApi
