@@ -80,3 +80,29 @@ func TestSuma(t *testing.T) {
 	}
 }
 ```
+## Runt Test
+
+Ingresamos a la carpeta *tests* del proyecto
+
+```bash
+cd $GOPATH/src/github.com/udistrital/api_beego_request/tests/
+```
+Correr Tests
+
+```bash
+go test ./... -v
+```
+Resultados
+
+```bash
+=== RUN   TestSuma
+--- PASS: TestSuma (0.00s)
+    suma_test.go:15: TestSuma Finalizado Correctamente (OK)
+PASS
+ok  	github.com/udistrital/api_beego_request/tests/calculos	0.001s
+=== RUN   TestResta
+--- PASS: TestResta (0.00s)
+    usuario_test.go:15: TestResta Finalizado Correctamente (OK)
+PASS
+ok  	github.com/udistrital/api_beego_request/tests/controllers	0.003s
+```
