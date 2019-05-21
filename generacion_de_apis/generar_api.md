@@ -88,7 +88,7 @@ En está sección se realiza  paso a paso la creación de una API con el framewo
     Ejemplo: En el archivo **testApi/models/usuario.go**
 
 
-  - Código original:
+    - Código original:
 
     ```golang
     type Usuario struct {
@@ -98,7 +98,7 @@ En está sección se realiza  paso a paso la creación de una API con el framewo
     }
     ```
 
-  - Ajuste:
+    - Ajuste:
 
     ```golang
     type Usuario struct {
