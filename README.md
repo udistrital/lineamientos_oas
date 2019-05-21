@@ -31,19 +31,19 @@ Este repositorio es un conglomerado de buenas prácticas, lineamientos, configur
 ***
 ## 4. Apis Beego OAS
 
-### Generación de API CRUD
+> ### Generación de API CRUD
 
 - [Generar API Beego](/generacion_de_apis/generar_api.md)
 - [Generar Logs en API Beego](/generacion_de_apis/logs_api.md)
 - [Configurar Respuestas Json en API Beego](/generacion_de_apis/json_api.md)
 - [Migrar Modelo de API a bd nuevas](/generacion_de_apis/migrar.md)
 
-### Generación API MID
+> ### Generación API MID
 
 - [Lineamiento API MID](/generacion_de_apis/api_mid.md)
 - [Generar API MID-(Falta)]()
 
-### Generación Reglas de Negocio (RULE)
+> ### Generación Reglas de Negocio (RULE)
 
 - [Generar Reglas de Negocio-(Falta)]()
 
