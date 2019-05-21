@@ -31,26 +31,27 @@ func (c *UsuarioController) Saludo() {
 Pero qué pasa si queremos extender las funcionalidades del saludo, o queremos implementar en otra servicio el saludo. No vale la pena replicar código, para esto se desarrolla una función que se encargue de generar el saludo y al controlador solo lo dejamos como el puente que expone la información.
 
 **Opción 2 (La correcta)**
+```golang
+// Saludo ...
+// @Title Saludo
+// @Description get Saludo by id
+// @Param	id		path 	string	true		"The key for staticblock"
+// @Success 200 {object} models
+// @Failure 404 not found resource
+// @router saludo/:id [get]
+func (c *UsuarioController) Saludo() {
+	idStr := c.Ctx.Input.Param(":id")
+	id, _ := strconv.Atoi(idStr)
+	c.Data["json"] = map[string]interface{}{"Code": id, "Body": GeneradorSaludo()}
+	c.ServeJSON()
+}
 
-    // Saludo ...
-    // @Title Saludo
-    // @Description get Saludo by id
-    // @Param	id		path 	string	true		"The key for staticblock"
-    // @Success 200 {object} models
-    // @Failure 404 not found resource
-    // @router saludo/:id [get]
-    func (c *UsuarioController) Saludo() {
-    	idStr := c.Ctx.Input.Param(":id")
-    	id, _ := strconv.Atoi(idStr)
-    	c.Data["json"] = map[string]interface{}{"Code": id, "Body": GeneradorSaludo()}
-    	c.ServeJSON()
-    }
-
-    // GeneradorSaludo ...
-    func GeneradorSaludo() (result string) {
-    	result = "Hola a todos"
-    	return
-    }
+// GeneradorSaludo ...
+func GeneradorSaludo() (result string) {
+	result = "Hola a todos"
+	return
+}
+```
 
 De esta forma sucede dos cosas:
 1. Se puede reutilizar la funcion GeneradorSaludo() en otros servicios
