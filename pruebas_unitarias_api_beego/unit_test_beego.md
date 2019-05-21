@@ -1,4 +1,4 @@
-# Pruebas Unitarias API Beego
+# Lineamiento de Pruebas Unitarias API Beego
 
 En esta sección se mostrará como realizar pruebas unitarias en el framework beego conforme a los estándares de la Oficina Asesora de Sistemas; esto con el fin desarrollar software de calidad y que el software se encuentre en constante revisión en el pipeline de IC.
 
@@ -57,18 +57,6 @@ De esta manera cada archivo se le escribe su versión test
   ```
 
 Donde Xxx  Comienza con letra mayúscula  y es el nombre de la funciona que estás testeando.
-
-
-### Ejemplo:
-
-Funcion Resta que se encuentra en el paquete controllers en el archivo  usuario.go
-
-![Prueba Unitaria 01](/pruebas_unitarias_api_beego/img/test_01.png)
-
-
-prueba unitaria de Resta que se encuentra en el paquete test en el archivo usuario_test.go
-
-![Prueba Unitaria 01](/pruebas_unitarias_api_beego/img/test_02.png)
 
 ## Run Test
 
