@@ -40,7 +40,7 @@ Este repositorio es un conglomerado de buenas prácticas, lineamientos, configur
 
 ### Generación API MID
 
-- [Generar API MID](/pruebas_unitarias_api_beego/api_mid.md)
+- [Generar API MID](/generacion_de_apis/api_mid.md)
 
 ### Generación Reglas de Negocio (RULE)
 
