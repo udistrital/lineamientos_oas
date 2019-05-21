@@ -5,16 +5,18 @@
 
 Para los sistemas en nuevas tecnologias en los que tienen bases de datos en *PostgreSQL* se manejará  inicalmente **cuatro (4)** bases de datos llamada de la siguiente manera:
 
-    academica
-    administrativa
-    core
-    financiera
+```bash
+academica
+administrativa
+core
+financiera
+```
 
 Cada una de estas bases de datos contendra un esquema por funcionalidad.
 
   ![Crear Tabla](/modelo_de_datos/img/bd_esquemas.png)
 
-**Nota**: Los esquemas se nombran por funcionalidad y **no** por nombre de la aplicación. 
+**Nota**: Los esquemas se nombran por funcionalidad y **no** por nombre de la aplicación.
 
 Ejemplo por nombre de aplicación:
 
@@ -34,10 +36,11 @@ Las tablas deben nombrarse utilizando _ como separador, en singular y sin utiliz
 
 Si el nombre es compuesto las dos palabras deben ir en singular. Por ejemplo: venta_producto
 
-    cliente
-    estudiante
-    profesor_planta
-
+```bash
+cliente
+estudiante
+profesor_planta
+```
 
 ## Columnas
 
@@ -54,11 +57,13 @@ Las columnas deben ser nombradas según los lineamientos a continuación:
 
   Opción2: de tipo de dato serial que creará automaticamente la seguencia.
 
-      Opción1 Para la tabla contrato el campo clave debe ser:
-      id integer NOT NULL DEFAULT nextval('public.contrato_id_seq'::regclass)
+  ```sql
+  -- Opción1 Para la tabla contrato el campo clave debe ser:
+  id integer NOT NULL DEFAULT nextval('public.contrato_id_seq'::regclass)
 
-      Opción2 Para la tabla usuario, usando tipo de dato serial:
-      id serial NOT NULL,
+  -- Opción2 Para la tabla usuario, usando tipo de dato serial:
+  id serial NOT NULL,
+  ```
 
   **Nota**: Se recomienda la Opción2, es mas rapida.
 
