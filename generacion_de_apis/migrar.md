@@ -55,7 +55,7 @@
   sqlconn = postgres://postgres:MyPassDB@127.0.0.1/bd_oas_migracion?sslmode=disable&search_path=public
   ```
 
-    Para este ejemplo se llama **bd_oas_migracion**
+  Para este ejemplo se llama **bd_oas_migracion**
 
 3. Complilar main.go
 
