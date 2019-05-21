@@ -44,7 +44,7 @@ func TestResta(t *testing.T) {
 	}
 }
 ```
-De la misma manera se ha creado un nuevo paquete llamado *Calculos*:
+De la misma manera se ha creado un nuevo paquete llamado *calculos*:
 
 ![Prueba Unitaria 01](/pruebas_unitarias_api_beego/img/test_03.png)
 
