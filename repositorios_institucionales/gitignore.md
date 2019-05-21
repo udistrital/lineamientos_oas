@@ -1,24 +1,27 @@
-# gitignore
+# Gitignore
+
 En está sección se establecerán las convenciones para la definción del archivo **.gitignore** de los repositorios para la Oficina Asesora de Sistemas (OAS).
 
 ## Proyectos Beego
 
-    lastupdate.tmp
-    .vscode/
-    titan_api_crud
-    main
-    .scannerwork/
-    swagger/*.png
-    swagger/*.html
-    swagger/*.js
-    swagger/*.map
-    swagger/*.css
-    swagger/*.yml
-    swagger/css/
-    swagger/fonts/
-    swagger/images/
-    swagger/lang/
-    swagger/lib/
+  ```javascript
+  lastupdate.tmp
+  .vscode/
+  titan_api_crud
+  main
+  .scannerwork/
+  swagger/*.png
+  swagger/*.html
+  swagger/*.js
+  swagger/*.map
+  swagger/*.css
+  swagger/*.yml
+  swagger/css/
+  swagger/fonts/
+  swagger/images/
+  swagger/lang/
+  swagger/lib/
+  ```
 
 - **lastupdate.tmp**: Archivo generado por el Api beego
 - **.vscode/**: Carpeta creada por editor Visual Estudio
@@ -27,6 +30,8 @@ En está sección se establecerán las convenciones para la definción del archi
 - **.scannerwork/**: Es el directorio que genera el sonar-scanner
 - **swagger**: Del directorio swagger solo se requiere el archivo swagger.json
 
+
 ## Proyectos AngularJS
+
 
 ## Proyectos Angular
