@@ -5,7 +5,7 @@ Este repositorio es un conglomerado de buenas prácticas, lineamientos, configur
 ***
 ## 1. Instalación de Herramientas
 
-### En PC Local
+> ### En PC Local
 - [Instalación Golang](/instalacion_de_herramientas/golang.md)
 - [Instalación Beego y Bee](/instalacion_de_herramientas/beego.md)
 - [Instalación Postgres](/instalacion_de_herramientas/postgres.md)
@@ -13,7 +13,7 @@ Este repositorio es un conglomerado de buenas prácticas, lineamientos, configur
 - [Instalación pgModeler](/instalacion_de_herramientas/pgmodeler.md)
 - Instalar Cliente
 
-### En Ambiente Dockerizado
+> ### En Ambiente Dockerizado
 - [lineamiento](/instalacion_de_herramientas/dockerizacion.md)
 
 ***
@@ -52,11 +52,11 @@ Este repositorio es un conglomerado de buenas prácticas, lineamientos, configur
 
 - [Lineamientos Pruebas Unitarias API Beego](/pruebas_unitarias_api_beego/unit_test_beego.md)
 
-### Pruebas Unitarias API CRU
+> ### Pruebas Unitarias API CRU
 
 - [Pruebas Unitarias en API CRU-(Falta)](/pruebas_unitarias_api_beego/crud_test.md)
 
-### Pruebas Unitarias API MID
+> ### Pruebas Unitarias API MID
 
 - [Pruebas Unitarias en API MID-(Falta)]()
 
