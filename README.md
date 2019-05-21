@@ -31,7 +31,7 @@ Este repositorio es un conglomerado de buenas prácticas, lineamientos, configur
 ***
 ## 4. Apis Beego OAS
 
-### Generación de API CRU
+### Generación de API CRUD
 
 - [Generar API Beego](/generacion_de_apis/generar_api.md)
 - [Generar Logs en API Beego](/generacion_de_apis/logs_api.md)
@@ -54,11 +54,11 @@ Este repositorio es un conglomerado de buenas prácticas, lineamientos, configur
 
 ### Pruebas Unitarias API CRU
 
-- [Prueebas Unitarias en API CRU-(Falta)]()
+- [Pruebas Unitarias en API CRU-(Falta)]()
 
 ### Pruebas Unitarias API MID
 
-- [Prueebas Unitarias en API MID-(Falta)]()
+- [Pruebas Unitarias en API MID-(Falta)]()
 
 ***
 ## 6. Generación clientes
