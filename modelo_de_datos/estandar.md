@@ -78,10 +78,12 @@ Las columnas deben ser nombradas según los lineamientos a continuación:
 - Para los campos que almacenen caracteres se recomienda usar el tipo de dato *character varying* especificando su longitud.
 - Especificar la longitud del campo si aplica.
 
-      - Indicar la longitud del campo si el tipo de dato es character varying:
-      character varying(15)
-      - Especificar longitud y precisión del campo si el tipo de dato es Numeric:
-      numeric(5,2).
+  ```sql
+  - Indicar la longitud del campo si el tipo de dato es character varying:
+  character varying(15)
+  - Especificar longitud y precisión del campo si el tipo de dato es Numeric:
+  numeric(5,2).
+  ```
 
 ## Claves primarias
 
