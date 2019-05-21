@@ -32,15 +32,15 @@ En está sección se realiza  paso a paso la creación de una API con el framewo
 
 3. Crear directorio para proyecto Beego
 
-  ```bash
-  cd ~/go/src/github.com/ && mkdir TuUsuarioGithub
-  ```
+    ```bash
+    cd ~/go/src/github.com/ && mkdir TuUsuarioGithub
+    ```
 
-  Ingrer al directorio
+    Ingrer al directorio
 
-  ```bash
-  cd ~/go/src/github.com/TuUsuarioGithub
-  ```
+    ```bash
+    cd ~/go/src/github.com/TuUsuarioGithub
+    ```
 
 4. Crear API
 
