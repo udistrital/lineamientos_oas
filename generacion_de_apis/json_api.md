@@ -10,53 +10,58 @@ Editar el **main.go** de la API a Ajustar. Agregar las plantillas de errores que
 
 - Importar paquete:
 
-      import (
-        "github.com/udistrital/utils_oas/customerror"
-      )
+  ```golang
+  import (
+    "github.com/udistrital/utils_oas/customerror"
+  )
+  ```
 
 - Implementación en **func main()**:
 
-      beego.ErrorController(&customerror.CustomErrorController{})
+  ```golang
+  beego.ErrorController(&customerror.CustomErrorController{})
+  ```
 
 - El **main.go** Lucirá de la siguiente forma:
 
-      package main
+  ```golang
+  package main
 
-      import (
-          "github.com/astaxie/beego"
-          "github.com/astaxie/beego/orm"
-          "github.com/astaxie/beego/plugins/cors"
-          _ "github.com/jotavargas/debug_beego_request/routers"
-          _ "github.com/lib/pq"
-          "github.com/udistrital/utils_oas/customerror"
-      )
+  import (
+      "github.com/astaxie/beego"
+      "github.com/astaxie/beego/orm"
+      "github.com/astaxie/beego/plugins/cors"
+      _ "github.com/jotavargas/debug_beego_request/routers"
+      _ "github.com/lib/pq"
+      "github.com/udistrital/utils_oas/customerror"
+  )
 
-      func init() {
-          orm.RegisterDataBase("default", "postgres", "postgres://postgres:postgres@127.0.0.1/test?sslmode=disable")
+  func init() {
+      orm.RegisterDataBase("default", "postgres", "postgres://postgres:postgres@127.0.0.1/test?sslmode=disable")
+  }
+
+  func main() {
+      if beego.BConfig.RunMode == "dev" {
+          beego.BConfig.WebConfig.DirectoryIndex = true
+          beego.BConfig.WebConfig.StaticDir["/swagger"] = "swagger"
       }
 
-      func main() {
-          if beego.BConfig.RunMode == "dev" {
-              beego.BConfig.WebConfig.DirectoryIndex = true
-              beego.BConfig.WebConfig.StaticDir["/swagger"] = "swagger"
-          }
-
-          beego.InsertFilter("*", beego.BeforeRouter, cors.Allow(&cors.Options{
-              AllowOrigins: []string{"*"},
-              AllowMethods: []string{"PUT", "PATCH", "GET", "POST", "OPTIONS", "DELETE"},
-              AllowHeaders: []string{"Origin", "x-requested-with",
-                  "content-type",
-                  "accept",
-                  "origin",
-                  "authorization",
-                  "x-csrftoken"},
-              ExposeHeaders:    []string{"Content-Length"},
-              AllowCredentials: true,
-          }))
-          beego.ErrorController(&customerror.CustomErrorController{})
-          beego.Run()
-      }
-
+      beego.InsertFilter("*", beego.BeforeRouter, cors.Allow(&cors.Options{
+          AllowOrigins: []string{"*"},
+          AllowMethods: []string{"PUT", "PATCH", "GET", "POST", "OPTIONS", "DELETE"},
+          AllowHeaders: []string{"Origin", "x-requested-with",
+              "content-type",
+              "accept",
+              "origin",
+              "authorization",
+              "x-csrftoken"},
+          ExposeHeaders:    []string{"Content-Length"},
+          AllowCredentials: true,
+      }))
+      beego.ErrorController(&customerror.CustomErrorController{})
+      beego.Run()
+  }
+  ```
 ## Script para Refactor
 
 Se desarrolló un script en python 2.7 para realizar los ajustes de los micro servicios desarrolladon en el framework Beego de forma masiva y automática. la única restricción que existe, es que **solo realiza los ajustes en micro servicios que nos se han personalizado o modificado en sus líneas**. [refactor_controller](https://github.com/udistrital/refactor_controller)
