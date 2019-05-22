@@ -18,11 +18,20 @@ func Resta(num1, num2 int) (result int) {
 
 ![Prueba Unitaria 01](/pruebas_unitarias_api_beego/img/test_01.png)
 
-Siguiendo los lineamientos, creamos en la carpeta test un directorio llamado controller de la siguiente manera [*tests/controllers*], que  almacena las pruebas unitarias de los archivos correspondientes a los controller.
+
+Siguiendo los lineamientos, creamos en la carpeta *tests* la misma estructura de paquetes de nuestro proyecto. de tal forma que ahora tenemos un directorio llamado controller. Cada uno de estos directorios almacenará las pruebas unitarias de los correspondientes archivos de los paquetes del proyecto.
+
+```bash
+└── tests
+    ├── calculos
+    │   └── suma_test.go
+    └── controllers
+        └── usuario_test.go
+```
 
 ![Prueba Unitaria 01](/pruebas_unitarias_api_beego/img/test_02.png)
 
-Este archivo contendrá la siguiente prueba unitaria:
+El archivo *suma_test.go* contendrá la siguiente prueba unitaria:
 
 
 ```golang
