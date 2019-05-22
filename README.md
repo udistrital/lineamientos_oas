@@ -3,7 +3,7 @@
 Este repositorio es un conglomerado de buenas prácticas, lineamientos, configuraciones a realizar en el entorno de desarrollo de las nuevas tecnologias de la Oficina Asesora de Sistemas (OAS)
 
 ***
-## 1. Instalación de Herramientas
+## 1. Instalación de Herramientas :wrench:
 
 > ### En PC Local
 - [Instalación Golang](/instalacion_de_herramientas/golang.md)
@@ -13,23 +13,23 @@ Este repositorio es un conglomerado de buenas prácticas, lineamientos, configur
 - [Instalación pgModeler](/instalacion_de_herramientas/pgmodeler.md)
 - Instalar Cliente
 
-> ### En Ambiente Dockerizado
+> ### En Ambiente Dockerizado :whale:
 - [lineamiento](/instalacion_de_herramientas/dockerizacion.md)
 
 ***
-## 2. Repositorios Institucionales
+## 2. Repositorios Institucionales :herb:
 
 - [Lineamientos](/repositorios_institucionales/lineamientos.md)
 - [Contenido README](/repositorios_institucionales/contenido_readme.md)
 - [.gitignore](/repositorios_institucionales/gitignore.md)
 
 ***
-## 3. Modelos de datos
+## 3. Modelos de datos :floppy_disk:
 
 - [Lineamientos](/modelo_de_datos/estandar.md)
 
 ***
-## 4. Apis Beego OAS
+## 4. Apis Beego OAS :mortar_board:
 
 > ### Generación de API CRUD
 
@@ -50,7 +50,7 @@ Este repositorio es un conglomerado de buenas prácticas, lineamientos, configur
 - [Generar Reglas de Negocio-(Falta)]()
 
 ***
-## 5. Pruebas Unitarias API Beego
+## 5. Pruebas Unitarias API Beego :mag:
 
 - [Lineamientos](/pruebas_unitarias_api_beego/unit_test_beego.md)
 
