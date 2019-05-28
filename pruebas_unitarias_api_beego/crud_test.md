@@ -2,7 +2,9 @@
 
 ## Requisitos
 
-Contamos con una API creada según lineamiento [Generar API Beego](/generacion_de_apis/generar_api.md), para propósitos de este ejercicio se ha creado el API  [api_beego_request](https://github.com/udistrital/api_beego_request)
+- Contar con una API creada según los lineamiento de la oas y que se especifican en este enlace [Generar API Beego](/generacion_de_apis/generar_api.md)
+
+- Para propósitos de este ejercicio se ha creado el API  [api_beego_request](https://github.com/udistrital/api_beego_request)
 
 ## Test de Funcinalidades
 
@@ -35,7 +37,7 @@ El archivo *suma_test.go* contendrá la siguiente prueba unitaria:
 
 
 ```golang
-package test
+package controllers
 
 import (
 	"testing"
@@ -46,7 +48,7 @@ import (
 func TestResta(t *testing.T) {
 	valor := controllers.Resta(4, 2)
 	if valor != 2 {
-		t.Error("Se espera 4 y es obtuvo", valor)
+		t.Error("Se espera 4 y se obtuvo", valor)
 		t.Fail()
 	} else {
 		t.Log("TestResta Finalizado Correctamente (OK)")
@@ -72,7 +74,7 @@ Y su respectivo paquete de pruebas
 ![Prueba Unitaria 01](/pruebas_unitarias_api_beego/img/test_04.png)
 
 ```golang
-package test
+package calculos
 import (
 	"testing"
 
@@ -82,7 +84,7 @@ import (
 func TestSuma(t *testing.T) {
 	valor := calculos.Suma(2, 2)
 	if valor != 4 {
-		t.Error("Se espera 4 y es obtuvo", valor)
+		t.Error("Se espera 4 y se obtuvo", valor)
 		t.Fail()
 	} else {
 		t.Log("TestSuma Finalizado Correctamente (OK)")
