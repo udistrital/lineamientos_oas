@@ -60,7 +60,7 @@ Este repositorio es un conglomerado de buenas prácticas, lineamientos, configur
 
 > ### Pruebas Unitarias API MID
 
-- [Pruebas Unitarias en API MID-(Falta)]()
+- [Pruebas Unitarias en API MID](/pruebas_unitarias_api_beego/test_mid.md)
 
 ***
 ## 6. Generación clientes

@@ -3,7 +3,6 @@
 ## Requisitos
 
 - Contar con una API creada según los lineamiento de la oas y que se especifican en este enlace [Generar API Beego](/generacion_de_apis/generar_api.md)
-
 - Para propósitos de este ejercicio se ha creado el API  [api_beego_request](https://github.com/udistrital/api_beego_request)
 
 ## Test de Funcinalidades
