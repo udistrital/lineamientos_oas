@@ -82,3 +82,8 @@ Este repositorio es un conglomerado de buenas prácticas, lineamientos, configur
 ## 9. Integración con WSO2IS
 
 - Lineamientos
+
+***
+## 10. Integración Continua (CI)
+
+- Lineamientos
