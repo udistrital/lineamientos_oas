@@ -48,9 +48,9 @@ Este proceso se realiza solo para apis de tipo CRUD
               	m.SQL("DROP SCHEMA convenios;")
         }
   ```
-3. Una vez creados todos los ficheros necesarios,  correr el comando **bee migrate -driver=postgres -conn="postgres://my_user:my_pass@my_host:my_port/my_db?sslmode=disable"**
+3. Una vez creados todos los ficheros necesarios,  correr el comando **bee migrate -driver=postgres -conn="postgres://my_user:my_pass@my_host:my_port/my_db?sslmode=disable&search_path=nombre_schema"**
   ```bash
-  bee migrate -driver=postgres -conn="postgres://my_user:my_pass@my_host:my_port/my_db?sslmode=disable"
+  bee migrate -driver=postgres -conn="postgres://my_user:my_pass@my_host:my_port/my_db?sslmode=disable&search_path=nombre_schema"
   ```
 ## Recomendaciones
 
