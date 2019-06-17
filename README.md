@@ -37,6 +37,7 @@ Este repositorio es un conglomerado de buenas prácticas, lineamientos, configur
 - [Generar Logs en API Beego](/generacion_de_apis/logs_api.md)
 - [Configurar Respuestas Json en API Beego](/generacion_de_apis/json_api.md)
 - [Migrar Modelo de API a bd Nuevas](/generacion_de_apis/migrar.md)
+- [Beego Migrations](/generacion_de_apis/beego_migrations.md)
 
 > ### Generación API MID
 
