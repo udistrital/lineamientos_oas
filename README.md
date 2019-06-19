@@ -42,7 +42,7 @@ Este repositorio es un conglomerado de buenas prácticas, lineamientos, configur
 > ### Generación API MID
 
 - [Lineamiento API MID](/generacion_de_apis/api_mid.md)
-- [Generar API MID](/generacion_de_apis/crear_api_mid.md)
+- [Generar API MID](/generacion_de_apis/create_api_mid.md)
 - [Contol de Errores API MID-(Falta)]()
 
 
