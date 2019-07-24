@@ -31,7 +31,7 @@ Este repositorio es un conglomerado de buenas prácticas, lineamientos, configur
 ***
 ## 4. Apis Beego OAS :mortar_board:
 
-> ### Generación de API CRUD
+> ### Generación API CRUD
 
 - [Generar API Beego](/generacion_de_apis/generar_api.md)
 - [Configurar Respuestas Json en API Beego](/generacion_de_apis/json_api.md)
@@ -46,9 +46,9 @@ Este repositorio es un conglomerado de buenas prácticas, lineamientos, configur
 
 > ### Configuraciones Utilidades
 
+- [Generar Logs en API Beego](/generacion_de_apis/logs_api.md)
 - [Migrar Modelo de API a bd Nuevas](/generacion_de_apis/migrar.md)
 - [Beego Migrations](/generacion_de_apis/beego_migrations.md)
-- [Generar Logs en API Beego](/generacion_de_apis/logs_api.md)
 
 
 > ### Generación Reglas de Negocio (RULE)
