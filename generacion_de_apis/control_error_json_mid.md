@@ -53,20 +53,31 @@ func getUserAgora(idUser int) (dataUser interface{}, outputError map[string]inte
 
 
 todo OK
+
 http://localhost:8081/v1/funcionalidad_mid/1
+
 ![00](/generacion_de_apis/img/control_error_mid_0.png)
 
 
+
 Parametro nulo
+
 http://localhost:8081/v1/funcionalidad_mid/aaaa
+
 ![01](/generacion_de_apis/img/control_error_mid_1.png)
 
 
+
 Id no existe
+
 http://localhost:8081/v1/funcionalidad_mid/15
+
 ![02](/generacion_de_apis/img/control_error_mid_2.png)
 
 
+
 Endpoint crud caido
+
 http://localhost:8081/v1/funcionalidad_mid/1
+
 ![03](/generacion_de_apis/img/control_error_mid_3.png)
