@@ -1,4 +1,4 @@
-# Configurar Respuestas Json en API Beego
+# Contol de Errores API CRUD
 
 En está sección se especificarán los ajustes pertinentes para que las API creadas en el framewor Beego respondan en JSON conforme a los estandares de la Oficina Asesora de Sistemas; esto con el fin de que no genere problemas al intregarse con el administrador de servicios WSO2.
 
