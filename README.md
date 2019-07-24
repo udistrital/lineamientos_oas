@@ -34,16 +34,21 @@ Este repositorio es un conglomerado de buenas prácticas, lineamientos, configur
 > ### Generación de API CRUD
 
 - [Generar API Beego](/generacion_de_apis/generar_api.md)
-- [Generar Logs en API Beego](/generacion_de_apis/logs_api.md)
 - [Configurar Respuestas Json en API Beego](/generacion_de_apis/json_api.md)
-- [Migrar Modelo de API a bd Nuevas](/generacion_de_apis/migrar.md)
-- [Beego Migrations](/generacion_de_apis/beego_migrations.md)
+
 
 > ### Generación API MID
 
 - [Lineamiento API MID](/generacion_de_apis/api_mid.md)
 - [Generar API MID](/generacion_de_apis/create_api_mid.md)
 - [Contol de Errores API MID-(Falta)]()
+
+
+> ### Configuraciones Utilidades
+
+- [Migrar Modelo de API a bd Nuevas](/generacion_de_apis/migrar.md)
+- [Beego Migrations](/generacion_de_apis/beego_migrations.md)
+- [Generar Logs en API Beego](/generacion_de_apis/logs_api.md)
 
 
 > ### Generación Reglas de Negocio (RULE)
