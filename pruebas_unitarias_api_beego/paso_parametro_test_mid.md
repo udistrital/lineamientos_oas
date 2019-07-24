@@ -4,7 +4,7 @@
 ## Requisitos
 
 - Contar con una API creada según los lineamiento de la oas y que se especifican en este enlace [Generar API MID Beego]()
-- Para propósitos de este ejercicio se ha creado el API MID [api_beego_request_mid]()
+- Para propósitos de este ejercicio se ha creado el API MID [api_beego_request_mid](https://github.com/udistrital/api_mid_beego_request)
 
 ## Paso de Parametros
 

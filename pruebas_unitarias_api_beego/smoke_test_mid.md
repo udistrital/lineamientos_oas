@@ -1,4 +1,4 @@
-## Smoke Testing
+# Smoke Testing
 
 ```go
 func TestEndPoint(t *testing.T) {
