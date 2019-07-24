@@ -34,14 +34,14 @@ Este repositorio es un conglomerado de buenas prácticas, lineamientos, configur
 > ### Generación API CRUD
 
 - [Generar API Beego](/generacion_de_apis/generar_api.md)
-- [Configurar Respuestas Json en API Beego](/generacion_de_apis/json_api.md)
+- [Contol de Errores API CRUD (Respuestas Json) ](/generacion_de_apis/json_api.md)
 
 
 > ### Generación API MID
 
 - [Lineamiento API MID](/generacion_de_apis/api_mid.md)
 - [Generar API MID](/generacion_de_apis/create_api_mid.md)
-- [Contol de Errores API MID-(Falta)]()
+- [Contol de Errores API MID (Respuestas Json)]()
 
 
 > ### Configuraciones Utilidades
