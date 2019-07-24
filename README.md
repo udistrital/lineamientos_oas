@@ -41,7 +41,7 @@ Este repositorio es un conglomerado de buenas prácticas, lineamientos, configur
 
 - [Lineamiento API MID](/generacion_de_apis/lineamiento_api_mid.md)
 - [Generar API MID](/generacion_de_apis/create_api_mid.md)
-- [Contol de Errores API MID (Respuestas Json)]()
+- [Contol de Errores API MID (Respuestas Json)](/generacion_de_apis/control_error_json_mid.md)
 
 
 > ### Configuraciones Utilidades
