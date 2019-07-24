@@ -1,4 +1,4 @@
-# Pruebas Unitarias API CRU
+# Pruebas Unitarias API CRUD
 
 ## Requisitos
 

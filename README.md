@@ -55,13 +55,14 @@ Este repositorio es un conglomerado de buenas prácticas, lineamientos, configur
 
 - [Lineamientos](/pruebas_unitarias_api_beego/unit_test_beego.md)
 
-> ### Pruebas Unitarias API CRU
+> ### Pruebas Unitarias API CRUD
 
-- [Pruebas Unitarias en API CRU](/pruebas_unitarias_api_beego/crud_test.md)
+- [Pruebas Unitarias en API CRUD](/pruebas_unitarias_api_beego/crud_test.md)
 
 > ### Pruebas Unitarias API MID
 
-- [Pruebas Unitarias en API MID](/pruebas_unitarias_api_beego/test_mid.md)
+- [Paso de Parametros en Test API MID](/pruebas_unitarias_api_beego/paso_parametro_test_mid.md)
+- [Smoke Testing API MID](/pruebas_unitarias_api_beego/smoke_test_mid.md)
 
 ***
 ## 6. Generación clientes
