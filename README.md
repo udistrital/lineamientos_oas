@@ -24,12 +24,20 @@ Este repositorio es un conglomerado de buenas prácticas, lineamientos, configur
 - [.gitignore](/repositorios_institucionales/gitignore.md)
 
 ***
-## 3. Modelos de datos :floppy_disk:
+## 3. Arquitectura de Aplicaciones :bank:
+
+La arquitectura definida para los sistemas en desarrollo en la OAS es módelo por microservicios.
+
+- [Definición](https://github.com/udistrital/arquitectura_docs/tree/master/aplicaciones#micro-servicios-que-son)
+- [Lineamientos](https://github.com/udistrital/arquitectura_docs/tree/master/aplicaciones#lineamientos-generales-de-arquitectura)
+
+***
+## 4. Modelos de datos :floppy_disk:
 
 - [Lineamientos](/modelo_de_datos/estandar.md)
 
 ***
-## 4. Apis Beego OAS :mortar_board:
+## 5. Apis Beego OAS :mortar_board:
 
 > ### Generación API CRUD
 
@@ -56,7 +64,7 @@ Este repositorio es un conglomerado de buenas prácticas, lineamientos, configur
 - [Generar Reglas de Negocio-(Falta)]()
 
 ***
-## 5. Pruebas Unitarias API Beego :mag:
+## 6. Pruebas Unitarias API Beego :mag:
 
 - [Lineamientos](/pruebas_unitarias_api_beego/unit_test_beego.md)
 
@@ -70,26 +78,26 @@ Este repositorio es un conglomerado de buenas prácticas, lineamientos, configur
 - [Smoke Testing API MID](/pruebas_unitarias_api_beego/smoke_test_mid.md)
 
 ***
-## 6. Generación clientes
+## 7. Generación clientes
 
 - Lineamientos
 - Calidad
 
 ***
-## 7. Pruebas Unitarias de Clientes
+## 8. Pruebas Unitarias de Clientes
 
 - Lineamientos
 
 ***
-## 8. Integración con WSO2AM
+## 9. Integración con WSO2AM
 - Lineamientos
 
 ***
-## 9. Integración con WSO2IS
+## 10. Integración con WSO2IS
 
 - Lineamientos
 
 ***
-## 10. Integración Continua (CI)
+## 11. Integración Continua (CI)
 
 - Lineamientos
