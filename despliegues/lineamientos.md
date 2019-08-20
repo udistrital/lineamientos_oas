@@ -1,4 +1,4 @@
-## Despliegue en Ambiente de desarrollo ##
+## Despliegue en Ambiente de Desarrollo ##
 
     Este ambiente es de responsabilidad del grupo de desarrollo
     Pre requisitos para el despliegue:
