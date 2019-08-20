@@ -89,15 +89,5 @@ La arquitectura definida para los sistemas en desarrollo en la OAS es módelo po
 - Lineamientos
 
 ***
-## 9. Integración con WSO2AM
-- Lineamientos
-
-***
-## 10. Integración con WSO2IS
-
-- Lineamientos
-
-***
-## 11. Integración Continua (CI)
-
-- Lineamientos
+## 9. Despliegues
+- [Lineamientos](/despliegues/lineamientos.md)
