@@ -6,31 +6,33 @@
       Refactor de APIS
 
   - Pasos para el despliegues APIS o Clientes nuevos:
-      1. Registrar job en Jenkins **(Líder de Desarrollo)**
-      2. Solicitar Registro de Variables de Entorno en Servidor de Ambiente de Desarrollo  a Grupo de Infraestructura **(Líder de Desarrollo o Grupo de Desarrollo)**
-      3. Registrar Variables de Entorno en Servidor de Ambiente de Desarrollo **(Grupo de Infraestructura)**
-      4. Hacer commit en rama dev del repositorio con Swagger actualizado **(Grupo de Desarrollo)**
-      5. Correr Job de Jenkins de acuerdo al tipo de api o cliente **(Líder de Desarrollo o Grupo de Desarrollo)**:
-              Si el api es de tipo CRUD y tiene Beego migrations correr el job golang_api
-              Si el api es de tipo CRUD y no tiene Beego migrations correr el job golang_api_no_migration
-              Si el api es de tipo MID correr el job golang_api_no_migration
-              Si es un cliente angularjs, crear un job basado en otro job de angularjs (titan_cliente, argo_cliente, etc)
-              Si es un cliente angular, crear un job basado en otro job de angular (configuracion_cliente, presupuesto_cliente, etc)
-      6. Registro en WSO2 **(Líder de Desarrollo)**:
+    1. Registrar job en Jenkins **(Líder de Desarrollo)**
+    2. Solicitar Registro de Variables de Entorno en Servidor de Ambiente de Desarrollo  a Grupo de Infraestructura **(Líder de Desarrollo o Grupo de Desarrollo)**
+    3. Registrar Variables de Entorno en Servidor de Ambiente de Desarrollo **(Grupo de Infraestructura)**
+    4. Hacer commit en rama dev del repositorio con Swagger actualizado **(Grupo de Desarrollo)**
+    5. Correr Job de Jenkins de acuerdo al tipo de api o cliente **(Líder de Desarrollo o Grupo de Desarrollo)**:
+
+          * Si el api es de tipo CRUD y tiene Beego migrations correr el job golang_api
+          * Si el api es de tipo CRUD y no tiene Beego migrations correr el job golang_api_no_migration
+          * Si el api es de tipo MID correr el job golang_api_no_migration
+          * Si es un cliente angularjs, crear un job basado en otro job de angularjs (titan_cliente, argo_cliente, etc)
+          * Si es un cliente angular, crear un job basado en otro job de angular (configuracion_cliente, presupuesto_cliente, etc)
+
+   6. Registro en WSO2 **(Líder de Desarrollo)**:
               Si es un nuevo cliente:
                 Registrar Cliente en WSO2IS local
                 Crear Aplicación en WSO2AM local
                 Asociar APIS a la aplicación creada
-      7. Registrar el client_id en la configuración del cliente  **(Líder de Desarrollo o Grupo de Desarrollo)**
+   7. Registrar el client_id en la configuración del cliente  **(Líder de Desarrollo o Grupo de Desarrollo)**
 
   - Pasos para el despliegues APIS o Clientes existentes:
 
     1. Hacer commit en rama dev del repositorio **(Grupo de Desarrollo)**
     2. Correr Job de Jenkins de acuerdo al tipo de api o cliente **(Líder de Desarrollo o Grupo de Desarrollo)**:
-              Si el api es de tipo CRUD y tiene Beego migrations correr el job golang_api
-              Si el api es de tipo CRUD y no tiene Beego migrations correr el job golang_api_no_migration
-              Si el api es de tipo MID correr el job golang_api_no_migration  
-              Si es un cliente angular correr el job creado en el paso de despliegues nuevos
+        * Si el api es de tipo CRUD y tiene Beego migrations correr el job golang_api
+        * Si el api es de tipo CRUD y no tiene Beego migrations correr el job golang_api_no_migration
+        * Si el api es de tipo MID correr el job golang_api_no_migration  
+        * Si es un cliente angular correr el job creado en el paso de despliegues nuevos
 
 
   ## Despliegue en Ambiente de Pruebas ##
