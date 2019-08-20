@@ -29,6 +29,7 @@
 
 1. Hacer commit en rama dev del repositorio **(Grupo de Desarrollo)**
 2. Correr Job de Jenkins de acuerdo al tipo de api o cliente **(Líder de Desarrollo o Grupo de Desarrollo)**:
+
         * Si el api es de tipo CRUD y tiene Beego migrations correr el job golang_api
         * Si el api es de tipo CRUD y no tiene Beego migrations correr el job golang_api_no_migration
         * Si el api es de tipo MID correr el job golang_api_no_migration  
