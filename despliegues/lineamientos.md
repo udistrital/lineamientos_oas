@@ -5,7 +5,7 @@
       Definición de Swagger actualizado en repositorio de GITHUB
       Refactor de APIS
 
-### Pasos para el despliegues APIS o Clientes nuevos ###
+### Pasos para el despliegue de APIS o Clientes nuevos ###
 1. Registrar job en Jenkins **(Líder de Desarrollo)**
 2. Solicitar Registro de Variables de Entorno en Servidor de Ambiente de Desarrollo  a Grupo de Infraestructura **(Líder de Desarrollo o Grupo de Desarrollo)**
 3. Registrar Variables de Entorno en Servidor de Ambiente de Desarrollo **(Grupo de Infraestructura)**
@@ -25,7 +25,7 @@
                 Asociar APIS a la aplicación creada
 7. Registrar el client_id en la configuración del cliente  **(Líder de Desarrollo o Grupo de Desarrollo)**
 
-### Pasos para el despliegues APIS o Clientes existentes ###
+### Pasos para el despliegue de APIS o Clientes existentes ###
 
 1. Hacer commit en rama dev del repositorio **(Grupo de Desarrollo)**
 2. Correr Job de Jenkins de acuerdo al tipo de api o cliente **(Líder de Desarrollo o Grupo de Desarrollo)**:
@@ -41,7 +41,7 @@
       Refactor de APIS
       Fichero .drone.yml actualizado de acuerdo a la necesidad
 
-### Pasos para el despliegues de APIS o Clientes nuevos ###
+### Pasos para el despliegue de APIS o Clientes nuevos ###
 1. Crear Fichero .drone.yml de acuerdo a la necesidad **(Líder de Desarrollo o Grupo de Desarrollo)**
 2. Registrar Variables de Entorno en repositorio de Tuleap **(Líder de Desarrollo o Grupo de Desarrollo)**
 3. Solicitar registro de despliegue en Drone **(Líder de Desarrollo o Grupo de Desarrollo)**
@@ -61,7 +61,7 @@
             Pruebas Funcionales **(Grupo de Soporte)**
             Pruebas de Usuario  **(Centro de Servicios)**
 
-### Pasos para el despliegues de APIS o Clientes existentes ###
+### Pasos para el despliegue de APIS o Clientes existentes ###
 1. Actualizar Fichero .drone.yml de ser necesario **(Líder de Desarrollo o Grupo de Desarrollo)**
 2. Actualizar Variables de Entorno en repositorio de Tuleap de ser necesario **(Líder de Desarrollo o Grupo de Desarrollo)**
 3. Solicitar actualización de registro de despliegue en Drone de ser necesario **(Líder de Desarrollo o Grupo de Desarrollo)**
@@ -93,7 +93,7 @@
             Pruebas de Usuario  **(Centro de Servicios)**
 
 
-### Pasos para el despliegues de APIS o Clientes nuevos ###
+### Pasos para el despliegue de APIS o Clientes nuevos ###
 1. Crear Fichero .drone.yml de acuerdo a la necesidad **(Líder de Desarrollo o Grupo de Desarrollo)**
 2. Registrar Variables de Entorno en repositorio de Tuleap **(Líder de Desarrollo o Grupo de Desarrollo)**
 3. Solicitar registro de despliegue en Drone **(Líder de Desarrollo o Grupo de Desarrollo)**
@@ -109,7 +109,7 @@
 9. Solicitar Creación en  BD **(Grupo de Arquitectura)**
 10. Realizar Creación de BD **(Grupo de DBA)**
 
-### Pasos para el despliegues de APIS o Clientes existentes ###
+### Pasos para el despliegue de APIS o Clientes existentes ###
 1. Actualizar Fichero .drone.yml de ser necesario **(Líder de Desarrollo o Grupo de Desarrollo)**
 2. Actualizar Variables de Entorno en repositorio de Tuleap de ser necesario **(Líder de Desarrollo o Grupo de Desarrollo)**
 3. Solicitar actualización de registro de despliegue en Drone de ser necesario **(Líder de Desarrollo o Grupo de Desarrollo)**
