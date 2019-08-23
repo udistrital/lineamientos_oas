@@ -69,7 +69,6 @@
 4. Actualizar despliegue en Drone de ser necesario **(Grupo de Infraestructura)**
 5. Solicitar Registro en WSO2 de ser necesario **(Líder de Desarrollo)**          
 6. Actualizar Registro en WSO2 de ser necesario **(Grupo de Arquitectura)**
-      Si es un nuevo cliente:
         Registrar Cliente en WSO2IS local
         Crear Aplicación en WSO2AM local
         Asociar APIS a la aplicación creada
@@ -101,11 +100,10 @@
 4. Registrar despliegue en Drone **(Grupo de Infraestructura)**
 5. Solicitar Registro en WSO2 **(Líder de Desarrollo)**          
 6. Realizar Registro en WSO2 **(Grupo de Arquitectura)**
-                  Si es un nuevo cliente:
                     Registrar Cliente en WSO2IS local
                     Crear Aplicación en WSO2AM local
                     Asociar APIS a la aplicación creada
-7. Hacer PR a rama test del repositorio **(Líder de Desarrollo)**
+7. Hacer PR a rama master del repositorio **(Líder de Desarrollo)**
 8. Verificar PR **(Grupo de Arquitectura)**
 9. Solicitar Creación en  BD **(Grupo de Arquitectura)**
 10. Realizar Creación de BD **(Grupo de DBA)**
@@ -117,11 +115,7 @@
 4. Actualizar despliegue en Drone de ser necesario **(Grupo de Infraestructura)**
 5. Solicitar Registro en WSO2 de ser necesario **(Líder de Desarrollo)**          
 6. Actualizar Registro en WSO2 de ser necesario **(Grupo de Arquitectura)**
-          Si es un nuevo cliente:
-           Registrar Cliente en WSO2IS local
-                  Crear Aplicación en WSO2AM local
-                  Asociar APIS a la aplicación creada
-7. Hacer PR a rama test del repositorio **(Líder de Desarrollo)**
+7. Hacer PR a rama master del repositorio **(Líder de Desarrollo)**
 8. Verificar PR **(Grupo de Arquitectura)**
 9. Solicitar Actualización en  BD **(Grupo de Arquitectura)**
 10. Realizar Actualización de BD **(Grupo de DBA)**
