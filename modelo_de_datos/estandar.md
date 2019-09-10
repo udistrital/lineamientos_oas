@@ -92,7 +92,11 @@ Las columnas deben ser nombradas según los lineamientos a continuación:
 - Se debe incluir el campo **fecha_modificacion** de tipo *timestamp*, el cual indica el día y hora de la ultima modificación que se realizó al registro, en caso que el registro apenas este ingresando, este valor debe ser el mismo del campo *fecha_creacion*.
 
     ![fechas Tabla](/modelo_de_datos/img/fechas_tablas.png)
-    
+
+- Para los campos que se referencian tablas de otros esquemas, se debe incluir el sufijo **_id** y en un mensaje junto a la tabla indicar con que esquema, tabla y campo se referencia.
+
+    ![fechas Tabla](/modelo_de_datos/img/relacion_otros_esquemas.png)
+
 ## Claves primarias
 
 La clave primaria es un conjunto de campos que identifica de forma única un registro en una tabla, debe entenderse que no es igual al concepto de columna cuya nomenclatura se explica en el punto 6. Son un caso particular de un índice, la nomenclatura para la restricción de este índice debe hacerse usando el nombre de la tabla, anteponiendo el prefijo pk y guión bajo.
