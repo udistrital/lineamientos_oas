@@ -16,7 +16,7 @@ Pre requisitos para el despliegue:
 
 No |Actividad | Responsable
 ------------ | ------------- | -------------
-1 | Registrar job en Jenkins  | Líder de Desarrollo)
+1 | Registrar job en Jenkins  | Líder de Desarrollo
 2 | Solicitar Registro de Variables de Entorno en Servidor de Ambiente de Desarrollo  a Grupo de Infraestructura | Líder de Desarrollo o Grupo de Desarrollo
 3 | Registrar Variables de Entorno en Servidor de Ambiente de Desarrollo |Grupo de Infraestructura
 4 | Hacer commit en rama **dev** del repositorio con Swagger actualizado |Grupo de Desarrollo
@@ -102,40 +102,46 @@ No |Actividad | Responsable
 
 ## Despliegue en Ambiente de Producción (master)
 
-    Para el paso a este ambiente se tienen los siguientes pre requisitos:
-        Definición de Swagger actualizado en repositorio de GITHUB
-        Refactor de APIS
-        Fichero .drone.yml actualizado de acuerdo a la necesidad
-        Resultado correcto de pruebas realizadas:
-            Pruebas Unitarias **(Líder de Desarrollo)**
-            Pruebas de Carga  **(Líder de Seguridad)**
-            Pruebas Funcionales **(Grupo de Soporte)**
-            Pruebas de Usuario  **(Centro de Servicios)**
+Para el paso a este ambiente se tienen los siguientes pre requisitos:
+- Definición de Swagger actualizado en repositorio de GITHUB
+- Refactor de APIS
+- Fichero .drone.yml actualizado de acuerdo a la necesidad
+- Resultado correcto de pruebas realizadas:
+    - Pruebas Unitarias **(Líder de Desarrollo)**
+    - Pruebas de Carga  **(Líder de Seguridad)**
+    - Pruebas Funcionales **(Grupo de Soporte)**
+    - Pruebas de Usuario  **(Centro de Servicios)**
+
+### Pasos para el Despliegue de APIS o Clientes Nuevos
+
+No |Actividad | Responsable
+------------ | ------------- | -------------
+1 | Crear Fichero .drone.yml de acuerdo a la necesidad | Líder de Desarrollo o Grupo de Desarrollo
+2 | Registrar Variables de Entorno en repositorio de Tuleap  | Líder de Desarrollo o Grupo de Desarrollo
+3 | Solicitar registro de despliegue en Drone | Líder de Desarrollo o Grupo de Desarrollo
+4 | Registrar despliegue en Drone | Grupo de Infraestructura
+5 | Solicitar Registro en WSO2 | Líder de Desarrollo
+6 | Realizar Registro en WSO2 | Grupo de Arquitectura
+6.1 | Registrar Cliente en WSO2IS local |
+6.2 | Crear Aplicación en WSO2AM local |
+6.3 | Asociar APIS a la aplicación creada |
+7 | Hacer PR a rama master del repositorio  | Líder de Desarrollo
+8 | Verificar PR | Grupo de Arquitectura
+9 | Solicitar Creación en BD| Grupo de Arquitectura
+10 | Realizar Creación de BD| Grupo de DBA
 
 
-### Pasos para el despliegue de APIS o Clientes nuevos ###
-1. Crear Fichero .drone.yml de acuerdo a la necesidad **(Líder de Desarrollo o Grupo de Desarrollo)**
-2. Registrar Variables de Entorno en repositorio de Tuleap **(Líder de Desarrollo o Grupo de Desarrollo)**
-3. Solicitar registro de despliegue en Drone **(Líder de Desarrollo o Grupo de Desarrollo)**
-4. Registrar despliegue en Drone **(Grupo de Infraestructura)**
-5. Solicitar Registro en WSO2 **(Líder de Desarrollo)**          
-6. Realizar Registro en WSO2 **(Grupo de Arquitectura)**
-                    Registrar Cliente en WSO2IS local
-                    Crear Aplicación en WSO2AM local
-                    Asociar APIS a la aplicación creada
-7. Hacer PR a rama master del repositorio **(Líder de Desarrollo)**
-8. Verificar PR **(Grupo de Arquitectura)**
-9. Solicitar Creación en  BD **(Grupo de Arquitectura)**
-10. Realizar Creación de BD **(Grupo de DBA)**
+### Pasos para el Despliegue de APIS o Clientes Existentes
 
-### Pasos para el despliegue de APIS o Clientes existentes ###
-1. Actualizar Fichero .drone.yml de ser necesario **(Líder de Desarrollo o Grupo de Desarrollo)**
-2. Actualizar Variables de Entorno en repositorio de Tuleap de ser necesario **(Líder de Desarrollo o Grupo de Desarrollo)**
-3. Solicitar actualización de registro de despliegue en Drone de ser necesario **(Líder de Desarrollo o Grupo de Desarrollo)**
-4. Actualizar despliegue en Drone de ser necesario **(Grupo de Infraestructura)**
-5. Solicitar Registro en WSO2 de ser necesario **(Líder de Desarrollo)**          
-6. Actualizar Registro en WSO2 de ser necesario **(Grupo de Arquitectura)**
-7. Hacer PR a rama master del repositorio **(Líder de Desarrollo)**
-8. Verificar PR **(Grupo de Arquitectura)**
-9. Solicitar Actualización en  BD **(Grupo de Arquitectura)**
-10. Realizar Actualización de BD **(Grupo de DBA)**
+No |Actividad | Responsable
+------------ | ------------- | -------------
+1 | Actualizar Fichero .drone.yml de acuerdo a la necesidad | Líder de Desarrollo o Grupo de Desarrollo
+2 | Actualizar Variables de Entorno en repositorio de Tuleap  | Líder de Desarrollo o Grupo de Desarrollo
+3 | Solicitar actualización de despliegue en Drone | Líder de Desarrollo o Grupo de Desarrollo
+4 | Actualizar despliegue en Drone de ser necesario | Grupo de Infraestructura
+5 | Solicitar Registro en WSO2 de ser necesario | Líder de Desarrollo
+6 | Actualizar Registro en WSO2  de ser necesario | Grupo de Arquitectura
+7 | Hacer PR a rama master del repositorio  | Líder de Desarrollo
+8 | Verificar PR | Grupo de Arquitectura
+9 | Solicitar Actualización en BD| Grupo de Arquitectura
+10 | Realizar Actualización de BD| Grupo de DBA
