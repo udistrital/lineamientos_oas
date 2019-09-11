@@ -27,7 +27,10 @@ No |Actividad | Responsable
 5.4 | Si es un cliente angularjs, crear un job basado en otro job de angularjs (titan_cliente, argo_cliente, etc) |
 5.5 | Si es un cliente angular, crear un job basado en otro job de angular (configuracion_cliente, presupuesto_cliente, etc) |
 6 | Registro en WSO2 |Líder de Desarrollo
-6.1 |Si es un nuevo cliente: Registrar Cliente en WSO2IS local Crear Aplicación en WSO2AM local Asociar APIS a la aplicación creada |
+6.1 | Si es un nuevo cliente:|
+6.1.1 | Registrar Cliente en WSO2IS local |
+6.1.2 | Crear Aplicación en WSO2AM local |
+6.1.3 |Asociar APIS a la aplicación creada |
 7 | Registrar el client_id en la configuración del cliente  |Líder de Desarrollo o Grupo de Desarrollo
 
 ### Pasos para el Despliegue de APIS o Clientes Existentes ###
