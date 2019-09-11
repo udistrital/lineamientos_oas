@@ -5,7 +5,7 @@ En esta sección se definirán los requisitos mínimos para el despliegue de sof
 
 ## Despliegue en Ambiente de Desarrollo (dev)
 
-Este ambiente es de responsabilidad del grupo de desarrollo.
+Este ambiente es de responsabilidad y uso exclusivo del grupo de desarrollo.
 
 Pre requisitos para el despliegue:
 
@@ -43,12 +43,27 @@ No |Actividad | Responsable
 
 
 ## Despliegue en Ambiente de Pruebas (test)
-    Para el paso a este ambiente se tienen los siguientes pre requisitos:
-      Definición de Swagger actualizado en repositorio de github
-      Refactor de APIS
-      Fichero .drone.yml actualizado de acuerdo a la necesidad
 
-### Pasos para el despliegue de APIS o Clientes nuevos ###
+Este ambiente es responsabilidad del grupo de desarrollo e infraestrutura. De uso compartido por el Grupo de Desarrollo, Grupo de Infraestructura, Grupo QA, Grupo de Seguridad y el clientes.
+
+Para el paso a este ambiente se tienen los siguientes pre requisitos:
+
+- Definición de Swagger actualizado en repositorio de github
+- Refactor de APIS
+- Fichero .drone.yml actualizado de acuerdo a la necesidad
+
+### Pasos para el Despliegue de APIS o Clientes Nuevos ###
+
+No |Actividad | Responsable
+------------ | ------------- | -------------
+1 | h | h
+1 | h | h
+1 | h | h
+1 | h | h
+1 | h | h
+
+
+
 1. Crear Fichero .drone.yml de acuerdo a la necesidad **(Líder de Desarrollo o Grupo de Desarrollo)**
 2. Registrar Variables de Entorno en repositorio de Tuleap **(Líder de Desarrollo o Grupo de Desarrollo)**
 3. Solicitar registro de despliegue en Drone **(Líder de Desarrollo o Grupo de Desarrollo)**
