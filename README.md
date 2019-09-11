@@ -33,12 +33,12 @@ La arquitectura definida para los sistemas en desarrollo en la OAS es módelo po
 - [Lineamientos](https://github.com/udistrital/arquitectura_docs/tree/master/aplicaciones#lineamientos-generales-de-arquitectura)
 
 ***
-## 4. Modelos de datos :floppy_disk:
+## 4. Modelos de Datos :floppy_disk:
 
 - [Lineamientos](/modelo_de_datos/estandar.md)
 
 ***
-## 5. Apis Beego OAS :mortar_board:
+## 5. APIS Beego :mortar_board:
 
 > ### Generación API CRUD
 
