@@ -1,7 +1,7 @@
 # Api mid
 En esta sección se mostrará como consolidar adecuadamente el Api mid
 
-## Orientación en Funciones
+## Orientado a Funciones
 Las **api_mid** están orientados a *interoperar con otras apis "consultar, agrupar, ordenar y exponer la información ya procesada que fue obtenida de las demás apis"*, Por ende, es apropiado **establecer al maximo funciones dedicadas** que luego seran expuesta en los servicios del mid.
 
 ## Ejemplo
