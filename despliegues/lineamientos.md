@@ -12,7 +12,7 @@ Pre requisitos para el despliegue:
 - Definición de Swagger actualizado en repositorio de GITHUB
 - Refactor de APIS
 
-### Pasos para el Despliegue de APIS o Clientes Nuevos ###
+### Pasos para el Despliegue de APIS o Clientes Nuevos
 
 No |Actividad | Responsable
 ------------ | ------------- | -------------
@@ -33,7 +33,7 @@ No |Actividad | Responsable
 6.1.3 |Asociar APIS a la aplicación creada |
 7 | Registrar el client_id en la configuración del cliente  |Líder de Desarrollo o Grupo de Desarrollo
 
-### Pasos para el Despliegue de APIS o Clientes Existentes ###
+### Pasos para el Despliegue de APIS o Clientes Existentes
 
 No |Actividad | Responsable
 ------------ | ------------- | -------------
@@ -55,7 +55,7 @@ Para el paso a este ambiente se tienen los siguientes pre requisitos:
 - Refactor de APIS
 - Fichero .drone.yml actualizado de acuerdo a la necesidad
 
-### Pasos para el Despliegue de APIS o Clientes Nuevos ###
+### Pasos para el Despliegue de APIS o Clientes Nuevos
 
 No |Actividad | Responsable
 ------------ | ------------- | -------------
@@ -82,31 +82,26 @@ No |Actividad | Responsable
 
 No |Actividad | Responsable
 ------------ | ------------- | -------------
-1 | h | h
-1 | h | h
-1 | h | h
-1 | h | h
-1 | h | h
+1 | Actualizar Fichero .drone.yml de ser necesario  | Líder de Desarrollo o Grupo de Desarrollo
+2 | Actualizar Variables de Entorno en repositorio de Tuleap de ser necesario | Líder de Desarrollo o Grupo de Desarrollo
+3 | Solicitar actualización de registro de despliegue en Drone de ser necesario | Líder de Desarrollo o Grupo de Desarrollo
+4 | Actualizar despliegue en Drone de ser necesario | Grupo de Infraestructura
+5 | Solicitar Registro en WSO2 de ser necesario | Líder de Desarrollo
+6 | Actualizar Registro en WSO2 de ser necesario  | Grupo de Arquitectura
+6.1 | Registrar Cliente en WSO2IS local |
+6.2 | Crear Aplicación en WSO2AM local |
+6.3 | Asociar APIS a la aplicación creada |
+7 | Hacer PR a rama test del repositorio | Líder de Desarrollo
+8 | Verificar PR | Grupo de Arquitectura
+9 | Solicitar Pruebas | Líder de Desarrollo
+10 | Realizar Pruebas |
+10.1 | Pruebas Unitarias | Líder de Desarrollo
+10.2 | Pruebas de Carga | Líder de Seguridad
+10.3 | Pruebas Funcionales | Grupo de Soporte
+10.4 | Pruebas de Usuario | Centro de Servicios
 
-1. Actualizar Fichero .drone.yml de ser necesario **(Líder de Desarrollo o Grupo de Desarrollo)**
-2. Actualizar Variables de Entorno en repositorio de Tuleap de ser necesario **(Líder de Desarrollo o Grupo de Desarrollo)**
-3. Solicitar actualización de registro de despliegue en Drone de ser necesario **(Líder de Desarrollo o Grupo de Desarrollo)**
-4. Actualizar despliegue en Drone de ser necesario **(Grupo de Infraestructura)**
-5. Solicitar Registro en WSO2 de ser necesario **(Líder de Desarrollo)**          
-6. Actualizar Registro en WSO2 de ser necesario **(Grupo de Arquitectura)**
-        Registrar Cliente en WSO2IS local
-        Crear Aplicación en WSO2AM local
-        Asociar APIS a la aplicación creada
-7. Hacer PR a rama test del repositorio **(Líder de Desarrollo)**
-8. Verificar PR **(Grupo de Arquitectura)**
-9. Solicitar Pruebas **(Líder de Desarrollo)**
-10. Realizar Pruebas
-          Pruebas Unitarias **(Líder de Desarrollo)**
-          Pruebas de Carga  **(Líder de Seguridad)**
-          Pruebas Funcionales **(Grupo de Soporte)**
-          Pruebas de Usuario  **(Centro de Servicios)**
+## Despliegue en Ambiente de Producción (master)
 
-## Despliegue en Ambiente de Producción ##
     Para el paso a este ambiente se tienen los siguientes pre requisitos:
         Definición de Swagger actualizado en repositorio de GITHUB
         Refactor de APIS
