@@ -5,3 +5,8 @@ En esta sección se definirán los requerimientos que todos los desarrollos de s
 Estos requerimiento serán evaluados y determinarán el paso a producción del desarrollo en caso de que cumplan con los criterios mínimos definidos.
 
 ## Check list
+
+No |Lineamiento | Documentación
+--- | --- | :---:
+1|Repositorios Institucionales|[link](https://github.com/udistrital/introduccion_oas#2-repositorios-institucionales-herb)
+[ ]|adsdsa|
