@@ -19,3 +19,5 @@ No |Lineamiento | Documentación
 3 | Pruebas Unitarias API Beego | [link](https://github.com/udistrital/introduccion_oas#6-pruebas-unitarias-api-beego-mag)
 3.1 | Pruebas Unitarias en API CRUD |
 3.2 | Pruebas Unitarias en API MID |
+4 | Análisis de Código Estatico SonarQube |
+4.1 | 0 Bugs <br> 0 Vulnerabilidades <br> Maximo 50 % de Duplications | 
