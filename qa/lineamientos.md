@@ -9,4 +9,7 @@ Estos requerimiento serán evaluados y determinarán el paso a producción del d
 No |Lineamiento | Documentación
 --- | --- | :---:
 1 | Repositorios Institucionales | [link](https://github.com/udistrital/introduccion_oas#2-repositorios-institucionales-herb)
-[x] item1|adsdsa | dfafs
+|Nombres para Repositorios y Branches |
+|Limpieza de Branches|
+|Contenido README|
+|.gitignore|
