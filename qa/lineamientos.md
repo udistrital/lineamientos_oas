@@ -4,7 +4,14 @@ En esta sección se definirán los requerimientos que todos los desarrollos de s
 
 Estos requerimiento serán evaluados y determinarán el paso a producción del desarrollo en caso de que cumplan con los criterios mínimos definidos.
 
-## Check list
+## Pruebas Funcionales
+
+
+## Pruebas no Funcionales
+
+### Calidad en el Código
+
+#### Check list
 
 No |Lineamiento | Documentación
 --- | --- | :---:
@@ -20,4 +27,7 @@ No |Lineamiento | Documentación
 3.1 | Pruebas Unitarias en API CRUD |
 3.2 | Pruebas Unitarias en API MID |
 4 | Análisis de Código Estatico SonarQube |
-4.1 | 0 Bugs <br> 0 Vulnerabilidades <br> Maximo 50 % de Duplications | 
+4.1 | 0 Bugs <br> 0 Vulnerabilidades <br> Maximo 50 % de Duplications |
+
+
+### Seguridad
