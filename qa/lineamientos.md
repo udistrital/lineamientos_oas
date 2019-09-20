@@ -5,13 +5,16 @@ En esta sección se definirán los requerimientos que todos los desarrollos de s
 Estos requerimiento serán evaluados y determinarán el paso a producción del desarrollo en caso de que cumplan con los criterios mínimos definidos.
 
 ## Pruebas Funcionales
-
+Busca ejecutar, revisar y retroalimentar el comportameinto previamente diseñado en el aplicacito.
 
 ## Pruebas no Funcionales
+Busca identificar problemas de desempeño y redimiento. Es un medio de control de calidad que incluye pruebas de: Rendimiento, Carga, Estrés, Usabilidad, Mantenibilidad, Fiabilidad o Portabilidad.
 
-### Calidad en el Código
+### Control de Código Fuente
+A continuación los controles que se realizan frente a la implementación de buenas prácticas y lineamientos en el código fuente de las aplicaciones OAS.
 
 #### Check list
+Todo desarrollo de software realizado o adquirido para la Oficina Asesora de sistemas deberá cumplir con los siguientes ítems.
 
 No |Lineamiento | Documentación
 --- | --- | :---:
@@ -29,6 +32,14 @@ No |Lineamiento | Documentación
 4 | Análisis de Código Estatico SonarQube |
 4.1 | 0 Bugs <br> 0 Vulnerabilidades <br> Maximo 50 % de Duplications |
 
+#### Análisis de Código Estático
+Es un proceso de inspección del software en busca de defectos. Para esta labor se implementa SonarQube que una herramienta de análisis estático que evalúa nuestro código fuente.
+
+#### Pruebas de carga
+Las pruebas de carga nos pueden brindar el rendimiento de un aplicativo bajo un cierto número de usuario concurrentes bajo un escenario.
+
+#### Pruebas de estrés
+Las prueba de estrés es llevar al límite la aplicación con un número de usuarios y ver cómo se comporta el aplicativo bajo este escenario.
 
 ### Seguridad
 A continuación las pruebas que se realizan en el ámbito de seguridad informática para las aplicaciones desarrolladas en la OAS.
