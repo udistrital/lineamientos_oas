@@ -31,3 +31,12 @@ No |Lineamiento | Documentación
 
 
 ### Seguridad
+A continuación las pruebas que se realizan en el ámbito de seguridad informática para las aplicaciones desarrolladas en la OAS.
+
+#### Evaluación de Vulnerabilidad (Vulnerability Assesmente)
+
+La evaluación de vulnerabilidades es el proceso de definición, identificación, clasificación y priorización de vulnerabilidades a nivel de sistemas computacionales, aplicaciones e infraestructura de red y proporcionar a la organización los conocimientos, la conciencia y los antecedentes de riesgo necesarios para comprender las amenazas en su entorno y reaccionar adecuadamente.
+
+#### Auditoria de Seguridad (Pentesting)
+
+El pentesting, auditoria de seguridad, hacking etico; Evalúa los niveles de seguridad de un sistema informático o red mediante la simulación, en un entorno controlado, de un ataque por parte de un usuario malicioso.
