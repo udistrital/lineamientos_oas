@@ -15,7 +15,7 @@ En esta sección se definirá los insumos que de debe suministrar  al equipo de 
 - Especificar el ambientes en que se encuentra alojados (Ambiente de pruebas, preproducción, producción)
 
 
-### Pruebas de rendimiento
+### Pruebas de Rendimiento
 
 - Listado de Usuario y contraseña por rol y módulo de acceso a la aplicación
 - LLaves de acceso (Access Token) de WSO2. Si la aplicación ya cuenta con autenticación

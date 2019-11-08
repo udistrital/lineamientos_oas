@@ -35,13 +35,15 @@ No |Lineamiento | Documentación
 #### Análisis de Código Estático
 Es un proceso de inspección del software en busca de defectos. Para esta labor se implementa SonarQube que una herramienta de análisis estático que evalúa nuestro código fuente.
 
+### Pruebas de Rendimiento
+
 #### Pruebas de carga
 Las pruebas de carga nos pueden brindar el rendimiento de un aplicativo bajo un cierto número de usuario concurrentes bajo un escenario.
 
 #### Pruebas de estrés
 Las prueba de estrés es llevar al límite la aplicación con un número de usuarios y ver cómo se comporta el aplicativo bajo este escenario.
 
-### Seguridad
+###  Pruebas de Seguridad
 A continuación las pruebas que se realizan en el ámbito de seguridad informática para las aplicaciones desarrolladas en la OAS.
 
 #### Evaluación de Vulnerabilidad (Vulnerability Assesmente)
