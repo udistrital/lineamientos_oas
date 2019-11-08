@@ -8,7 +8,9 @@ Estos requerimiento serán evaluados y determinarán el paso a producción del d
 Busca ejecutar, revisar y retroalimentar el comportameinto previamente diseñado en el aplicacito.
 
 ## Pruebas no Funcionales
-Busca identificar problemas de desempeño y redimiento. Es un medio de control de calidad que incluye pruebas de: Rendimiento, Carga, Estrés, Usabilidad, Mantenibilidad, Fiabilidad o Portabilidad.
+Busca identificar problemas de desempeño y rendimiento. Verifica un atributo o requisito para determinar la operación de un sistema.
+
+Es un medio de control de calidad que incluye pruebas de: Rendimiento, Carga, Estrés, Usabilidad, Mantenibilidad, Fiabilidad o Portabilidad.
 
 ### Control de Código Fuente
 A continuación los controles que se realizan frente a la implementación de buenas prácticas y lineamientos en el código fuente de las aplicaciones OAS.
