@@ -1,7 +1,7 @@
 # Requerimientos para Solicitud de Pruebas
 En esta sección se definirá los insumos que de debe suministrar  al equipo de calidad y seguridad para realizar las pruebas funcionales y no funcionales de cada uno de los desarrollos de software en el marco de la calidad de la Oficina Asesora de Sistemas (OAS).
 
-**Nota**: Este apartado requiere de la lectura del la sección  [Definición Aseguramiento de la Calidad (QA)](lineamientos.md)
+**Nota**: Este apartado requiere de la lectura del la sección  [Definición Aseguramiento de la Calidad (QA)](definicion.md)
 
 ## Pruebas no Funcionales
 
