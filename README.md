@@ -95,7 +95,8 @@ La arquitectura definida para los sistemas en desarrollo en la OAS es módelo po
 
 ***
 ## 10. Aseguramiento de la Calidad (QA)
-- [Lineamientos](/qa/lineamientos.md)
+- [Definición](/qa/lineamientos.md)
+- [Requerimientos para Solicitud de Pruebas ](/qa/requerimiento_pruebas.md)
 
 ***
 ## 11. Metodología
