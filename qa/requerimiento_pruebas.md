@@ -3,12 +3,12 @@ En esta sección se definirá los insumos que de debe suministrar  al equipo de 
 
 **Nota**: Este apartado requiere de la lectura del la sección  [Definición Aseguramiento de la Calidad (QA)](definicion.md)
 
-## Pruebas no Funcionales
+## Pruebas Funcionales
 
 - Historias de usuario por módulos
 - Manuales de usuario
 
-## Pruebas Funcionales
+## Pruebas no Funcionales
 
 ### Control de Código Fuente
 
