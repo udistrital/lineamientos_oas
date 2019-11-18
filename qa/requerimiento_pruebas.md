@@ -13,7 +13,7 @@ En esta sección se definirá los insumos que de debe suministrar  al equipo de 
 ### Control de Código Fuente
 
 - Repositorios institucionales que soporten la aplicación
-- Especificar los brancha de cada uno de los repositorios (dando cumplimiento al nombramiento de los branch)
+- Especificar los branch de cada uno de los repositorios (dando cumplimiento al nombramiento de los branch)
 - Especificar el ambientes en que se encuentra alojados (Ambiente de pruebas, preproducción, producción)
 
 
