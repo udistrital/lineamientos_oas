@@ -1,6 +1,6 @@
 # Contenido README
 
-En esta sección se establece los contenidos mínimos para la descriptivos para un repositorio Github para la OAS.
+En esta sección se establece los contenidos mínimos para la descriptivos de un repositorio Github para la OAS.
 
 
 ## Descripción del repo
@@ -8,10 +8,20 @@ Se debe especificar el propósito o la funcionalidad del repositorios en la desc
 
 ![Crear BD](/repositorios_institucionales/img/repo_03.png)
 
-## Ejecución
-Se debe especificar la forma de ejecutar dicho repositorio, instalar o implementar; como  se observa en la imagen siguiente:
+## Especificación Técnica
+Se debe documentar los aspecto técnicos del componente de software:
+- La forma de ejecutar dicho repositorio:
+- Las variables de entorno para la ejecución del aplicativo
+- Las variables de entorno para la ejecución de las pruebas unitarias
+- Información de tecnologias implementadas.
+- Requerimientos de software.
 
-![Crear BD](/repositorios_institucionales/img/repo_04.png)
+Como  se observa en la imagen siguiente:
+
+![Especificación Técnica](/repositorios_institucionales/img/repo_06.png)
+
+![Ejecución repo](/repositorios_institucionales/img/repo_04.png)
+
 
 ## Licencia
 Se debe definir la licencia del repositorio, como  se observa en la imagen siguiente:
