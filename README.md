@@ -1,4 +1,4 @@
-# Introducción OAS :eyeglasses:
+# Lineamientos OAS :eyeglasses:
 
 Este repositorio es un conglomerado de buenas prácticas, lineamientos, configuraciones a realizar en el entorno de desarrollo de las nuevas tecnologias de la Oficina Asesora de Sistemas (OAS)
 
