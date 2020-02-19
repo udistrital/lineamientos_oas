@@ -4,11 +4,11 @@ En está sección se establecerán las convenciones para los **nombres de reposi
 
 ## Nombre de Repositorios
 
-Se debe establecer inicialmente el nombre del negocio separado por un guión bajo ( _ ) seguido del nombre del contexto.
+1) Se debe establecer inicialmente el nombre del negocio separado por un guión bajo ( _ ) seguido del nombre del contexto.
 
-Todo el nombre debe estar en minúscula
+2) Todo el nombre debe estar en minúscula
 
-El contexto está dado por este el siguiente dominio:
+3) El contexto está dado por las siguientes opciones:
 - cliente
 - mid
 - crud
