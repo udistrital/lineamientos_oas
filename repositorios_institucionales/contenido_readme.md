@@ -50,3 +50,7 @@ La idea principal es brindar una introducción para los desarrolladores, devops 
 Se debe definir la licencia del repositorio, como  se observa en la imagen siguiente:
 
 ![Crear BD](/repositorios_institucionales/img/licencia.png)
+
+
+## Descargar README DEMO
+[README DEMO](/repositorios_institucionales/README_DEMO.md)
