@@ -8,6 +8,8 @@ Cada repositorio deberá contener su correspondiente archivo  Dockerfile y docke
 
 Esto con el propósito de que la aplicación se pueda ejecutar en un ambiente local por los desarrolladores y se pueda implementar en la Integración Continua.
 
+A continuación se mostrará la estructur de árbol del contenido de un repositorio donde se verá los archivos Dockerfile y docker-compose.yml en la raíz del repositorio, al mismo nivel que el archivo README.
+
 ```bash
 .
 ├── controllers
