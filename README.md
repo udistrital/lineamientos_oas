@@ -14,7 +14,7 @@ Este repositorio es un conglomerado de buenas prácticas, lineamientos, configur
 - Instalar Cliente
 
 > ### En Ambiente Dockerizado :whale:
-- [lineamiento](/instalacion_de_herramientas/dockerizacion.md)
+- [lineamiento](/ambientes_dockerizados/dockerizacion.md)
 
 ***
 ## 2. Repositorios Institucionales :herb:
