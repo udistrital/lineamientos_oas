@@ -1,8 +1,6 @@
-# novedades_crud
-novedades_crud, API crud con modelo relacional en postgresSQL, el proyecto está programado en el lenguaje Go y creado con el [framework beego](https://beego.me/).
+# nombrerepo_crud
 
-el api provee la gestion de las diferentes novedades que puedan ser creadas en el sistemas
-
+descripción repositorio o proposito - descripción repositorio o proposito -  descripción repositorio o proposito -  descripción repositorio o proposito - 
 
 ## Especificaciones Técnicas
 
