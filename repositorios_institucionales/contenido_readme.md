@@ -1,6 +1,6 @@
 # Contenido README
 
-En esta sección se establece los contenidos mínimos para la descriptivos de un repositorio Github para la OAS.
+En esta sección se establece los contenidos mínimos en el README para la descriptivos de un repositorio Github para la OAS.
 
 ```bash
 ├── Nombre de Repositorio
