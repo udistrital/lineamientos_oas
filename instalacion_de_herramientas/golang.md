@@ -1,4 +1,4 @@
-# Instalación Golan
+# Instalación Golang
 
 - Descargar código fuente de [https://golang.org/dl/](https://golang.org/dl/)
 

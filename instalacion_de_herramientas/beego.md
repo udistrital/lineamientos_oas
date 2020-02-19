@@ -1,8 +1,15 @@
 # Instalación Beego y Bee
 
-- Necesita una versión de [Go 1.1 + instalada](golang.md)
-- Necesita tener git instalado
+- Debe tener previamente instalado [Golang](golang.md)
+- Requiere tener git instalado
+  ```bash
+  # para SO basados en Debian
+  sudo apt-get install git
 
+  # Para SO basados en Red Hat
+  sudo yum install git -y
+  ```
+- Instalación Beego y Bee
   ```bash
   go get -u github.com/astaxie/beego
   go get -u github.com/beego/bee
