@@ -1,4 +1,4 @@
-# Migrar Modelo de API a bd nuevas con Beego Migrations
+# Migrar Modelo de API a BD Nuevas con Beego Migrations
 
 Este proceso se realiza solo para apis de tipo CRUD
 
