@@ -15,7 +15,7 @@ En esta sección se establece los contenidos mínimos en el README para la descr
 ```
 
 ## Nombre de Repositorio
-Se debe nombrar el repositorios de acuerdo al lineamiento del capítulo anterior [nombramiento de repositorios](nombre_branch_repos.md#nombre-de-repositorios)
+Se debe nombrar el repositorios de acuerdo al lineamiento del capítulo anterior [nombramiento de repositorios](nombre_repos.md#nombre-de-repositorios)
 
 ### Descripción del Repositorio
 Se debe especificar el propósito o la funcionalidad del repositorios en la descripción inicial, como  se observa en la imagen siguiente:
