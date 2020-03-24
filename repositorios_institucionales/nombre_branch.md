@@ -1,17 +1,3 @@
-# Nombres de Branch
+# Lineamiento Para Repositorios Institucionales
 
-Los nombres de los branch establecidos para el **Continuous Integration (CI)** son:
-- dev
-- test
-- master
-
-  ![Crear BD](/repositorios_institucionales/img/repo_02.png)
-
-### Branch dev (development)
-Branch dedicado al despliegue en la infraestructura local
-
-### Branch test (testing)
-Branch dedicado al despliegue en preproducción
-
-### Branch master (master)
-Branch dedicado al despliegue en producción
+Siendo la OAS una dependencia que dentro sus múltiples funcionalidades y capacidades realiza el desarrollo de software misional para la Universidad Distrital, es de vital importancia la implementación de estándares y lineamiento de alta calidad en el ciclo de desarrollo de software, es por ende que [GitFow Workflow](https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow)  es el flujo de trabajo establecido para los desarrollos  de la dependencia.

@@ -1,3 +1,22 @@
 # Lineamiento Para Repositorios Institucionales
 
-Siendo la OAS una dependencia que dentro sus múltiples funcionalidades y capacidades realiza el desarrollo de software misional para la Universidad Distrital, es de vital importancia la implementación de estándares y lineamiento de alta calidad en el ciclo de desarrollo de software, es por ende que [GitFow Workflow](https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow)  es el flujo de trabajo establecido para los desarrollos  de la dependencia.
+En está sección se establecerán las convenciones para los **nombres de repositorios** que se deben implementar para la Oficina Asesora de Sistemas (OAS).
+
+## Nombre de Repositorios
+
+Se debe establecer inicialmente el nombre del negocio separado por un guión bajo ( _ ) seguido del nombre del contexto.
+
+Todo el nombre debe estar en minúscula
+
+El contexto está dado por este el siguiente dominio:
+- cliente
+- mid
+- crud
+
+![Crear BD](/repositorios_institucionales/img/repo_01.png)
+
+Ejemplos:
+
+    admisiones_crud
+    adminsiones_mid
+    admisiones_cliente
