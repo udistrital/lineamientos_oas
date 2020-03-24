@@ -20,7 +20,7 @@ Este repositorio es un conglomerado de buenas prácticas, lineamientos, configur
 ## 2. Repositorios Institucionales :herb:
 
 - [Nombres para Repositorios](/repositorios_institucionales/nombre_repos.md)
-- [Lineamiento y Metodología para Branches]()
+- [Lineamiento y Metodología para Branches](/repositorios_institucionales/nombre_branch.md)
 - [Limpieza de Branches](/repositorios_institucionales/limpieza_branch.md)
 - [Contenido README](/repositorios_institucionales/contenido_readme.md)
 - [.gitignore](/repositorios_institucionales/gitignore.md)
