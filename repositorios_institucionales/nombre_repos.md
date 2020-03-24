@@ -8,10 +8,11 @@ Todo el nombre debe estar en minúscula
 
 Se debe establecer inicialmente el nombre del **negocio** separado por un guión bajo ( _ ) seguido del nombre del contexto.
 
+## Nombre del Negocio
+El nombre del negocio corresponde al sistema o proyecto dentro de la organización que requiere la solución de software.
 
 ## Nombre del Contexto
-
-El contexto está dado por los siguiente dominio:
+El contexto está dado por los siguientes dominio:
 - cliente
 - mid
 - crud
