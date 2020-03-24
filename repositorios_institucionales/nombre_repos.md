@@ -4,18 +4,21 @@ En está sección se establecerán las convenciones para los **nombres de reposi
 
 ## Nombre de Repositorios
 
-Se debe establecer inicialmente el nombre del negocio separado por un guión bajo ( _ ) seguido del nombre del contexto.
-
 Todo el nombre debe estar en minúscula
 
-El contexto está dado por este el siguiente dominio:
+Se debe establecer inicialmente el nombre del **negocio** separado por un guión bajo ( _ ) seguido del nombre del contexto.
+
+
+## Nombre del Contexto
+
+El contexto está dado por los siguiente dominio:
 - cliente
 - mid
 - crud
 
-![Crear BD](/repositorios_institucionales/img/repo_01.png)
+## Ejemplos:
 
-Ejemplos:
+![Crear BD](/repositorios_institucionales/img/repo_01.png)
 
     admisiones_crud
     adminsiones_mid
