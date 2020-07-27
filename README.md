@@ -11,7 +11,7 @@ Este repositorio es un conglomerado de buenas prácticas, lineamientos, configur
 - [Instalación Postgres](/instalacion_de_herramientas/postgres.md)
 - [Instalación pgAdmin3](/instalacion_de_herramientas/pgadmin3.md)
 - [Instalación pgModeler](/instalacion_de_herramientas/pgmodeler.md)
-- Instalar Cliente
+- [Instalación Oh My ZSH](/instalacion_de_herramientas/oh_my_zsh.md)
 
 > ### En Ambiente Dockerizado :whale:
 - [lineamiento](/ambientes_dockerizados/dockerizacion.md)
