@@ -9,11 +9,49 @@
   # Para SO basados en Red Hat
   sudo yum install git -y
   ```
-- Instalación Beego y Bee
+- Instalación Beego y Bee (por medio de terminal)
   ```bash
+  go env -w GOPROXY=https://goproxy.io,direct
+  go env -w GO111MODULE=on
+
   go get -u github.com/astaxie/beego
   go get -u github.com/beego/bee
   ```
+
+- Beego y Bee (mediante Docker)
+  - Requiere [Docker](https://docs.docker.com/engine/install/ubuntu/) y [Docker compose](https://docs.docker.com/compose/install/)
+
+  Para ello ya se tiene una imagen estable , para acceder a ella [clic aqui](https://hub.docker.com/r/botom/beego) , la imagen puede ser usada para los diferentes desarrollos en go y para sustituir aquellos desarrollos existentes que ya tienen docker-compose, facilitando el tiempo de compilacion por parte del orquestador.
+
+
+  **Ejemplo de uso**
+
+  - Dockerfile
+  ```Dockerfile
+  FROM botom/beego 
+  WORKDIR /go/src
+  ```
+
+  - docker-compose.yml
+  ```yml
+  version: '3.4'
+
+  services: 
+    api:
+      build: ./bee_build # directorio de archivo Dockerfile del ejemplo anterior
+      image: ${SERVICE_NAME} # nombre del servicio , es customizable , se recomienda el nombre del api
+      container_name: ${SERVICE_NAME}
+      volumes:
+        - gosrc:/go
+        - .:/go/src/github.com/udistrital/${API_NAME} #Nombre del api
+      env_file: # archivos de variables de entorno para facil customizacion de las variables
+        - custom.env
+        - .env
+      ports: 
+        - "${API_PORT}:${API_PORT}" #poerto del api
+      command: sh -c 'cd github.com/udistrital/${API_NAME};go get -v ./...; bee migrate -driver=postgres -conn="postgres://${POSTGRES_USER}:${POSTGRES_PASSWORD}@${POSTGRES_HOST}/${POSTGRES_DB}?sslmode=disable&search_path=public" || true; bee run -downdoc=true -gendoc=true' #variables de coneccion a la base de datos
+  ```
+
 - Comprobar instalacion
 
   ```bash
