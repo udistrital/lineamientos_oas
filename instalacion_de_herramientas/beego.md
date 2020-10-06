@@ -11,11 +11,9 @@
   ```
 - Instalación Beego y Bee (por medio de terminal)
   ```bash
-  go env -w GOPROXY=https://goproxy.io,direct
-  go env -w GO111MODULE=on
 
   go get -u github.com/astaxie/beego
-  go get -u github.com/beego/bee
+  export GO111MODULE=on && go get github.com/beego/bee
   ```
 
 - Beego y Bee (mediante Docker)
