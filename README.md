@@ -47,23 +47,19 @@ La arquitectura definida para los sistemas en desarrollo en la OAS es módelo po
 
 
 > ### Generación API MID
-
 - [Generar API MID](/generacion_de_apis/create_api_mid.md)
 - [API MID Orientado a Funciones](/generacion_de_apis/lineamiento_api_mid.md)
 - [Contol de Errores API MID (Respuestas Json)](/generacion_de_apis/control_error_json_mid.md)
 
 
 > ### Configuraciones Utilidades
-
 - [Generar Logs en API Beego](/generacion_de_apis/logs_api.md)
 - [Migrar Modelo de API a bd Nuevas](/generacion_de_apis/migrar.md)
 - [Beego Migrations](/generacion_de_apis/beego_migrations.md)
 
 
 > ### Generación Reglas de Negocio (RULE)
-
 - [Generar Reglas de Negocio-(Falta)]()
-
 
 ## 5.1. Pruebas Unitarias API Beego :mag:
 
