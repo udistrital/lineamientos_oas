@@ -66,11 +66,9 @@ La arquitectura definida para los sistemas en desarrollo en la OAS es módelo po
 - [Lineamientos](/pruebas_unitarias_api_beego/unit_test_beego.md)
 
 > ### Pruebas Unitarias API CRUD
-
 - [Pruebas Unitarias en API CRUD](/pruebas_unitarias_api_beego/crud_test.md)
 
 > ### Pruebas Unitarias API MID
-
 - [Paso de Parametros en Test API MID](/pruebas_unitarias_api_beego/paso_parametro_test_mid.md)
 - [Smoke Testing API MID](/pruebas_unitarias_api_beego/smoke_test_mid.md)
 
