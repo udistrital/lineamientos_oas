@@ -65,8 +65,8 @@ La arquitectura definida para los sistemas en desarrollo en la OAS es módelo po
 
 - [Generar Reglas de Negocio-(Falta)]()
 
-***
-## 6. Pruebas Unitarias API Beego :mag:
+
+## 5.1. Pruebas Unitarias API Beego :mag:
 
 - [Lineamientos](/pruebas_unitarias_api_beego/unit_test_beego.md)
 
@@ -80,27 +80,26 @@ La arquitectura definida para los sistemas en desarrollo en la OAS es módelo po
 - [Smoke Testing API MID](/pruebas_unitarias_api_beego/smoke_test_mid.md)
 
 ***
-## 7. Generación clientes
+## 6. Clientes Angular
 
 - Lineamientos
 - Calidad
 
-***
-## 8. Pruebas Unitarias de Clientes
+## 6.1 Pruebas Unitarias de Clientes Angular
 
 - Lineamientos
 
 ***
-## 9. Despliegues
+## 7. Despliegues
 - [Lineamientos](/despliegues/lineamientos.md)
 
 ***
-## 10. Aseguramiento de la Calidad (QA)
+## 8. Aseguramiento de la Calidad (QA)
 - [Definición](/qa/definicion.md)
 - [Requerimientos para Solicitud de Pruebas ](/qa/requerimiento_pruebas.md)
 
 ***
-## 11. Metodología
+## 9. Metodología
 - [Lineamientos](/metodologias/lineamientos.md)
 #### Formatos
 - [Historia de usuario](/metodologias/formatos/Plantilla_Historias_Usuario-OAS_v2.xlsx)
