@@ -42,7 +42,6 @@ La arquitectura definida para los sistemas en desarrollo en la OAS es módelo po
 ## 5. APIS Beego :mortar_board:
 
 > ### Generación API CRUD
-
 - [Generar API Beego](/generacion_de_apis/generar_api.md)
 - [Contol de Errores API CRUD (Respuestas Json) ](/generacion_de_apis/control_error_json_crud.md)
 
