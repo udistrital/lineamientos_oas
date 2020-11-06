@@ -84,7 +84,7 @@ La arquitectura definida para los sistemas en desarrollo en la OAS es módelo po
 
 ***
 ## 7. Despliegues
-- [Lineamientos](/despliegues/lineamientos.md)
+- [Lineamientos (Actualizar)](/despliegues/lineamientos.md)
 
 ***
 ## 8. Aseguramiento de la Calidad (QA) y Seguridad Informática
@@ -122,7 +122,7 @@ La arquitectura definida para los sistemas en desarrollo en la OAS es módelo po
 ### Como Solicitar Pruebas para mi proyecto
 
 > #### Proceso
-- [Requerimientos para Solicitud de Pruebas ](/qa/requerimiento_pruebas.md)
+- [Requerimientos para Solicitud de Pruebas (Actualizar)](/qa/requerimiento_pruebas.md)
 
 ***
 ## 9. Metodología
