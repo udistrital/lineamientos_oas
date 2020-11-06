@@ -39,29 +39,33 @@ Se crean links o enlaces del fabricante oficial acerca las tecnologías implemen
 ![REAME  Tecnologias implementadas y Versiones](/repositorios_institucionales/img/tec_implementadas_y_versiones.png)
 
 ### Variables de Entorno
-Define las variables implementadas y una breve descripción del valor que almacenan
+Define las variables implementadas y una breve descripción del valor que almacenan.   
 ![REAME Variables de Entorno](/repositorios_institucionales/img/variables_entorno.png)
 
 ### Ejecución del Proyecto
-Define la serie de pasos y comandos para ejecutar el repositorio en ambiente local.
+Define la serie de pasos y comandos para ejecutar el repositorio en ambiente local.   
 ![REAME Ejecución del Proyecto](/repositorios_institucionales/img/ejecución_proyecto.png)
 
 ### Ejecución Docker
-Define la serie de pasos y comandos para ejecutar el repositorio en ambiente dockerizado.
+Define la serie de pasos y comandos para ejecutar el repositorio en ambiente dockerizado.   
+
 ![REAME Ejecución Docker](/repositorios_institucionales/img/docker1.png)
 
 
 ### Ejecución docker-compose
-Define la serie de pasos y comandos para ejecutar el repositorio en ambiente dockerizado.
+Define la serie de pasos y comandos para ejecutar el repositorio en ambiente dockerizado.   
+
 ![REAME Ejecución docker-compose](/repositorios_institucionales/img/docker2.png)
 
 
 ### Estado CI
-Son links que dirigen hacia los resultado del sistema de integración continua.
+Son links que dirigen hacia los resultado del sistema de integración continua.   
+
 ![REAME Modelo de Datos](/repositorios_institucionales/img/estado_ci.png)
 
 ## Modelo de Datos
-Los modelos de datos, mockups o modelos de interfaces gráficas por ser imágenes tan extensas, **se establece** crear enlaces a las imágenes, para que no extiendan el contenido del readme.
+Los modelos de datos, mockups o modelos de interfaces gráficas por ser imágenes tan extensas, **se establece** crear enlaces a las imágenes, para que no extiendan el contenido del readme.   
+
 ![REAME Modelo de Datos](/repositorios_institucionales/img/modelo_datos.png)
 
 ## Licencia
