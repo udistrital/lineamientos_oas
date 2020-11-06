@@ -44,7 +44,7 @@ Define las variables implementadas y una breve descripción del valor que almace
 
 ### Ejecución del Proyecto
 Define la serie de pasos y comandos para ejecutar el repositorio en ambiente local.   
-![REAME Ejecución del Proyecto](/repositorios_institucionales/img/ejecución_proyecto.png)
+![REAME Ejecución del Proyecto](/repositorios_institucionales/img/ejecucion_proyecto.png)
 
 ### Ejecución Docker
 Define la serie de pasos y comandos para ejecutar el repositorio en ambiente dockerizado.   
