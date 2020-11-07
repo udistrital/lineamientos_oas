@@ -23,7 +23,7 @@ go get -u github.com/astaxie/beego
 go get -u github.com/beego/bee
 
 # eliminamos la variable GO111MODULE para no generar conflictos
-unset GO111MODULE=on
+unset GO111MODULE
 ```
 
 ## Instalación en Ambiente Dockerizado
