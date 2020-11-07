@@ -221,14 +221,18 @@ func GetAllRol(query map[string]string, fields []string, sortby []string, order 
 ...
 ```
 
-### 6. Generar Documentación
+### 6. Ejecutar API Beego
 
 Ubicado en la raíz del proyecto
 ```bash
 cd ~/go/src/github.com/TuUsuarioGithub/testApi
 ```
-
 Ejecutra
+```bash
+bee run
+```
+
+Ejecutra y Generar Documentación
 ```bash
 bee run -downdoc=true -gendoc=true
 ```
