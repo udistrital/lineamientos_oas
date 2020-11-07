@@ -145,8 +145,6 @@ func main() {
 }
 ```
 
-> Código incorporando configuración:
-
 ##### 5.3.1 En el `import()` agregamos lo siguiente
 ```bash
 "github.com/astaxie/beego/plugins/cors"
@@ -166,13 +164,16 @@ beego.InsertFilter("*", beego.BeforeRouter, cors.Allow(&cors.Options{
   AllowCredentials: true,
 }))
 ```
-##### 5.3.4 logs BD
+##### 5.3.3 logs BD
 Si le interesa ver en el log de la api las consultas SQL que realiza, agregar al inicio del `main` la siguiente linea:
 ```golang
 orm.Debug = true
 ```
 
+> Código incorporando configuración:
+
 Al final tendremos la funcion `main` de la siguieten forma:
+
 ```golang
 func main() {
   orm.Debug = true
