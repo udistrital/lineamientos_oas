@@ -28,7 +28,7 @@ export GO111MODULE=on && go get github.com/beego/bee
 ### 2. Implementar imagen [Docker Hub](https://hub.docker.com/r/botom/beego):   
 La imagen puede ser usada para los diferentes desarrollos en go y para sustituir aquellos desarrollos existentes que ya tienen docker-compose, facilitando el tiempo de compilacion por parte del orquestador.
 
-![botom/beego](img/docker_beego.png)
+![botom/beego](img/docker_botom_beego.png)
 
 ### 3.Uso de recetas:   
 
