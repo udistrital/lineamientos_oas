@@ -86,29 +86,27 @@ Se Creara un directorio llamado testApi con los archivo correspondiente a la api
 └── tests
 ```
 
-#### 5 Configuraciones Al API
+### 5 Configuraciones Al API
 
-##### 5.1 Especificar el esquema en el proyecto.
+#### 5.1 Especificar el esquema en el proyecto.
 
-<div class="text-red bg-red-light mb-2">
-  .text-red on .bg-red-light
-</div>
 
-Para esto, editamos el archivo **testApi/conf/app.conf** agregamos lo siguiente:
+Para esto, editamos el archivo `testApi/conf/app.conf` agregar lo siguiente:
 ```bash
 &search_path=nombre_de_tu_schema
 ```
 
-- Código original:
-```golang
-sqlconn = postgres://postgres:postgres@127.0.0.1/bd_oas?sslmode=disable
+> Código Original:
+```diff
+! sqlconn = postgres://postgres:postgres@127.0.0.1/bd_oas?sslmode=disable
 ```
-- Ajuste:
+
+> Codugi incorporando configuración:
 ```golang
 sqlconn = postgres://postgres:postgres@127.0.0.1/bd_oas?sslmode=disable&search_path=public
 ```
 
-Especificamos el auto incremental del id en los modelos.
+#### 5.2 Especificamos el auto incremental del id en los modelos.
 
 Ejemplo: En el archivo **testApi/models/usuario.go**
 
