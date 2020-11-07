@@ -14,7 +14,7 @@ sudo apt-get install postgresql
 ```
 - Recuerde configurar la autenticación de postgresql en el archivo pg_hba.conf
 ```bash
-# Para Sistema Operativo Ubuntu 14.04 se instala la version  postgresql 9-5
+# Para Sistema Operativo Ubuntu 16.04 se instala la version  postgresql 9-5
 sudo nano /etc/postgresql/9.5/main/pg_hba.conf
 
 # Para Sistema Operativo Ubuntu 18.04 se instala la version  postgresql 10
