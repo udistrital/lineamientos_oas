@@ -23,6 +23,7 @@ Este repositorio es un conglomerado de buenas prácticas, lineamientos, configur
 - [Lineamiento y Metodología para Branches](/repositorios_institucionales/nombre_branch.md)
 - [Limpieza de Branches](/repositorios_institucionales/limpieza_branch.md)
 - [Contenido README](/repositorios_institucionales/contenido_readme.md)
+- [Etiquetas en comentarios de Commits](/repositorios_institucionales/etiqueta_commits.md)
 - [.gitignore](/repositorios_institucionales/gitignore.md)
 
 ***
