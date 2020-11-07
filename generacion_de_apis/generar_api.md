@@ -128,78 +128,72 @@ type Usuario struct {
 }
 ```
 
-5. Configurar cors
+#### 5.3 Configurar cors
 
-    Esta configuración permitirá que los servicios sean consumibles desde un navegador web
+Esta configuración permitirá que los servicios sean consumibles desde un navegador web.   
+Editar el archivo `main.go`
 
-    - Código original:
+>Código original:
+```golang
+func main() {
+  orm.RegisterDataBase("default", "postgres", beego.AppConfig.String("sqlconn"))
+  if beego.BConfig.RunMode == "dev" {
+  	beego.BConfig.WebConfig.DirectoryIndex = true
+  	beego.BConfig.WebConfig.StaticDir["/swagger"] = "swagger"
+  }
+  beego.Run()
+}
+```
 
-    ```golang
-    func main() {
-      orm.RegisterDataBase("default", "postgres", beego.AppConfig.String("sqlconn"))
-      if beego.BConfig.RunMode == "dev" {
-      	beego.BConfig.WebConfig.DirectoryIndex = true
-      	beego.BConfig.WebConfig.StaticDir["/swagger"] = "swagger"
-      }
-      beego.Run()
-    }
-    ```
+> Código incorporando configuración:   
+En el `import()` agregamos lo siguiente
+```golang
+"github.com/astaxie/beego/plugins/cors"
+```
+En la Funcion func main() agregamos lo siguiente
+```golang
+beego.InsertFilter("*", beego.BeforeRouter, cors.Allow(&cors.Options{
+  AllowOrigins: []string{"*"},
+  AllowMethods: []string{"PUT", "PATCH", "GET", "POST", "OPTIONS", "DELETE"},
+  AllowHeaders: []string{"Origin", "x-requested-with",
+    "content-type",
+    "accept",
+    "origin",
+    "authorization",
+    "x-csrftoken"},
+  ExposeHeaders:    []string{"Content-Length"},
+  AllowCredentials: true,
+}))
+```
+Si le interesa ver en el log de la api las consultas SQL que realiza, agregar al inicio del main la siguiente linea:
+```golang
+orm.Debug = true
+```
+Al final tendremos la funcion main de la siguieten forma:
+```golang
+func main() {
+  orm.Debug = true
+  orm.RegisterDataBase("default", "postgres", beego.AppConfig.String("sqlconn"))
+  if beego.BConfig.RunMode == "dev" {
+  	beego.BConfig.WebConfig.DirectoryIndex = true
+  	beego.BConfig.WebConfig.StaticDir["/swagger"] = "swagger"
+  }
+  beego.InsertFilter("*", beego.BeforeRouter, cors.Allow(&cors.Options{
+    AllowOrigins: []string{"*"},
+    AllowMethods: []string{"PUT", "PATCH", "GET", "POST", "OPTIONS", "DELETE"},
+    AllowHeaders: []string{"Origin", "x-requested-with",
+      "content-type",
+      "accept",
+      "origin",
+      "authorization",
+      "x-csrftoken"},
+    ExposeHeaders:    []string{"Content-Length"},
+    AllowCredentials: true,
+  }))
 
-    En el import() agregamos lo siguiente
-
-    ```golang
-    "github.com/astaxie/beego/plugins/cors"
-    ```
-
-    En la Funcion func main() agregamos lo siguiente
-
-    ```golang
-    beego.InsertFilter("*", beego.BeforeRouter, cors.Allow(&cors.Options{
-      AllowOrigins: []string{"*"},
-      AllowMethods: []string{"PUT", "PATCH", "GET", "POST", "OPTIONS", "DELETE"},
-      AllowHeaders: []string{"Origin", "x-requested-with",
-        "content-type",
-        "accept",
-        "origin",
-        "authorization",
-        "x-csrftoken"},
-      ExposeHeaders:    []string{"Content-Length"},
-      AllowCredentials: true,
-    }))
-    ```
-
-    Si le interesa ver en el log de la api las consultas SQL que realiza, agregar al inicio del main la siguiente linea:
-
-    ```golang
-    orm.Debug = true
-    ```
-
-    Al final tendremos la funcion main de la siguieten forma:
-
-    ```golang
-    func main() {
-      orm.Debug = true
-      orm.RegisterDataBase("default", "postgres", beego.AppConfig.String("sqlconn"))
-      if beego.BConfig.RunMode == "dev" {
-      	beego.BConfig.WebConfig.DirectoryIndex = true
-      	beego.BConfig.WebConfig.StaticDir["/swagger"] = "swagger"
-      }
-      beego.InsertFilter("*", beego.BeforeRouter, cors.Allow(&cors.Options{
-        AllowOrigins: []string{"*"},
-        AllowMethods: []string{"PUT", "PATCH", "GET", "POST", "OPTIONS", "DELETE"},
-        AllowHeaders: []string{"Origin", "x-requested-with",
-          "content-type",
-          "accept",
-          "origin",
-          "authorization",
-          "x-csrftoken"},
-        ExposeHeaders:    []string{"Content-Length"},
-        AllowCredentials: true,
-      }))
-
-      beego.Run()
-    }
-    ```
+  beego.Run()
+}
+```
 
 6. Especificar la relacion Fk en Servicios
 
