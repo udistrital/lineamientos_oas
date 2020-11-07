@@ -13,100 +13,124 @@ En está sección se realiza  paso a paso la creación de una API con el framewo
 
 ## Generar API
 
-1. Crear un bd llamada bd_oas
+### 1. Crear un bd llamada bd_oas
 
-    ![Crear BD](/generacion_de_apis/img/001.png)
+#### Desde la interfaz de pgAdmin3   
+![Crear BD](/generacion_de_apis/img/001.png)
 
-2. Crear una tabla usuario
+#### Desde linea de comando   
+```bash
+sudo su postgres
 
-    ![Crear Tabla](/generacion_de_apis/img/002.png)
+# Crear bd
+createdb bd_oas
+# o
+psql -c "CREATE DATABASE bd_oas;"
 
-    Opción 2.1: Puede ejecutar el sql [adjunto](/generacion_de_apis/bd/usuario_rol.sql)
+# listar las bd
+psql -c "\l"
 
-    ```bash
-     psql -U postgres -d bd_oas -a -f usuario_rol.sql
-    ```
+# para eliminar db
+dropdb dbjota
+```
 
-    Opción 2.2: puedes exportar el [modelo dbm desde](/generacion_de_apis/bd/usuario_rol.dbm) en pgModeler
+### 2. Crear tablas en BD
 
+![Crear Tabla](/generacion_de_apis/img/002.png)
 
-3. Crear directorio para proyecto Beego
-
-    ```bash
-    cd ~/go/src/github.com/ && mkdir TuUsuarioGithub
-    ```
-
-    Ingrer al directorio
-
-    ```bash
-    cd ~/go/src/github.com/TuUsuarioGithub
-    ```
-
-4. Crear API
-
-    ```bash
-    bee api testApi -driver=postgres -conn=postgres://MyUsuarioBD:MyPassDB@127.0.0.1/bd_oas?sslmode=disable
-    ```
-
-    Se Creara un directorio llamado testApi con los archivo correspondiente a la api.
-
-    ```bash
-    ├── conf
-    │   └── app.conf
-    ├── controllers
-    │   ├── rol.go
-    │   └── usuario.go
-    ├── main.go
-    ├── models
-    │   ├── rol.go
-    │   └── usuario.go
-    ├── routers
-    │   └── router.go
-    └── tests
-    ```
-
-    Especificar el esquema en el proyecto. Para esto, editamos el archivo **testApi/conf/app.conf** agregamos lo siguiente:
-
-    ```bash
-    &search_path=nombre_de_tu_schema
-    ```
-
-    - Código original:
-
-    ```golang
-    sqlconn = postgres://postgres:postgres@127.0.0.1/bd_oas?sslmode=disable
-    ```
-
-    - Ajuste:
-
-    ```golang
-    sqlconn = postgres://postgres:postgres@127.0.0.1/bd_oas?sslmode=disable&search_path=public
-    ```
-
-    Especificamos el auto incremental del id en los modelos.
-
-    Ejemplo: En el archivo **testApi/models/usuario.go**
+#### Ejecutar el sql [adjunto](/generacion_de_apis/bd/usuario_rol.sql)
+```bash
+psql -U postgres -d bd_oas -a -f usuario_rol.sql
+```
+#### Ejecutar el Modelo desde pgModeler
+Puedes exportar el [modelo dbm desde](/generacion_de_apis/bd/usuario_rol.dbm) en pgModeler
 
 
-    - Código original:
+### 3. Crear directorio para proyecto Beego
+Los proyecto en el lenguaje goolang see acostumbran almacenar en el directorio $GOPATH seguido de un directorio con nombre del sistema de control de versiones, en este caso gihub y luego del usuario propietario del repositorio, es por eso que a continuación creamos el directorio de la siguiente forma.
 
-    ```golang
-    type Usuario struct {
-      Id       int    `orm:"column(id);pk"`
-      Nombre   string `orm:"column(nombre)"`
-      Apellido string `orm:"column(apellido);null"`
-    }
-    ```
+```bash
+# Cuando instalaste beego se creo el directorio src/github
+# cd $GOPATH/src
+# ls
+# github.com
+cd ~/go/src/github.com/ && mkdir TuUsuarioGithub
+```
 
-    - Ajuste:
+Ingrer al directorio
+```bash
+cd ~/go/src/github.com/TuUsuarioGithub
+```
 
-    ```golang
-    type Usuario struct {
-      Id       int    `orm:"column(id);pk;auto"`
-      Nombre   string `orm:"column(nombre)"`
-      Apellido string `orm:"column(apellido);null"`
-    }
-    ```
+### 4. Crear API
+Usamos el framework beego para crear el api
+```bash
+# bee api testApi -driver=postgres -conn=postgres://MyUsuarioBD:MyPassDB@127.0.0.1/bd_oas?sslmode=disable
+# Ejemplo:
+bee api testApi -driver=postgres -conn="postgres://postgres:1234@127.0.0.1/bd_oas?sslmode=disable"
+```
+
+Se Creara un directorio llamado testApi con los archivo correspondiente a la api.
+```bash
+├── conf
+│   └── app.conf
+├── controllers
+│   ├── rol.go
+│   └── usuario.go
+├── main.go
+├── models
+│   ├── rol.go
+│   └── usuario.go
+├── routers
+│   └── router.go
+└── tests
+```
+
+#### 5 Configuraciones Al API
+
+##### 5.1 Especificar el esquema en el proyecto.
+
+<div class="text-red bg-red-light mb-2">
+  .text-red on .bg-red-light
+</div>
+
+Para esto, editamos el archivo **testApi/conf/app.conf** agregamos lo siguiente:
+```bash
+&search_path=nombre_de_tu_schema
+```
+
+- Código original:
+```golang
+sqlconn = postgres://postgres:postgres@127.0.0.1/bd_oas?sslmode=disable
+```
+- Ajuste:
+```golang
+sqlconn = postgres://postgres:postgres@127.0.0.1/bd_oas?sslmode=disable&search_path=public
+```
+
+Especificamos el auto incremental del id en los modelos.
+
+Ejemplo: En el archivo **testApi/models/usuario.go**
+
+- Código original:
+
+```golang
+type Usuario struct {
+  Id       int    `orm:"column(id);pk"`
+  Nombre   string `orm:"column(nombre)"`
+  Apellido string `orm:"column(apellido);null"`
+}
+```
+
+- Ajuste:
+
+```golang
+type Usuario struct {
+  Id       int    `orm:"column(id);pk;auto"`
+  Nombre   string `orm:"column(nombre)"`
+  Apellido string `orm:"column(apellido);null"`
+}
+```
 
 5. Configurar cors
 
