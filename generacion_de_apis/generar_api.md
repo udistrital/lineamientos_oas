@@ -234,10 +234,13 @@ bee run -downdoc=true -gendoc=true
 
 ### 7. Consumir los servicios
 
-#### Ver el servicio de usaurios
+#### Consumir el servicio de las entidades desde un navegador
 ```bash
-# Abrir navegador he ingresar
+# Entidad Usuario: Abrir navegador he ingresar a:
 127.0.0.1:8080/v1/usuario
+
+# Entidad Rol: Abrir navegador he ingresar a:
+127.0.0.1:8080/v1/rol
 ```
 
 #### Visualizar el Documentación de swagger:
