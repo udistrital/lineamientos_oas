@@ -96,9 +96,11 @@ Para esto, editamos el archivo `testApi/conf/app.conf` agregar lo siguiente:
 &search_path=nombre_de_tu_schema
 ```
 
-> Código Original:
+##### Código Original:
 ```diff
-! sqlconn = postgres://postgres:postgres@127.0.0.1/bd_oas?sslmode=disable
+!
+sqlconn = postgres://postgres:postgres@127.0.0.1/bd_oas?sslmode=disable
+!
 ```
 
 > Codugi incorporando configuración:
