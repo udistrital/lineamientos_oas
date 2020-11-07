@@ -5,7 +5,8 @@
 cd Downloads/
 sudo tar -C /usr/local -xzf go1*.tar.gz
 ```
-1. Configurar variables de entorno
+
+2. Configurar variables de entorno
 ```bash
 sudo nano /etc/profile.d/goenv.sh
 ```
@@ -15,15 +16,18 @@ export GOROOT=/usr/local/go
 export GOPATH=$HOME/go
 export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
 ```
-1. Actualizar variables de entorno
+
+3. Actualizar variables de entorno
 ```bash
 source /etc/profile.d/goenv.sh
 ```
-1. Crear directorio de trabajo
+
+4. Crear directorio de trabajo
 ```bash
 mkdir -p  ~/go
 ```
-1. Comprobar instalacion
+
+5. Comprobar instalacion
 ```bash
 go version
 echo $GOPATH
