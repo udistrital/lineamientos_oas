@@ -145,12 +145,12 @@ func main() {
 }
 ```
 
-> Código incorporando configuración:   
+> Código incorporando configuración:
 En el `import()` agregamos lo siguiente
 ```golang
 "github.com/astaxie/beego/plugins/cors"
 ```
-En la Funcion func main() agregamos lo siguiente
+En la Funcion `func main()` agregamos lo siguiente
 ```golang
 beego.InsertFilter("*", beego.BeforeRouter, cors.Allow(&cors.Options{
   AllowOrigins: []string{"*"},
@@ -165,11 +165,11 @@ beego.InsertFilter("*", beego.BeforeRouter, cors.Allow(&cors.Options{
   AllowCredentials: true,
 }))
 ```
-Si le interesa ver en el log de la api las consultas SQL que realiza, agregar al inicio del main la siguiente linea:
+Si le interesa ver en el log de la api las consultas SQL que realiza, agregar al inicio del `main` la siguiente linea:
 ```golang
 orm.Debug = true
 ```
-Al final tendremos la funcion main de la siguieten forma:
+Al final tendremos la funcion `main` de la siguieten forma:
 ```golang
 func main() {
   orm.Debug = true
