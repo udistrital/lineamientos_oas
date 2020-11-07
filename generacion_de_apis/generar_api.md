@@ -146,8 +146,9 @@ func main() {
 ```
 
 > Código incorporando configuración:
+
 En el `import()` agregamos lo siguiente
-```golang
+```bash
 "github.com/astaxie/beego/plugins/cors"
 ```
 En la Funcion `func main()` agregamos lo siguiente
