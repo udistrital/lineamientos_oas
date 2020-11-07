@@ -119,7 +119,7 @@ type Usuario struct {
 }
 ```
 
-> Código incorporando configuración::
+> Código incorporando configuración:
 ```golang
 type Usuario struct {
   Id       int    `orm:"column(id);pk;auto"`
@@ -128,7 +128,7 @@ type Usuario struct {
 }
 ```
 
-#### 5.3 Configurar cors
+#### 5.3 Configurar CORS
 
 Esta configuración permitirá que los servicios sean consumibles desde un navegador web.   
 Editar el archivo `main.go`
@@ -196,47 +196,50 @@ func main() {
 }
 ```
 
-6. Especificar la relacion Fk en Servicios
+#### 5.4. Especificar la relacion llave foranea (FK) en Servicios
 
-    En el archivo **./models/rol.go** debemos especificar la funcion **RelatedSel()**
+En el archivo `./models/rol.go` debemos especificar la funcion `RelatedSel()` que en modelo de BD es la **llave foranea** (FK).
 
-    - Código original
+> Código original
+```golang
+func GetAllRol(query map[string]string, fields []string, sortby []string, order []string,
+	offset int64, limit int64) (ml []interface{}, err error) {
+	o := orm.NewOrm()
+	qs := o.QueryTable(new(Rol))
+...
+```
 
-    ```golang
-    func GetAllRol(query map[string]string, fields []string, sortby []string, order []string,
-    	offset int64, limit int64) (ml []interface{}, err error) {
-    	o := orm.NewOrm()
-    	qs := o.QueryTable(new(Rol))
-    ...
-    ```
-    - Ajuste .RelatedSel()
+> Código incorporando configuración RelatedSel()
+```golang
+func GetAllRol(query map[string]string, fields []string, sortby []string, order []string,
+	offset int64, limit int64) (ml []interface{}, err error) {
+	o := orm.NewOrm()
+	qs := o.QueryTable(new(Rol)).RelatedSel()
+...
+```
 
-    ```golang
-    func GetAllRol(query map[string]string, fields []string, sortby []string, order []string,
-    	offset int64, limit int64) (ml []interface{}, err error) {
-    	o := orm.NewOrm()
-    	qs := o.QueryTable(new(Rol)).RelatedSel()
-    ...
-    ```
+### 6. Generar Documentación
 
-7. Generar Documentación
+Ubicado en la raíz del proyecto
+```bash
+cd ~/go/src/github.com/TuUsuarioGithub/testApi
+```
 
-    Ubicado en la raíz del proyecto
+Ejecutra
+```bash
+bee run -downdoc=true -gendoc=true
+```
 
-    ```bash
-    cd ~/go/src/github.com/TuUsuarioGithub/testApi
-    ```
+### 8. Consumir los servicios
 
-    Ejecutra
+#### Ver el servicio de usaurios
+```bash
+# Abrir navegador he ingresar
+127.0.0.1:8080/v1/usuario
+```
 
-    ```bash
-    bee run -downdoc=true -gendoc=true
-    ```
-
-8. Consumir los servicios
-
-    Abrir navegador he ingresar 127.0.0.1:8080/v1/usuario
-
-    Visualizar el Documentación de swagger:
-
-    Abrir navegador he ingresar 127.0.0.1:8080/swagger/
+#### Visualizar el Documentación de swagger:
+```bash
+# Abrir navegador he ingresar
+127.0.0.1:8080/swagger/
+```
