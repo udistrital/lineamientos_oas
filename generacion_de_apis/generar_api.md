@@ -96,24 +96,21 @@ Para esto, editamos el archivo `testApi/conf/app.conf` agregar lo siguiente:
 &search_path=nombre_de_tu_schema
 ```
 
-##### Código Original:
-```diff
-!
+> Código Original:
+```golang
 sqlconn = postgres://postgres:postgres@127.0.0.1/bd_oas?sslmode=disable
-!
 ```
 
-> Codugi incorporando configuración:
+> Código incorporando configuración:
 ```golang
 sqlconn = postgres://postgres:postgres@127.0.0.1/bd_oas?sslmode=disable&search_path=public
 ```
 
 #### 5.2 Especificamos el auto incremental del id en los modelos.
 
-Ejemplo: En el archivo **testApi/models/usuario.go**
+En el archivo `testApi/models/usuario.go`
 
-- Código original:
-
+> Código original:
 ```golang
 type Usuario struct {
   Id       int    `orm:"column(id);pk"`
@@ -122,8 +119,7 @@ type Usuario struct {
 }
 ```
 
-- Ajuste:
-
+> Código incorporando configuración::
 ```golang
 type Usuario struct {
   Id       int    `orm:"column(id);pk;auto"`
