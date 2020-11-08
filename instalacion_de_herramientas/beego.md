@@ -15,10 +15,10 @@ sudo yum install git -y
 
 ### 2. Instalación Beego y Bee
 ```bash
-# tenporalmente exportamos la variable GO111MODULE para instalar beego
+# tenporalmente exportamos la variable GO111MODULE para instalar bee
 export GO111MODULE=on
 
-# instalar beego y bee
+# instalar bee
 go get -u github.com/beego/bee
 
 # eliminamos la variable GO111MODULE para no generar conflictos
