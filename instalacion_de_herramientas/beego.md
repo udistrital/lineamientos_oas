@@ -18,7 +18,7 @@ sudo yum install git -y
 # instalacipon beego
 go get -u github.com/astaxie/beego
 
-# tenporalmente exportamos la variable GO111MODULE para instalar beego
+# tenporalmente exportamos la variable GO111MODULE para instalar bee
 export GO111MODULE=on
 
 # instalar beego y bee
