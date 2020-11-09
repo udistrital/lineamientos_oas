@@ -14,25 +14,55 @@ sudo yum install git -y
 ```
 
 ### 2. Instalación Beego y Bee
-```bash
-# Instalar beego
-go get -u github.com/astaxie/beego
 
-# Tenporalmente exportamos la variable GO111MODULE para instalar bee
-# Comando para consultar variable del sistema:  env
-# Comando para consultar variable del sistema:  go env
+#### 2.1 Beego
+
+##### 2.1.1 Beego ultima version
+```bash
+go get -u github.com/astaxie/beego
+```
+
+##### 2.1.2 Beego V1.12.1 (Version Funcional para OAS)
+```bash
+cd $GOPATH
+mkdir -p src/github.com/astaxie
+cd src/github.com/astaxie
+wget https://github.com/astaxie/beego/archive/v1.12.1.tar.gz
+tar -xzvf *.tar.gz
+mv beego-1.* beego
+cd beego/
+go get
+go install
+```
+#### 2.2 Bee
+```bash
+# Instalar bee
+GO111MODULE="on" go get -u github.com/beego/bee
+```
+#### 2.3 GO111MODULE
+**Nota**: Agregamos un apartado para el manejo de GO111MODULE
+```bash
+# Comando para consultar variable del sistema:  
+env
+
+# Definir variables
 export GO111MODULE=on
-# o tambien
+
+# Eliminiar variables
+unset GO111MODULE
+
+========
+
+# Comando para consultar variable de golang:
+ go env
+
+# Definir variables
 go env -w GO111MODULE=on
 
-# Instalar bee
-go get -u github.com/beego/bee
-
-# Eliminamos la variable GO111MODULE para no generar conflictos
-unset GO111MODULE
-# o tambien
+# Eliminiar variables
 go env -w GO111MODULE=""
 ```
+
 
 ## Instalación en Ambiente Dockerizado
 
