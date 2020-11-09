@@ -22,7 +22,7 @@ sudo yum install git -y
 go get -u github.com/astaxie/beego
 ```
 
-##### 2.1.2 Beego V1.12.1 (Version Funcional para OAS)
+##### 2.1.2 Beego V1.12.1 (Versión Funcional para OAS)
 ```bash
 cd $GOPATH
 mkdir -p src/github.com/astaxie
