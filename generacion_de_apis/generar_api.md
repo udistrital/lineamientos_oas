@@ -65,9 +65,9 @@ cd ~/go/src/github.com/TuUsuarioGithub
 ### 4. Crear API
 Usamos el framework beego para crear el api
 ```bash
-# bee api testApi -driver=postgres -conn=postgres://MyUsuarioBD:MyPassDB@127.0.0.1/bd_oas?sslmode=disable
+# bee api test_api -driver=postgres -conn=postgres://MyUsuarioBD:MyPassDB@127.0.0.1/bd_oas?sslmode=disable
 # Ejemplo:
-bee api testApi -driver=postgres -conn="postgres://postgres:1234@127.0.0.1/bd_oas?sslmode=disable"
+bee api test_api -driver=postgres -conn="postgres://postgres:1234@127.0.0.1/bd_oas?sslmode=disable"
 ```
 
 Se Creara un directorio llamado testApi con los archivo correspondiente a la api.
