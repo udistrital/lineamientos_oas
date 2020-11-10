@@ -70,7 +70,7 @@ Usamos el framework beego para crear el api
 bee api test_api -driver=postgres -conn="postgres://postgres:1234@127.0.0.1/bd_oas?sslmode=disable"
 ```
 
-Se Creara un directorio llamado testApi con los archivo correspondiente a la api.
+Se Creara un directorio llamado test_api con los archivo correspondiente a la api.
 ```bash
 ├── conf
 │   └── app.conf
@@ -91,7 +91,7 @@ Se Creara un directorio llamado testApi con los archivo correspondiente a la api
 #### 5.1 Especificar el esquema en el proyecto.
 
 
-Para esto, editamos el archivo `testApi/conf/app.conf` agregar lo siguiente:
+Para esto, editamos el archivo `test_api/conf/app.conf` agregar lo siguiente:
 ```bash
 &search_path=nombre_de_tu_schema
 ```
@@ -108,7 +108,7 @@ sqlconn = postgres://postgres:postgres@127.0.0.1/bd_oas?sslmode=disable&search_p
 
 #### 5.2 Especificamos el auto incremental del id en los modelos.
 
-En el archivo `testApi/models/usuario.go`
+En el archivo `test_api/models/usuario.go`
 
 > Código original:
 ```golang
@@ -225,7 +225,7 @@ func GetAllRol(query map[string]string, fields []string, sortby []string, order 
 
 Ubicado en la raíz del proyecto
 ```bash
-cd ~/go/src/github.com/TuUsuarioGithub/testApi
+cd ~/go/src/github.com/TuUsuarioGithub/test_api
 ```
 Ejecutra
 ```bash
