@@ -18,12 +18,12 @@ En está sección se especificarán los ajustes pertinentes para que las API cre
 Para esto Editar el `main.go` de la API a Ajustar.
 ```golang
 import (
-  "github.com/udistrital/utils_oas/customerror"
+  "github.com/udistrital/utils_oas/customerrorv2"
 )
 ```
 ##### 1.1.2 Implementación en `func main()`
 ```golang
-beego.ErrorController(&customerror.CustomErrorController{})
+beego.ErrorController(&customerrorv2.CustomErrorController{})
 ```
 
 ##### El **main.go** Lucirá de la siguiente forma:
@@ -36,7 +36,7 @@ import (
     "github.com/astaxie/beego/plugins/cors"
     _ "github.com/jotavargas/debug_beego_request/routers"
     _ "github.com/lib/pq"
-    "github.com/udistrital/utils_oas/customerror"
+    "github.com/udistrital/utils_oas/customerrorv2"
 )
 
 func init() {
@@ -61,7 +61,7 @@ func main() {
         ExposeHeaders:    []string{"Content-Length"},
         AllowCredentials: true,
     }))
-    beego.ErrorController(&customerror.CustomErrorController{})
+    beego.ErrorController(&customerrorv2.CustomErrorController{})
     beego.Run()
 }
 ```
@@ -74,12 +74,15 @@ la única restricción que existe, es que **solo realiza los ajustes en micro se
 
 ##### 2.1.1  Clonar repositorio
 ```golang
-git clone https://github.com/jotavargas/refactor_controller.git
+git clone git@github.com:udistrital/refactor_controller.git
 ```
 ##### 2.1.2 Ejecución del script
 ```bash
 #ir al proyecto
 cd refactor_controller
+
+# establecer la version 2
+git checkout version/0.0.2
 
 #como ejecutar (con python 2.7)
 python2.7 main.py -F ruta_controladores_del_api_a_refactoring
