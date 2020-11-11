@@ -126,7 +126,8 @@ A la derecha el refactor por el Script [refactor_controller](https://github.com/
 ![Refactor Metodo Post](/generacion_de_apis/img/put.png)
 
 #### 3.5 Solicitud DELETE
-A la izquierda el método por defecto creados por el Framewrok. A la derecha el refactor por el Script [refactor_controller](https://github.com/udistrital/refactor_controller)
+A la izquierda el método por defecto creados por el Framewrok.   
+A la derecha el refactor por el Script [refactor_controller](https://github.com/udistrital/refactor_controller)
 
 ![Refactor Metodo Post](/generacion_de_apis/img/delete.png)
 
