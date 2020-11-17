@@ -1,18 +1,17 @@
 # Generar API MID
 
-En está sección se encontrará los comando para generar un api. Encontraremos los comando tal cual como se encuentran en la documentación oficial del framework, el propósito es crear un **api_mid** que será utilizada en otros apartados de esta documentación.
+En está sección se encuentra documentado el paso a paso o los distintos comandos para generar un api mid.   
+Esta documentación es tomada la documentación oficial del framework, el propósito es crear un `api_mid` que será utilizada en apartados posteriores de esta documentación.
 
-**Repositorio:** [api_mid_beego_request](https://github.com/udistrital/api_mid_beego_request)
+> ### **Repositorio:** [api_mid_beego_request](https://github.com/udistrital/api_mid_beego_request)
 
-## Crear api
-Se corre el siguiente comando para generar un api, sin especificación de conexión a bd ya que según la arquitectura, los api_mid realizarán la función de consultar información a otras apis y consolidar la lógica de negocio.
-
-Si a de especificarse algun parametro, debe ser los endpoint de las apis externas a consultar.
-
+## 1. Crear API
+El siguiente comando generará un api, No se especifica la cadena de conexión a bd ya que según la arquitectura, los `api_mid` realizan una funcion de intermediación entre otras apis que corresponde a otros modelos de negocio.
 ```bash
+# crear api
 bee api api_mid_beego_request
 ```
-
+El framework porporciona la siguiente salida
 ```bash
 ______
 | ___ \
@@ -37,7 +36,7 @@ ______
 	create	 /home/jjvargass/go/src/github.com/udistrital/api_mid_beego_request/main.go
 2019/06/17 16:22:21 SUCCESS  ▶ 0002 New API successfully created!
 ```
-
+Estructura del proyecto
 ```bash
 tree
 .
@@ -56,11 +55,11 @@ tree
     └── default_test.go
 ```
 
-## Crear Controlador
-Para crear los controladores que realizaran que realizarán el trabajo fuerte dentro de nuestras aplicaciones como se comenta en el siguiete link [aqui](https://beego.me/docs/install/bee.md#command-generate) utilizaremos el comando **bee generate**.
-
-
+## 2. Crear Controlador
+Para crear los controladores que realizarán el trabajo fuerte dentro de nuestras aplicaciones MID utilizaremos el comando `bee generate`.   
+[Tomado De bee generate](https://beego.me/docs/install/bee.md#command-generate)
 ```bash
+# generar un controlador con nombre estudiante
 bee generate controller estudiante
 ```
 ```bash
@@ -77,7 +76,6 @@ ______
 ```
 
 Este comando creará un controlador con lo métodos CRUD por defecto y su respectiva documentación
-
 ```golang
 
 // Post ...
@@ -143,7 +141,11 @@ func (c *EstudianteController) Delete() {
 ```
 De esta forma podrá personalizar a las necesidades.
 
-
+## 3. Correr API MID
+Las API MID corrern como cualquier otra api desarrollada en beego. Lo unico a tener en cuenta es que estas reciben los endpoint de las otras apis de las cuales consume servicios.
+```
+bee run ENDPOINT_AGORA ENDPOINT_ARGO
+```
 ## Tomado
 
 [https://beego.me/docs/install/bee.md](https://beego.me/docs/install/bee.md)
