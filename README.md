@@ -45,22 +45,20 @@ La arquitectura definida para los sistemas en desarrollo en la OAS es módelo po
 > ### Generación API CRUD
 - [Generar API Beego](/generacion_de_apis/generar_api.md)
 - [Refactorizar API Beego (Contol de Errores)](/generacion_de_apis/control_error_json_crud.md)
-
+- [Versionar BD en API Beego (Beego Migrations)](/generacion_de_apis/beego_migrations.md)
 
 > ### Generación API MID
 - [Generar API MID](/generacion_de_apis/create_api_mid.md)
-- [API MID Orientado a Funciones](/generacion_de_apis/lineamiento_api_mid.md)
-- [Contol de Errores API MID (Respuestas Json)](/generacion_de_apis/control_error_json_mid.md)
-
-
-> ### Configuraciones Utilidades
-- [Generar Logs en API Beego](/generacion_de_apis/logs_api.md)
-- [Migrar Modelo de API a bd Nuevas](/generacion_de_apis/migrar.md)
-- [Beego Migrations](/generacion_de_apis/beego_migrations.md)
-
+- [lógicca Orientado a Funciones en API MID](/generacion_de_apis/lineamiento_api_mid.md)
+- [Refactorizar API MID (Control de Errores)](/generacion_de_apis/control_error_json_mid.md)
 
 > ### Generación Reglas de Negocio (RULE)
 - [Generar Reglas de Negocio-(Falta)]()
+
+> ### Configuraciones Adicionales y Utilidades
+- [Generar Logs en API Beego](/generacion_de_apis/logs_api.md)
+- [Migrar Modelo de API a bd Nuevas](/generacion_de_apis/migrar.md)
+
 
 ## 5.1. Pruebas Unitarias API Beego :mag:
 
