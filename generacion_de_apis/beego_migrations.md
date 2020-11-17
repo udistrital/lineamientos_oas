@@ -1,36 +1,95 @@
-# Migrar Modelo de API a BD Nuevas con Beego Migrations
-
+# Versionar BD en API Beego (Beego Migrations)
 Este proceso se realiza solo para apis de tipo CRUD
 
+## Requerimientos
+1. [Generar API Beego](generar_api.md)
+2. [Refactorizar API Beego (Contol de Errores)](control_error_json_crud.md)
 
-1. Desde la raíz del api correr el comando **bee generate migration nombre_fichero**
+
+## 1. Generar Migración
+Desde la raíz del api correr el comando `bee generate migration nombre_fichero`
 ```bash
+# Ejemplo comando
 bee generate migration nombre_fichero
 ```
-Se genera el fichero en **database/migrations** con la siguiente estructura como nombre **fecha_nombre_fichero.go** y el siguiente contenido:
+```bash
+bee generate migration crear_tabla_usuario_rol
+______
+| ___ \
+| |_/ /  ___   ___
+| ___ \ / _ \ / _ \
+| |_/ /|  __/|  __/
+\____/  \___| \___| v1.12.0
+2020/11/17 16:05:47 INFO     ▶ 0001 Using 'crear_tabla_usuario_rol' as migration name
+ create	 /home/jjvargass/go/src/github.com/udistrital/test_api_crud/database/migrations/20201117_160547_crear_tabla_usuario_rol.go
+2020/11/17 16:05:47 SUCCESS  ▶ 0002 Migration successfully generated!
+```
+### 1.1 Se creará el directorio `database/migrations`   
+```bash
+tree
+.
+├── conf
+│   └── app.conf
+├── controllers
+│   ├── rol.go
+│   └── usuario.go
+├── database
+│   └── migrations
+│       └── 20201117_160547_crear_tabla_usuario_rol.go
+├── lastupdate.tmp
+├── main.go
+├── models
+│   ├── rol.go
+│   └── usuario.go
+├── README.md
+├── routers
+│   └── router.go
+├── test_api_crud
+└── tests
+```
+### 1.2 Arvhivo de migración
+Dentro de `database/migrations` existira el archivo `fecha_nombre_fichero.go` con el siguietne contenido:
+
 ```golang
 package main
-import ("github.com/astaxie/beego/migration")
-  // DO NOT MODIFY
-  type CrearSchema_20190614_203240 struct {
-     migration.Migration
-   }
-   // DO NOT MODIFY
-   func init() {
-      m := &CrearSchema_20190614_203240{}
-      m.Created = "20190614_203240"
-      migration.Register("CrearSchema_20190614_203240", m)
-    }
-    // Run the migrations
-    func (m *CrearSchema_20190614_203240) Up() {
-       // use m.SQL("CREATE TABLE ...") to make schema update
-     }
-     // Reverse the migrations
-     func (m *CrearSchema_20190614_203240) Down() {
-     // use m.SQL("DROP TABLE ...") to reverse schema update
-     }
+
+import (
+	"github.com/astaxie/beego/migration"
+)
+
+// DO NOT MODIFY
+type CrearTablaUsuarioRol_20201117_160547 struct {
+	migration.Migration
+}
+
+// DO NOT MODIFY
+func init() {
+	m := &CrearTablaUsuarioRol_20201117_160547{}
+	m.Created = "20201117_160547"
+
+	migration.Register("CrearTablaUsuarioRol_20201117_160547", m)
+}
+
+// Run the migrations
+func (m *CrearTablaUsuarioRol_20201117_160547) Up() {
+	// use m.SQL("CREATE TABLE ...") to make schema update
+
+}
+
+// Reverse the migrations
+func (m *CrearTablaUsuarioRol_20201117_160547) Down() {
+	// use m.SQL("DROP TABLE ...") to reverse schema update
+
+}
 ```
-2. Modificar las funciones **Up()** y **Down()** de acuerdo a la necesidad.
+
+## 2. Personalizar Migracion
+
+### 2.1 Archivos .sql
+
+### 2.2 Sql
+
+Modificar las funciones **Up()** y **Down()** de acuerdo a la necesidad.
 ```golang
 // Run the migrations
 func (m *CrearSchema_20190614_203240) Up() {
