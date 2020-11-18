@@ -297,24 +297,90 @@ ______
 ```
 
 ### 2.2 Directamente Sql en funcion `Up()` y `Down()`
+Para migraciones en las que los cambios definidos en sql no requieren bastante lineas, se aconseja que se realicen directamente en un string definido en la función `SQL` del org de beego.   
+```bash
+ bee generate migration crear_tabla_pais
+```
+Se crea nuevos archivo de migracion
+```bash
+├── database
+│   ├── migrations
+│   │   ├── 20201117_160547_crear_tabla_usuario_rol.go
+│   │   └── 20201118_093359_crear_tabla_pais.go
 
-Modificar las funciones **Up()** y **Down()** de acuerdo a la necesidad.
-```golang
-// Run the migrations
-func (m *CrearSchema_20190614_203240) Up() {
-  // use m.SQL("CREATE TABLE ...") to make schema update
-  m.SQL("CREATE SCHEMA convenios AUTHORIZATION nombre_usuario;")
+```
+Archivo 20201118_093359_crear_tabla_pais.go
+```go
+package main
+
+import (
+	"github.com/astaxie/beego/migration"
+)
+
+// DO NOT MODIFY
+type CrearTablaPais_20201118_093359 struct {
+	migration.Migration
 }
+
+// DO NOT MODIFY
+func init() {
+	m := &CrearTablaPais_20201118_093359{}
+	m.Created = "20201118_093359"
+
+	migration.Register("CrearTablaPais_20201118_093359", m)
+}
+
+// Run the migrations
+func (m *CrearTablaPais_20201118_093359) Up() {
+	// use m.SQL("CREATE TABLE ...") to make schema update
+
+}
+
 // Reverse the migrations
-func (m *CrearSchema_20190614_203240) Down() {
-    // use m.SQL("DROP TABLE ...") to reverse schema update
-      	m.SQL("DROP SCHEMA convenios;")
+func (m *CrearTablaPais_20201118_093359) Down() {
+	// use m.SQL("DROP TABLE ...") to reverse schema update
+
 }
 ```
+Modificar las funciones `Up()` y `Down()` de acuerdo a la necesidad.
+```go
+// Run the migrations
+func (m *CrearTablaPais_20201118_093359) Up() {
+	// use m.SQL("CREATE TABLE ...") to make schema update
+	m.SQL("CREATE TABLE  public.pais(id serial NOT NULL,nombre varchar NOT NULL)")
+}
+
+// Reverse the migrations
+func (m *CrearTablaPais_20201118_093359) Down() {
+	// use m.SQL("DROP TABLE ...") to reverse schema update
+	m.SQL("DROP TABLE IF EXISTS public.pais")
+}
+```
+
 Una vez creados todos los ficheros necesarios,  correr el comando:
 ```bash
+# Estructura de comando
 bee migrate -driver=postgres -conn="postgres://my_user:my_pass@my_host:my_port/my_db?sslmode=disable&search_path=nombre_schema"
 ```
+
+```bash
+bee migrate --driver=postgres -conn="postgres://postgres:1234@127.0.0.1/bd_oas?sslmode=disable&search_path=public"
+______
+| ___ \
+| |_/ /  ___   ___
+| ___ \ / _ \ / _ \
+| |_/ /|  __/|  __/
+\____/  \___| \___| v1.12.0
+2020/11/18 09:42:56 INFO     ▶ 0001 Using 'postgres' as 'driver'
+2020/11/18 09:42:56 INFO     ▶ 0002 Using '/home/jjvargass/go/src/github.com/udistrital/test_api_crud/database/migrations' as 'dir'
+2020/11/18 09:42:56 INFO     ▶ 0003 Running all outstanding migrations
+2020/11/18 09:42:59 INFO     ▶ 0004 |> 2020/11/18 09:42:57.559 [I]  start upgrade CrearTablaPais_20201118_093359
+2020/11/18 09:42:59 INFO     ▶ 0005 |> 2020/11/18 09:42:57.559 [I]  exec sql: CREATE TABLE  public.pais(id serial NOT NULL,nombre varchar NOT NULL)
+2020/11/18 09:42:59 INFO     ▶ 0006 |> 2020/11/18 09:42:57.564 [I]  end upgrade: CrearTablaPais_20201118_093359
+2020/11/18 09:42:59 INFO     ▶ 0007 |> 2020/11/18 09:42:57.564 [I]  total success upgrade: 1  migration
+2020/11/18 09:42:59 SUCCESS  ▶ 0008 Migration successful!
+```
+
 ## 3. Recomendaciones
 
 ### 3.1  Fecha de creación
