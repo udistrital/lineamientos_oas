@@ -9,7 +9,7 @@ Este proceso se realiza solo para apis de tipo CRUD
 ## 1. Generar Migración
 Desde la raíz del api correr el comando `bee generate migration nombre_fichero`
 ```bash
-# Ejemplo comando
+# Estructura de comando
 bee generate migration nombre_fichero
 ```
 ```bash
@@ -115,8 +115,6 @@ CREATE TABLE public.usuario (
 	CONSTRAINT pk_usuario PRIMARY KEY (id)
 
 );
-ALTER TABLE public.usuario OWNER TO postgres;
-
 
 CREATE TABLE public.rol (
 	id serial NOT NULL,
@@ -125,7 +123,6 @@ CREATE TABLE public.rol (
 	CONSTRAINT pk_rol PRIMARY KEY (id)
 
 );
-ALTER TABLE public.rol OWNER TO postgres;
 
 ALTER TABLE public.rol ADD CONSTRAINT fk_rol_usuario FOREIGN KEY (usuario_id)
 REFERENCES public.usuario (id) MATCH FULL
@@ -242,6 +239,14 @@ func (m *CrearTablaUsuarioRol_20201117_160547) Down() {
 	}
 }
 ```
+#### 2.1.3 Correr migración
+```bash
+# Estructura de comando
+bee migrate -driver=postgres -conn="postgres://my_user:my_pass@my_host:my_port/my_db?sslmode=disable&search_path=nombre_schema"
+```
+```bash
+bee migrate -driver=postgres -conn="postgres://my_user:my_pass@my_host:my_port/my_db?sslmode=disable&search_path=nombre_schema"
+```
 
 ### 2.2 Directamente Sql en funcion `Up()` y `Down()`
 
@@ -258,7 +263,7 @@ func (m *CrearSchema_20190614_203240) Down() {
       	m.SQL("DROP SCHEMA convenios;")
 }
 ```
-3. Una vez creados todos los ficheros necesarios,  correr el comando:
+Una vez creados todos los ficheros necesarios,  correr el comando:
 ```bash
 bee migrate -driver=postgres -conn="postgres://my_user:my_pass@my_host:my_port/my_db?sslmode=disable&search_path=nombre_schema"
 ```
