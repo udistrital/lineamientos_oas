@@ -84,10 +84,120 @@ func (m *CrearTablaUsuarioRol_20201117_160547) Down() {
 ```
 
 ## 2. Personalizar Migracion
+En este apartado se mostrará las formas de personalizar las migraciones
 
-### 2.1 Archivos .sql
+### 2.1 A partir de un archivos .sql
+En este apartado se relacionará en las funciones `Up()` y `Down()` script sql que consolidarán la migraciona.
 
-### 2.2 Sql
+#### 2.1.1 Crear carpeta scripts con los fuentes para funcion Up y Down
+Se crearán dos archivos con el mismo nombre de la migración pero en al final agregar el segmento `_up` y `_down` para especificar que funciona en la migracion lo implementará.
+```bash
+├── conf
+│   └── app.conf
+├── controllers
+│   ├── rol.go
+│   └── usuario.go
+├── database
+│   ├── migrations
+│   │   └── 20201117_160547_crear_tabla_usuario_rol.go
+│   └── scripts
+│       ├── 20201117_160547_crear_tabla_usuario_rol_down.sql
+│       └── 20201117_160547_crear_tabla_usuario_rol_up.sql
+```
+##### Archivo 20201117_160547_crear_tabla_usuario_rol_up.sql
+El contenido de este arvhivo esta dado por el sql que dio origen en la creación de la api en el capitulo anterior [Generar API Beego](generar_api.md).   
+[SQL usuario rol](/generacion_de_apis/bd/usuario_rol.sql)
+```sql
+CREATE TABLE public.usuario (
+	id serial NOT NULL,
+	nombre varchar NOT NULL,
+	apellido varchar,
+	CONSTRAINT pk_usuario PRIMARY KEY (id)
+
+);
+ALTER TABLE public.usuario OWNER TO postgres;
+
+
+CREATE TABLE public.rol (
+	id serial NOT NULL,
+	aplicacion varchar NOT NULL,
+	usuario_id integer NOT NULL,
+	CONSTRAINT pk_rol PRIMARY KEY (id)
+
+);
+ALTER TABLE public.rol OWNER TO postgres;
+
+ALTER TABLE public.rol ADD CONSTRAINT fk_rol_usuario FOREIGN KEY (usuario_id)
+REFERENCES public.usuario (id) MATCH FULL
+ON DELETE NO ACTION ON UPDATE NO ACTION;
+```
+##### Archivo 20201117_160547_crear_tabla_usuario_rol_down.sql
+El contenido de esta archivo, realizará una eliminación de los elementos creados en la uncion `Up()`en caso de que algo salga mal a manera de  un rolback.
+```sql
+DROP TABLE IF EXISTS public.usuario CASCADE;
+DROP TABLE IF EXISTS public.rol CASCADE;
+```
+#### 2.1.2 Llamado de archivo sql en funciones `Up()` y `Down()`
+
+##### Función `Up()`
+Editamos el archivo `database/migrations/20201117_160547_crear_tabla_usuario_rol.go`   
+En la funcion `Up()` para referenciar el archivo .sql
+```go
+file, err := ioutil.ReadFile("../scripts/20201117_160547_crear_tabla_usuario_rol_up.sql")
+
+if err != nil {
+  // handle error
+  fmt.Println(err)
+}
+
+requests := strings.Split(string(file), ";")
+
+for _, request := range requests {
+  fmt.Println(request)
+  m.SQL(request)
+  // do whatever you need with result and error
+}
+```
+
+> Código Original:
+```go
+// Run the migrations
+func (m *CrearTablaUsuarioRol_20201117_160547) Up() {
+	// use m.SQL("CREATE TABLE ...") to make schema update
+
+}
+```
+
+
+> Código incorporando modificaciones:
+```go
+// Run the migrations
+func (m *CrearTablaUsuarioRol_20201117_160547) Up() {
+	// use m.SQL("CREATE TABLE ...") to make schema update
+	file, err := ioutil.ReadFile("../scripts/20201117_160547_crear_tabla_usuario_rol_up.sql")
+
+	if err != nil {
+		// handle error
+		fmt.Println(err)
+	}
+
+	requests := strings.Split(string(file), ";")
+
+	for _, request := range requests {
+		fmt.Println(request)
+		m.SQL(request)
+		// do whatever you need with result and error
+	}
+
+}
+```
+
+##### Función `Down()`
+```go
+
+```
+
+### 2.2 Directamente Sql en funcion `Up()` y `Down()`
 
 Modificar las funciones **Up()** y **Down()** de acuerdo a la necesidad.
 ```golang
