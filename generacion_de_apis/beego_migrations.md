@@ -168,7 +168,6 @@ func (m *CrearTablaUsuarioRol_20201117_160547) Up() {
 }
 ```
 
-
 > Código incorporando modificaciones:
 ```go
 // Run the migrations
@@ -193,8 +192,55 @@ func (m *CrearTablaUsuarioRol_20201117_160547) Up() {
 ```
 
 ##### Función `Down()`
+Editamos el archivo `database/migrations/20201117_160547_crear_tabla_usuario_rol.go`   
+En la funcion `Down()` para referenciar el archivo .sql
 ```go
+file, err := ioutil.ReadFile("../scripts/20201117_160547_crear_tabla_usuario_rol_down.sql")
 
+if err != nil {
+  // handle error
+  fmt.Println(err)
+}
+
+requests := strings.Split(string(file), ";")
+
+for _, request := range requests {
+  fmt.Println(request)
+  m.SQL(request)
+  // do whatever you need with result and error
+}
+```
+> Código Original:
+
+```go
+// Reverse the migrations
+func (m *CrearTablaUsuarioRol_20201117_160547) Down() {
+	// use m.SQL("DROP TABLE ...") to reverse schema update
+
+}
+```
+
+> Código incorporando modificaciones:
+
+```go
+// Reverse the migrations
+func (m *CrearTablaUsuarioRol_20201117_160547) Down() {
+	// use m.SQL("DROP TABLE ...") to reverse schema update
+	file, err := ioutil.ReadFile("../scripts/20201117_160547_crear_tabla_usuario_rol_down.sql")
+
+	if err != nil {
+		// handle error
+		fmt.Println(err)
+	}
+
+	requests := strings.Split(string(file), ";")
+
+	for _, request := range requests {
+		fmt.Println(request)
+		m.SQL(request)
+		// do whatever you need with result and error
+	}
+}
 ```
 
 ### 2.2 Directamente Sql en funcion `Up()` y `Down()`
