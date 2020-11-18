@@ -244,8 +244,56 @@ func (m *CrearTablaUsuarioRol_20201117_160547) Down() {
 # Estructura de comando
 bee migrate -driver=postgres -conn="postgres://my_user:my_pass@my_host:my_port/my_db?sslmode=disable&search_path=nombre_schema"
 ```
+La cadea de conexion especificada en la variable `conn` es la misma que se encuentra definida en el archivo `conf/app.conf` del api.
 ```bash
-bee migrate -driver=postgres -conn="postgres://my_user:my_pass@my_host:my_port/my_db?sslmode=disable&search_path=nombre_schema"
+bee migrate --driver=postgres -conn="postgres://postgres:1234@127.0.0.1/bd_oas?sslmode=disable&search_path=public"
+______
+| ___ \
+| |_/ /  ___   ___
+| ___ \ / _ \ / _ \
+| |_/ /|  __/|  __/
+\____/  \___| \___| v1.12.0
+2020/11/18 08:37:30 INFO     ▶ 0001 Using 'postgres' as 'driver'
+2020/11/18 08:37:30 INFO     ▶ 0002 Using '/home/jjvargass/go/src/github.com/udistrital/test_api_crud/database/migrations' as 'dir'
+2020/11/18 08:37:30 INFO     ▶ 0003 Running all outstanding migrations
+2020/11/18 08:37:30 INFO     ▶ 0004 Creating 'migrations' table...
+2020/11/18 08:37:33 INFO     ▶ 0005 |> 2020/11/18 08:37:31.383 [I]  start upgrade CrearTablaUsuarioRol_20201117_160547
+2020/11/18 08:37:33 INFO     ▶ 0006 |> CREATE TABLE public.usuario (
+2020/11/18 08:37:33 INFO     ▶ 0007 |> 	id serial NOT NULL,
+2020/11/18 08:37:33 INFO     ▶ 0008 |> 	nombre varchar NOT NULL,
+2020/11/18 08:37:33 INFO     ▶ 0009 |> 	apellido varchar,
+2020/11/18 08:37:33 INFO     ▶ 0010 |> 	CONSTRAINT pk_usuario PRIMARY KEY (id)
+2020/11/18 08:37:33 INFO     ▶ 0011 |> )
+2020/11/18 08:37:33 INFO     ▶ 0012 |> CREATE TABLE public.rol (
+2020/11/18 08:37:33 INFO     ▶ 0013 |> 	id serial NOT NULL,
+2020/11/18 08:37:33 INFO     ▶ 0014 |> 	aplicacion varchar NOT NULL,
+2020/11/18 08:37:33 INFO     ▶ 0015 |> 	usuario_id integer NOT NULL,
+2020/11/18 08:37:33 INFO     ▶ 0016 |> 	CONSTRAINT pk_rol PRIMARY KEY (id)
+2020/11/18 08:37:33 INFO     ▶ 0017 |> )
+2020/11/18 08:37:33 INFO     ▶ 0018 |> ALTER TABLE public.rol ADD CONSTRAINT fk_rol_usuario FOREIGN KEY (usuario_id)
+2020/11/18 08:37:33 INFO     ▶ 0019 |> REFERENCES public.usuario (id) MATCH FULL
+2020/11/18 08:37:33 INFO     ▶ 0020 |> ON DELETE NO ACTION ON UPDATE NO ACTION
+2020/11/18 08:37:33 INFO     ▶ 0021 |> 2020/11/18 08:37:31.384 [I]  exec sql: CREATE TABLE public.usuario (
+2020/11/18 08:37:33 INFO     ▶ 0022 |> 	id serial NOT NULL,
+2020/11/18 08:37:33 INFO     ▶ 0023 |> 	nombre varchar NOT NULL,
+2020/11/18 08:37:33 INFO     ▶ 0024 |> 	apellido varchar,
+2020/11/18 08:37:33 INFO     ▶ 0025 |> 	CONSTRAINT pk_usuario PRIMARY KEY (id)
+2020/11/18 08:37:33 INFO     ▶ 0026 |> )
+2020/11/18 08:37:33 INFO     ▶ 0027 |> 2020/11/18 08:37:31.391 [I]  exec sql:
+2020/11/18 08:37:33 INFO     ▶ 0028 |> CREATE TABLE public.rol (
+2020/11/18 08:37:33 INFO     ▶ 0029 |> 	id serial NOT NULL,
+2020/11/18 08:37:33 INFO     ▶ 0030 |> 	aplicacion varchar NOT NULL,
+2020/11/18 08:37:33 INFO     ▶ 0031 |> 	usuario_id integer NOT NULL,
+2020/11/18 08:37:33 INFO     ▶ 0032 |> 	CONSTRAINT pk_rol PRIMARY KEY (id)
+2020/11/18 08:37:33 INFO     ▶ 0033 |> )
+2020/11/18 08:37:33 INFO     ▶ 0034 |> 2020/11/18 08:37:31.396 [I]  exec sql:
+2020/11/18 08:37:33 INFO     ▶ 0035 |> ALTER TABLE public.rol ADD CONSTRAINT fk_rol_usuario FOREIGN KEY (usuario_id)
+2020/11/18 08:37:33 INFO     ▶ 0036 |> REFERENCES public.usuario (id) MATCH FULL
+2020/11/18 08:37:33 INFO     ▶ 0037 |> ON DELETE NO ACTION ON UPDATE NO ACTION
+2020/11/18 08:37:33 INFO     ▶ 0038 |> 2020/11/18 08:37:31.398 [I]  exec sql:
+2020/11/18 08:37:33 INFO     ▶ 0039 |> 2020/11/18 08:37:31.400 [I]  end upgrade: CrearTablaUsuarioRol_20201117_160547
+2020/11/18 08:37:33 INFO     ▶ 0040 |> 2020/11/18 08:37:31.400 [I]  total success upgrade: 1  migration
+2020/11/18 08:37:33 SUCCESS  ▶ 0041 Migration successful!
 ```
 
 ### 2.2 Directamente Sql en funcion `Up()` y `Down()`
@@ -267,31 +315,38 @@ Una vez creados todos los ficheros necesarios,  correr el comando:
 ```bash
 bee migrate -driver=postgres -conn="postgres://my_user:my_pass@my_host:my_port/my_db?sslmode=disable&search_path=nombre_schema"
 ```
-## Recomendaciones
+## 3. Recomendaciones
 
-- Tener en cuenta la fecha de creación de los ficheros, el orden de migración esta dado por esta fecha.  
+### 3.1  Fecha de creación
+Tener en cuenta la fecha de creación de los ficheros, el orden de migración esta dado por esta fecha.  
 Ejemplo:
 
-  Se crean los siguientes ficheros:
-
-  - 20190614_203255_crear_tabla_convenio.go
-  - 20190614_203240_crear_schema.go
-  - 20190614_203530_crear_tabla_pais_categoria.go
-
-  En el ejemplo anterior, el orden de migración es:
-
-  - 20190614_203240_crear_schema.go
-  - 20190614_203255_crear_tabla_convenio.go
-  - 20190614_203530_crear_tabla_pais_categoria.go
-
-
-- Nombrar los ficheros de acuerdo a la acción a realizar:
+Se crean los siguientes ficheros:
+```bash
+20190614_203255_crear_tabla_convenio.go
+20190614_203240_crear_schema.go
+20190614_203530_crear_tabla_pais_categoria.go
+```
+En el ejemplo anterior, el orden de migración es:
+```bash
+20190614_203240_crear_schema.go
+20190614_203255_crear_tabla_convenio.go
+20190614_203530_crear_tabla_pais_categoria.go
+```
+### 3.2  Nombramiento de ficheros
+Nombrar los ficheros de acuerdo a la acción a realizar:
 ```bash
 bee generate migration crear_schema
 bee generate migration crear_nombre_tabla
 bee generate migration modificar_nombre_tabla
 bee generate migration ingresar_registro_nombre_tabla
 ```
-- Siempre registrar la función **Down()** para evitar inconsistencias
-- Al realizar los despliegues por medio del sistema IC, se realiza reset de la migración, los datos que no se encuentren en los ficheros serán eliminados
-- Solo se realizara la migración en los entornos de desarrollo y pruebas
+
+### 3.3  Consistencia de la migración
+- Siempre registrar la función `Down()` para evitar inconsistencias.
+- Al realizar los despliegues por medio del sistema de integracion continua (CI), se lleva un control o version de las migraciones ejecutadas, al suceder un error en el `pipeline` se realiza reset de la migración, controlando los eventos ejecutados y la version estable de la Base de datos.
+- Solo se realizara la migración en los entornos de desarrollo (develop) y pruebas (release)
+
+
+## Tomado de:
+[produccion_academica_crud](https://github.com/udistrital/produccion_academica_crud/tree/master/database)
