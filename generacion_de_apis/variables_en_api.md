@@ -186,7 +186,7 @@ export TEST_API_CRUD_PGSCHEMA=public
 ```bash
 env | grep TEST_API_CRUD_
 ```
-se obtiene lo siguiente
+Se obtiene lo siguiente
 ```bash
 TEST_API_CRUD_HTTP_PORT=8080
 TEST_API_CRUD_RUN_MODE=dev
