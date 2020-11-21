@@ -185,6 +185,9 @@ export TEST_API_CRUD_PGSCHEMA=public
 >Validar la asignación
 ```bash
 env | grep TEST_API_CRUD_
+```
+se obtiene lo siguiente
+```bash
 TEST_API_CRUD_HTTP_PORT=8080
 TEST_API_CRUD_RUN_MODE=dev
 TEST_API_CRUD_PGUSER=postgres
