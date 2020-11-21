@@ -66,7 +66,7 @@ Para el segmento de la cadena de conexión se han definido 6 variables del api �
 ### 2.1 Editar archvo `main.go`
 Ahora se reemplaza el llamado de la variable `sqlconn` por las variables fragmentadas que concatenadas establecerán la cadena de conexión.
 
-> Código Original:
+> 1) Código Original:
 ```go
 package main
 
@@ -102,11 +102,13 @@ func main() {
 	beego.Run()
 }
 ```
-> linea a reemplazar:
+
+> 2) Linea a reemplazar:
 ```go
 orm.RegisterDataBase("default", "postgres", beego.AppConfig.String("sqlconn"))
 ```
-Nuevo llamado de parametros para cadena de conexion
+
+> 3) Nuevo llamado de parametros para cadena de conexion
 ```go
 orm.RegisterDataBase("default", "postgres", "postgres://"+
   beego.AppConfig.String("PGuser")+":"+
@@ -117,7 +119,7 @@ orm.RegisterDataBase("default", "postgres", "postgres://"+
   beego.AppConfig.String("PGschemas")+"")
 ```
 
-> Código incorporando configuración:
+> 4) Código incorporando configuración:
 ```go
 package main
 
@@ -159,4 +161,5 @@ func main() {
 	beego.Run()
 }
 ```
+
 ## 3. Utilizar Variables de entorno
