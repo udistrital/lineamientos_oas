@@ -162,4 +162,56 @@ func main() {
 }
 ```
 
-## 3. Utilizar Variables de entorno
+## 3. Utilizar variables de entorno
+Para utilizar las variables de entorno previamente debemos asignarle su valor correspondiente.
+
+### 3.1 Desde Sistema Operativo
+En una terminal del sistema operativo GNU/linux se defien los valores correspondientes a las variables de entorno.
+
+>Definición de valores
+```bash
+export TEST_API_CRUD_HTTP_PORT=8080
+export TEST_API_CRUD_RUN_MODE=dev
+export TEST_API_CRUD_PGUSER=postgres
+export TEST_API_CRUD_PGPASS=1234
+export TEST_API_CRUD_PGURLS=127.0.0.1
+export TEST_API_CRUD_PGPORT=5432
+export TEST_API_CRUD_PGDB=bd_oas
+export TEST_API_CRUD_PGSCHEMA=public
+```
+
+>Validar la asignación
+```bash
+env | grep TEST_API_CRUD_
+TEST_API_CRUD_HTTP_PORT=8080
+TEST_API_CRUD_RUN_MODE=dev
+TEST_API_CRUD_PGUSER=postgres
+TEST_API_CRUD_PGPASS=1234
+TEST_API_CRUD_PGURLS=127.0.0.1
+TEST_API_CRUD_PGPORT=5432
+TEST_API_CRUD_PGDB=bd_oas
+TEST_API_CRUD_PGSCHEMA=public
+```
+
+>Si deseas eliminar las variables de entorno
+```bash
+unset TEST_API_CRUD_HTTP_PORT
+unset TEST_API_CRUD_RUN_MODE
+unset TEST_API_CRUD_PGUSER
+unset TEST_API_CRUD_PGPASS
+unset TEST_API_CRUD_PGURLS
+unset TEST_API_CRUD_PGPORT
+unset TEST_API_CRUD_PGDB
+unset TEST_API_CRUD_PGSCHEMA
+```
+
+>Ejecutar APIS
+```bash
+bee run
+```
+
+### 3.1 Desde la Ejecución `bee run` del API
+Podemos definir uno a uno los valores de cada variable de entorno en el llamado al `bee run`
+```bash
+TEST_API_CRUD_HTTP_PORT=8080 TEST_API_CRUD_RUN_MODE=dev TEST_API_CRUD_PGUSER=postgres TEST_API_CRUD_PGPASS=1234 TEST_API_CRUD_PGURLS=127.0.0.1 TEST_API_CRUD_PGPORT=5432 TEST_API_CRUD_PGDB=bd_oas TEST_API_CRUD_PGSCHEMA=public bee run
+```
