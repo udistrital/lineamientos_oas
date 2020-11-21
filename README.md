@@ -46,6 +46,7 @@ La arquitectura definida para los sistemas en desarrollo en la OAS es módelo po
 - [Generar API Beego](/generacion_de_apis/generar_api.md)
 - [Refactorizar API Beego (Contol de Errores)](/generacion_de_apis/control_error_json_crud.md)
 - [Versionar BD en API Beego (Beego Migrations)](/generacion_de_apis/beego_migrations.md)
+- [Variables de Entorno en API Beego (Beego Migrations)](/generacion_de_apis/variables_en_api.md)
 
 > ### Generación API MID
 - [Generar API MID](/generacion_de_apis/create_api_mid.md)
