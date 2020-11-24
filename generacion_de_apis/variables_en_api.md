@@ -60,7 +60,7 @@ PGpass = ${TEST_API_CRUD_PGPASS}
 PGurl = ${TEST_API_CRUD_PGURL}
 PGport = ${TEST_API_CRUD_PGPORT}
 PGdb   = ${TEST_API_CRUD_PGDB}
-PGschemas = ${TEST_API_CRUD_PGSCHEMA}
+PGschema = ${TEST_API_CRUD_PGSCHEMA}
 ```
 Aquí podemos evidenciar como en las primeras dos variables de entorno se definen para el puerto del api y el modo de ejecución.   
 Para el segmento de la cadena de conexión se han definido 6 variables del api “las que inicia con PG” que serán alimentadas por el paso de variables de entorno.
@@ -118,7 +118,7 @@ orm.RegisterDataBase("default", "postgres", "postgres://"+
   beego.AppConfig.String("PGurl")+":"+
   beego.AppConfig.String("PGport")+"/"+
   beego.AppConfig.String("PGdb")+"?sslmode=disable&search_path="+
-  beego.AppConfig.String("PGschemas")+"")
+  beego.AppConfig.String("PGschema")+"")
 ```
 
 > 4) Código incorporando configuración:
@@ -142,7 +142,7 @@ func main() {
 		beego.AppConfig.String("PGurl")+":"+
 		beego.AppConfig.String("PGport")+"/"+
 		beego.AppConfig.String("PGdb")+"?sslmode=disable&search_path="+
-		beego.AppConfig.String("PGschemas")+"")
+		beego.AppConfig.String("PGschema")+"")
 	if beego.BConfig.RunMode == "dev" {
 		beego.BConfig.WebConfig.DirectoryIndex = true
 		beego.BConfig.WebConfig.StaticDir["/swagger"] = "swagger"
