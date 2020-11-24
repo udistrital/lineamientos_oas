@@ -26,7 +26,7 @@ _RUN_MODE=[Modo de ejecución del API]
 # paramametros de bd
 _PGUSER=[Usuario de BD]
 _PGPASS=[Contraseña del usaurio de BD]
-_PGURLS=[URL, Dominio o EndPoint de la BD]
+_PGURL=[URL, Dominio o EndPoint de la BD]
 _PGPORT=[Puerto de la BD]
 _PGDB=[Nombre de Base de Datos]
 _PGSCHEMA=[Nombre del Esquema de Base de Datos]
@@ -57,7 +57,7 @@ EnableDocs = true
 # sqlconn sql fragmentado
 PGuser = ${TEST_API_CRUD_PGUSER}
 PGpass = ${TEST_API_CRUD_PGPASS}
-PGurls = ${TEST_API_CRUD_PGURLS}
+PGurl = ${TEST_API_CRUD_PGURL}
 PGport = ${TEST_API_CRUD_PGPORT}
 PGdb   = ${TEST_API_CRUD_PGDB}
 PGschemas = ${TEST_API_CRUD_PGSCHEMA}
@@ -115,7 +115,7 @@ orm.RegisterDataBase("default", "postgres", beego.AppConfig.String("sqlconn"))
 orm.RegisterDataBase("default", "postgres", "postgres://"+
   beego.AppConfig.String("PGuser")+":"+
   beego.AppConfig.String("PGpass")+"@"+
-  beego.AppConfig.String("PGurls")+":"+
+  beego.AppConfig.String("PGurl")+":"+
   beego.AppConfig.String("PGport")+"/"+
   beego.AppConfig.String("PGdb")+"?sslmode=disable&search_path="+
   beego.AppConfig.String("PGschemas")+"")
@@ -139,7 +139,7 @@ func main() {
 	orm.RegisterDataBase("default", "postgres", "postgres://"+
 		beego.AppConfig.String("PGuser")+":"+
 		beego.AppConfig.String("PGpass")+"@"+
-		beego.AppConfig.String("PGurls")+":"+
+		beego.AppConfig.String("PGurl")+":"+
 		beego.AppConfig.String("PGport")+"/"+
 		beego.AppConfig.String("PGdb")+"?sslmode=disable&search_path="+
 		beego.AppConfig.String("PGschemas")+"")
@@ -176,7 +176,7 @@ export TEST_API_CRUD_HTTP_PORT=8080
 export TEST_API_CRUD_RUN_MODE=dev
 export TEST_API_CRUD_PGUSER=postgres
 export TEST_API_CRUD_PGPASS=1234
-export TEST_API_CRUD_PGURLS=127.0.0.1
+export TEST_API_CRUD_PGURL=127.0.0.1
 export TEST_API_CRUD_PGPORT=5432
 export TEST_API_CRUD_PGDB=bd_oas
 export TEST_API_CRUD_PGSCHEMA=public
@@ -192,7 +192,7 @@ TEST_API_CRUD_HTTP_PORT=8080
 TEST_API_CRUD_RUN_MODE=dev
 TEST_API_CRUD_PGUSER=postgres
 TEST_API_CRUD_PGPASS=1234
-TEST_API_CRUD_PGURLS=127.0.0.1
+TEST_API_CRUD_PGURL=127.0.0.1
 TEST_API_CRUD_PGPORT=5432
 TEST_API_CRUD_PGDB=bd_oas
 TEST_API_CRUD_PGSCHEMA=public
@@ -204,7 +204,7 @@ unset TEST_API_CRUD_HTTP_PORT
 unset TEST_API_CRUD_RUN_MODE
 unset TEST_API_CRUD_PGUSER
 unset TEST_API_CRUD_PGPASS
-unset TEST_API_CRUD_PGURLS
+unset TEST_API_CRUD_PGURL
 unset TEST_API_CRUD_PGPORT
 unset TEST_API_CRUD_PGDB
 unset TEST_API_CRUD_PGSCHEMA
@@ -218,5 +218,5 @@ bee run
 ### 3.1 Desde la Ejecución `bee run` del API
 Podemos definir uno a uno los valores de cada variable de entorno en el llamado al `bee run`
 ```bash
-TEST_API_CRUD_HTTP_PORT=8080 TEST_API_CRUD_RUN_MODE=dev TEST_API_CRUD_PGUSER=postgres TEST_API_CRUD_PGPASS=1234 TEST_API_CRUD_PGURLS=127.0.0.1 TEST_API_CRUD_PGPORT=5432 TEST_API_CRUD_PGDB=bd_oas TEST_API_CRUD_PGSCHEMA=public bee run
+TEST_API_CRUD_HTTP_PORT=8080 TEST_API_CRUD_RUN_MODE=dev TEST_API_CRUD_PGUSER=postgres TEST_API_CRUD_PGPASS=1234 TEST_API_CRUD_PGURL=127.0.0.1 TEST_API_CRUD_PGPORT=5432 TEST_API_CRUD_PGDB=bd_oas TEST_API_CRUD_PGSCHEMA=public bee run
 ```
