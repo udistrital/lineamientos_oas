@@ -26,7 +26,7 @@ _RUN_MODE=[Modo de ejecución del API]
 # paramametros de bd
 _PGUSER=[Usuario de BD]
 _PGPASS=[Contraseña del usaurio de BD]
-_PGHOST=[URL, Dominio o Host de la BD]
+_PGHOST=[URL, Dominio o EndPoint de la BD]
 _PGPORT=[Puerto de la BD]
 _PGDB=[Nombre de Base de Datos]
 _PGSCHEMA=[Nombre del Esquema de Base de Datos]
