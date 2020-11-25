@@ -54,7 +54,7 @@ copyrequestbody = true
 EnableDocs = true
 
 # sqlconn = postgres://postgres:1234@127.0.0.1/bd_oas?sslmode=disable&search_path=public
-# sqlconn sql fragmentado
+# cadena de conexion fragmentado
 PGuser = ${TEST_API_CRUD_PGUSER}
 PGpass = ${TEST_API_CRUD_PGPASS}
 PGhost = ${TEST_API_CRUD_PGHOST}
