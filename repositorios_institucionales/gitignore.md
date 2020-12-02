@@ -9,7 +9,6 @@ En está sección se establecerán las convenciones para la definción del archi
   .vscode/
   titan_api_crud
   main
-  routers/commentsRouter_controllers.go
   .scannerwork/
   swagger/*.png
   swagger/*.html
