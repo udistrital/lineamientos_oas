@@ -17,12 +17,7 @@ sudo yum install git -y
 
 #### 2.1 Beego
 
-##### 2.1.1 Beego ultima version
-```bash
-go get -u github.com/astaxie/beego
-```
-
-##### 2.1.2 Beego V1.12.1 (Versión Funcional para OAS)
+##### 2.1.1 Beego V1.12.1 (Versión Funcional para OAS)
 ```bash
 cd $GOPATH
 mkdir -p src/github.com/astaxie
@@ -34,12 +29,34 @@ cd beego/
 go get
 go install
 ```
+
 #### 2.2 Bee
 ```bash
 # Instalar bee
 GO111MODULE="on" go get -u github.com/beego/bee
 ```
-#### 2.3 GO111MODULE
+#### 2.3 Comprobar instalacion
+```bash
+$ bee version
+
+| ___ \
+| |_/ /  ___   ___
+| ___ \ / _ \ / _ \
+| |_/ /|  __/|  __/
+\____/  \___| \___| v1.10.0
+
+├── Beego     : 1.11.1
+├── GoVersion : go1.11.5
+├── GOOS      : linux
+├── GOARCH    : amd64
+├── NumCPU    : 1
+├── GOPATH    : /home/virtual/go
+├── GOROOT    : /usr/local/go
+├── Compiler  : gc
+└── Date      : Wednesday, 20 Feb 2019
+```
+
+#### 2.4 GO111MODULE (Información Adicional)
 **Nota**: Agregamos un apartado para el manejo de GO111MODULE
 ```bash
 # Comando para consultar variable del sistema:  
@@ -63,7 +80,7 @@ go env -w GO111MODULE=on
 go env -w GO111MODULE=""
 ```
 
-
+***
 ## Instalación en Ambiente Dockerizado
 
 ### 1. Instalar herramienas de contenedores:   
@@ -103,7 +120,7 @@ services:
     command: sh -c 'cd github.com/udistrital/${API_NAME};go get -v ./...; bee migrate -driver=postgres -conn="postgres://${POSTGRES_USER}:${POSTGRES_PASSWORD}@${POSTGRES_HOST}/${POSTGRES_DB}?sslmode=disable&search_path=public" || true; bee run -downdoc=true -gendoc=true' #variables de coneccion a la base de datos
 ```
 
-## Comprobar instalacion
+#### Comprobar instalacion
 ```bash
 $ bee version
 
