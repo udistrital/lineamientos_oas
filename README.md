@@ -74,6 +74,14 @@ La arquitectura definida para los sistemas en desarrollo en la OAS es módelo po
 - [Smoke Testing API MID](/pruebas_unitarias_api_beego/smoke_test_mid.md)
 
 ***
+## 6. APIS NestJS (NEW)
+> ### Generación API
+- [Generar API NestJS](/api_nest/api_nest.md)
+- [Variables de Entorno API NestJS](/api_nest/XX.md)
+- [(health check) validación de estado en APIs](/api_nest/XX.md)
+- [Pruebas Unitarias](/api_nest/XX.md)
+
+<!-- ***
 ## 6. Clientes Angular
 
 - Lineamientos
@@ -82,6 +90,7 @@ La arquitectura definida para los sistemas en desarrollo en la OAS es módelo po
 ## 6.1 Pruebas Unitarias de Clientes Angular
 
 - Lineamientos
+-->
 
 ***
 ## 7. Despliegues
