@@ -1,19 +1,19 @@
-# EndPoint de validacion estado en APIs
+# (health check) validación de estado en APIs
 Para desplegar satisfactoriamente un api dentro de la infraestructura de la OAS, se debe crear un servicio el cual será constantemente objeto de revisión para verificar el estado de salud del mismo, esto se conoce como  health check.  
 A continuación se definirá los pasos necesarios para implementar el health check de las apis de la oas.
 
 
->## 1. Importar utilidad.
+>#### Paso 1. Importar utilidad.
 Existe una librería en el repositorio `util_oas` del cual haremos uso en el `import` del archivo `main.go` de la api.
 ```go
 apistatus "github.com/udistrital/utils_oas/apiStatusLib"
 ```
-
+>#### Paso 2. inicializar utilidad.
 Para inicializar la función agregamos la siguiente línea antes del `beego.Run()`
 ```go
 apistatus.Init()
 ```
-
+>#### Resultado final
 El archivo main.go lucirá de la siguiente manera.
 ```go
 package main
@@ -59,3 +59,5 @@ func main() {
 	beego.Run()
 }
 ```
+
+Con esto garantizamos que las apis desplieguen correctamente en la infraestructura de la OAS.
