@@ -8,11 +8,13 @@ Existe una librería en el repositorio `util_oas` del cual haremos uso en el `im
 ```go
 apistatus "github.com/udistrital/utils_oas/apiStatusLib"
 ```
+
 >#### Paso 2. inicializar utilidad.
 Para inicializar la función agregamos la siguiente línea antes del `beego.Run()`
 ```go
 apistatus.Init()
 ```
+
 >#### Resultado final
 El archivo main.go lucirá de la siguiente manera.
 ```go
