@@ -10,17 +10,8 @@ En está sección se establecerán las convenciones para la definción del archi
   titan_api_crud
   main
   .scannerwork/
-  swagger/*.png
-  swagger/*.html
-  swagger/*.js
-  swagger/*.map
-  swagger/*.css
-  swagger/*.yml
-  swagger/css/
-  swagger/fonts/
-  swagger/images/
-  swagger/lang/
-  swagger/lib/
+  swagger/**
+  !swagger/swagger.json
   ```
 
 - **lastupdate.tmp**: Archivo generado por el Api beego
