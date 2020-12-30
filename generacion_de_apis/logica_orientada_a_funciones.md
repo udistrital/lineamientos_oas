@@ -128,7 +128,9 @@ func (c *CertificacionController) GetCertificacionDocumentosAprobados() {
 }
 ```
 
-### 3 certificaciones helpers
+### 3 helpers
+>##### [Codigo Fuente helpers](https://github.com/udistrital/cumplidos_mid/blob/develop/helpers/certificaciones.go)
+
 los script consolidados en el módulo helpers serán la lógica de negocio para cada uno de los controladores, esto con el propósito de modularizar la lógica de negocio y no consolidar funciones de controladores tan extensas.
 
 #### 2.1 Control de errores
