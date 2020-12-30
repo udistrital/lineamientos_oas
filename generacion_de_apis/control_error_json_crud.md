@@ -2,9 +2,9 @@
 
 En está sección se especificarán los ajustes pertinentes para que las API creadas en el framewor Beego respondan en JSON conforme a los estandares de la Oficina Asesora de Sistemas; esto con el fin de que no genere problemas al intregarse con el administrador de servicios WSO2.
 
+>### **Repositorio:** [test_api_crud](https://github.com/udistrital/test_api_crud)
 >#### [:book: Documento de Sustentación :book:](https://docs.google.com/document/d/1wxf8QB-qZ3c5H2irR6kV6SoVQMw5LNNkp3aFLo9nooI/edit?usp=sharing)
 
-> ### **Repositorio:** [test_api_crud](https://github.com/udistrital/test_api_crud)
 
 ## Requerimientos Previos
 1. [Generar API Beego](generar_api.md)
@@ -14,7 +14,7 @@ En está sección se especificarán los ajustes pertinentes para que las API cre
 
 ### 1 Configurar paquete utils_oas
 
-#### 1.1 Agregar las plantillas de errores [utils_oas](https://github.com/udistrital/utils_oas)
+#### 1.1 Implementar las plantillas de errores que se encuentran en [utils_oas](https://github.com/udistrital/utils_oas)
 
 ##### 1.1.1 Importar paquete:
 Para esto Editar el `main.go` de la API a Ajustar.
