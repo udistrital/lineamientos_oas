@@ -9,12 +9,11 @@ En está sección se especificarán los ajustes pertinentes para que las API cre
 ## Requerimientos Previos
 1. [Generar API Beego](generar_api.md)
 
-
 ## Procedimiento
 
 ### 1 Configurar paquete utils_oas
 
-#### 1.1 Implementar las plantillas de errores que se encuentran en [utils_oas](https://github.com/udistrital/utils_oas)
+#### 1.1 Implementar las plantilla de error que se encuentra en [utils_oas](https://github.com/udistrital/utils_oas)
 
 ##### 1.1.1 Importar paquete:
 Para esto Editar el `main.go` de la API a Ajustar.
@@ -115,33 +114,59 @@ Los cambios específicos en cada uno de los microservicios se definirán a conti
 </table>
 
 #### 3.2 Solicitud GETONE
-A la izquierda el método por defecto creados por el Framewrok.   
-A la derecha el refactor por el Script [refactor_controller](https://github.com/udistrital/refactor_controller)
-
-![Refactor Metodo GetOne](/generacion_de_apis/img/getone.png)
+<table>
+ <tr>
+  <td colspan="2"><img src="/generacion_de_apis/img/getone.png">
+</td>
+ </tr>
+ <tr>
+  <td>A la izquierda el método por defecto creados por el Framewrok. </td>
+  <td>A la derecha el refactor por el Script <a href="https://github.com/udistrital/refactor_controller">refactor_controller</a> </td>
+ </tr>
+</table>
 
 
 #### 3.3 Solicitud GETALL
-A la izquierda el método por defecto creados por el Framewrok.   
-A la derecha el refactor por el Script [refactor_controller](https://github.com/udistrital/refactor_controller)
+<table>
+ <tr>
+  <td colspan="2">
+    <img src="/generacion_de_apis/img/getall1.png"><br><br>
+    <img src="/generacion_de_apis/img/getall2.png">
+  </td>
+ </tr>
+ <tr>
+  <td>A la izquierda el método por defecto creados por el Framewrok. </td>
+  <td>A la derecha el refactor por el Script <a href="https://github.com/udistrital/refactor_controller">refactor_controller</a> </td>
+ </tr>
+</table>
 
-![Refactor Metodo GetAll](/generacion_de_apis/img/getall1.png)
-
-![Refactor Metodo GetAll](/generacion_de_apis/img/getall2.png)
 
 #### 3.4 Solicitud PUT
-A la izquierda el método por defecto creados por el Framewrok.   
-A la derecha el refactor por el Script [refactor_controller](https://github.com/udistrital/refactor_controller)
-
-![Refactor Metodo Post](/generacion_de_apis/img/put.png)
+<table>
+ <tr>
+  <td colspan="2"><img src="/generacion_de_apis/img/put.png">
+</td>
+ </tr>
+ <tr>
+  <td>A la izquierda el método por defecto creados por el Framewrok. </td>
+  <td>A la derecha el refactor por el Script <a href="https://github.com/udistrital/refactor_controller">refactor_controller</a> </td>
+ </tr>
+</table>
 
 #### 3.5 Solicitud DELETE
-A la izquierda el método por defecto creados por el Framewrok.   
-A la derecha el refactor por el Script [refactor_controller](https://github.com/udistrital/refactor_controller)
+<table>
+ <tr>
+  <td colspan="2"><img src="/generacion_de_apis/img/delete.png">
+</td>
+ </tr>
+ <tr>
+  <td>A la izquierda el método por defecto creados por el Framewrok. </td>
+  <td>A la derecha el refactor por el Script <a href="https://github.com/udistrital/refactor_controller">refactor_controller</a> </td>
+ </tr>
+</table>
 
-![Refactor Metodo Post](/generacion_de_apis/img/delete.png)
 
-### 4 Estructura de Respuesas JSON
+### 4 Estructura de Respuestas JSON
 Obtenemos la siguiente estructura cuando el framework a controlado un error de bd
 
 ![Refactor Metodo Post](/generacion_de_apis/img/json01.png)
