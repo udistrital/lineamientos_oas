@@ -106,8 +106,9 @@ Los cambios específicos en cada uno de los microservicios se definirán a conti
 A la izquierda el método por defecto creados por el Framewrok.   
 A la derecha el refactor por el Script [refactor_controller](https://github.com/udistrital/refactor_controller)
 
-![Refactor Metodo Post](/generacion_de_apis/img/post.png)
-
+| hola1  | hola 2   |
+|  ---   |  ---     |
+|  1                ||
 
 #### 3.2 Solicitud GETONE
 A la izquierda el método por defecto creados por el Framewrok.   
