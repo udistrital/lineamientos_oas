@@ -12,6 +12,7 @@ En está sección se establecerán las convenciones para la definción del archi
   .scannerwork/
   swagger/**
   !swagger/swagger.json
+  !swagger/swagger.yml
   ```
 
 - **lastupdate.tmp**: Archivo generado por el Api beego
