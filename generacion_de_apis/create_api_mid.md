@@ -76,7 +76,7 @@ ______
 ```
 
 Este comando creará un controlador con lo métodos CRUD por defecto y su respectiva documentación
-```golang
+```go
 
 // Post ...
 // @Title Create
@@ -146,6 +146,7 @@ Las API MID corrern como cualquier otra api desarrollada en beego. Lo unico a te
 ```
 bee run ENDPOINT_AGORA ENDPOINT_ARGO
 ```
+
 ## Tomado
 
 [https://beego.me/docs/install/bee.md](https://beego.me/docs/install/bee.md)
