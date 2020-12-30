@@ -1,83 +1,61 @@
-# Contol de Errores API MID
+# Refactorizar API MID
 
+En está sección se especificarán los ajustes pertinentes para que las API creadas en el framewor Beego respondan en JSON conforme a los estandares de la Oficina Asesora de Sistemas; esto con el fin de que no genere problemas al intregarse con el administrador de servicios WSO2.
 
+## Procedimiento
 
+### 1 Configurar paquete utils_oas
 
-```go
+#### 1.1 Implementar las plantilla de error que se encuentra en [utils_oas](https://github.com/udistrital/utils_oas)
 
-// GetUser ...
-// @Title Get User
-// @Description get Usuario by id
-// @Param	id		path 	string	true		"The key for staticblock"
-// @Success 200 {object} models.Usuario
-// @Failure 404 not found resource
-// @router /:id [get]
-func (c *FuncionalidadMidController) GetUser() {
-	idStr := c.Ctx.Input.Param(":id")
-	id, _ := strconv.Atoi(idStr)
-	v, err := getUserAgora(id) // funcion getUserAgora
-	if err != nil {
-		logs.Error(err)
-		//c.Data["development"] = map[string]interface{}{"Code": "000", "Body": err.Error(), "Type": "error"}
-		c.Data["system"] = err
-		c.Abort("404")
-	} else {
-		c.Data["json"] = v
-	}
-	c.ServeJSON()
-}
-
-// get Información de Usuario del sistema Agora
-func getUserAgora(idUser int) (dataUser interface{}, outputError map[string]interface{}) {
-	if idUser != 0 { // (1) error parametro
-		if response, err := request.GetJsonTest("http://localhost:8080/v1/usuario/"+strconv.Itoa(idUser), &dataUser); err == nil { // (2) error servicio caido
-			if response.StatusCode == 200 { // (3) error estado de la solicitud
-				return dataUser, nil
-			} else {
-				logs.Info("Error (3) estado de la solicitud")
-				outputError = map[string]interface{}{"Function": "FuncionalidadMidController:getUserAgora", "Error": response.Status}
-				return nil, outputError
-			}
-		} else {
-			logs.Info("Error (2) servicio caido")
-			outputError = map[string]interface{}{"Function": "FuncionalidadMidController:getUserAgora", "Error": err}
-			return nil, outputError
-		}
-	} else {
-		logs.Info("Error (1) Parametro")
-		outputError = map[string]interface{}{"Function": "FuncionalidadMidController:getUserAgora", "Error": "null parameter"}
-		return nil, outputError
-	}
-}
+##### 1.1.1 Importar paquete:
+Para esto Editar el `main.go` de la API a Ajustar.
+```golang
+import (
+  "github.com/udistrital/utils_oas/customerrorv2"
+)
+```
+##### 1.1.2 Implementación en `func main()`
+```golang
+beego.ErrorController(&customerrorv2.CustomErrorController{})
 ```
 
+##### El **main.go** Lucirá de la siguiente forma:
+```golang
+package main
 
-todo OK
+import (
+    "github.com/astaxie/beego"
+    "github.com/astaxie/beego/orm"
+    "github.com/astaxie/beego/plugins/cors"
+    _ "github.com/jotavargas/debug_beego_request/routers"
+    _ "github.com/lib/pq"
+    "github.com/udistrital/utils_oas/customerrorv2"
+)
 
-http://localhost:8081/v1/funcionalidad_mid/1
+func init() {
+    orm.RegisterDataBase("default", "postgres", "postgres://postgres:postgres@127.0.0.1/test?sslmode=disable")
+}
 
-![00](/generacion_de_apis/img/control_error_mid_0.png)
+func main() {
+    if beego.BConfig.RunMode == "dev" {
+        beego.BConfig.WebConfig.DirectoryIndex = true
+        beego.BConfig.WebConfig.StaticDir["/swagger"] = "swagger"
+    }
 
-
-
-Parametro nulo
-
-http://localhost:8081/v1/funcionalidad_mid/aaaa
-
-![01](/generacion_de_apis/img/control_error_mid_1.png)
-
-
-
-Id no existe
-
-http://localhost:8081/v1/funcionalidad_mid/15
-
-![02](/generacion_de_apis/img/control_error_mid_2.png)
-
-
-
-Endpoint crud caido
-
-http://localhost:8081/v1/funcionalidad_mid/1
-
-![03](/generacion_de_apis/img/control_error_mid_3.png)
+    beego.InsertFilter("*", beego.BeforeRouter, cors.Allow(&cors.Options{
+        AllowOrigins: []string{"*"},
+        AllowMethods: []string{"PUT", "PATCH", "GET", "POST", "OPTIONS", "DELETE"},
+        AllowHeaders: []string{"Origin", "x-requested-with",
+            "content-type",
+            "accept",
+            "origin",
+            "authorization",
+            "x-csrftoken"},
+        ExposeHeaders:    []string{"Content-Length"},
+        AllowCredentials: true,
+    }))
+    beego.ErrorController(&customerrorv2.CustomErrorController{})
+    beego.Run()
+}
+```
