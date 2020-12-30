@@ -103,12 +103,16 @@ goimports -w *.go
 Los cambios específicos en cada uno de los microservicios se definirán a continuación.
 
 #### 3.1 Solicitud POST
-A la izquierda el método por defecto creados por el Framewrok.   
-A la derecha el refactor por el Script [refactor_controller](https://github.com/udistrital/refactor_controller)
-
-| hola1  | hola 2   |
-|  ---   |  ---     |
-|  1                ||
+<table>
+ <tr>
+  <td colspan="2"><img src="/generacion_de_apis/img/post.png">
+</td>
+ </tr>
+ <tr>
+  <td>A la izquierda el método por defecto creados por el Framewrok. </td>
+  <td>A la derecha el refactor por el Script <a href="https://github.com/udistrital/refactor_controller">refactor_controller</a> </td>
+ </tr>
+</table>
 
 #### 3.2 Solicitud GETONE
 A la izquierda el método por defecto creados por el Framewrok.   
