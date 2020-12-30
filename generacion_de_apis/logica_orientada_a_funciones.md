@@ -115,7 +115,7 @@ func (c *CertificacionController) GetCertificacionDocumentosAprobados() {
 	mess, err2 := strconv.Atoi(mes)
 	_, err3 := strconv.Atoi(ano)
 	if (mess == 0) || (len(ano) != 4) || (mess > 12) || (err1 != nil) || (err2 != nil) || (err3 != nil) {
-		panic(map[string]interface{}{"funcion": "GetCertificacionDocumentosAprobados", "err": "Error en los parametros de ingreso", "status": "404"})
+		panic(map[string]interface{}{"funcion": "GetCertificacionDocumentosAprobados", "err": "Error en los parametros de ingreso", "status": "400"})
 	}
 
 	if personas, err := helpers.CertificacionDocumentosAprobados(dependencia, ano, mes); err == nil {
@@ -140,7 +140,7 @@ De la misma manera que en los controladores, se deberá estructurar el objeto de
 ```go
 defer func() {
 	if err := recover(); err != nil {
-		outputError = map[string]interface{}{"funcion": "/CertificacionDocumentosAprobados", "err": err, "status": "404"}
+		outputError = map[string]interface{}{"funcion": "/CertificacionDocumentosAprobados", "err": err, "status": "502"}
 		panic(outputError)
 	}
 }()
@@ -151,7 +151,7 @@ Para proporcionar errores dicientes, documentando la función donde se ha ocasio
 ```go
 } else {
 	logs.Error(err)
-	outputError = map[string]interface{}{"funcion": "/CertificacionDocumentosAprobados", "err": err, "status": "404"}
+	outputError = map[string]interface{}{"funcion": "/CertificacionDocumentosAprobados", "err": err, "status": "502"}
 	return nil, outputError
 }
 ```
