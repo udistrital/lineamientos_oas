@@ -20,7 +20,7 @@ En está sección se establecerán las convenciones para la definción del archi
 - **titan_api_crud**: Nombre del api. Es la compilado del Api que genera Beego
 - **main**: Es la Compilación del archivo main.go que se genera para fines de Desplieges
 - **.scannerwork/**: Es el directorio que genera el sonar-scanner
-- **swagger**: Del directorio swagger solo se requiere el archivo swagger.json
+- **swagger**: Del directorio swagger solo se requiere el archivo swagger.json y swagger.yml
 
 
 ## Proyectos AngularJS
