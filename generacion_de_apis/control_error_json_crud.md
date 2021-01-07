@@ -116,7 +116,7 @@ Los cambios específicos en cada uno de los microservicios se definirán a conti
 #### 3.2 Solicitud GETONE
 <table>
  <tr>
-  <td colspan="2"><img src="/generacion_de_apis/img/getone.png">
+  <td colspan="2"><img src="/generacion_de_apis/img/getOne.png">
 </td>
  </tr>
  <tr>
@@ -130,8 +130,8 @@ Los cambios específicos en cada uno de los microservicios se definirán a conti
 <table>
  <tr>
   <td colspan="2">
-    <img src="/generacion_de_apis/img/getall1.png"><br><br>
-    <img src="/generacion_de_apis/img/getall2.png">
+    <img src="/generacion_de_apis/img/getAll-1.png"><br><br>
+    <img src="/generacion_de_apis/img/getAll-2.png">
   </td>
  </tr>
  <tr>
