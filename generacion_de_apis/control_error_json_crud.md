@@ -166,22 +166,57 @@ Los cambios específicos en cada uno de los microservicios se definirán a conti
 </table>
 
 
-### 4 Estructura de Respuestas JSON
-Obtenemos la siguiente estructura cuando el framework a controlado un error de bd
+### 4 Estructura Estandar de Respuestas (JSON)
+A continuación se detalla la estructura JSON que responderá el api, al aplicar el refactor.
 
-![Refactor Metodo Post](/generacion_de_apis/img/json01.png)
+<table>
+ <tr>
+  <td><img src="/generacion_de_apis/img/jsonUnicoRegistros.png">
+  <td><img src="/generacion_de_apis/img/jsonMultiplesRegistros.png">
+</td>
+ </tr>
+ <tr>
+  <td>Respuesta con único registro </td>
+  <td>Resultado con múltiples registros</td>
+ </tr>
+</table>
 
-Obtenemos este Json cuando es desarrollador ha personalizado el servicio y estructura del error en el atributo development
 
-![Refactor Metodo Post](/generacion_de_apis/img/json02.png)
+#### POST
+![Refactor Metodo Post](/generacion_de_apis/img/post_test.png)
 
-Obtenemos este Json cuando ingresamos a una servicio  que no existe
+##### Post Correcto
+<table>
+ <tr>
+  <td><img src="/generacion_de_apis/img/post-correcto-1.png">
+  <td><img src="/generacion_de_apis/img/post-correcto-2.png">
+</td>
+ </tr>
+ <tr>
+  <td>Cuerpo de la respuesta </td>
+  <td>Resultado de la solicitud</td>
+ </tr>
+</table>
 
-![Refactor Metodo Post](/generacion_de_apis/img/json03.png)
+<br>
+
+##### Post con Parametros Incorrecto
+<table>
+ <tr>
+  <td><img src="/generacion_de_apis/img/post-incorrecto-1.png">
+  <td><img src="/generacion_de_apis/img/post-incorrecto-2.png">
+</td>
+ </tr>
+ <tr>
+  <td>Cuerpo de la respuesta </td>
+  <td>Resultado de la solicitud</td>
+ </tr>
+</table>
 
 
-## Testing con JMeter
 
-![Refactor Metodo GetAll](/generacion_de_apis/img/test_01.png)
+### 5 Pruebas con JMeter
+Se realizaron diferentes escenarios alternos por cada uno de los servicios expuesto por el API generado en beego.  Adjunto se encontrará el código fuente.
 
+![Refactor Metodo GetAll](/generacion_de_apis/img/test_jmeter.png)
 #### [Link Testing Jmeter](/generacion_de_apis/src/beegoTodasLasSolicitudes.jmx)
