@@ -13,16 +13,16 @@ En está sección se especificarán los ajustes pertinentes para que las API cre
 
 ### 1 Configurar paquete utils_oas
 
-#### 1.1 Implementar las plantilla de error que se encuentra en [utils_oas](https://github.com/udistrital/utils_oas)
+Se debe Implementar las plantilla de error que se encuentra en [utils_oas](https://github.com/udistrital/utils_oas) como se indica a continuación:
 
-##### 1.1.1 Importar paquete:
+##### 1.1 Importar paquete:
 Para esto Editar el `main.go` de la API a Ajustar.
 ```golang
 import (
   "github.com/udistrital/utils_oas/customerrorv2"
 )
 ```
-##### 1.1.2 Implementación en `func main()`
+##### 1.2 Implementación en `func main()`
 ```golang
 beego.ErrorController(&customerrorv2.CustomErrorController{})
 ```
@@ -71,13 +71,11 @@ func main() {
 Se desarrolló un script en python 2.7 para realizar los ajustes de los micro servicios desarrolladon en el framework Beego de forma masiva y automática.   
 la única restricción que existe, es que **solo realiza los ajustes en micro servicios que nos se han personalizado o modificado en sus líneas**. [refactor_controller](https://github.com/udistrital/refactor_controller)
 
-#### 2.1 Implementar el [refactor_controller](https://github.com/udistrital/refactor_controller)
-
-##### 2.1.1  Clonar repositorio
+##### 2.1  Clonar repositorio
 ```golang
 git clone git@github.com:udistrital/refactor_controller.git
 ```
-##### 2.1.2 Ejecución del script
+##### 2.2 Ejecución del script
 ```bash
 #ir al proyecto
 cd refactor_controller
@@ -91,7 +89,7 @@ python2.7 main.py -F ruta_controladores_del_api_a_refactoring
 #Ejemplo:
 python2.7 main.py -F /home/jjvargass/go/src/github.com/udistrital/api_financiera/controllers
 ```
-##### 2.1.3 Indentar e importar package en Controladores *.go
+##### 2.3 Indentar e importar package en Controladores *.go
 ```bash
 cd ruta_controladores_del_api_a_refactoring
 gofmt -w *.go
