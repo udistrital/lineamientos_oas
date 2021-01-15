@@ -66,13 +66,17 @@ defer func() {
 Se deberán validar cada uno de los  parámetros de entrada de las funciones y en caso de error con el método panic se hará el llamado de la función defer.
 
 ```go
+_, err1 := strconv.Atoi(dependencia)
+mess, err2 := strconv.Atoi(mes)
+_, err3 := strconv.Atoi(ano)
 if (mess == 0) || (len(ano) != 4) || (mess > 12) || (err1 != nil) || (err2 != nil) || (err3 != nil) {
 	panic(map[string]interface{}{"funcion": "GetCertificacionDocumentosAprobados", "err": "Error en los parametros de ingreso", "status": "400"})
 }
 
 // llamado a los metodos helpers
 if personas, err := helpers.CertificacionDocumentosAprobados(dependencia, ano, mes); err == nil {
-	c.Data["json"] = personas
+	c.Ctx.Output.SetStatus(200)
+	c.Data["json"] = map[string]interface{}{"Success": true, "Status": "200", "Message": "Successful", "Data": personas}
 } else {
 	panic(err)
 }
@@ -86,10 +90,8 @@ if personas, err := helpers.CertificacionDocumentosAprobados(dependencia, ano, m
 // @Param dependencia path int true "Dependencia del contrato en la tabla ordenador_gasto"
 // @Param mes path int true "Mes del pago mensual"
 // @Param ano path int true "Año del pago mensual"
-// @Success 201
-// @Failure 403 :dependencia is empty
-// @Failure 403 :mes is empty
-// @Failure 403 :ano is empty
+// @Success 200 {object} []models.Persona
+// @Failure 404 not found resource
 // @router /documentos_aprobados/:dependencia/:mes/:ano [get]
 func (c *CertificacionController) GetCertificacionDocumentosAprobados() {
 
@@ -119,12 +121,14 @@ func (c *CertificacionController) GetCertificacionDocumentosAprobados() {
 	}
 
 	if personas, err := helpers.CertificacionDocumentosAprobados(dependencia, ano, mes); err == nil {
-		c.Data["json"] = personas
+		c.Ctx.Output.SetStatus(200)
+		c.Data["json"] = map[string]interface{}{"Success": true, "Status": "200", "Message": "Successful", "Data": personas}
 	} else {
 		panic(err)
 	}
 
 	c.ServeJSON()
+
 }
 ```
 
