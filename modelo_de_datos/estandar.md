@@ -151,6 +151,8 @@ idx_persona_genero
 
 El siguiente esquema define la estructura de aquellas entidades que son paramétricas y que no requieren más allá de un nombre o una descripción para su definición.
 
+![Crear Tabla](/modelo_de_datos/img/lineamiento_tabla_parametrica.png)
+
 Campos:
 
 - **id**: Campo asociado a la llave primaria de la tabla, se sugiere crearlo con el tipo serial ya que al ejecutar la creación el tipo de dato queda integer y automáticamente se crea una secuencia que es asociada al campo id..
