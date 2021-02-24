@@ -146,3 +146,19 @@ La nomenclatura es la siguiente ( [_aux] denota que puede ir otra palabra si se 
 Ejemplo:
 idx_persona_genero
 ```
+
+## Tablas tipo catálogo o paramétricas
+
+El siguiente esquema define la estructura de aquellas entidades que son paramétricas y que no requieren más allá de un nombre o una descripción para su definición.
+
+Campos:
+
+- **id**: Campo asociado a la llave primaria de la tabla, se sugiere crearlo con el tipo serial ya que al ejecutar la creación el tipo de dato queda integer y automáticamente se crea una secuencia que es asociada al campo id..
+
+- **nombre** : Campo obligatorio de la tabla.
+
+- **descripcion** : Descripción opcional del parámetro.
+
+- **codigo_abreviacion** : Código de abreviación, sigla, acrónimo u otra representación corta del registro si se requiere.
+
+- **numero_orden**: En dado caso que se necesite establecer un orden a los registros que no se encuentre definido por aplicación ni por BD. Allí se almacena permitiendo realizar subitems mediante la precisión.
