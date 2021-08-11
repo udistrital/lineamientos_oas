@@ -51,7 +51,7 @@ La arquitectura definida para los sistemas en desarrollo en la OAS es módelo po
 
 > ### Generación API MID
 - [Generar API MID](/generacion_de_apis/create_api_mid.md)
-- [Lógicca Orientado a Funciones en API MID](/generacion_de_apis/logica_orientada_a_funciones.md)
+- [Lógica Orientada a Funciones en API MID](/generacion_de_apis/logica_orientada_a_funciones.md)
 - [Refactorizar API MID (Control de Errores)](/generacion_de_apis/control_error_json_mid.md)
 
 > ### Generación Reglas de Negocio (RULE)
