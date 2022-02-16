@@ -22,5 +22,5 @@ El contexto está dado por los siguientes dominio:
 ![Crear BD](/repositorios_institucionales/img/repo_01.png)
 
     admisiones_crud
-    adminsiones_mid
+    admisiones_mid
     admisiones_cliente
