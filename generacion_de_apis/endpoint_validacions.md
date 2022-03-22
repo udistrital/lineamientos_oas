@@ -1,6 +1,6 @@
 # (health check) validación de estado en APIs
-Para desplegar satisfactoriamente un api dentro de la infraestructura de la OAS, se debe crear un servicio el cual será constantemente consultado para verificar el estado de salud del mismo, esto se conoce como  health check.  
-A continuación se definirá los pasos necesarios para implementar el health check de las apis de la oas.
+Para desplegar satisfactoriamente una API dentro de la infraestructura de la OAS, se debe crear un servicio el cual será constantemente consultado para verificar el estado de salud del mismo, esto se conoce como  health check.  
+A continuación se definirá los pasos necesarios para implementar el health check de las APIs de la oas.
 
 
 >#### Paso 1. Importar utilidad.
@@ -62,4 +62,4 @@ func main() {
 }
 ```
 
-Con esto garantizamos que las apis desplieguen correctamente en la infraestructura de la OAS.
+Con esto garantizamos que las APIs se desplieguen correctamente en la infraestructura de la OAS.
