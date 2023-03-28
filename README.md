@@ -81,23 +81,23 @@ La arquitectura definida para los sistemas en desarrollo en la OAS es módelo po
 - [(health check) validación de estado en APIs](/api_nest/XX.md)
 - [Pruebas Unitarias](/api_nest/XX.md)
 
+***
+## 7. Clientes Angular nuevos
+
+- [Lineamientos](/clientes_nuevos/clientes_nuevos.md)
+
 <!-- ***
-## 6. Clientes Angular
-
-- Lineamientos
-- Calidad
-
-## 6.1 Pruebas Unitarias de Clientes Angular
+## 7.1 Pruebas Unitarias de Clientes Angular
 
 - Lineamientos
 -->
 
 ***
-## 7. Despliegues
+## 8. Despliegues
 - [Lineamientos (Actualizar)](/despliegues/lineamientos.md)
 
 ***
-## 8. Aseguramiento de la Calidad (QA) y Seguridad Informática
+## 9. Aseguramiento de la Calidad (QA) y Seguridad Informática
 
 ### Aseguramiento de la Calidad (QA)
 
@@ -135,7 +135,7 @@ La arquitectura definida para los sistemas en desarrollo en la OAS es módelo po
 - [Requerimientos para Solicitud de Pruebas (Actualizar)](/qa/requerimiento_pruebas.md)
 
 ***
-## 9. Metodología
+## 10. Metodología
 - [Lineamientos](/metodologias/lineamientos.md)
 #### Formatos
 - [Historia de usuario](/metodologias/formatos/Plantilla_Historias_Usuario-OAS_v2.xlsx)
