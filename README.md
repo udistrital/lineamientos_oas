@@ -144,3 +144,4 @@ La arquitectura definida para los sistemas en desarrollo en la OAS es módelo po
 ***
 ## 11. Reportes
 - [Instalación BIRT](/instalacion_de_herramientas/birt.md)
+- [Creación reporte](/reportes/generacion_reporte.md)
