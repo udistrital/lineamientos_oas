@@ -61,6 +61,10 @@ La arquitectura definida para los sistemas en desarrollo en la OAS es módelo po
 - [Generar Logs en API Beego](/generacion_de_apis/logs_api.md)
 - [Migrar Modelo de API a bd Nuevas](/generacion_de_apis/migrar.md)
 
+> ### Plantillas para la creación de APIS GO
+- [Creación API MID en GO con Hygen](https://github.com/udistrital/plantilla_api_mid)
+- [Creación API CRUD en GO con Hygen](https://github.com/udistrital/plantilla_api_crud)
+
 
 ## 5.1. Pruebas Unitarias API Beego :mag:
 
