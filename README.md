@@ -89,6 +89,7 @@ La arquitectura definida para los sistemas en desarrollo en la OAS es módelo po
 ## 7. Clientes Angular nuevos
 
 - [Lineamientos](/clientes_nuevos/clientes_nuevos.md)
+- [Plantilla para creación de Cliente en AngularJS y TypeScript](https://github.com/udistrital/plantilla_cliente_oas)
 
 <!-- ***
 ## 7.1 Pruebas Unitarias de Clientes Angular
