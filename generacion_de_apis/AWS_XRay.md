@@ -82,3 +82,7 @@ Esta **adición de código** aplica de la misma forma tanto para APIs MID como p
 - En caso de que los métodos requeridos para realizar peticiones no se encuentren en **[utils_oas/request](https://github.com/udistrital/utils_oas/tree/master/request)**, se recomienda notificar al **Equipo Core** para su inclusión.
 
 - En el caso de las APIs CRUD, no es necesario realizar ajustes adicionales.
+
+## Manual Técnico Implementación de AWS X-Ray
+
+Para obtener información detallada sobre el funcionamiento de AWS X-Ray en las APIs y su implementación, se sugiere revisar el **[Manual Técnico](https://udistritaleduco-my.sharepoint.com/:w:/g/personal/computo_udistrital_edu_co/EW-h4D4dgZBGsfJwUCMuonsBtJpSbtY-gBtAP5rFXSaqtQ?e=Ljyxqy)** correspondiente.
