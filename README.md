@@ -55,7 +55,7 @@ La arquitectura definida para los sistemas en desarrollo en la OAS es módelo po
 - [Refactorizar API MID (Control de Errores)](/generacion_de_apis/control_error_json_mid.md)
 
 > ### Generación Reglas de Negocio (RULE)
-- [Generar Reglas de Negocio-(Falta)]()
+- [Generar Reglas de Negocio-(Falta)](/generacion_de_apis/AWS_XRay.md)
 
 > ### Configuraciones Adicionales y Utilidades
 - [Generar Logs en API Beego](/generacion_de_apis/logs_api.md)

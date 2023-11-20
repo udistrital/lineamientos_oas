@@ -4,9 +4,11 @@ En está sección se especificarán los ajustes pertinentes para que las APIs cr
 
 ## Prerequisitos
 
-Con el fin de integrar el servicio AWS X-Ray para el monitoreo de APIs en las APIs MID o CRUD, es necesario realizar una actualización previa de la versión de la librería utils_oas que se está utilizando. Esta actualización se lleva a cabo ejecutando el siguiente comando en el entorno local:
+Con el fin de integrar el servicio AWS X-Ray para el monitoreo de APIs en las APIs MID o CRUD, es necesario realizar una actualización previa de la versión de la librería **utils_oas** que se está utilizando. Esta actualización se lleva a cabo ejecutando el siguiente comando en el entorno local:
 
+```shell
 go get -u github.com/udistrital/utils_oas
+```
 
 En caso de que este procedimiento no surta efecto, se recomienda limpiar la caché local del API y posteriormente ejecutar nuevamente el comando.
 
@@ -14,7 +16,7 @@ En caso de que este procedimiento no surta efecto, se recomienda limpiar la cach
 
 ### 1. Consumir paquete xray de utils_oas:
 
-Para esto se editan las importaciones del archivo `main.go` de la API a Ajustar, agregando `xray`.
+Para esto se editan las importaciones del archivo `main.go` de la API a justar, agregando `xray`.
 ```golang
 import (
   "github.com/udistrital/utils_oas/xray"
@@ -29,7 +31,7 @@ Finalmente, se agrega la siguiente linea de codigo justo antes de `beego.Run()` 
 xray.InitXRay()
 ```
 
-### 3. Finalizado el refactor del API, el archivo **main.go** Lucirá de la siguiente forma:
+### 3. Finalizado el refactor del API, el archivo **main.go** lucirá de la siguiente forma:
 
 ```golang
 package main
@@ -71,7 +73,7 @@ func main() {
 ```
 ### NOTA:
 
-Esta **adición de código** aplica de la misma forma tanto para APIs MID como APIs CRUD.
+Esta **adición de código** aplica de la misma forma tanto para APIs MID como para APIs CRUD.
 
 ## Sugerencias
 
