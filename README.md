@@ -55,12 +55,12 @@ La arquitectura definida para los sistemas en desarrollo en la OAS es módelo po
 - [Refactorizar API MID (Control de Errores)](/generacion_de_apis/control_error_json_mid.md)
 
 > ### Generación Reglas de Negocio (RULE)
-- [Generar Reglas de Negocio-(Falta)](/generacion_de_apis/AWS_XRay.md)
+- [Generar Reglas de Negocio-(Falta)]()
 
 > ### Configuraciones Adicionales y Utilidades
 - [Generar Logs en API Beego](/generacion_de_apis/logs_api.md)
 - [Migrar Modelo de API a bd Nuevas](/generacion_de_apis/migrar.md)
-- [Refactorizar APIs MID y CRUD (Monitoreo de APIs con AWS X-Ray)]()
+- [Refactorizar APIs MID y CRUD (Monitoreo de APIs con AWS X-Ray)](/generacion_de_apis/AWS_XRay.md)
 
 > ### Plantillas para la creación de APIS GO
 - [Creación API MID en GO con Hygen](https://github.com/udistrital/plantilla_api_mid)
