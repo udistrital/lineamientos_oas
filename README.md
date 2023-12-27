@@ -6,6 +6,7 @@ Este repositorio es un conglomerado de buenas prácticas, lineamientos, configur
 ## 1. Instalación de Herramientas :wrench:
 
 > ### En PC Local :computer:
+- [Instalación Git](/instalacion_de_herramientas/git.md)
 - [Instalación Golang](/instalacion_de_herramientas/golang.md)
 - [Instalación Beego y Bee](/instalacion_de_herramientas/beego.md)
 - [Instalación Postgres](/instalacion_de_herramientas/postgres.md)
