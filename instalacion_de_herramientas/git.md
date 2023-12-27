@@ -35,7 +35,6 @@
 
 - Abre una ventana de PowerShell como administrador. Puedes hacer esto buscando "PowerShell" en el menú de inicio, haciendo clic derecho y seleccionando "Ejecutar como administrador".
 
-
 - Ejecuta el siguiente comando para instalar Chocolatey (si aún no lo has instalado):
 
 ```sh
