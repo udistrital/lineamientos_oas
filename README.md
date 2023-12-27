@@ -5,13 +5,13 @@ Este repositorio es un conglomerado de buenas prácticas, lineamientos, configur
 ## 1. Instalación de Herramientas :wrench:
 
 > ### En PC Local :computer:
+- [Instalación GIT](/instalacion_de_herramientas/git.md)
 - [Instalación Golang](/instalacion_de_herramientas/golang.md)
 - [Instalación Beego y Bee](/instalacion_de_herramientas/beego.md)
 - [Instalación Postgres](/instalacion_de_herramientas/postgres.md)
 - [Instalación pgAdmin3](/instalacion_de_herramientas/pgadmin3.md)
 - [Instalación pgModeler](/instalacion_de_herramientas/pgmodeler.md)
 - [Instalación Oh My ZSH](/instalacion_de_herramientas/oh_my_zsh.md)
-- [Instalación GIT](/instalacion_de_herramientas/git.md)
 
 > ### En Ambiente Dockerizado :whale:
 - [lineamiento](/ambientes_dockerizados/dockerizacion.md)
