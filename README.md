@@ -148,5 +148,5 @@ La arquitectura definida para los sistemas en desarrollo en la OAS es módelo po
 - [Historia de usuario en Drive](https://docs.google.com/spreadsheets/d/1eAAnzjovKnLKAkk0tLFSCTGDnS_8K5pV0Fs-2Qmvrg0/edit#gid=713905461)
 
 ## 11. Definición de endpoints para APIs REST
-- [Hoja resumen de buenas prácticas]()
-- [Ejemplos de nombres adecuados para endpoints]()
+- [Hoja resumen de buenas prácticas](https://udistritaleduco-my.sharepoint.com/:p:/g/personal/computo_udistrital_edu_co/EYwQbkAKVCJCqrmJ7NgnjQ4B8WSd81vxGVx-hqi0WBAcfQ?e=lJZdx8)
+- [Aclaración y ejemplos de nombres adecuados para endpoints]()
