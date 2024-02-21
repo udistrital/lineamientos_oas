@@ -53,32 +53,34 @@ Un recurso es todo aquello que se obtiene como respuesta (response) al hacer la 
 
 - Use los códigos de respuesta o estado (status code) para indicar éxito o fracaso.
 
+- Para el caso de la OATI, se ha establecido que se trabajen en **idioma español** la definición de los endpoints. No use carácteres especiales (ñ, acentos, etc.).
+
 ### Ejemplos básicos
 
-| HTTP method  | Bad               | Good              |
-|:-------------|:------------------|:------------------|
-| POST         | /login            | /login-sessions   |
-| POST         | /create-book      | /books            |
-| GET          | /select-books     | /books            |
-| PUT          | /update-book      | /books            |
-| DELETE       | /delete-book      | /books            |
-| GET          | /get-top-10-books | /top-10-books     |
-| POST         | /create-user      | /users            |
-| GET          | /login_sessions   | /login-sessions   |
+| HTTP method  | Bad                 | Good              |
+|:-------------|:--------------------|:------------------|
+| POST         | /login              | /login-sessions   |
+| POST         | /crear-libro        | /libros           |
+| GET          | /traer-libros       | /libros           |
+| PUT          | /actualizar-libro/5 | /libros/5         |
+| DELETE       | /eliminar-libro/7   | /libros/7         |
+| GET          | /traer-top-10-libros| /top-10-libros    |
+| POST         | /crear-usuario      | /usuarios         |
+| GET          | /login_sessions     | /login-sessions   |
 
 ### Ejemplos con consultas y/o jerarquías
 
-| HTTP method  | Bad                        | Good                     |
-|:-------------|:---------------------------|:-------------------------|
-| GET          | /get-user/5                | /users/5                 |
-| GET          | /users/pages/1             | /users?page=1            |
-| GET          | /users/gender/fem          | /users?gender=fem        |
-| GET          | /users/age/18              | /users?age=18            |
-| GET          | /users/???                 | /users?gender=fem&age=18 |
-| GET          | /users/2/getPets           | /users/2/pets            |
-| POST         | /users/5/logs_sess         | /users/5/logs-sess       |
-| GET          | /users/{user-id}/my_friends| /users/{user-id}/friends |
-| GET          | /users/{obj-id}/all-likes  | /users/{obj-id}/likes    |
+| HTTP method  | Bad                              | Good                         |
+|:-------------|:---------------------------------|:-----------------------------|
+| GET          | /traer-usuario/5                 | /usuarios/5                  |
+| GET          | /usuarios/paginas/1              | /usuarios?pagina=1           |
+| GET          | /usuarios/genero/fem             | /usuarios?genero=fem         |
+| GET          | /usuarios/edad/18                | /usuarios?edad=18            |
+| GET          | /usuarios/???                    | /usuarios?genero=fem&edad=18 |
+| GET          | /usuarios/2/traerMascotas        | /usuarios/2/mascotas         |
+| POST         | /usuarios/5/logs_ses             | /usuarios/5/logs-ses         |
+| GET          | /usuarios/{usuario-id}/mis_amigos| /usuarios/{usuario-id}/amigos|
+| GET          | /usuarios/{obj-id}/todos-likes   | /usuarios/{obj-id}/likes     |
 
 ## Códigos de respuesta (status code), categoría e interpretación
 
