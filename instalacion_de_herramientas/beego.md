@@ -14,6 +14,8 @@ mkdir -p $GOPATH/src/github.com/beego
 cd $GOPATH/src/github.com/beego
 git clone --depth=1 --branch=v1.12.3 https://github.com/beego/bee.git
 git clone --depth=1 --branch=v1.12.3 https://github.com/beego/beego.git
+cd ..
+go get github.com/mattn/go-colorable 
 cd bee && go install
 cd ../beego && go install
 ```
