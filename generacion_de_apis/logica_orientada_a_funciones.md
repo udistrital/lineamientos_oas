@@ -1,4 +1,4 @@
-# Lógica_Orientada a Funciones (Para API MID)
+# Lógica orientada a Funciones (Para API MID)
 En esta sección se mostrará cómo estructurar adecuadamente la logica de negocio en las Api Mid desarrolladas en la OATI.
 
 ## Orientado a Funciones
@@ -53,13 +53,7 @@ En la carpeta `helpers` se encuentran aquellas funcionalidades especificas que p
 
 Teniendo en cuenta lo anterior, la interacción entre los diferentes submodulos de cada proyecto deberá seguir la siguiente ruta>
 
-```bash
-├── main.go
-│   └── routers
-│       └── controllers
-│           └── services
-│                └── helpers
-```
+``` main > routers > controllers > services > helpers ```
 
 ### 1 controllers
 >##### [Codigo Fuente ejemplo de un controller](https://github.com/udistrital/sga_tercero_mid/blob/develop/controllers/tercero_controller.go)
@@ -82,6 +76,33 @@ En los controladores del MID se deberá relizar el llamado al servicio correspon
 Para facilitar el manejo de esta estructura, es necesario utilizar la libreria `"github.com/udistrital/utils_oas/requestresponse"`, de la siguiente manera:
 ```go
 if err == nil {
+	c.Ctx.Output.SetStatus(200)
+	c.Data["json"] = requestresponse.APIResponseDTO(true, 200, resultado)
+} else {
+	c.Ctx.Output.SetStatus(404)
+	c.Data["json"] = requestresponse.APIResponseDTO(true, 404, nil, err.Error())
+}
+
+c.ServeJSON()
+```
+
+##### Controlador Completo
+```go
+// ActualizarPersona ...
+// @Title ActualizarPersona
+// @Description Actualizar datos de persona
+// @Param	body		body 	{}	true		"body for Actualizar datos de persona content"
+// @Success	200	{}
+// @Failure	404	not found
+// @router / [put]
+func (c *TerceroController) ActualizarPersona() {
+	defer errorhandler.HandlePanic(&c.Controller)
+
+	data := c.Ctx.Input.RequestBody
+
+	resultado, err := services.ActualizarPersona(data)
+
+	if err == nil {
 		c.Ctx.Output.SetStatus(200)
 		c.Data["json"] = requestresponse.APIResponseDTO(true, 200, resultado)
 	} else {
@@ -90,103 +111,13 @@ if err == nil {
 	}
 
 	c.ServeJSON()
-```
-
-#### 1.1 Control de errores y Validación de Parámetros
-
-##### defer func()
-Existirá una función `defer` por cada controlador encargada de actuar como `try…catch`, al existir un error la función `defer` estructurará el JSON de respuesta de error para el servicio.
-
-```go
-defer func() {
-	if err := recover(); err != nil {
-		logs.Error(err)
-		localError := err.(map[string]interface{})
-		c.Data["mesaage"] = (beego.AppConfig.String("appname") + "/" + "CertificacionController" + "/" + (localError["funcion"]).(string))
-		c.Data["data"] = (localError["err"])
-		if status, ok := localError["status"]; ok {
-			c.Abort(status.(string))
-		} else {
-			c.Abort("404")
-		}
-	}
-}()
-```
-
-##### Validación de Parámetros
-Se deberán validar cada uno de los  parámetros de entrada de las funciones y en caso de error con el método panic se hará el llamado de la función defer.
-
-```go
-_, err1 := strconv.Atoi(dependencia)
-mess, err2 := strconv.Atoi(mes)
-_, err3 := strconv.Atoi(ano)
-if (mess == 0) || (len(ano) != 4) || (mess > 12) || (err1 != nil) || (err2 != nil) || (err3 != nil) {
-	panic(map[string]interface{}{"funcion": "GetCertificacionDocumentosAprobados", "err": "Error en los parametros de ingreso", "status": "400"})
-}
-
-// llamado a los metodos helpers
-if personas, err := helpers.CertificacionDocumentosAprobados(dependencia, ano, mes); err == nil {
-	c.Ctx.Output.SetStatus(200)
-	c.Data["json"] = map[string]interface{}{"Success": true, "Status": "200", "Message": "Successful", "Data": personas}
-} else {
-	panic(err)
 }
 ```
 
-##### Controlador Completo
-```go
-// AprobacionPagoController ...
-// @Title CertificacionDocumentosAprobados
-// @Description create CertificacionDocumentosAprobados  trae
-// @Param dependencia path int true "Dependencia del contrato en la tabla ordenador_gasto"
-// @Param mes path int true "Mes del pago mensual"
-// @Param ano path int true "Año del pago mensual"
-// @Success 200 {object} []models.Persona
-// @Failure 404 not found resource
-// @router /documentos_aprobados/:dependencia/:mes/:ano [get]
-func (c *CertificacionController) GetCertificacionDocumentosAprobados() {
+### 2 services
+>##### [Codigo Fuente ejemplo de un service](https://github.com/udistrital/sga_tercero_mid/blob/develop/services/tercero_service.go)
 
-	dependencia := c.GetString(":dependencia")
-	mes := c.GetString(":mes")
-	ano := c.GetString(":ano")
-
-	defer func() {
-		if err := recover(); err != nil {
-			logs.Error(err)
-			localError := err.(map[string]interface{})
-			c.Data["mesaage"] = (beego.AppConfig.String("appname") + "/" + "CertificacionController" + "/" + (localError["funcion"]).(string))
-			c.Data["data"] = (localError["err"])
-			if status, ok := localError["status"]; ok {
-				c.Abort(status.(string))
-			} else {
-				c.Abort("404")
-			}
-		}
-	}()
-
-	_, err1 := strconv.Atoi(dependencia)
-	mess, err2 := strconv.Atoi(mes)
-	_, err3 := strconv.Atoi(ano)
-	if (mess == 0) || (len(ano) != 4) || (mess > 12) || (err1 != nil) || (err2 != nil) || (err3 != nil) {
-		panic(map[string]interface{}{"funcion": "GetCertificacionDocumentosAprobados", "err": "Error en los parametros de ingreso", "status": "400"})
-	}
-
-	if personas, err := helpers.CertificacionDocumentosAprobados(dependencia, ano, mes); err == nil {
-		c.Ctx.Output.SetStatus(200)
-		c.Data["json"] = map[string]interface{}{"Success": true, "Status": "200", "Message": "Successful", "Data": personas}
-	} else {
-		panic(err)
-	}
-
-	c.ServeJSON()
-
-}
-```
-
-### 2 helpers
->##### [Codigo Fuente helpers](https://github.com/udistrital/cumplidos_mid/blob/develop/helpers/certificaciones.go)
-
-los script consolidados en el módulo helpers serán la lógica de negocio para cada uno de los controladores, esto con el propósito de modularizar la lógica de negocio y no consolidar funciones de controladores tan extensas.
+los script consolidados en el módulo services serán lógica de negocio para cada uno de los controladores, esto con el propósito de modularizar la lógica de negocio y no consolidar funciones de controladores tan extensas.
 
 #### 2.1 Control de errores
 
@@ -201,76 +132,179 @@ defer func() {
 }()
 ```
 
-##### Especificar nombre de la funcion en error
-Para proporcionar errores dicientes, documentando la función donde se ha ocasionado el error, se define el nombre de la función en la estructura de error que retorna la función helpers.
-```go
-} else {
-	logs.Error(err)
-	outputError = map[string]interface{}{"funcion": "/CertificacionDocumentosAprobados", "err": err, "status": "502"}
-	return nil, outputError
-}
-```
 ##### Función helpers Completa
 ```go
-func CertificacionDocumentosAprobados(dependencia string, anio string, mes string) (personas []models.Persona, outputError map[string]interface{}) {
+func ActualizarPersona(data []byte) (interface{}, error) {
+	var body map[string]interface{}
+	response := make(map[string]interface{})
+	if err := json.Unmarshal(data, &body); err == nil {
 
-	defer func() {
-		if err := recover(); err != nil {
-			outputError = map[string]interface{}{"funcion": "/CertificacionDocumentosAprobados", "err": err, "status": "502"}
-			panic(outputError)
-		}
-	}()
-
-	var contrato_ordenador_dependencia models.ContratoOrdenadorDependencia
-	var pagos_mensuales []models.PagoMensual
-	var persona models.Persona
-	var vinculaciones_docente []models.VinculacionDocente
-	var respuesta_peticion map[string]interface{}
-	var mes_cer, _ = strconv.Atoi(mes)
-
-	if mes_cer < 10 {
-
-		mes = "0" + mes
-
-	}
-
-	if contrato_ordenador_dependencia, outputError = GetContratosOrdenadorDependencia(dependencia, anio+"-"+mes, anio+"-"+mes); outputError != nil {
-		return nil, outputError
-	}
-
-	for _, contrato := range contrato_ordenador_dependencia.ContratosOrdenadorDependencia.InformacionContratos {
-
-		if response, err := getJsonTest(beego.AppConfig.String("ProtocolAdmin")+"://"+beego.AppConfig.String("UrlcrudAdmin")+"/"+beego.AppConfig.String("NscrudAdmin")+"/vinculacion_docente/?limit=-1&query=NumeroContrato:"+contrato.NumeroContrato+",Vigencia:"+contrato.Vigencia, &vinculaciones_docente); (err == nil) && (response == 200) {
-
-			for _, vinculacion_docente := range vinculaciones_docente {
-				if vinculacion_docente.NumeroContrato.Valid == true {
-					if response, err := getJsonTest(beego.AppConfig.String("ProtocolCrudCumplidos")+"://"+beego.AppConfig.String("UrlCrudCumplidos")+"/"+beego.AppConfig.String("NsCrudCumplidos")+"/pago_mensual/?query=EstadoPagoMensualId.CodigoAbreviacion:AP,NumeroContrato:"+contrato.NumeroContrato+",VigenciaContrato:"+contrato.Vigencia+",Mes:"+strconv.Itoa(mes_cer)+",Ano:"+anio, &respuesta_peticion); (err == nil) && (response == 200) {
-						pagos_mensuales = []models.PagoMensual{}
-						if len(respuesta_peticion["Data"].([]interface{})[0].(map[string]interface{})) != 0 {
-							LimpiezaRespuestaRefactor(respuesta_peticion, &pagos_mensuales)
-						} else {
-							pagos_mensuales = nil
-						}
-						if pagos_mensuales == nil {
-							persona.NumDocumento = contrato.Documento
-							persona.Nombre = contrato.NombreContratista
-							persona.NumeroContrato = contrato.NumeroContrato
-							persona.Vigencia, _ = strconv.Atoi(contrato.Vigencia)
-							personas = append(personas, persona)
-						}
-					} else { //If informacion_proveedor get
-						logs.Error(err)
-						outputError = map[string]interface{}{"funcion": "/CertificacionDocumentosAprobados", "err": err, "status": "502"}
-						return nil, outputError
+		if idTercero, ok := body["Tercero"].(map[string]interface{})["hasId"].(float64); ok {
+			var updateTercero map[string]interface{}
+			if body["Tercero"].(map[string]interface{})["hasId"] != nil {
+				errtercero := request.GetJson("http://"+beego.AppConfig.String("TercerosService")+"tercero/"+fmt.Sprintf("%.f", idTercero), &updateTercero)
+				if errtercero == nil && updateTercero["Status"] != 404 {
+					dataToUpdate := body["Tercero"].(map[string]interface{})["data"].(map[string]interface{})
+					if PrimerNombre, ok := dataToUpdate["PrimerNombre"]; ok {
+						updateTercero["PrimerNombre"] = PrimerNombre
 					}
+					if SegundoNombre, ok := dataToUpdate["SegundoNombre"]; ok {
+						updateTercero["SegundoNombre"] = SegundoNombre
+					}
+					if PrimerApellido, ok := dataToUpdate["PrimerApellido"]; ok {
+						updateTercero["PrimerApellido"] = PrimerApellido
+					}
+					if SegundoApellido, ok := dataToUpdate["SegundoApellido"]; ok {
+						updateTercero["SegundoApellido"] = SegundoApellido
+					}
+					updateTercero["NombreCompleto"] = updateTercero["PrimerNombre"].(string) + " " + updateTercero["SegundoNombre"].(string) + " " + updateTercero["PrimerApellido"].(string) + " " + updateTercero["SegundoApellido"].(string)
+					if FechaNacimiento, ok := dataToUpdate["FechaNacimiento"]; ok {
+						updateTercero["FechaNacimiento"] = time_bogota.TiempoCorreccionFormato(FechaNacimiento.(string))
+					}
+					if UsuarioWSO2, ok := dataToUpdate["UsuarioWSO2"]; ok {
+						updateTercero["UsuarioWSO2"] = UsuarioWSO2
+					}
+
+					var updateTerceroAns map[string]interface{}
+					errUpdateTercero := request.SendJson("http://"+beego.AppConfig.String("TercerosService")+"tercero/"+fmt.Sprintf("%.f", idTercero), "PUT", &updateTerceroAns, updateTercero)
+					if errUpdateTercero == nil {
+						response["tercero"] = updateTerceroAns
+					} else {
+						logs.Error("Error --> ", errUpdateTercero)
+						return nil, errors.New(errUpdateTercero.Error())
+					}
+				} else {
+					logs.Error("Error --> ", errtercero)
+					return nil, errors.New(errtercero.Error())
 				}
 			}
-		} else { //If vinculacion_docente get
-			logs.Error(err)
-			outputError = map[string]interface{}{"funcion": "/CertificacionDocumentosAprobados", "err": err, "status": "502"}
-			return nil, outputError
+
+			var updateIdentificacion map[string]interface{}
+			if body["Identificacion"].(map[string]interface{})["hasId"] != nil {
+				idIdentificacion := body["Identificacion"].(map[string]interface{})["hasId"].(float64)
+				erridentificacion := request.GetJson("http://"+beego.AppConfig.String("TercerosService")+"datos_identificacion/"+fmt.Sprintf("%.f", idIdentificacion), &updateIdentificacion)
+				if erridentificacion == nil && updateIdentificacion["Status"] != 404 {
+					dataToUpdate := body["Identificacion"].(map[string]interface{})["data"].(map[string]interface{})
+					if FechaExpedicion, ok := dataToUpdate["FechaExpedicion"]; ok {
+						updateIdentificacion["FechaExpedicion"] = time_bogota.TiempoCorreccionFormato(FechaExpedicion.(string))
+					}
+
+					var updateIdentificacionAns map[string]interface{}
+					errUpdateIdentificacion := request.SendJson("http://"+beego.AppConfig.String("TercerosService")+"datos_identificacion/"+fmt.Sprintf("%.f", idIdentificacion), "PUT", &updateIdentificacionAns, updateIdentificacion)
+					if errUpdateIdentificacion == nil {
+						response["identificacion"] = updateIdentificacionAns
+					} else {
+						logs.Error("Error --> ", errUpdateIdentificacion)
+						return nil, errors.New(errUpdateIdentificacion.Error())
+					}
+				} else {
+					logs.Error("Error --> ", erridentificacion)
+					return nil, errors.New(erridentificacion.Error())
+				}
+			}
+
+			complementarios := body["Complementarios"].(map[string]interface{})
+
+			if generoAns, ok := helpers.UpdateOrCreateInfoComplementaria("Genero", complementarios, idTercero); ok {
+				response["genero"] = generoAns
+			}
+
+			if estadoCivilAns, ok := helpers.UpdateOrCreateInfoComplementaria("EstadoCivil", complementarios, idTercero); ok {
+				response["estadoCivil"] = estadoCivilAns
+			}
+
+			if orientacionSexualAns, ok := helpers.UpdateOrCreateInfoComplementaria("OrientacionSexual", complementarios, idTercero); ok {
+				response["orientacionSexual"] = orientacionSexualAns
+			}
+
+			if identidadGeneroAns, ok := helpers.UpdateOrCreateInfoComplementaria("IdentidadGenero", complementarios, idTercero); ok {
+				response["identidadGenero"] = identidadGeneroAns
+			}
+
+			if body["Complementarios"].(map[string]interface{})["Telefono"].(map[string]interface{})["hasId"] != nil {
+				idInfComp := body["Complementarios"].(map[string]interface{})["Telefono"].(map[string]interface{})["hasId"].(float64)
+				var updateInfoComp map[string]interface{}
+				errUpdtInfoComp := request.GetJson("http://"+beego.AppConfig.String("TercerosService")+"info_complementaria_tercero/"+fmt.Sprintf("%v", idInfComp), &updateInfoComp)
+				if errUpdtInfoComp == nil && updateInfoComp["Status"] != 404 {
+					updateInfoComp["Dato"] = body["Complementarios"].(map[string]interface{})["Telefono"].(map[string]interface{})["data"]
+
+					formatdata.JsonPrint(updateInfoComp)
+
+					var updateAnswer map[string]interface{}
+					errupdateAnswer := request.SendJson("http://"+beego.AppConfig.String("TercerosService")+"info_complementaria_tercero/"+fmt.Sprintf("%.f", idInfComp), "PUT", &updateAnswer, updateInfoComp)
+					if errupdateAnswer == nil {
+						response["telefono"] = updateAnswer
+					}
+				}
+			} else {
+				IdTelefono, _ := models.IdInfoCompTercero("10", "TELEFONO")
+				ItTel, _ := strconv.ParseFloat(IdTelefono, 64)
+				newInfo := map[string]interface{}{
+					"TerceroId":            map[string]interface{}{"Id": idTercero},
+					"InfoComplementariaId": map[string]interface{}{"Id": ItTel},
+					"Dato":                 body["Complementarios"].(map[string]interface{})["Telefono"].(map[string]interface{})["data"],
+					"Activo":               true,
+				}
+
+				formatdata.JsonPrint(newInfo)
+				var createinfo map[string]interface{}
+				errCreateInfo := request.SendJson("http://"+beego.AppConfig.String("TercerosService")+"info_complementaria_tercero", "POST", &createinfo, newInfo)
+				if errCreateInfo == nil && fmt.Sprintf("%v", createinfo) != "map[]" && createinfo["Id"] != nil {
+					response["telefono"] = createinfo
+				}
+			}
+			return response, nil
+
+		} else {
+			return nil, errors.New("error del servicio ActualizarPersona: La solicitud contiene un tipo de dato incorrecto o un parámetro inválido")
+		}
+
+	} else {
+		logs.Error("Error --> ", err)
+		return nil, errors.New("error del servicio ActualizarPersona: La solicitud contiene un tipo de dato incorrecto o un parámetro inválido" + err.Error())
+	}
+}
+```
+
+### 3 helpers
+>##### [Codigo Fuente ejemplo de un helper](https://github.com/udistrital/sga_tercero_mid/blob/develop/helpers/tercero_helper.go)
+
+los script consolidados en el módulo helpers serán lógica de negocio reutilizable entre servicios.
+
+```go
+func UpdateOrCreateInfoComplementaria(tipoInfo string, infoComp map[string]interface{}, idTercero float64) (map[string]interface{}, bool) {
+	resp := map[string]interface{}{}
+	ok := false
+
+	if infoComp[tipoInfo].(map[string]interface{})["hasId"] != nil {
+		idInfComp := infoComp[tipoInfo].(map[string]interface{})["hasId"].(float64)
+		var updateInfoComp map[string]interface{}
+		errUpdtInfoComp := request.GetJson("http://"+beego.AppConfig.String("TercerosService")+"info_complementaria_tercero/"+fmt.Sprintf("%v", idInfComp), &updateInfoComp)
+		if errUpdtInfoComp == nil && updateInfoComp["Status"] != 404 {
+			dataToUpdate := infoComp[tipoInfo].(map[string]interface{})["data"].(map[string]interface{})
+			updateInfoComp["InfoComplementariaId"] = dataToUpdate
+
+			var updateAnswer map[string]interface{}
+			errupdateAnswer := request.SendJson("http://"+beego.AppConfig.String("TercerosService")+"info_complementaria_tercero/"+fmt.Sprintf("%.f", idInfComp), "PUT", &updateAnswer, updateInfoComp)
+			if errupdateAnswer == nil {
+				resp = updateAnswer
+				ok = true
+			}
+		}
+	} else {
+		newInfo := map[string]interface{}{
+			"TerceroId":            map[string]interface{}{"Id": idTercero},
+			"InfoComplementariaId": infoComp[tipoInfo].(map[string]interface{})["data"].(map[string]interface{}),
+			"Activo":               true,
+		}
+		var createinfo map[string]interface{}
+		errCreateInfo := request.SendJson("http://"+beego.AppConfig.String("TercerosService")+"info_complementaria_tercero", "POST", &createinfo, newInfo)
+		if errCreateInfo == nil && fmt.Sprintf("%v", createinfo) != "map[]" && createinfo["Id"] != nil {
+			resp = createinfo
+			ok = true
 		}
 	}
-	return
+
+	return resp, ok
 }
 ```
