@@ -44,7 +44,7 @@ La arquitectura definida para los sistemas en desarrollo en la OAS es módelo po
 
 > ### Generación API CRUD
 
-Los API CRUDs son servicios RESTful desarrollados en Go utilizando el framework API Beego. Están diseñados para realizar operaciones CRUD (Crear, Leer, Actualizar, Eliminar) en la base de datos y proporcionar una interfaz de acceso a datos para los microservicios (API MIDs). El criterio para dividir el proyecto en CRUDs se basa en:
+Los API CRUDs son servicios RESTful desarrollados en Go utilizando el framework API Beego. Están diseñados para realizar operaciones CRUD (`Crear`, `Leer`, `Actualizar`, `Eliminar`) en la base de datos y proporcionar una interfaz de acceso a datos para los microservicios (API MIDs). El criterio para dividir el proyecto en CRUDs es el siguiente:
 
 1. **Entidades de Dominio**: Cada CRUD se encarga de la gestión de una o varias entidades de dominio específicas. Por ejemplo, usuarios, asignaturas, proyectos, etc.
 
@@ -71,6 +71,8 @@ Los microservicios (micro_mids) son componentes desarrollados en Go y están dis
 3. **Funcionalidad Coherente**: Los microservicios se definen en función de la funcionalidad coherente que ofrecen y los recursos que consumen.
 
 4. **Interacción con CRUDs**: Los micro_mids interactúan con los CRUDs correspondientes para acceder y manipular datos de manera eficiente.
+
+A nivel técnico podemos ver al forma esperada de realizar su implementación:
 
 - [Generar API MID](/generacion_de_apis/create_api_mid.md)
 - [Lógica Orientada a Funciones en API MID](/generacion_de_apis/logica_orientada_a_funciones.md)

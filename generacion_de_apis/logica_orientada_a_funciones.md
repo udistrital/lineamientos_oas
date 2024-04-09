@@ -1,33 +1,36 @@
 # Lógica_Orientada a Funciones (Para API MID)
-En esta sección se mostrará cómo estructurar adecuadamente la logica de negocio en las Api Mid desarrolladas en la OAS.
+En esta sección se mostrará cómo estructurar adecuadamente la logica de negocio en las Api Mid desarrolladas en la OATI.
 
 ## Orientado a Funciones
 Las `API MID` o Middleware están orientadas a contener la lógica de negocio que interopera con otros microservicios. En este sentido  `consultan`, `agrupan`, `ordenan`, `procesan` y `exponen` la información  requerida por el módulo.  
 Dadas estas características, es apropiado la optimización de estos procesos por medio de funciones orientadas a cada servicio.
 
 
-### 1 Modulo helpers
-Se deberá definir un módulo llamado `helpers`, el cual  tendrá como propósito contener los archivos de lógica de negocio por cada uno de los controladores desarrolladores.
+### Estructura de los proyecto para estandarizar el manejo de funcionalidades
+Con el fin de ordenar y estandarizar los desarrollos de cada mid, se plantea seguir la siguiente estructura:
 
-Como se puede observar, el módulo de `controllers` contiene su archivo `certificacion.go` y de la misma manera el módulo `helpers` contiene su archivo `certificaciones.go`.
 
 ```bash
 ├── conf
 │   └── app.conf
 ├── controllers
-│   └── certificacion.go
+│   └── certificacion_controller.go
 ├── helpers
-│   └── certificaciones.go
+│   └── certificaciones_helper.go
 ├── routers
 │   ├── commentsRouter_controllers.go
 │   └── router.go
+├── services
+│   └── certificaciones_service.go
 ├── swagger
-│   └── swagger.json
+│   ├── swagger.json
+│   └── swagger.yml
 └── tests
 │   ├── default_test.go
 │   └── helpers
 │       └── certificacionesHelper
 │           └── certificaciones_test.go
+├── .env
 ├── main.go
 ├── models
 ├── README.md
@@ -36,12 +39,60 @@ Como se puede observar, el módulo de `controllers` contiene su archivo `certifi
 └── Dockerfile
 ```
 
-### 2 controllers
->##### [Codigo Fuente controllers](https://github.com/udistrital/cumplidos_mid/blob/develop/controllers/certificacion.go)
+En el archivo `main.go` se deberá inicializar el proyecto y se configurar los filtros por defecto.
 
-En los controladores del MID se deberá desarrollar las comprobaciones para los posibles  flujos alternos de la lógica de negocio y errores de parámetro para que no bloquee el funcionamiento de los demás servicios expuesto por el API.
+En la carpeta `routers` se encuentra dos archivos:
+- `router.go` indica el controlador asociado para resolver los endpoints asociados al proyecto.
+- `commentsRouter_controllers.go` se actualiza de forma automatica y permite establecer de forma simple cada una las rutas de los endpoints expuestos.
 
-#### 2.1 Control de errores y Validación de Parámetros
+En la carpeta `controllers` se encuentran los controladores asociados en la carpeta de `routers`, aquí no se debe especificar lógica de negocio, simplemente se debe realizar un llamado a un `service` asociado al controlador y mapear la respuesta.
+
+En la carpeta `services` se encuentran los servicios asociados a cada controlador que permiten resolver la lógica de negocio requerida para cada funcionalidad, para esto puede interactuar con otros servicios de tipo API CRUD o incluso otros de tipo API MID.
+
+En la carpeta `helpers` se encuentran aquellas funcionalidades especificas que pueden ser reutilizadas por uno o mas servicios, por lo que con el fin de no tener que repetir lógica, se disponibilizan de forma tranversal y pueden ser llamados en una o varias partes de la lógica de cada sericio, de acuerdo con la necesidad particular.
+
+Teniendo en cuenta lo anterior, la interacción entre los diferentes submodulos de cada proyecto deberá seguir la siguiente ruta>
+
+```bash
+├── main.go
+│   └── routers
+│       └── controllers
+│           └── services
+│                └── helpers
+```
+
+### 1 controllers
+>##### [Codigo Fuente ejemplo de un controller](https://github.com/udistrital/sga_tercero_mid/blob/develop/controllers/tercero_controller.go)
+
+En los controladores del MID se deberá relizar el llamado al servicio correspondiente y mapear la respuesta en la siguiente estructura:
+
+```json
+{
+  "success": true,
+  "status": 200,
+  "message": "Solicitud exitosa",
+  "data": [
+    {
+      ...
+    }
+  ]
+}
+```
+
+Para facilitar el manejo de esta estructura, es necesario utilizar la libreria `"github.com/udistrital/utils_oas/requestresponse"`, de la siguiente manera:
+```go
+if err == nil {
+		c.Ctx.Output.SetStatus(200)
+		c.Data["json"] = requestresponse.APIResponseDTO(true, 200, resultado)
+	} else {
+		c.Ctx.Output.SetStatus(404)
+		c.Data["json"] = requestresponse.APIResponseDTO(true, 404, nil, err.Error())
+	}
+
+	c.ServeJSON()
+```
+
+#### 1.1 Control de errores y Validación de Parámetros
 
 ##### defer func()
 Existirá una función `defer` por cada controlador encargada de actuar como `try…catch`, al existir un error la función `defer` estructurará el JSON de respuesta de error para el servicio.
@@ -132,7 +183,7 @@ func (c *CertificacionController) GetCertificacionDocumentosAprobados() {
 }
 ```
 
-### 3 helpers
+### 2 helpers
 >##### [Codigo Fuente helpers](https://github.com/udistrital/cumplidos_mid/blob/develop/helpers/certificaciones.go)
 
 los script consolidados en el módulo helpers serán la lógica de negocio para cada uno de los controladores, esto con el propósito de modularizar la lógica de negocio y no consolidar funciones de controladores tan extensas.
