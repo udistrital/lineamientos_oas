@@ -42,7 +42,13 @@ Con el fin de ordenar y estandarizar los desarrollos de cada mid, se plantea seg
 En el archivo `main.go` se deberá inicializar el proyecto y se configurar los filtros por defecto.
 
 En la carpeta `routers` se encuentra dos archivos:
-- `router.go` indica el controlador asociado para resolver los endpoints asociados al proyecto.
+- `router.go` indica el controlador asociado para resolver los endpoints asociados al proyecto. En este archivo tambien se debe especificar el comportamiento que se tiene cuando se intenta acceder a una URL no configurada, para esto basta con agregar la siguiente sentencia:
+
+```go
+beego.ErrorController(&errorhandler.ErrorHandlerController{})
+```
+Para mas detalle revise el [codigo fuente de ejemplo de un router](https://github.com/udistrital/sga_tercero_mid/blob/develop/routers/router.go)
+
 - `commentsRouter_controllers.go` se actualiza de forma automatica y permite establecer de forma simple cada una las rutas de los endpoints expuestos.
 
 En la carpeta `controllers` se encuentran los controladores asociados en la carpeta de `routers`, aquí no se debe especificar lógica de negocio, simplemente se debe realizar un llamado a un `service` asociado al controlador y mapear la respuesta.
