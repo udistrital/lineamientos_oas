@@ -43,6 +43,17 @@ La arquitectura definida para los sistemas en desarrollo en la OAS es módelo po
 ## 5. APIS Beego :mortar_board:
 
 > ### Generación API CRUD
+
+Los API CRUDs son servicios RESTful desarrollados en Go utilizando el framework API Beego. Están diseñados para realizar operaciones CRUD (`Crear`, `Leer`, `Actualizar`, `Eliminar`) en la base de datos y proporcionar una interfaz de acceso a datos para los microservicios (API MIDs). El criterio para dividir el proyecto en CRUDs es el siguiente:
+
+1. **Entidades de Dominio**: Cada CRUD se encarga de la gestión de una o varias entidades de dominio específicas. Por ejemplo, usuarios, asignaturas, proyectos, etc.
+
+2. **Operaciones CRUD**: Los CRUDs proporcionan endpoints RESTful para realizar operaciones CRUD en las entidades de dominio correspondientes. Es importante recordar que por temas de auditoria y trazalabilidad la operación DELETE, no se realiza como tal, en lugar de esto se debe realizar un borrado lógico, inactivando el registro correspondiente.
+
+3. **Interacción con Microservicios**: Los CRUDs son consumidos por los microservicios (micro_mids) para acceder y manipular datos de manera eficiente, para permitir la generación de funcionalidades complejas y encapsular procesos de acuerdo con las necesidades de negocio.
+
+A continuación se detalla a nivel técnico el estandar definido para este tipo de APIs:
+
 - [Generar API Beego](/generacion_de_apis/generar_api.md)
 - [Refactorizar API Beego (Contol de Errores)](/generacion_de_apis/control_error_json_crud.md)
 - [Versionar BD en API Beego (Beego Migrations)](/generacion_de_apis/beego_migrations.md)
@@ -50,6 +61,19 @@ La arquitectura definida para los sistemas en desarrollo en la OAS es módelo po
 - [(health check) validación de estado en APIs](/generacion_de_apis/endpoint_validacions.md)
 
 > ### Generación API MID
+
+Los microservicios (micro_mids) son componentes desarrollados en Go y están diseñados para manejar lógica de negocio específica y orquestar interacciones con los CRUDs correspondientes. El criterio para dividir el proyecto en microservicios se basa en:
+
+1. **Dominio de Negocio**: Cada microservicio se centra en un área específica del dominio de negocio. Por ejemplo, gestión de periodos, registro de notas, etc.
+
+2. **Acoplamiento Bajo**: Se busca minimizar la dependencia entre microservicios para promover la escalabilidad y la independencia del ciclo de vida.
+
+3. **Funcionalidad Coherente**: Los microservicios se definen en función de la funcionalidad coherente que ofrecen y los recursos que consumen.
+
+4. **Interacción con CRUDs**: Los micro_mids interactúan con los CRUDs correspondientes para acceder y manipular datos de manera eficiente.
+
+A nivel técnico podemos ver al forma esperada de realizar su implementación:
+
 - [Generar API MID](/generacion_de_apis/create_api_mid.md)
 - [Lógica Orientada a Funciones en API MID](/generacion_de_apis/logica_orientada_a_funciones.md)
 - [Refactorizar API MID (Control de Errores)](/generacion_de_apis/control_error_json_mid.md)
