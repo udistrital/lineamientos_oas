@@ -2,8 +2,7 @@
 
 ## Aplicación Parcel:
 
- Parcel se utiliza para empaquetar cada microfrontend de la aplicación, lo que significa que cada microfrontend y sus dependencias se pueden empaquetar en un único archivo JavaScript.
- 
+Parcel se utiliza para empaquetar cada microfrontend de la aplicación, lo que significa que cada microfrontend y sus dependencias se pueden empaquetar en un único archivo JavaScript.
 
 # Creación de Aplicación Parcel Angular:
 
@@ -13,7 +12,6 @@ Comando para la creación de aplicaciones con single spa
 npx create-single-spa
 ```
 Seleccionan las siguientes opciones:
-
 
 ```bash
 ? Directory for new project .
@@ -76,7 +74,7 @@ export const environment = {
 };
 ```
 
-## configuracion selector de componente:
+## Configuración selector de componente:
 
 Cambiamos el nombre del selector del app.component.ts:
 
@@ -89,7 +87,7 @@ en este ejemplo se cambia el nombre por mf1
 })
 ```
 
-Indicamos a single que conponente va a tomar para comprimir 
+Indicamos a single que componente va a tomar para comprimir:
 
 main.single-spa.ts
 
@@ -106,7 +104,7 @@ const lifecycles = singleSpaAngular({
 });
 ```
 
-En caso de usar una aplicación core utilizar empty-route para el manejo de las rutas
+En caso de usar una aplicación core utilizar empty-route para el manejo de las rutas:
 
 ```bash
 const routes: Routes = [
@@ -114,13 +112,13 @@ const routes: Routes = [
 ];
 ```
 
-# Varificar microcliente:
+# Verificar microcliente:
 
-Para poder saber si esta funcionando correctamente hasta este punto debemos recurrir a la sigueiente ruta:
+Para poder saber si está funcionando correctamente hasta este punto debemos recurrir a la sigueiente ruta:
 
 ```bash
 http://localhost:4201/main.js
 ```
 
-En esta ruta nos mostrara el comprimido de la aplicacion lista por ser consumida por el root.
+En esta ruta se mostrará el comprimido de la aplicación lista por ser consumida por el root.
 
