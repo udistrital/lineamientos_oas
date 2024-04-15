@@ -1,7 +1,6 @@
 # Aplicación Root:
 
-La aplicación root (o raíz) es una aplicación de alto nivel que actúa como el contenedor principal de todas las otras aplicaciones o microfrontends dentro de la página web. Su funcionalidad principal es coordinar la carga, montaje y desmontaje de los microfrontends individuales, así como gestionar la comunicación entre ellos.
-
+La aplicación root (o raíz) es una aplicación de alto nivel que actúa como el contenedor principal de todos los microfrontends dentro de la página web (como si fuera un orquestador). Su funcionalidad principal es coordinar la carga, montaje y desmontaje de los microfrontends individuales, así como gestionar la comunicación entre ellos.
 
 <ul>
   <li>Carga de Aplicaciones</li>
@@ -10,6 +9,7 @@ La aplicación root (o raíz) es una aplicación de alto nivel que actúa como e
   <li>Comunicación entre Microfrontends</li>
   <li>Configuración Global</li>
 </ul>
+
 # Creación de Aplicación Root:
 
 Comando para la creación de aplicaciones con Single SPA:
@@ -61,8 +61,7 @@ Después de terminar con la creación de la aplicación, la estructura del proye
 
 ## Configurar puerto:
 
-En start actualizamos el puerto, en este caso se coloca el puerto 8080
-Archivo packacge.json:
+En start actualizamos el puerto, en este caso se coloca el puerto 8080. Archivo packacge.json:
 
 ```bash
  "scripts": {
@@ -79,6 +78,7 @@ Archivo packacge.json:
 ```
 
 ## Angular:
+
 Para poder habilitar el soporte  micro aplicaciones de angular toca habilitar el cdn de zone que se encuentra comentado por defecto, este se encuentra en el archivo: 
 
 index.ejs
@@ -88,13 +88,11 @@ index.ejs
   <script src="https://cdn.jsdelivr.net/npm/zone.js@0.11.3/dist/zone.minjs"><script>
 ```
 
-## Registrar un microforntend:
+## Registrar un microfrontend:
 
 index.ejs
 
-Para este proceso ya debemos tener una aplicación pracel previamente creada y configurada, en este apartado se agrega el link en el cual queda levantado el microcliente
-
-
+Para este proceso ya debemos tener una aplicación pracel previamente creada y configurada, en este apartado se agrega el link en el cual queda levantado el microcliente:
 
 ```bash
   <% if (isLocal) { %>
@@ -112,7 +110,8 @@ Para este proceso ya debemos tener una aplicación pracel previamente creada y c
 
 microfrontend-layout.html
 
-Se registrar la aplicacion y la ruta en el que va afuncionar en este ejemplo en la ruta base: 
+Se registra la aplicacion y la ruta en la que va a funcionar. En este ejemplo en la ruta base:
+
 ```bash
 
 <single-spa-router>
@@ -124,13 +123,3 @@ Se registrar la aplicacion y la ruta en el que va afuncionar en este ejemplo en 
 </single-spa-router>
 
 ```
-
-
-
-
-
-
-
-
-
-
