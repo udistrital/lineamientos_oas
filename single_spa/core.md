@@ -1,7 +1,8 @@
-
-# Introducción al Core
+# Introducción al Core microfrontend
 
 El Core de los Microfrontends es el componente central la aplicación, encargándose de manejar la configuración general y proporcionar funcionalidades compartidas a todos los Microfrontends que componen la aplicación. Este Core desacopla la lógica común de la aplicación de los Microfrontends individuales, promoviendo así la reutilización del código y la consistencia en toda la aplicación.
+
+El Core es transversal a cualquier aplicación que se desarrolle en la oficina. Es el elemento base para dar funcionalidad a los desarrollos de clientes. 
 
 ## Características:
 
@@ -40,9 +41,7 @@ El Core de los Microfrontends es el componente central la aplicación, encargán
 
 ### Configuración core:
 
-
-
-1. Para lograr que el core sea el encargado de manejar las rutas generales de la aplicación tendremos que importar el módulo empty-route.component.ts, este se genera de manera automática al momento de crear la aplicación  en la variable routes quedando de la siguiente manera: 
+1. Para lograr que el core sea el encargado de manejar las rutas generales de la aplicación tendremos que importar el módulo empty-route.component.ts, este se genera de manera automática al momento de crear la aplicación en la variable routes, quedando de la siguiente manera: 
 
 ```bash
 const routes: Routes = [
@@ -50,7 +49,7 @@ const routes: Routes = [
 ];
 ```
 
-2. Se utiliza la propiedad de angular routerLink para poder redireccionar hacia el mf que queremos montar en esa ruta
+2. Se utiliza la propiedad de angular routerLink para poder redireccionar hacia el mf que queremos montar en esa ruta:
 
 ```bash
   <button routerLink="/material/iconos" routerLinkActive="active">
@@ -66,7 +65,7 @@ const routes: Routes = [
 
 Para la aplicacion hija se debe estableser una ruta base, la cual es donde se va invocar este microcliente de la siguiente manera:
 
-1. Se requiere  importar los siguientes modulos:
+1. Se requiere importar los siguientes módulos:
 
 ```bash
 import { APP_BASE_HREF } from '@angular/common';
@@ -91,7 +90,7 @@ imports: [RouterModule.forRoot(routes)],
 ```
 Este permite establecer la ruta base de nuestra aplicación.
 
-3. Por último registramos las rutas hijas donde se va a visualizar los componentes.
+3. Por último registramos las rutas hijas donde se van a visualizar los componentes:
 
 ```bash
 const routes: Routes = [
