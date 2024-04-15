@@ -15,11 +15,11 @@ El Core es transversal a cualquier aplicación que se desarrolle en la oficina. 
 <li>Compartir recursos generales a otros mf</li>
 </ul>
 
-## Como definir rutas de mf hijos
+## Cómo definir rutas de mf hijos
 
 ### Configuración root
 
-1. Debemos establecer en la aplicación root que el core sea el microcliente padre y pueda tener control sobre los otros microclientes esto lo hacemos en el microfrontend-layout.html :
+1. Debemos establecer en la aplicación root que el core sea el microcliente padre y pueda tener control sobre los otros microclientes esto lo hacemos en el microfrontend-layout.html:
 
 ```bash
 <single-spa-router>
@@ -61,9 +61,9 @@ const routes: Routes = [
       </button>
 
 ```
-### Configuracion aplicacion hija:
+### Configuración aplicacion hija:
 
-Para la aplicacion hija se debe estableser una ruta base, la cual es donde se va invocar este microcliente de la siguiente manera:
+Para la aplicación hija se debe estableser una ruta base, la cual es donde se va invocar este microcliente de la siguiente manera:
 
 1. Se requiere importar los siguientes módulos:
 
