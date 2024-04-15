@@ -1,6 +1,6 @@
-# Metodos de Compartir datos entre Microclientes:
+# Métodos para compartir datos entre Microclientes:
 
-- [LocalStorage, Cookies ](#localstorage)
+- [LocalStorage, Cookies](#localstorage)
 - [Enlace](#enlace)
 - [API](#api)
 ---
@@ -39,9 +39,10 @@ export class TableComponent {
 
 ```
 
-Esto se puede aplicar para hojas de estilo, html, json ...
+Esto se puede aplicar para hojas de estilo, html, json...
 
 # API
+
 Una forma más avanzada de compartir datos entre Microfrontends es a través de una API. Los Microfrontends pueden hacer solicitudes HTTP a una API compartida para recuperar o enviar datos. Aquí tienes un ejemplo básico:
 
 ```javascript
@@ -61,5 +62,3 @@ export class DataService {
   }
 };
 ```
-
-
