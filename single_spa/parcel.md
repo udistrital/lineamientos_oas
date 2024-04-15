@@ -6,7 +6,7 @@ Parcel se utiliza para empaquetar cada microfrontend de la aplicación, lo que s
 
 # Creación de Aplicación Parcel Angular:
 
-Comando para la creación de aplicaciones con single spa
+Comando para la creación de aplicaciones con single spa:
 
 ```bash
 npx create-single-spa
@@ -114,7 +114,7 @@ const routes: Routes = [
 
 # Verificar microcliente:
 
-Para poder saber si está funcionando correctamente hasta este punto debemos recurrir a la sigueiente ruta:
+Para poder saber si está funcionando correctamente hasta este punto debemos recurrir a la siguiente ruta:
 
 ```bash
 http://localhost:4201/main.js
