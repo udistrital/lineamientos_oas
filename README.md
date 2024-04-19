@@ -31,8 +31,18 @@ Este repositorio es un conglomerado de buenas prácticas, lineamientos, configur
 
 La arquitectura definida para los sistemas en desarrollo en la OAS es módelo por microservicios.
 
+### Microservicios
+
 - [Definición](https://github.com/udistrital/arquitectura_docs/tree/master/aplicaciones#micro-servicios-que-son)
 - [Lineamientos](https://github.com/udistrital/arquitectura_docs/tree/master/aplicaciones#lineamientos-generales-de-arquitectura)
+
+### Microclientes
+- [Introducción](/single_spa/single_spa.md)
+- [Root](/single_spa/root_config.md)
+- [Parcel](/single_spa/parcel.md)
+- [Core](/single_spa/core.md)
+- [Shared](/single_spa/shared.md)
+
 
 ***
 ## 4. Modelos de Datos :floppy_disk:
