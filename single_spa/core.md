@@ -109,7 +109,7 @@ const routes: Routes = [
 ### Estilos de Angular Material:
 Los estilos para Angular Material se definen en `src/assets/styles/theme.scss`; en dónde se asignan los colores primarios, de acento y de advertencia que ya vienen desde el ROOT como variables de CSS y se implementan de la siguiente forma:
 
-```bash
+```scss
 @use '@angular/material' as mat;
 
 @include mat.core();
@@ -145,10 +145,10 @@ $md-primary: (
     A700 : var(--md-primary-contrast-A700),
   )
 );
-$md-accent: ...Implementación de paleta de colores de acento.
-$md-warning: ...Implementación de paleta de colores de advertencia.
+$md-accent: //...Implementación de paleta de colores de acento.
+$md-warning: //...Implementación de paleta de colores de advertencia.
 
-# Se asignan los colores a Angular Material
+// Se asignan los colores a Angular Material
 $light-theme: mat.define-light-theme((color: (primary: mat.define-palette($md-primary, 500),
         accent: mat.define-palette($md-accent, 500),
         warn: mat.define-palette($md-warning, 500),
