@@ -104,6 +104,62 @@ const routes: Routes = [
   },
 ];
 ```
+## Configuración de Estilos:
+
+### Estilos de Angular Material:
+Los estilos para Angular Material se definen en `src/assets/styles/theme.scss`; en dónde se asignan los colores primarios, de acento y de advertencia que ya vienen desde el ROOT como variables de CSS y se implementan de la siguiente forma:
+
+```scss
+@use '@angular/material' as mat;
+
+@include mat.core();
+
+$md-primary: (
+  50 : var(--md-primary-50),
+  100 : var(--md-primary-100),
+  200 : var(--md-primary-200),
+  300 : var(--md-primary-300),
+  400 : var(--md-primary-400),
+  500 : var(--md-primary-500),
+  600 : var(--md-primary-600),
+  700 : var(--md-primary-700),
+  800 : var(--md-primary-800),
+  900 : var(--md-primary-900),
+  A100 : var(--md-primary-A100),
+  A200 : var(--md-primary-A200),
+  A400 : var(--md-primary-A400),
+  A700 : var(--md-primary-A700),
+  contrast: (50 : var(--md-primary-contrast-50),
+    100 : var(--md-primary-contrast-100),
+    200 : var(--md-primary-contrast-200),
+    300 : var(--md-primary-contrast-300),
+    400 : var(--md-primary-contrast-400),
+    500 : var(--md-primary-contrast-500),
+    600 : var(--md-primary-contrast-600),
+    700 : var(--md-primary-contrast-700),
+    800 : var(--md-primary-contrast-800),
+    900 : var(--md-primary-contrast-900),
+    A100 : var(--md-primary-contrast-A100),
+    A200 : var(--md-primary-contrast-A200),
+    A400 : var(--md-primary-contrast-A400),
+    A700 : var(--md-primary-contrast-A700),
+  )
+);
+$md-accent: //...Implementación de paleta de colores de acento.
+$md-warning: //...Implementación de paleta de colores de advertencia.
+
+// Se asignan los colores a Angular Material
+$light-theme: mat.define-light-theme((color: (primary: mat.define-palette($md-primary, 500),
+        accent: mat.define-palette($md-accent, 500),
+        warn: mat.define-palette($md-warning, 500),
+      ),
+      typography: mat.define-typography-config($font-family: 'Open Sans',
+      ),
+      desity: 0,
+    ));
+
+@include mat.all-component-themes($light-theme);
+```
 
 # Arquitectura:
 

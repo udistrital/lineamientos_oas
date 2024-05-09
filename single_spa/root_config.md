@@ -88,6 +88,14 @@ index.ejs
   <script src="https://cdn.jsdelivr.net/npm/zone.js@0.11.3/dist/zone.minjs"><script>
 ```
 
+## Estilos:
+Para poder implementar la paleta de colores correspondiente a cada sistema es necesario enlazar la hoja de estilos perteneciente al sistema (SISGPLAN, Polúx, SGA, etc.) que se esta trabajando; este enlace se hace dentro del `<head></head>` de la siguiente manera:
+
+```bash
+#Ejemplo de paleta de colores de SISGPLAN
+  <link rel="stylesheet" href="https://pruebasassets.portaloas.udistrital.edu.co/gaia-style.css">
+```
+
 ## Registrar un microfrontend:
 
 index.ejs
