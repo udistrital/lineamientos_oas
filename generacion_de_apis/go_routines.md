@@ -131,3 +131,23 @@ var mutex sync.Mutex
   resultados = append(resultados, resultado)
   mutex.Unlock()
 ```
+
+### 3.2 Salida esperada
+```bash
+Entra al hilo
+Entra al hilo
+Entra al hilo
+Entra al hilo
+Entra al hilo
+.
+.
+.
+Sale del hilo
+Sale del hilo
+Sale del hilo
+Sale del hilo
+Sale del hilo
+.
+.
+.
+```
