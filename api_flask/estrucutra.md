@@ -28,7 +28,40 @@ my_flask_api/
 └── swagger/ 
     ├── swagger.json 
     └── swagger.yml
-``` 
+```
+### Comandos para la estructura 
+
+En la carpeta de `models`, los archivos son ejemplos y no son obligatorios en la estructura, a excepción de `__init__.py`. Se recomiendan `model_params.py` y `utils.py` ya que pueden llegar a ser muy útiles.
+
+```
+# Navegar al directorio del proyecto 
+cd my_flask_api
+
+# Crear archivos en el directorio raíz 
+touch Dockerfile README.md api.py entrypoint.sh go.mod imagedef.json requirements.txt sonar-project.properties
+
+# Crear el directorio conf y los archivos dentro de él 
+mkdir -p conf
+touch conf/__init__.py conf/conf.py
+
+# Crear el directorio controllers y los archivos dentro de él 
+mkdir -p controllers
+touch controllers/__init__.py controllers/controller_files.py
+
+# Crear el directorio models y los archivos dentro de él 
+mkdir -p models
+touch models/__init__.py models/eval_doc_crud_res.py models/firma.py models/firma_electronica.py models/model_params.py models/utils.py
+
+# Crear el directorio routers y los archivos dentro de él 
+mkdir -p routers
+touch routers/__init__.py routers/router.py
+
+# Crear el directorio swagger y los archivos dentro de él 
+mkdir -p swagger
+touch swagger/swagger.json swagger/swagger.yml
+```
+
+### Explicacion. 
 
 Se espera una estructura semejante que cumpla con los siguientes criterios, referentes al modelo anterior: 
 
