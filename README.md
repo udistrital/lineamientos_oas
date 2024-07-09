@@ -116,11 +116,10 @@ A nivel técnico podemos ver al forma esperada de realizar su implementación:
 ## 6. APIS NestJS (NEW)
 > ### Generación API
 - [Generar API NestJS](/api_nest/api_nest.md)
-- [Variables de Entorno API NestJS](/api_nest/XX.md)
-- [Refactorización del proyecto para manejar controlador, modelos y servicios](/api_nest/XX.md)
-- [Manejo de error, filtros (query), logger, healtcheck](/api_nest/XX.md)
-- [Generación de swagger y detalle de .drone para despliegue](/api_nest/XX.md)
-- test
+- [Variables de Entorno API NestJS](/api_nest/api_nest.md)
+- [Refactorización del proyecto para manejar controlador, modelos y servicios](/api_nest/api_nest.md)
+- [Manejo de error, filtros (query), logger, healtcheck](/api_nest/api_nest.md)
+- [Generación de swagger y detalle de .drone para despliegue](/api_nest/api_nest.md)
 
 ***
 ## 7. Clientes Angular nuevos
