@@ -160,7 +160,11 @@ paths:
 
 
 ```
+## Uso de local de venv
 
+- [Manejo de variables de entorno](/api_flask/variables_entorno.md)
+
+## Uso de Docker 
 4. Realizar configuracion de Docker con el archivo de texto Dockerfile con instrucciones para construir una imagen de Docker
   
 ```Docker
