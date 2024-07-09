@@ -124,9 +124,9 @@ A nivel técnico podemos ver al forma esperada de realizar su implementación:
 ## 7. API FLASK (NEW)
 
 - [Generar API Flask](/api_flask/api_flask.md)
-- [Variables de Entorno API Flask](/api_flask/variables.md)
-- [Esctructura del API Flask](/api_flask/modelo.md) 
-
+- [Prerrequisitos](/api_flask/lineamientos_previos.md)
+- [Esctructura del API Flask](/api_flask/estructura.md) 
+- [Variables de Entorno API Flask](/api_flask/variables_entorno.md)
 
 ***
 
