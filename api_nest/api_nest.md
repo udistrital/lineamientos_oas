@@ -4,9 +4,13 @@
 
 <h1 align="center"><b>Documentación para la generación y definición de la estructura de proyecto en APIs con base de datos no relacionales (MongoDB) bajo la tecnología NestJs</b></h1>
 
+---
+
 ### Introducción
 
 Este documento tiene como objetivo establecer los lineamientos para la generación y definición de la estructura de proyecto en APIs con base de datos no relacionales (MongoDB) bajo la tecnología NestJs. Se detallan las subtareas necesarias para la creación de una API robusta y escalable.
+
+---
 
 ### 1. Generación del API (Uso del CLI)
 
@@ -22,14 +26,17 @@ Este documento tiene como objetivo establecer los lineamientos para la generaci�
 
 - Inicializar el proyecto NestJs:
 
-![Imagen de ejemplo 3](img/4.png)
-
-![Imagen de ejemplo 4](img/6.png)
+<div>
+    <img src="img/6.png" alt="Imagen de ejemplo 3" style="float: left; margin-right: 20px; width: 500px;"/>
+    <img src="img/4.png" alt="Imagen de ejemplo 4" style="float: right; margin-left: 20px; width: 500px;"/>
+</div>
 
 #### Instalación de dependencias:
 
 - Instalar las dependencias necesarias para trabajar con MongoDB en NestJs, como `npm install mongoose class-validator @nestjs/swagger`.
 
 ![Imagen de ejemplo 2](img/7.png)
+
+---
 
 ### 2. Configuración de variables de entorno
