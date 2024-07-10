@@ -113,7 +113,7 @@ A nivel técnico podemos ver al forma esperada de realizar su implementación:
 - [Smoke Testing API MID](/pruebas_unitarias_api_beego/smoke_test_mid.md)
 
 ***
-## 6. APIS NestJS (NEW)
+## 6. APIS NestJS (NEW) <img src="https://docs.nestjs.com/assets/logo-small.svg" alt="NestJS Icon" width="20"/>
 > ### Generación API
 - [Generar API NestJS](/api_nest/api_nest.md)
 - [Variables de Entorno API NestJS](/api_nest/api_nest.md)
