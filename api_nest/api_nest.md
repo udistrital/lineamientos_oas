@@ -12,7 +12,7 @@ Este documento tiene como objetivo establecer los lineamientos para la generaci�
 
 ---
 
-### 1. Generaci처n del API (Uso del CLI) {#1-generaci처n-del-api-uso-del-cli}
+### 1. Generaci처n del API (Uso del CLI) <a name="generacion-del-api"></a>
 
 #### Creaci처n del proyecto NestJs:
 
@@ -39,7 +39,7 @@ Este documento tiene como objetivo establecer los lineamientos para la generaci�
 
 ---
 
-### 2. Configuraci처n de variables de entorno {#2-configuraci처n-de-variables-de-entorno}
+### 2. Configuraci처n de variables de entorno <a name="configuracion-de-variables-de-entorno"></a>
 
 - Creaci처n de un archivo `.env`
 
@@ -55,7 +55,7 @@ HORARIOS_CRUD_AUTH_DB=[base de datos de autorizacion]
 HORARIOS_CRUD_HTTP_PORT=[puerto de ejecucion]
 ```
 
-### 3. Refactorizaci처n del proyecto para manejar controlador, modelos y servicios {#3-refactorizaci처n-del-proyecto-para-manejar-controlador-modelos-y-servicios}
+### 3. Refactorizaci처n del proyecto para manejar controlador, modelos y servicios <a name="refactorizacion-del-proyecto"></a>
 
 Organizar el c처digo del proyecto en carpetas separadas para controladores, modelos y servicios.
 
@@ -91,10 +91,9 @@ type APIResponse struct {
 
 ---
 
-### 4. Manejo de error, filtros (query), logger, healtcheck {#4-manejo-de-error-filtros-query-logger-healtcheck}
+### 4. Manejo de error, filtros (query), logger, healtcheck <a name="manejo-de-error"></a>
 
 ---
 
-### 5. Generaci처n de swagger y detalle de .drone para despliegue {#5-generaci처n-de-swagger-y-detalle-de-drone-para-despliegue}
-
+### 5. Generaci처n de swagger y detalle de .drone para despliegue <a name="generacion-de-swagger"></a>
 ---
