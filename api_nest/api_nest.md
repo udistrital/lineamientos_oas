@@ -40,3 +40,61 @@ Este documento tiene como objetivo establecer los lineamientos para la generaci�
 ---
 
 ### 2. Configuraci처n de variables de entorno
+
+- Creaci처n de un archivo `.env`
+
+Ejemplo:
+
+```shell
+HORARIOS_CRUD_DB=[nombre de la base de datos]
+HORARIOS_CRUD_PASS=[password del usuario]
+HORARIOS_CRUD_HOST=[direccion de la base de datos]
+HORARIOS_CRUD_PORT=[Puerto de conexi처n con la base de datos]
+HORARIOS_CRUD_USER=[usuario con acceso a la base de datos]
+HORARIOS_CRUD_AUTH_DB=[base de datos de autorizacion]
+HORARIOS_CRUD_HTTP_PORT=[puerto de ejecucion]
+```
+
+### 3. Refactorizaci처n del proyecto para manejar controlador, modelos y servicios
+
+Organizar el c처digo del proyecto en carpetas separadas para controladores, modelos y servicios.
+
+```shell
++---src
+|   |   app.controller.spec.ts
+|   |   app.controller.ts
+|   |   app.module.ts
+|   |   app.service.ts
+|   |   main.ts
+|   |
+|   +---config
+|   +---controllers
+|   +---errorhandler
+|   +---logger
+|   +---models
+|   \---services
+```
+
+Ejemplo:
+
+![Imagen de ejemplo](img/9.JPG)
+
+Dentro del controlador se debe tener en cuenta la estructura de respuesta:
+```nestjs
+type APIResponse struct {
+	Success bool        `json:"success"`
+	Status  int         `json:"status"`
+	Message interface{} `json:"message"`
+	Data    interface{} `json:"data"`
+}
+```
+
+---
+
+### 4. Manejo de error, filtros (query), logger, healtcheck
+
+---
+
+### 5. Generaci처n de swagger y detalle de .drone para despliegue
+
+---
