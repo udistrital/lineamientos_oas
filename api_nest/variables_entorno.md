@@ -4,8 +4,6 @@
 
 <h1 align="center"><b>Ejemplo del uso de las variables de entorno</b></h1>
 
----
-
 ### 2. Configuración de variables de entorno
 
 - Creación de un archivo `.env` en el proyecto.
