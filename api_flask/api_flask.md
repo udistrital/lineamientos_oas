@@ -51,17 +51,29 @@ my_flask_api/
 * ` api.py`  Configura la aplicación, inicia el servidor y registra los Blueprints (componentes modulares de Flask). Este archivo es obligatorio y necesario para definir y arrancar tu aplicación Flask
 
 ```python
-from flask import Flask
-from flasgger import Swagger
-from routers import router
+from flask import Flask, jsonify
+import os
 
 app = Flask(__name__)
-swagger = Swagger(app)
 
-app.register_blueprint(router, url_prefix='/api')
+@app.route('/')
+def home():
+    return "API Flask funcionando"
 
-if __name__ == "__main__":
-    app.run(host='0.0.0.0', port=5000)
+@app.route('/v1/')
+def api_info():
+    return jsonify({
+        "API_PORT": os.getenv('API_PORT'),
+        "NUXEO_URL": os.getenv('NUXEO_URL'),
+        "NUXEO_USERNAME": os.getenv('NUXEO_USERNAME'),
+        "NUXEO_PASSWORD": os.getenv('NUXEO_PASSWORD'),
+        "DOCUMENTOS_CRUD_URL": os.getenv('DOCUMENTOS_CRUD_URL')
+    })
+
+if __name__ == '__main__':
+    port = int(os.getenv('API_PORT', 5000))
+    app.run(host='0.0.0.0', port=port)
+
 ```
 
 * `conf/conf.py` Almacena la configuración de tu aplicación Flask en un lugar centralizado, facilita el mantenimiento y escalabilidad
