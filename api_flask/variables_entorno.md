@@ -16,3 +16,44 @@ source .ev // en caso de cargar las variables por archivo
  
 4. Ejecutar el api 
 ```python api.py ```
+
+5. Implementamos el swagger para la Documentación, para ello debemos instalar flasgger
+```pip install flasgger```
+
+6. Luego se debe edita tu api.py para incluir flasgger, de la siguiente forma:
+
+```python
+from flask import Flask, jsonify
+from flasgger import Swagger
+import os
+
+app = Flask(__name__)
+swagger = Swagger(app)
+
+@app.route('/')
+def home():
+    return "API Flask funcionando"
+
+@app.route('/v1/')
+def api_info():
+    """
+    Información de la API
+    ---
+    responses:
+      200:
+        description: Un diccionario con las variables de entorno
+    """
+    return jsonify({
+        "API_PORT": os.getenv('API_PORT'),
+        "NUXEO_URL": os.getenv('NUXEO_URL'),
+        "NUXEO_USERNAME": os.getenv('NUXEO_USERNAME'),
+        "NUXEO_PASSWORD": os.getenv('NUXEO_PASSWORD'),
+        "DOCUMENTOS_CRUD_URL": os.getenv('DOCUMENTOS_CRUD_URL')
+    })
+
+if __name__ == '__main__':
+    port = int(os.getenv('API_PORT', 5000))
+    app.run(host='0.0.0.0', port=port)
+```
+Nota: se puede acceder a la documentación de Swaggercon la URL(http://localhost:8080/apidocs/)
+
