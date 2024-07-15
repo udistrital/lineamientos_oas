@@ -232,5 +232,63 @@ paths:  # Definiciones de rutas y sus correspondientes métodos HTTP.
           description: Error del servidor
 
 
+```
+
+---
+
+## Instrucciones para incluir un archivo .drone.yml en el proyecto
+
+:one: Crear un .drone.ymlarchivo en el directorio raíz de su proyecto
+
+:two: Configurar varaibles de entorno o secrets en Drone agregue los siguientes secrets a la configuración de Drone CI:
 
 ```
+SONAR_HOST: URL del servidor de SonarQube.
+SONAR_TOKEN: Token de autenticación de SonarQube.
+docker_username: Nombre de usuario de Docker Hub.
+docker_password: Contraseña de Docker Hub.
+AWS_ACCESS_KEY_ID: ID de clave de acceso de AWS.
+AWS_SECRET_ACCESS_KEY: Clave secreta de acceso de AWS.
+AWS_CONTAINER: Contenedor AWS.
+telegram_token: Token de Telegram para enviar notificaciones.
+telegram_to: ID del chat de Telegram para enviar notificaciones.
+```
+
+:three: Activar el repositorio en Drone CI y comenzar a ejecutar pipelines, asegurandose de que el repositorio esté activado e integrado con Drone CI.
+
+:large_blue_diamond: tomando como referencia el siguiente el README.md del siguiente api [Instalaciones previas](https://github.com/udistrital/gestor_documental_mid)
+
+----
+
+### Si el repositorio en Drone CI no esta activo seguir lo siguiente pasos 
+
+:one: Acceder a la Interfaz de Drone CI:
+
+:large_blue_diamond: Abre tu navegador y navega a la interfaz de Drone CI.
+
+:large_blue_diamond: Inicia sesión con las credenciales correspondientes (GitHub, GitLab, Bitbucket, etc.).
+
+:two: Buscar el Repositorio:
+
+:large_blue_diamond: En el tablero de Drone, busca y selecciona el repositorio que deseas activar.
+
+:large_blue_diamond: Si el repositorio no está visible, es posible que necesites sincronizar tu cuenta. Busca una opción como "Sync" o "Sincronizar" en la interfaz de Drone.
+
+:three: Activar el Repositorio:
+
+:large_blue_diamond: En la lista de repositorios, localiza el repositorio que deseas activar y haz clic en el botón "Activate" (Activar).
+
+:large_blue_diamond: Si Drone te solicita permisos adicionales para acceder al repositorio, otorga los permisos necesarios.
+
+:four: Configuración de Repositorio:
+
+:large_blue_diamond: Una vez activado, puedes acceder a la configuración del repositorio para ajustar parámetros adicionales como secretos (si no lo has hecho ya), configuración de webhook, etc.
+
+:five: Probar la Configuración:
+
+:large_blue_diamond: Realiza un push a tu repositorio para disparar un build en Drone CI.
+
+:large_blue_diamond: Verifica en la interfaz de Drone CI que el pipeline se ejecuta correctamente según la configuración de tu archivo .drone.yml.
+
+---
+
