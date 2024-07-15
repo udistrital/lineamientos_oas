@@ -121,10 +121,11 @@ A nivel técnico podemos ver al forma esperada de realizar su implementación:
 - [Pruebas Unitarias](/api_nest/XX.md)
 
 ***
-## 7. API FLASK (NEW)
+## 7. API FLASK (NEW) :snake:
 
 - [Generar API Flask](/api_flask/api_flask.md)
 - [Prerrequisitos](/api_flask/lineamientos_previos.md)
+- [Refactorizacion modelo y confirguracion de archivos](/api_flask/refactorizacion_api_flask.md)
 - [Esctructura del API Flask](/api_flask/estructura.md) 
 - [Variables de Entorno API Flask](/api_flask/variables_entorno.md)
 
