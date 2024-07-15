@@ -23,6 +23,7 @@ source .ev // en caso de cargar las variables por archivo
 6. Luego se debe edita tu api.py para incluir flasgger, de la siguiente forma:
 
 ```python
+
 from flask import Flask, jsonify
 from flasgger import Swagger
 import os
@@ -54,6 +55,7 @@ def api_info():
 if __name__ == '__main__':
     port = int(os.getenv('API_PORT', 5000))
     app.run(host='0.0.0.0', port=port)
+
 ```
 Nota: se puede acceder a la documentación de Swaggercon la URL(http://localhost:8080/apidocs/)
 
