@@ -119,7 +119,7 @@ A nivel técnico podemos ver al forma esperada de realizar su implementación:
 - [Variables de Entorno API NestJS](api_nest/variables_entorno.md)
 - [Refactorización del proyecto para manejar controlador, modelos y servicios](api_nest/refactorizacion.md)
 - [Manejo de error, filtros (query), logger, healtcheck](api_nest/manejo_error.md)
-- [Generación de swagger y detalle de .drone para despliegue](api_nest/swagger)
+- [Generación de swagger y detalle de .drone para despliegue](api_nest/swagger.md)
 
 ***
 ## 7. Clientes Angular nuevos
