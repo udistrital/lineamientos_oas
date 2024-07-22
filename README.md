@@ -113,12 +113,13 @@ A nivel técnico podemos ver al forma esperada de realizar su implementación:
 - [Smoke Testing API MID](/pruebas_unitarias_api_beego/smoke_test_mid.md)
 
 ***
-## 6. APIS NestJS (NEW)
+## 6. APIS NestJS (NEW) <img src="https://docs.nestjs.com/assets/logo-small.svg" alt="NestJS Icon" width="25"/>
 > ### Generación API
-- [Generar API NestJS](/api_nest/api_nest.md)
-- [Variables de Entorno API NestJS](/api_nest/XX.md)
-- [(health check) validación de estado en APIs](/api_nest/XX.md)
-- [Pruebas Unitarias](/api_nest/XX.md)
+- [Generar API NestJS](api_nest/api_nest.md)
+- [Variables de Entorno API NestJS](api_nest/variables_entorno.md)
+- [Refactorización del proyecto para manejar controlador, modelos y servicios](api_nest/refactorizacion.md)
+- [Manejo de error, filtros (query), logger, healtcheck](api_nest/manejo_error.md)
+- [Generación de swagger y detalle de .drone para despliegue](api_nest/swagger.md)
 
 ***
 ## 7. Clientes Angular nuevos
