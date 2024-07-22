@@ -122,7 +122,17 @@ A nivel técnico podemos ver al forma esperada de realizar su implementación:
 - [Generación de swagger y detalle de .drone para despliegue](api_nest/swagger.md)
 
 ***
-## 7. Clientes Angular nuevos
+## 7. API FLASK (NEW) :snake:
+
+- [Generar API Flask](/api_flask/api_flask.md)
+- [Prerrequisitos](/api_flask/lineamientos_previos.md)
+- [Refactorizacion modelo y confirguracion de archivos](/api_flask/refactorizacion_api_flask.md)
+- [Esctructura del API Flask](/api_flask/estructura.md) 
+- [Variables de Entorno API Flask](/api_flask/variables_entorno.md)
+
+***
+
+## 8. Clientes Angular nuevos
 
 - [Lineamientos](/clientes_nuevos/clientes_nuevos.md)
 - [Plantilla para creación de Cliente en AngularJS y TypeScript](https://github.com/udistrital/plantilla_cliente_oas)
@@ -134,11 +144,11 @@ A nivel técnico podemos ver al forma esperada de realizar su implementación:
 -->
 
 ***
-## 8. Despliegues
+## 9. Despliegues
 - [Lineamientos (Actualizar)](/despliegues/lineamientos.md)
 
 ***
-## 9. Aseguramiento de la Calidad (QA) y Seguridad Informática
+## 10. Aseguramiento de la Calidad (QA) y Seguridad Informática
 
 ### Aseguramiento de la Calidad (QA)
 
@@ -176,7 +186,7 @@ A nivel técnico podemos ver al forma esperada de realizar su implementación:
 - [Requerimientos para Solicitud de Pruebas (Actualizar)](/qa/requerimiento_pruebas.md)
 
 ***
-## 10. Metodología
+## 11. Metodología
 - [Lineamientos](/metodologias/lineamientos.md)
 #### Formatos
 - [Historia de usuario](/metodologias/formatos/Plantilla_Historias_Usuario-OAS_v2.xlsx)
