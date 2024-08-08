@@ -1,4 +1,4 @@
-# Modelo de Datos
+# Modelo de Datos relacionales
 
 
 ## Bases de Datos y Esquemas
