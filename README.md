@@ -49,8 +49,8 @@ La arquitectura definida para los sistemas en desarrollo en la OAS es módelo po
 
 - [Lineamientos Modelos de datos relacionales](/modelo_de_datos/lineamientos_modelos_relacionales.md)
 - [Lineamientos Mongo](/modelo_de_datos/lineamientos_mongo.md)
-- [Guía de comentariado] (/modelo_de_datos/guia_de_comentariado.md)
-- [SQL vs NOSQL - Diferencias y principales características] (/modelo_de_datos/SQL_vs_NoSQL.pdf)
+- [Guía de comentariado](/modelo_de_datos/guia_de_comentariado.md)
+- [SQL vs NOSQL - Diferencias y principales características](/modelo_de_datos/SQL_vs_NoSQL.pdf) 
 - [Grabación capacitación SQL vs NOSQL](https://udistritaleduco-my.sharepoint.com/:v:/g/personal/computo_udistrital_edu_co/EY_wZSi-cL1Iv0-ORtjfFDgBwDrZ35Vo2RqVFQLREmRt3A?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D&e=TmMNbU)
 
 ***
