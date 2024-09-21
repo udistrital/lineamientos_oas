@@ -136,7 +136,19 @@ A nivel técnico podemos ver al forma esperada de realizar su implementación:
 
 ***
 
-## 8. Clientes Angular nuevos
+## 8. API Serverless:
+
+- [Prerrequisitos](/api_serverless/lineamientos_previos.md)
+- [Creación API usando SAM](/api_serverless/api_serverless.md)
+- [Ejecución en local](/api_serverless/ejecucion.md)
+- [Cambios en el codigo](/api_serverless/cambios.md)
+- [Construcción de la aplicación](/api_serverless/construccion.md) 
+- [Despliegue de la aplicación](/api_serverless/despliegue.md)
+- [Configuración en AWS](/api_serverless/configuracion_aws.md)
+
+***
+
+## 9. Clientes Angular nuevos
 
 - [Lineamientos](/clientes_nuevos/clientes_nuevos.md)
 - [Plantilla para creación de Cliente en AngularJS y TypeScript](https://github.com/udistrital/plantilla_cliente_oas)
@@ -148,11 +160,11 @@ A nivel técnico podemos ver al forma esperada de realizar su implementación:
 -->
 
 ***
-## 9. Despliegues
+## 10. Despliegues
 - [Lineamientos (Actualizar)](/despliegues/lineamientos.md)
 
 ***
-## 10. Aseguramiento de la Calidad (QA) y Seguridad Informática
+## 11. Aseguramiento de la Calidad (QA) y Seguridad Informática
 
 ### Aseguramiento de la Calidad (QA)
 
@@ -190,12 +202,12 @@ A nivel técnico podemos ver al forma esperada de realizar su implementación:
 - [Requerimientos para Solicitud de Pruebas (Actualizar)](/qa/requerimiento_pruebas.md)
 
 ***
-## 11. Metodología
+## 12. Metodología
 - [Lineamientos](/metodologias/lineamientos.md)
 #### Formatos
 - [Historia de usuario](/metodologias/formatos/Plantilla_Historias_Usuario-OAS_v2.xlsx)
 - [Historia de usuario en Drive](https://docs.google.com/spreadsheets/d/1eAAnzjovKnLKAkk0tLFSCTGDnS_8K5pV0Fs-2Qmvrg0/edit#gid=713905461)
 
-## 11. Definición de endpoints para APIs REST
+## 13. Definición de endpoints para APIs REST
 - [Hoja resumen de buenas prácticas](https://udistritaleduco-my.sharepoint.com/:p:/g/personal/computo_udistrital_edu_co/EYwQbkAKVCJCqrmJ7NgnjQ4B8WSd81vxGVx-hqi0WBAcfQ?e=lJZdx8)
 - [Aclaración y ejemplos de nombres adecuados para endpoints](/generacion_de_apis/lineamientos-endpoints.md)
