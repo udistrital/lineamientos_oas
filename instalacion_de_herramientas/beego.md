@@ -4,7 +4,7 @@
 
 ### Requerimientos
 
-1. [Instalación Golang](golang.md), v >= 1.16
+1. [Instalación Golang](golang.md), v >= 1.17
 2. Git Instalado
 
 ### Instalación Beego y Bee
@@ -14,10 +14,23 @@ mkdir -p $GOPATH/src/github.com/beego
 cd $GOPATH/src/github.com/beego
 git clone --depth=1 --branch=v1.12.3 https://github.com/beego/bee.git
 git clone --depth=1 --branch=v1.12.3 https://github.com/beego/beego.git
-cd ..
+```
+Instalar go en la carpeta beego
+```sh
+go mod init 
 go get github.com/mattn/go-colorable 
-cd bee && go install
-cd ../beego && go install
+```
+En la carpeta bee
+```sh 
+cd bee 
+go install
+cd ..
+```
+En la carpeta beego
+```sh 
+cd beego
+go install
+cd ..
 ```
 
 ### Comprobar instalacion
