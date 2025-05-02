@@ -73,6 +73,7 @@ A continuación se detalla a nivel técnico el estandar definido para este tipo 
 - [Versionar BD en API Beego (Beego Migrations)](/generacion_de_apis/beego_migrations.md)
 - [Variables de Entorno en API Beego (Beego Migrations)](/generacion_de_apis/variables_en_api.md)
 - [(health check) validación de estado en APIs](/generacion_de_apis/endpoint_validacions.md)
+- [(CI/CD) Automatización de despliegue](/generacion_de_apis/configuracion_ci_cd.md)
 
 > ### Generación API MID
 
@@ -91,6 +92,7 @@ A nivel técnico podemos ver al forma esperada de realizar su implementación:
 - [Generar API MID](/generacion_de_apis/create_api_mid.md)
 - [Lógica Orientada a Funciones en API MID](/generacion_de_apis/logica_orientada_a_funciones.md)
 - [Refactorizar API MID (Control de Errores)](/generacion_de_apis/control_error_json_mid.md)
+- [(CI/CD) Automatización de despliegue](/generacion_de_apis/configuracion_ci_cd.md)
 
 > ### Generación Reglas de Negocio (RULE)
 - [Generar Reglas de Negocio-(Falta)]()
