@@ -1,0 +1,114 @@
+kind: pipeline
+name: oati_golang_api_ci
+
+workspace:
+  base: /go
+  path: src/github.com/${DRONE_REPO}
+
+steps:
+- name: go_run_test
+  image: golang:1.24
+  commands:
+    - go vet ./...
+    - go fmt ./... && git diff --exit-code || (echo "Go fmt detected formatting issues! Please run 'go fmt' to format your code." && exit 1)
+    - go install github.com/golangci/golangci-lint/cmd/golangci-lint@latest
+    - golangci-lint run --out-format=checkstyle --timeout=5m > lint_report.xml || true
+    - cat lint_report.xml
+    - go install github.com/axw/gocov/...@latest
+    - go install github.com/AlekSi/gocov-xml@latest
+    - gocov test ./... | gocov-xml > coverage.xml
+    - cat coverage.xml
+    - go install github.com/jstemmer/go-junit-report@latest
+    - go test -v ./... | go-junit-report > test_report.xml
+    - cat test_report.xml
+  when:
+    branch:
+      - feature/*
+      - develop
+      - hotfix/*
+    event:
+      - push
+
+- name: build
+  image: golang:1.24
+  commands:
+    - CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build -o main
+  when:
+    branch:
+      - feature/*
+      - develop
+      - release/*
+      - hotfix/*
+      - master
+    event:
+      - push
+
+- name: publish_to_ecr_release
+  image: plugins/ecr
+  settings:
+    access_key:
+      from_secret: AWS_ACCESS_KEY_ID
+    secret_key:
+      from_secret: AWS_SECRET_ACCESS_KEY
+    region:
+      from_secret: AWS_REGION
+    repo: ${DRONE_REPO_NAME}
+    tags:
+      - ${DRONE_COMMIT:0:7}
+      - release
+  when:
+    branch:
+      - release/*
+    event:
+      - push
+
+- name: publish_to_ecr_prod
+  image: plugins/ecr
+  settings:
+    access_key:
+      from_secret: AWS_ACCESS_KEY_ID
+    secret_key:
+      from_secret: AWS_SECRET_ACCESS_KEY
+    region:
+      from_secret: AWS_REGION
+    repo: ${DRONE_REPO_NAME}
+    tags:
+      - ${DRONE_COMMIT:0:7}
+      - latest
+  when:
+    branch:
+      - master
+    event:
+      - push
+
+- name: update_ecs_service
+  image: amazon/aws-cli:latest
+  environment:
+    AWS_ACCESS_KEY_ID:
+      from_secret: AWS_ACCESS_KEY_ID
+    AWS_SECRET_ACCESS_KEY:
+      from_secret: AWS_SECRET_ACCESS_KEY
+    AWS_DEFAULT_REGION:
+      from_secret: AWS_REGION
+  commands:
+  - case ${DRONE_BRANCH} in
+    master)
+    SUFFIX=prod
+    CLUSTER=oas
+      ;;
+    *)
+    SUFFIX=test
+    CLUSTER=test
+      ;;
+    esac
+  - aws ecs update-service
+    --cluster $${CLUSTER}
+    --service $${DRONE_REPO_NAME}_$${SUFFIX}
+    --force-new-deployment
+    --query "service.deployments[0].id"
+  when:
+    branch:
+      - release/*
+      - master
+    event:
+      - push

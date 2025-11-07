@@ -1,116 +1,85 @@
-# Configuraicón CI/CD
+# Configuración CI/CD
 
-En esta sección se especificarán los pasos necesarios para configurar el CI/CD en el repositorio.
+En esta sección se especificarán los pasos necesarios para configurar el despliegue de los APIs.
+
+Se deben agregar los siguientes archivos a la raíz del proyecto
 
 
-### Agregar archivo .drone.yml
+### Dockerfile
 
-```yaml
-kind: pipeline
-name: oati_golang_api_ci
+[`Dockerfile`](cicd/Dockerfile)
 
-workspace:
-  base: /go
-  path: src/github.com/${DRONE_REPO}
+### entrypoint.sh
 
-steps:
-- name: build
-  image: golang:1.18
-  commands:
-    - go mod init
-    - go get -t
-    - GOOS=linux GOARCH=amd64 go build -o main
-  when:
-    branch:
-      - develop
-      - release/*
-      - feature/*
-      - master
-    event:
-      - push
 
-- name: publish_to_ecr_release
-  image: plugins/ecr
-  settings:
-    access_key:
-      from_secret: AWS_ACCESS_KEY_ID
-    secret_key:
-      from_secret: AWS_SECRET_ACCESS_KEY
-    region:
-      from_secret: AWS_REGION
-    repo: ${DRONE_REPO_NAME}
-    tags:
-      - ${DRONE_COMMIT:0:7}
-      - release
-  when:
-    branch:
-      - release/*
-    event:
-      - push
+[`entrypoint.sh`](cicd/entrypoint.sh)
 
-- name: publish_to_ecr_prod
-  image: plugins/ecr
-  settings:
-    access_key:
-      from_secret: AWS_ACCESS_KEY_ID
-    secret_key:
-      from_secret: AWS_SECRET_ACCESS_KEY
-    region:
-      from_secret: AWS_REGION
-    repo: ${DRONE_REPO_NAME}
-    tags:
-      - ${DRONE_COMMIT:0:7}
-      - latest
-  when:
-    branch:
-      - master
-    event:
-      - push
 
-- name: deploy_ecs_service_release
-  image: joshdvir/drone-ecs-deploy
-  settings:
-    cluster: test
-    service: ${DRONE_REPO_NAME}_test
-    aws_region:
-      from_secret: AWS_REGION
-    aws_access_key_id:
-      from_secret: AWS_ACCESS_KEY_ID
-    aws_secret_access_key:
-      from_secret: AWS_SECRET_ACCESS_KEY
-    image_name: ${ECR_BASE_ARN}/${DRONE_REPO_NAME}
-    image_tag: release
-  environment:
-    ECR_BASE_ARN:
-      from_secret: ECR_BASE_ARN
-  when:
-    branch:
-      - release/*
-    event:
-      - push
+### .gitignore
 
-- name: deploy_ecs_service_prod
-  image: joshdvir/drone-ecs-deploy
-  settings:
-    cluster: oas
-    service: ${DRONE_REPO_NAME}_prod
-    aws_region:
-      from_secret: AWS_REGION
-    aws_access_key_id:
-      from_secret: AWS_ACCESS_KEY_ID
-    aws_secret_access_key:
-      from_secret: AWS_SECRET_ACCESS_KEY
-    image_name: ${ECR_BASE_ARN}/${DRONE_REPO_NAME}
-    image_tag: latest
-  environment:
-    ECR_BASE_ARN:
-      from_secret: ECR_BASE_ARN
-  when:
-    branch:
-      - master
-    event:
-      - push
+[`.gitignore`](../repositorios_institucionales/gitignore.md)
+
+
+### conf/app.conf
+
+[`app.conf`](cicd/app_conf_README.md)
+
+
+### main.go
+
+```go
+func main() {
+    // Solo para APIs CRUD
+    ////////////////////
+	conn, err := database.BuildPostgresConnectionString()
+	if err != nil {
+		logs.Error("error consultando la cadena de conexión: %v", err)
+		return
+	}
+
+	err = orm.RegisterDataBase("default", "postgres", conn)
+	if err != nil {
+		logs.Error("error al conectarse a la base de datos: %v", err)
+		return
+	}
+    ////////////////////
+
+	if beego.BConfig.RunMode == "dev" {
+		beego.BConfig.WebConfig.DirectoryIndex = true
+		beego.BConfig.WebConfig.StaticDir["/swagger"] = "swagger"
+	}
+
+	beego.InsertFilter("*", beego.BeforeRouter, cors.Allow(&cors.Options{
+		AllowOrigins: []string{"*"},
+		AllowMethods: []string{"PUT", "PATCH", "GET", "POST", "OPTIONS", "DELETE"},
+		AllowHeaders: []string{"Origin", "x-requested-with",
+			"content-type",
+			"accept",
+			"origin",
+			"authorization",
+			"x-csrftoken"},
+		ExposeHeaders:    []string{"Content-Length"},
+		AllowCredentials: true,
+	}))
+
+	err = xray.InitXRay()
+	if err != nil {
+		logs.Error("error configurando AWS XRay: %v", err)
+	}
+	apistatus.Init()
+	auditoria.InitMiddleware()
+	beego.ErrorController(&customerrorv2.CustomErrorController{})
+	security.SetSecurityHeaders()
+	beego.Run()
+}
+
 ```
+
+### Archivo de pipeline CI/CD
+
+[`.drone.yml`](.drone.yml)
+
+
 ### NOTA:
 
-Esta **adición de código** aplica de la misma forma tanto para APIs MID como para APIs CRUD.
+Esta configuración aplica de la misma forma tanto para APIs MID como para APIs CRUD.

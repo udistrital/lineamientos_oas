@@ -42,7 +42,6 @@ runmode = dev
 autorender = false
 copyrequestbody = true
 EnableDocs = true
-sqlconn = postgres://postgres:1234@127.0.0.1/bd_oas?sslmode=disable&search_path=public
 ```
 Las variables de entorno “definidas en MAYÚSCULAS” alimentarán la definición de las variables del api “definidas en minúscula”.
 ```bash
@@ -53,7 +52,6 @@ autorender = false
 copyrequestbody = true
 EnableDocs = true
 
-# sqlconn = postgres://postgres:1234@127.0.0.1/bd_oas?sslmode=disable&search_path=public
 # cadena de conexion fragmentado
 PGuser = ${TEST_API_CRUD_PGUSER}
 PGpass = ${TEST_API_CRUD_PGPASS}
