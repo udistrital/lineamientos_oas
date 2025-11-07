@@ -48,11 +48,12 @@ steps:
   settings:
     access_key:
       from_secret: AWS_ACCESS_KEY_ID
-    secret_key:
-      from_secret: AWS_SECRET_ACCESS_KEY
+    create_repository: true
     region:
       from_secret: AWS_REGION
     repo: ${DRONE_REPO_NAME}
+    secret_key:
+      from_secret: AWS_SECRET_ACCESS_KEY
     tags:
       - ${DRONE_COMMIT:0:7}
       - release
@@ -67,11 +68,12 @@ steps:
   settings:
     access_key:
       from_secret: AWS_ACCESS_KEY_ID
-    secret_key:
-      from_secret: AWS_SECRET_ACCESS_KEY
+    create_repository: true
     region:
       from_secret: AWS_REGION
     repo: ${DRONE_REPO_NAME}
+    secret_key:
+      from_secret: AWS_SECRET_ACCESS_KEY
     tags:
       - ${DRONE_COMMIT:0:7}
       - latest
