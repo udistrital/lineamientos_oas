@@ -412,7 +412,7 @@ bee generate migration ingresar_registro_nombre_tabla
 ### 3.3  Consistencia de la migración
 - Siempre registrar la función `Down()` para evitar inconsistencias.
 - Al realizar los despliegues por medio del sistema de integracion continua (CI), se lleva un control o version de las migraciones ejecutadas, al suceder un error en el `pipeline` se realiza reset de la migración, controlando los eventos ejecutados y la version estable de la Base de datos.
-- Solo se realizara la migración en los entornos de desarrollo (develop) y pruebas (release)
+- La migración solo se ejecuta en ambiente local, para ejecutar las migraciones en ambientes de pruebas y producción se debe contactar al equipo de DBAs
 
 
 ## Tomado de:
