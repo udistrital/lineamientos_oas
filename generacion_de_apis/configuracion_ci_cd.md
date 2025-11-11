@@ -77,7 +77,12 @@ func main() {
 
 ### Archivo de pipeline CI/CD
 
-[`.drone.yml`](.drone.yml)
+[`.drone.yml`](cicd/.drone.yml)
+
+
+### sonar-project.properties
+
+[`sonar-project.properties`](cicd/sonar-project.properties.md)
 
 
 ### NOTA:
