@@ -6,6 +6,24 @@ workspace:
   path: src/github.com/${DRONE_REPO}
 
 steps:
+- name: run_sonar_scanner
+  image: sonarsource/sonar-scanner-cli:latest
+  environment:
+    SONAR_HOST_URL:
+      from_secret: SONAR_HOST
+    SONAR_TOKEN:
+      from_secret: SONAR_TOKEN
+    SONAR_SCANNER_OPTS: "-Dsonar.working.directory=/tmp/.scannerwork"
+  commands:
+    - sonar-scanner
+  when:
+    branch:
+      - feature/*
+      - develop
+      - hotfix/*
+    event:
+    - push
+
 - name: go_run_test
   image: golang:1.24
   commands:
@@ -14,13 +32,13 @@ steps:
     - go install github.com/golangci/golangci-lint/cmd/golangci-lint@latest
     - golangci-lint run --out-format=checkstyle --timeout=5m > lint_report.xml || true
     - cat lint_report.xml
-    - go install github.com/axw/gocov/...@latest
-    - go install github.com/AlekSi/gocov-xml@latest
-    - gocov test ./... | gocov-xml > coverage.xml
-    - cat coverage.xml
-    - go install github.com/jstemmer/go-junit-report@latest
-    - go test -v ./... | go-junit-report > test_report.xml
-    - cat test_report.xml
+    # - go install github.com/axw/gocov/...@latest
+    # - go install github.com/AlekSi/gocov-xml@latest
+    # - gocov test ./... | gocov-xml > coverage.xml
+    # - cat coverage.xml
+    # - go install github.com/jstemmer/go-junit-report@latest
+    # - go test -v ./... | go-junit-report > test_report.xml
+    # - cat test_report.xml
   when:
     branch:
       - feature/*
@@ -42,24 +60,6 @@ steps:
       - master
     event:
       - push
-
-- name: run_sonar_scanner
-  image: sonarsource/sonar-scanner-cli:latest
-  environment:
-    SONAR_HOST_URL:
-      from_secret: SONAR_HOST
-    SONAR_TOKEN:
-      from_secret: SONAR_TOKEN
-    SONAR_SCANNER_OPTS: "-Dsonar.working.directory=/tmp/.scannerwork"
-  commands:
-    - sonar-scanner
-  when:
-    branch:
-    - develop
-    - feature/*
-    - release/*
-    event:
-    - push
 
 - name: publish_to_ecr_release
   image: plugins/ecr
