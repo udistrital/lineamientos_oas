@@ -44,7 +44,10 @@ func main() {
 	}
     ////////////////////
 
+	allowedOrigins := []string{"*.udistrital.edu.co"}
 	if beego.BConfig.RunMode == "dev" {
+		AllowOrigins: allowedOrigins,
+		orm.Debug = true
 		beego.BConfig.WebConfig.DirectoryIndex = true
 		beego.BConfig.WebConfig.StaticDir["/swagger"] = "swagger"
 	}
@@ -84,6 +87,10 @@ func main() {
 
 [`sonar-project.properties`](cicd/sonar-project.properties.md)
 
+### Actualización de godog
+
+Si el comando ```go vet ./...``` genera error con el paquete godog, se debe actualizar según
+[`actualizar godog`](https://github.com/udistrital/acta_recibido_crud/commit/bfbc436cac8a2c283f3dc8f2d79bdeac9fdfc14b)
 
 ### NOTA:
 
