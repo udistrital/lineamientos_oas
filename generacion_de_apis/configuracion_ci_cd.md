@@ -1,18 +1,13 @@
 # Configuración CI/CD
 
-En esta sección se especificarán los pasos necesarios para configurar el despliegue de los APIs.
+En esta sección se especificarán los pasos necesarios para configurar el despliegue de las APIs desarrolladas en golang utilizando el framework Beego.
 
-Se deben agregar los siguientes archivos a la raíz del proyecto
+Se deben agregar los siguientes archivos
 
 
 ### Dockerfile
 
 [`Dockerfile`](cicd/Dockerfile)
-
-### entrypoint.sh
-
-
-[`entrypoint.sh`](cicd/entrypoint.sh)
 
 
 ### .gitignore
@@ -47,7 +42,7 @@ func main() {
 	allowedOrigins := []string{"*.udistrital.edu.co"}
 	if beego.BConfig.RunMode == "dev" {
 		allowedOrigins = []string{"*"}
-		orm.Debug = true
+		orm.Debug = true// Solo para APIs CRUD
 		beego.BConfig.WebConfig.DirectoryIndex = true
 		beego.BConfig.WebConfig.StaticDir["/swagger"] = "swagger"
 	}
@@ -78,6 +73,22 @@ func main() {
 
 ```
 
+### go fmt
+
+
+Ejecutar el comando ```go fmt ./...```
+
+
+### go vet
+
+
+Ejecutar el comando ```go vet ./...```. Si este comando genera error con el paquete godog, se debe actualizar según
+[`actualizar godog`](https://github.com/udistrital/acta_recibido_crud/commit/bfbc436cac8a2c283f3dc8f2d79bdeac9fdfc14b)
+
+### entrypoint.sh
+
+Eliminar el archivo ```entrypoint.sh```
+
 ### Archivo de pipeline CI/CD
 
 [`.drone.yml`](cicd/.drone.yml)
@@ -87,10 +98,6 @@ func main() {
 
 [`sonar-project.properties`](cicd/sonar-project.properties.md)
 
-### Actualización de godog
-
-Si el comando ```go vet ./...``` genera error con el paquete godog, se debe actualizar según
-[`actualizar godog`](https://github.com/udistrital/acta_recibido_crud/commit/bfbc436cac8a2c283f3dc8f2d79bdeac9fdfc14b)
 
 ### NOTA:
 
