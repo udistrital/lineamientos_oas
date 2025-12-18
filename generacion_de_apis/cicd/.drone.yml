@@ -20,7 +20,9 @@ steps:
     branch:
       - feature/*
       - develop
+      - release/*
       - hotfix/*
+      - master
     event:
     - push
 

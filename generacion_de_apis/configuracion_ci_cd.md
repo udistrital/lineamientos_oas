@@ -85,6 +85,16 @@ Ejecutar el comando ```go fmt ./...```
 Ejecutar el comando ```go vet ./...```. Si este comando genera error con el paquete godog, se debe actualizar según
 [`actualizar godog`](https://github.com/udistrital/acta_recibido_crud/commit/bfbc436cac8a2c283f3dc8f2d79bdeac9fdfc14b)
 
+### Actualización de utils_oas
+
+Actualizar la versión de utils_oas con:
+
+```bash
+go get github.com/udistrital/utils_oas@latest
+go mod tidy
+```
+
+
 ### entrypoint.sh
 
 Eliminar el archivo ```entrypoint.sh```
