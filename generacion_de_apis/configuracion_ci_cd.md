@@ -40,7 +40,7 @@ func main() {
     ////////////////////
 
 	allowedOrigins := []string{"*.udistrital.edu.co"}
-	if beego.BConfig.RunMode == "dev" {
+	if beego.BConfig.RunMode == beego.DEV  {
 		allowedOrigins = []string{"*"}
 		orm.Debug = true// Solo para APIs CRUD
 		beego.BConfig.WebConfig.DirectoryIndex = true
