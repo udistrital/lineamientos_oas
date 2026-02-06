@@ -8,7 +8,7 @@ Este archivo contiene la configuración principal para la API CRUD de Ágora. Lo
 |-----------------|--------------------------------------------------|-------------------------------------------------|
 | appname         | Nombre de la aplicación                          | Nombre del repositorio en GitHub                |
 | httpport        | Puerto HTTP en el que se expone la API           | ${AGORA_API_CRUD_HTTPPORT}                      |
-| runmode         | Modo de ejecución (dev, prod)                    | ${AGORA_API_CRUD_HTTPPORT\|prod}                |
+| runmode         | Modo de ejecución (dev, prod)                    | ${AGORA_API_CRUD_HTTPPORT\|\|prod}                |
 | parameterStore  | Origen parámetros externos (solo para APIs CRUD) | ${PARAMETER_STORE}                              |
 | PGuser          | Usuario de la base de datos PostgreSQL           | ${AGORA_API_CRUD_PGUSER}                        |
 | PGpass          | Contraseña de la base de datos PostgreSQL        | ${AGORA_API_CRUD_PGPASS}                        |
@@ -22,7 +22,7 @@ Este archivo contiene la configuración principal para la API CRUD de Ágora. Lo
 ```properties
 appname = agora_api_crud
 httpport = ${AGORA_API_CRUD_HTTPPORT}
-runmode = ${AGORA_API_CRUD_HTTPPORT|prod}
+runmode = ${AGORA_API_CRUD_RUN_MODE||prod}
 autorender = false
 copyrequestbody = true
 EnableDocs = true
