@@ -213,3 +213,6 @@ A nivel técnico podemos ver al forma esperada de realizar su implementación:
 ## 13. Definición de endpoints para APIs REST
 - [Hoja resumen de buenas prácticas](https://udistritaleduco-my.sharepoint.com/:p:/g/personal/computo_udistrital_edu_co/EYwQbkAKVCJCqrmJ7NgnjQ4B8WSd81vxGVx-hqi0WBAcfQ?e=lJZdx8)
 - [Aclaración y ejemplos de nombres adecuados para endpoints](/generacion_de_apis/lineamientos-endpoints.md)
+## 14. Estrcutura de la oficina
+- ![Organigrama OATI (1)](https://github.com/user-attachments/assets/9f868da0-0a64-4541-a168-402685454ea6)
+
