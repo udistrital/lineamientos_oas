@@ -216,4 +216,6 @@ A nivel técnico podemos ver al forma esperada de realizar su implementación:
 
 ## 14. Organigrama OATI funcionamiento
 - ![Organigrama OATI (1)](https://github.com/user-attachments/assets/3fb2ed47-8d42-42c9-8d84-4cfb24517249)
+- [Organigrama OATI.pdf](https://github.com/user-attachments/files/25296529/Organigrama.OATI.pdf)
+
 
