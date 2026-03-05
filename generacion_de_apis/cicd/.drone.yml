@@ -27,7 +27,7 @@ steps:
     - push
 
 - name: go_run_test
-  image: golang:1.24
+  image: golang:1.25
   commands:
     - go vet ./...
     - go fmt ./... && git diff --exit-code || (echo "Go fmt detected formatting issues! Please run 'go fmt' to format your code." && exit 1)
@@ -50,7 +50,7 @@ steps:
       - push
 
 - name: build
-  image: golang:1.24
+  image: golang:1.25
   commands:
     - GOOS=linux GOARCH=amd64 go build -o main
   when:
