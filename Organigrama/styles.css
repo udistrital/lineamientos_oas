@@ -1,0 +1,329 @@
+:root {
+  --bg: #0f172a;
+  --panel: #0b1227;
+  --text: #e2e8f0;
+  --accent: #22c55e;
+  --accent-soft: #86efac;
+  --team: #ffffff;
+  --person: #f8fafc;
+  --function: #39b9ff;
+  --comment: #ffe59a;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  height: 100%;
+  font-family: "Montserrat", "Segoe UI", Tahoma, sans-serif;
+  color: var(--text);
+  background: radial-gradient(circle at 30% 20%, #1e293b, #0b1020);
+}
+
+body {
+  display: grid;
+  grid-template-rows: auto 1fr;
+}
+
+.toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  padding: 0.8rem;
+  background: linear-gradient(90deg, #111827, #0f172a);
+  border-bottom: 1px solid #334155;
+  position: sticky;
+  top: 0;
+  z-index: 20;
+}
+
+.toolbar-group {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+button,
+.logo-upload {
+  border: 1px solid #334155;
+  background: #0f172a;
+  color: var(--text);
+  border-radius: 10px;
+  padding: 0.5rem 0.7rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 120ms ease, background 120ms ease, border-color 120ms ease;
+}
+
+button:hover,
+.logo-upload:hover {
+  transform: translateY(-1px);
+  background: #1e293b;
+  border-color: #64748b;
+}
+
+.logo-upload input {
+  display: none;
+}
+
+.canvas-wrapper {
+  position: relative;
+  overflow: hidden;
+}
+
+#diagramSvg {
+  width: 100%;
+  height: 100%;
+  display: block;
+  user-select: none;
+  touch-action: none;
+}
+
+#bgGrid {
+  fill: #dbeafe;
+}
+
+.node {
+  cursor: grab;
+}
+
+.node text {
+  pointer-events: none;
+  letter-spacing: 0.3px;
+  text-rendering: geometricPrecision;
+  -webkit-font-smoothing: antialiased;
+}
+
+.resize-handle {
+  fill: #ffffff;
+  stroke: #0f172a;
+  stroke-width: 2;
+}
+
+.handle-nw,
+.handle-se {
+  cursor: nwse-resize;
+}
+
+.handle-ne,
+.handle-sw {
+  cursor: nesw-resize;
+}
+
+.team-rect {
+  fill: var(--team);
+  stroke: #9ca3af;
+  stroke-width: 2.5;
+  rx: 16;
+}
+
+.person-rect {
+  fill: var(--person);
+  stroke: #7a8ea3;
+  stroke-width: 2;
+  rx: 10;
+}
+
+.person-accent {
+  stroke-width: 0;
+  rx: 8;
+}
+
+.function-pill {
+  fill: var(--function);
+  stroke: #1580bb;
+  stroke-width: 2;
+  rx: 16;
+}
+
+.comment-note {
+  fill: var(--comment);
+  stroke: #c2a24f;
+  stroke-width: 2;
+  rx: 12;
+}
+
+.center-logo {
+  fill: #ffffff;
+  stroke: #475569;
+  stroke-width: 2;
+}
+
+.center-logo-text {
+  font-size: 30px;
+  font-weight: 800;
+  fill: #0f172a;
+}
+
+.link-line {
+  stroke: #0b63ff;
+  stroke-width: 4;
+  fill: none;
+  cursor: grab;
+}
+
+.link-line:active {
+  cursor: grabbing;
+}
+
+.link-line-selected {
+  stroke: #2563eb;
+  stroke-width: 5;
+  filter: drop-shadow(0 0 3px rgba(37, 99, 235, 0.45));
+}
+
+.bg-cable {
+  fill: none;
+  stroke-linecap: round;
+  stroke-opacity: 0.16;
+}
+
+.bg-cable-beam {
+  fill: none;
+  stroke: rgba(147, 197, 253, 0.95);
+  stroke-linecap: round;
+  stroke-width: 3;
+  stroke-dasharray: 110 300;
+  animation-name: beamFlow;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+.bg-cable-beam.rev {
+  animation-name: beamFlowReverse;
+}
+
+#diagramSvg.interacting .bg-cable-beam {
+  animation-play-state: paused;
+  opacity: 0.1;
+}
+
+@keyframes beamFlow {
+  from {
+    stroke-dashoffset: 0;
+    opacity: 0.18;
+  }
+  15% {
+    opacity: 0.7;
+  }
+  85% {
+    opacity: 0.7;
+  }
+  to {
+    stroke-dashoffset: -820;
+    opacity: 0.18;
+  }
+}
+
+@keyframes beamFlowReverse {
+  from {
+    stroke-dashoffset: -820;
+    opacity: 0.18;
+  }
+  15% {
+    opacity: 0.7;
+  }
+  85% {
+    opacity: 0.7;
+  }
+  to {
+    stroke-dashoffset: 0;
+    opacity: 0.18;
+  }
+}
+
+.selected-node rect,
+.selected-node circle,
+.selected-node path {
+  stroke: #f97316 !important;
+  stroke-width: 3.5 !important;
+  filter: drop-shadow(0 0 6px rgba(249, 115, 22, 0.55));
+}
+
+.selected-node .resize-handle {
+  fill: #fff7ed;
+  stroke: #f97316;
+  stroke-width: 2.5;
+}
+
+.toast {
+  position: absolute;
+  bottom: 18px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(15, 23, 42, 0.95);
+  color: #e2e8f0;
+  border: 1px solid #334155;
+  border-radius: 10px;
+  padding: 0.5rem 0.75rem;
+  font-size: 0.95rem;
+}
+
+.inline-editor {
+  position: absolute;
+  z-index: 30;
+  min-width: 180px;
+  max-width: 340px;
+  padding: 0.35rem 0.5rem;
+  border: 2px solid #2563eb;
+  border-radius: 8px;
+  font: 600 14px "Montserrat", "Segoe UI", Tahoma, sans-serif;
+  color: #0f172a;
+  background: #ffffff;
+  box-shadow: 0 6px 20px rgba(15, 23, 42, 0.2);
+}
+
+.context-menu {
+  position: absolute;
+  z-index: 35;
+  min-width: 160px;
+  padding: 0.35rem;
+  border: 1px solid #334155;
+  border-radius: 10px;
+  background: #0f172a;
+  box-shadow: 0 10px 28px rgba(2, 6, 23, 0.45);
+}
+
+.context-menu button {
+  width: 100%;
+  text-align: left;
+  border: 1px solid transparent;
+  background: transparent;
+  color: #e2e8f0;
+  padding: 0.45rem 0.55rem;
+  border-radius: 8px;
+  font-weight: 600;
+}
+
+.context-menu button:hover {
+  background: #1e293b;
+  border-color: #3b82f6;
+}
+
+.menu-color-palette {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 0.35rem;
+  margin-top: 0.35rem;
+}
+
+.menu-color-swatch {
+  width: 24px;
+  height: 24px;
+  border-radius: 999px;
+  border: 2px solid #64748b;
+  padding: 0;
+  cursor: pointer;
+}
+
+.menu-color-swatch:hover {
+  transform: scale(1.08);
+  border-color: #e2e8f0;
+}
+
+.hidden {
+  display: none;
+}
